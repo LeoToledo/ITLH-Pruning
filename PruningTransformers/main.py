@@ -27,8 +27,8 @@ import custom_callbacks
 
 # Global variables to replace command line arguments
 ARCHITECTURE_NAME = ''
-CRITERION_HEAD = 'random'
-CRITERION_LAYER = 'random'
+CRITERION_HEAD = 'CKA'
+CRITERION_LAYER = 'CKA'
 P_HEAD = 1.0
 P_LAYER = 1
 
