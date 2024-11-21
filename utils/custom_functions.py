@@ -6,7 +6,6 @@ import numpy as np
 from sklearn.metrics import accuracy_score
 import keras
 from tensorflow.python.data import Dataset
-from keras import layers
 
 
 def fine_tuning(model, x_train, y_train, x_test, y_test):
@@ -35,9 +34,9 @@ def fine_tuning(model, x_train, y_train, x_test, y_test):
                       callbacks=callbacks,
                       epochs=ep, initial_epoch=ep - 1)
 
-            if ep % 50 == 0:
+            if ep % 5 == 0:
                 acc = accuracy_score(np.argmax(y_test, axis=1), np.argmax(model.predict(x_test, verbose=0), axis=1))
-               # print('Accuracy [{:.4f}]'.format(acc), flush=True)
+                print('Accuracy [{:.4f}]'.format(acc), flush=True)
 
     return model
 
@@ -235,155 +234,10 @@ def count_filters_layer(model):
     return n_filters
 
 
-def compute_flops_full_network(model):
-    """
-    Calcula os FLOPs totais da rede considerando todas as camadas
-    
-    Args:
-        model: modelo do transformer
-        
-    Returns:
-        total_flops: número total de FLOPs
-        flops_per_layer: lista com FLOPs de cada camada
-    """
-    total_flops = 0
-    flops_per_layer = []
-    
-    # Encontra as camadas Patches e PatchEncoder
-    patches_layer = None
-    patch_encoder_layer = None
-    for layer in model.layers:
-        if 'patches' in layer.name.lower():
-            patches_layer = layer
-        elif 'patch_encoder' in layer.name.lower():
-            patch_encoder_layer = layer
-    
-    for layer_idx in range(1, len(model.layers)):
-        layer = model.get_layer(index=layer_idx)
-        layer_flops = 0
-        
-        # MultiHeadAttention
-        if isinstance(layer, keras.layers.MultiHeadAttention):
-            seq_len = layer.output_shape[1] or 1
-            num_heads = layer._num_heads
-            head_dim = layer._key_dim
-            input_dim = layer.input_shape[-1] or 1
-            
-            qkv_flops = 3 * seq_len * input_dim * head_dim * num_heads
-            attention_scores_flops = seq_len * seq_len * head_dim * num_heads
-            attention_output_flops = seq_len * seq_len * head_dim * num_heads
-            output_projection_flops = seq_len * head_dim * input_dim * num_heads
-            
-            layer_flops = qkv_flops + attention_scores_flops + attention_output_flops + output_projection_flops
-            
-        # Dense
-        elif isinstance(layer, keras.layers.Dense):
-            input_shape = layer.input_shape
-            output_shape = layer.output_shape
-            
-            batch_ops = 1
-            if len(input_shape) > 2:
-                for dim in input_shape[1:-1]:
-                    if dim is not None:
-                        batch_ops *= dim
-            
-            input_dim = input_shape[-1] or 1
-            output_dim = output_shape[-1] or 1
-            
-            layer_flops = batch_ops * input_dim * output_dim * 2
-            
-        # LayerNormalization
-        elif isinstance(layer, keras.layers.LayerNormalization):
-            shape = layer.output_shape
-            elements = 1
-            for dim in shape[1:]:
-                if dim is not None:
-                    elements *= dim
-            layer_flops = elements * 4
-            
-        # Add
-        elif isinstance(layer, keras.layers.Add):
-            shape = layer.output_shape
-            elements = 1
-            for dim in shape[1:]:
-                if dim is not None:
-                    elements *= dim
-            layer_flops = elements
-            
-        # Flatten
-        elif isinstance(layer, keras.layers.Flatten):
-            layer_flops = 0
-            
-        # Patches
-        elif patches_layer and isinstance(layer, type(patches_layer)):
-            input_shape = layer.input_shape
-            patch_size = layer.patch_size
-            if all(dim is not None for dim in input_shape[1:]):
-                layer_flops = (input_shape[1] // patch_size) * (input_shape[2] // patch_size) * patch_size * patch_size * input_shape[3]
-            else:
-                layer_flops = 0
-            
-        # PatchEncoder
-        elif patch_encoder_layer and isinstance(layer, type(patch_encoder_layer)):
-            input_shape = layer.input_shape
-            output_shape = layer.output_shape
-            if all(dim is not None for dim in [input_shape[1], input_shape[2], output_shape[2]]):
-                layer_flops = input_shape[1] * input_shape[2] * output_shape[2] * 2
-            else:
-                layer_flops = 0
-            
-        total_flops += layer_flops
-        flops_per_layer.append((layer.name, layer_flops))
-        
-    return total_flops, flops_per_layer
-
-
-def calculate_pruning_efficiency(total_flops_original, total_flops_after, items_to_remove, total_score, pruning_type='head'):
-    """
-    Calcula a eficiência da poda considerando redução de FLOPs e impacto na representação
-    
-    Args:
-        total_flops_original: FLOPs antes da poda
-        total_flops_after: FLOPs após a poda 
-        items_to_remove: heads_to_remove ou (blocks_tmp, mask, allowed_layers) dependendo do tipo
-        total_score: lista com os scores (1-CKA)
-        pruning_type: 'head' ou 'layer'
-        
-    Returns:
-        efficiency: valor entre 0 e 1, onde maior = mais eficiente
-    """
-    flops_reduction = (total_flops_original - total_flops_after) / total_flops_original
-    
-    if pruning_type == 'head':
-        # Calcula a média dos scores dos heads removidos
-        sum_score = 0
-        num_removed = 0
-        score_index = 0
-        
-        for layer_idx, heads in items_to_remove:
-            # Considera apenas os heads que serão efetivamente removidos
-            if len(heads) > 0:
-                for head_idx in heads:
-                    if score_index < len(total_score):
-                        sum_score += total_score[score_index]
-                        num_removed += 1
-                    score_index += 1
-        
-        # Evita divisão por zero se nenhum head foi removido
-        score_ratio = sum_score / num_removed if num_removed > 0 else 0
-        
-    else:  # layer
-        # Para poda de camadas, usa a média de todos os scores
-        score_ratio = np.mean(total_score) if len(total_score) > 0 else 0
-    
-    # A eficiência é maior quando há maior redução de FLOPs e menor impacto (score)
-    efficiency = flops_reduction * (1 - score_ratio)
-    return efficiency
-
-
 def compute_flops(model):
     # useful link https://www.programmersought.com/article/27982165768/
     import keras
+    # from keras.applications.mobilenet import DepthwiseConv2D
     from keras.layers import DepthwiseConv2D
     total_flops = 0
     flops_per_layer = []
@@ -412,10 +266,10 @@ def compute_flops(model):
             total_flops += flops
             flops_per_layer.append(flops)
 
-        elif isinstance(layer, keras.layers.Dense) is True:
-            # Pega a última dimensão independente do número de dimensões
-            current_layer_depth = layer.output_shape[-1]
-            previous_layer_depth = layer.input_shape[-1]
+        if isinstance(layer, keras.layers.Dense) is True:
+            _, current_layer_depth = layer.output_shape
+
+            _, previous_layer_depth = layer.input_shape
 
             flops = current_layer_depth * previous_layer_depth
             total_flops += flops

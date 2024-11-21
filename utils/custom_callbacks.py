@@ -1,5 +1,3 @@
-# custom_callbacks.py
-
 import numpy as np
 import keras
 from keras.callbacks import Callback
@@ -22,7 +20,7 @@ class LearningRateScheduler(Callback):
         if epoch >= self.schedule[-1][0]:
             lr = self.schedule[-1][1]
 
-        #print('Learning rate:{}'.format(lr))
+        print('Learning rate:{}'.format(lr))
 
         K.set_value(self.model.optimizer.lr, lr)
 
