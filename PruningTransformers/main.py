@@ -36,6 +36,16 @@ P_LAYER = 1
 PRUNING_START_EPOCH = 2  # Começa a podar após 50 épocas
 PRUNING_INTERVAL = 2     # Poda a cada 10 épocas
 
+# Variáveis globais adicionais
+SEED_VALUE = 12227
+DATA_FILE = 'FaciesClassificationYananGasField'
+N_EPOCHS = 200
+LR = 0.001
+BATCH_SIZE = 1024
+PROJECTION_DIM = 64
+NUM_HEADS = [256, 128, 64, 16, 32, 8]
+SCHEDULE = [(100, LR / 10), (150, LR / 100)]
+
 def load_transformer_data(file='synthetic'):
     """
     loads premade data for transformer model
@@ -108,7 +118,7 @@ def statistics(model):
     print('#Heads {} Params [{}]  FLOPS [{}] Memory [{:.6f}]'.format(tmp, n_params, flops(model), memory), flush=True)
 
 
-def fine_tuning(model, x_train, y_train, x_test, y_test, current_epoch, batch_size=1024, lr=0.001):
+def fine_tuning(model, x_train, y_train, x_test, y_test, current_epoch):
     """
     Realiza o fine tuning do modelo para uma época
     
@@ -119,21 +129,18 @@ def fine_tuning(model, x_train, y_train, x_test, y_test, current_epoch, batch_si
         x_test: dados de teste
         y_test: labels de teste
         current_epoch: época atual para o scheduler
-        batch_size: tamanho do batch
-        lr: learning rate inicial
-    
+        
     Returns:
         model: modelo treinado
         accuracy: acurácia da época atual
     """
     # Configura o learning rate scheduler
-    schedule = [(100, lr / 10), (150, lr / 100)]
-    lr_scheduler = custom_callbacks.LearningRateScheduler(init_lr=lr, schedule=schedule)
+    lr_scheduler = custom_callbacks.LearningRateScheduler(init_lr=LR, schedule=SCHEDULE)
     callbacks = [lr_scheduler]
 
     # Configura o otimizador SGD com momentum
     sgd = keras.optimizers.SGD(
-        learning_rate=lr, 
+        learning_rate=LR, 
         decay=1e-6, 
         momentum=0.9, 
         nesterov=True
@@ -148,13 +155,13 @@ def fine_tuning(model, x_train, y_train, x_test, y_test, current_epoch, batch_si
 
     # Cria um dataset TensorFlow com shuffle e batch
     dataset = Dataset.from_tensor_slices((x_train, y_train))\
-        .shuffle(4 * batch_size)\
-        .batch(batch_size)
+        .shuffle(4 * BATCH_SIZE)\
+        .batch(BATCH_SIZE)
 
     # Treina por uma época
     model.fit(
         dataset,
-        batch_size=batch_size,
+        batch_size=BATCH_SIZE,
         verbose=2,
         callbacks=callbacks,
         epochs=current_epoch + 1,
@@ -174,12 +181,12 @@ def fine_tuning(model, x_train, y_train, x_test, y_test, current_epoch, batch_si
 def perform_pruning(model, x_train, y_train, x_test, y_test):
     """
     Realiza tanto a poda de heads quanto de layers e aplica a que obtiver melhor resultado
-    
+        
     Args:
         model: modelo original
         x_train, y_train: dados de treino
         x_test, y_test: dados de teste
-    
+        
     Returns:
         best_model: modelo após a melhor poda
         best_accuracy: acurácia do melhor modelo
@@ -261,8 +268,8 @@ def perform_pruning(model, x_train, y_train, x_test, y_test):
 
 
 if __name__ == '__main__':
-    np.random.seed(12227)
-    random.seed(12227)
+    np.random.seed(SEED_VALUE)
+    random.seed(SEED_VALUE)
 
     # Configuração do ambiente
     os.environ['TF_GPU_THREAD_MODE'] = 'gpu_private'
@@ -275,19 +282,19 @@ if __name__ == '__main__':
 
     # Carrega e prepara dados tabulares
     x_train, x_test, y_train, y_test, n_classes = load_transformer_data(
-        file='FaciesClassificationYananGasField')
+        file=DATA_FILE)
 
     # Configuração do modelo
     input_shape = (x_train.shape[1:])
-    projection_dim = 64
-    num_heads = [256, 128, 64, 16, 32, 8]
+    projection_dim = PROJECTION_DIM
+    num_heads = NUM_HEADS
 
     # Cria e compila o modelo inicial
     model = template_architectures.TransformerTabular(
         input_shape, projection_dim, num_heads, n_classes)
 
-    # Treinamento inicial - 200 épocas
-    n_epochs = 200
+    # Treinamento inicial
+    n_epochs = N_EPOCHS
     print("Iniciando treinamento...")
     
     # Guarda estado inicial do modelo para comparação
