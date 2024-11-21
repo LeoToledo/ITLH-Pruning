@@ -18,13 +18,8 @@ from tqdm import tqdm
 
 # Configurações para remover warnings
 import logging
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # 0 = all messages, 1 = INFO, 2 = WARNING, 3 = ERROR
-logging.getLogger('tensorflow').setLevel(logging.ERROR)  # Só mostra erros
+import os
 
-# Desabilita avisos específicos do TensorFlow
-import warnings
-warnings.filterwarnings('ignore', category=DeprecationWarning)
-warnings.filterwarnings('ignore', category=FutureWarning)
 
 sys.path.insert(0, '../utils')
 import custom_functions as func
@@ -36,6 +31,10 @@ CRITERION_HEAD = 'random'
 CRITERION_LAYER = 'random'
 P_HEAD = 1.0
 P_LAYER = 1
+
+# Pruning schedule variables
+PRUNING_START_EPOCH = 2  # Começa a podar após 50 épocas
+PRUNING_INTERVAL = 2     # Poda a cada 10 épocas
 
 def load_transformer_data(file='synthetic'):
     """
@@ -172,6 +171,95 @@ def fine_tuning(model, x_train, y_train, x_test, y_test, current_epoch, batch_si
     return model, accuracy
 
 
+def perform_pruning(model, x_train, y_train, x_test, y_test):
+    """
+    Realiza tanto a poda de heads quanto de layers e aplica a que obtiver melhor resultado
+    
+    Args:
+        model: modelo original
+        x_train, y_train: dados de treino
+        x_test, y_test: dados de teste
+    
+    Returns:
+        best_model: modelo após a melhor poda
+        best_accuracy: acurácia do melhor modelo
+    """
+    # Calcula métricas do modelo original
+    original_flops = flops(model)
+    original_heads = [layer._num_heads for layer in model.layers if isinstance(layer, layers.MultiHeadAttention)]
+    original_params = model.count_params()
+    
+    y_pred = model.predict(x_test, verbose=0)
+    original_accuracy = accuracy_score(
+        np.argmax(y_test, axis=1),
+        np.argmax(y_pred, axis=1)
+    )
+    
+    # Tenta poda de heads
+    head_method = ch.criteria(CRITERION_HEAD)
+    head_scores = head_method.scores(model, x_train, y_train, rh.heads_to_prune(model))
+    head_pruned_model = rh.rebuild_network(model, head_scores, P_HEAD)
+    
+    # Métricas após poda de heads
+    head_flops = flops(head_pruned_model)
+    head_heads = [layer._num_heads for layer in head_pruned_model.layers if isinstance(layer, layers.MultiHeadAttention)]
+    head_params = head_pruned_model.count_params()
+    
+    y_pred = head_pruned_model.predict(x_test, verbose=0)
+    head_accuracy = accuracy_score(
+        np.argmax(y_test, axis=1),
+        np.argmax(y_pred, axis=1)
+    )
+    
+    # Tenta poda de layers
+    layer_method = cl.criteria(CRITERION_LAYER)
+    layer_scores = layer_method.scores(model, x_train, y_train, rl.layers_to_prune(model))
+    layer_pruned_model = rl.rebuild_network(model, layer_scores, P_LAYER)
+    
+    # Métricas após poda de layers
+    layer_flops = flops(layer_pruned_model)
+    layer_heads = [layer._num_heads for layer in layer_pruned_model.layers if isinstance(layer, layers.MultiHeadAttention)]
+    layer_params = layer_pruned_model.count_params()
+    
+    y_pred = layer_pruned_model.predict(x_test, verbose=0)
+    layer_accuracy = accuracy_score(
+        np.argmax(y_test, axis=1),
+        np.argmax(y_pred, axis=1)
+    )
+    
+    # Imprime resultados detalhados
+    print("\nResultados da Tentativa de Poda:")
+    print(f"Modelo Original:")
+    print(f"- Accuracy: {original_accuracy:.4f}")
+    print(f"- FLOPS: {original_flops:,}")
+    print(f"- Heads: {original_heads}")
+    print(f"- Params: {original_params:,}")
+    
+    print(f"\nPoda de Heads:")
+    print(f"- Accuracy: {head_accuracy:.4f}")
+    print(f"- FLOPS: {head_flops:,} ({((original_flops - head_flops)/original_flops)*100:.2f}% redução)")
+    print(f"- Heads: {head_heads}")
+    print(f"- Params: {head_params:,} ({((original_params - head_params)/original_params)*100:.2f}% redução)")
+    
+    print(f"\nPoda de Layers:")
+    print(f"- Accuracy: {layer_accuracy:.4f}")
+    print(f"- FLOPS: {layer_flops:,} ({((original_flops - layer_flops)/original_flops)*100:.2f}% redução)")
+    print(f"- Heads: {layer_heads}")
+    print(f"- Params: {layer_params:,} ({((original_params - layer_params)/original_params)*100:.2f}% redução)")
+    
+    # Escolhe a melhor poda
+    if head_accuracy > layer_accuracy:
+        print("\nEscolhida poda de heads - Melhor accuracy com:")
+        print(f"- Redução de FLOPS: {((original_flops - head_flops)/original_flops)*100:.2f}%")
+        print(f"- Redução de Params: {((original_params - head_params)/original_params)*100:.2f}%")
+        return head_pruned_model, head_accuracy
+    else:
+        print("\nEscolhida poda de layers - Melhor accuracy com:")
+        print(f"- Redução de FLOPS: {((original_flops - layer_flops)/original_flops)*100:.2f}%")
+        print(f"- Redução de Params: {((original_params - layer_params)/original_params)*100:.2f}%")
+        return layer_pruned_model, layer_accuracy
+
+
 if __name__ == '__main__':
     np.random.seed(12227)
     random.seed(12227)
@@ -200,46 +288,50 @@ if __name__ == '__main__':
 
     # Treinamento inicial - 200 épocas
     n_epochs = 200
-    print("Iniciando treinamento inicial...")
+    print("Iniciando treinamento...")
+    
+    # Guarda estado inicial do modelo para comparação
+    initial_flops = flops(model)
+    initial_params = model.count_params()
+    initial_heads = [layer._num_heads for layer in model.layers if isinstance(layer, layers.MultiHeadAttention)]
+    
     for epoch in tqdm(range(n_epochs)):
         model, accuracy = fine_tuning(
             model, x_train, y_train, x_test, y_test, epoch)
         
+        # Verifica se é momento de podar
+        if epoch >= PRUNING_START_EPOCH and (epoch - PRUNING_START_EPOCH) % PRUNING_INTERVAL == 0:
+            print(f"\nRealizando tentativa de poda na época {epoch}")
+            
+            # Guarda métricas antes da poda
+            pre_pruning_flops = flops(model)
+            pre_pruning_params = model.count_params()
+            pre_pruning_heads = [layer._num_heads for layer in model.layers if isinstance(layer, layers.MultiHeadAttention)]
+            
+            # Realiza a poda
+            model, accuracy = perform_pruning(model, x_train, y_train, x_test, y_test)
+            
+            # Confirma mudanças após a poda
+            current_flops = flops(model)
+            current_params = model.count_params()
+            current_heads = [layer._num_heads for layer in model.layers if isinstance(layer, layers.MultiHeadAttention)]
+            
+            print("\nConfirmação das mudanças após poda:")
+            print(f"FLOPS: {pre_pruning_flops:,} -> {current_flops:,} (Redução de {((pre_pruning_flops - current_flops)/pre_pruning_flops)*100:.2f}%)")
+            print(f"Params: {pre_pruning_params:,} -> {current_params:,} (Redução de {((pre_pruning_params - current_params)/pre_pruning_params)*100:.2f}%)")
+            print(f"Heads: {pre_pruning_heads} -> {current_heads}")
+            print(f"Redução total desde o início:")
+            print(f"- FLOPS: Redução de {((initial_flops - current_flops)/initial_flops)*100:.2f}%")
+            print(f"- Params: Redução de {((initial_params - current_params)/initial_params)*100:.2f}%")
+            print("-"*50)
+            
         # Imprime resultados a cada 5 épocas
         if epoch % 5 == 0:
             print(f'Época [{epoch}] Accuracy [{accuracy:.4f}]')
             statistics(model)
 
-    # Avaliação final do modelo inicial
+    # Avaliação final do modelo
     y_pred = model.predict(x_test)
     acc = accuracy_score(np.argmax(y_pred, axis=1), np.argmax(y_test, axis=1))
-    print('Accuracy Modelo Inicial [{}]'.format(acc))
+    print('Accuracy Final [{}]'.format(acc))
     statistics(model)
-
-    # Processo de poda iterativa
-    print("\nIniciando processo de poda...")
-    for i in range(40):
-        prob = random.random()  # Probabilidade para escolher tipo de poda
-        
-        if prob >= 0.5:
-            # Poda de heads
-            head_method = ch.criteria(CRITERION_HEAD)
-            scores = head_method.scores(model, x_train, y_train, rh.heads_to_prune(model))
-            model = rh.rebuild_network(model, scores, P_HEAD)
-        else:
-            # Poda de layers
-            layer_method = cl.criteria(CRITERION_LAYER)
-            scores = layer_method.scores(model, x_train, y_train, rl.layers_to_prune(model))
-            model = rl.rebuild_network(model, scores, P_LAYER)
-
-        # Retreinamento após poda
-        print(f"\nRetreinamento após poda {i+1}")
-        for epoch in range(n_epochs):
-            model, accuracy = fine_tuning(
-                model, x_train, y_train, x_test, y_test, epoch)
-            
-            if epoch % 5 == 0:
-                print(f'Poda [{i+1}] Época [{epoch}] Accuracy [{accuracy:.4f}]')
-                statistics(model)
-
-        print(f'Iteração de Poda [{i}] Accuracy Final [{accuracy}]')
