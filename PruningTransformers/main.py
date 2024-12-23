@@ -19,6 +19,8 @@ from tqdm import tqdm
 # Configurações para remover warnings
 import logging
 import os
+from identify_subnetwork import get_subnetwork
+from epi import EPI
 
 
 sys.path.insert(0, '../utils')
@@ -27,26 +29,23 @@ import custom_callbacks
 
 # Global variables to replace command line arguments
 ARCHITECTURE_NAME = ''
-CRITERION_HEAD = 'CKA'
-CRITERION_LAYER = 'CKA'
-P_HEAD = 1.0
+CRITERION_HEAD = 'random'
+CRITERION_LAYER = 'random'
+P_HEAD = 5
 P_LAYER = 1
-
-# Pruning schedule variables
-PRUNING_START_EPOCH = 2  # Começa a podar após 50 épocas
-PRUNING_INTERVAL = 2     # Poda a cada 10 épocas
+RETENTION_RATIO = 0.2
 
 # Variáveis globais adicionais
 SEED_VALUE = 12227
 DATA_FILE = 'FaciesClassificationYananGasField'
 N_EPOCHS = 200
 LR = 0.001
-BATCH_SIZE = 1024
-PROJECTION_DIM = 64
+BATCH_SIZE = 16
+PROJECTION_DIM = 16
 NUM_HEADS = [256, 128, 64, 16, 32, 8]
 SCHEDULE = [(100, LR / 10), (150, LR / 100)]
 
-def load_transformer_data(file='synthetic'):
+def load_transformer_data(file):
     """
     loads premade data for transformer model
     Args:
@@ -157,12 +156,12 @@ def fine_tuning(model, x_train, y_train, x_test, y_test, current_epoch):
     dataset = Dataset.from_tensor_slices((x_train, y_train))\
         .shuffle(4 * BATCH_SIZE)\
         .batch(BATCH_SIZE)
-
+    
     # Treina por uma época
     model.fit(
         dataset,
         batch_size=BATCH_SIZE,
-        verbose=2,
+        verbose=1,
         callbacks=callbacks,
         epochs=current_epoch + 1,
         initial_epoch=current_epoch
@@ -281,8 +280,7 @@ if __name__ == '__main__':
         ARCHITECTURE_NAME, P_HEAD, P_LAYER), flush=True)
 
     # Carrega e prepara dados tabulares
-    x_train, x_test, y_train, y_test, n_classes = load_transformer_data(
-        file=DATA_FILE)
+    x_train, x_test, y_train, y_test, n_classes = load_transformer_data(file=DATA_FILE)
 
     # Configuração do modelo
     input_shape = (x_train.shape[1:])
@@ -302,12 +300,21 @@ if __name__ == '__main__':
     initial_params = model.count_params()
     initial_heads = [layer._num_heads for layer in model.layers if isinstance(layer, layers.MultiHeadAttention)]
     
+    # Inicializa o epi
+    epi_calculator = EPI()
+    
     for epoch in tqdm(range(n_epochs)):
         model, accuracy = fine_tuning(
             model, x_train, y_train, x_test, y_test, epoch)
         
+        # Obtém a sub-rede atual
+        structure, importance_scores = get_subnetwork(model, prune_ratio=(1 - RETENTION_RATIO), epoch=epoch)
+    
+        # Verifica se deve podar usando EPI
+        should_prune = epi_calculator.should_prune(structure, method='magnitude')
+        
         # Verifica se é momento de podar
-        if epoch >= PRUNING_START_EPOCH and (epoch - PRUNING_START_EPOCH) % PRUNING_INTERVAL == 0:
+        if should_prune:
             print(f"\nRealizando tentativa de poda na época {epoch}")
             
             # Guarda métricas antes da poda
@@ -323,6 +330,9 @@ if __name__ == '__main__':
             current_params = model.count_params()
             current_heads = [layer._num_heads for layer in model.layers if isinstance(layer, layers.MultiHeadAttention)]
             
+            # Reset do EPI após a poda
+            epi_calculator.reset()
+        
             print("\nConfirmação das mudanças após poda:")
             print(f"FLOPS: {pre_pruning_flops:,} -> {current_flops:,} (Redução de {((pre_pruning_flops - current_flops)/pre_pruning_flops)*100:.2f}%)")
             print(f"Params: {pre_pruning_params:,} -> {current_params:,} (Redução de {((pre_pruning_params - current_params)/pre_pruning_params)*100:.2f}%)")
@@ -333,7 +343,7 @@ if __name__ == '__main__':
             print("-"*50)
             
         # Imprime resultados a cada 5 épocas
-        if epoch % 5 == 0:
+        if epoch % 1 == 0:
             print(f'Época [{epoch}] Accuracy [{accuracy:.4f}]')
             statistics(model)
 
