@@ -1,0 +1,2 @@
+{"epoch": 1, "train_acc": 0.34661999344825745, "val_acc": 0.288, "test_acc": 0.334, "flops": 125747840, "angle": 0.0, "pruning_info": null}
+{"epoch": 2, "train_acc": 0.47284001111984253, "val_acc": 0.399, "test_acc": 0.4482, "flops": 125747840, "angle": 12.967237732744412, "pruning_info": null}
