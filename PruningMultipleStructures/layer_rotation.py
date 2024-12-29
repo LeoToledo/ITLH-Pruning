@@ -57,63 +57,84 @@ class LayerRotationTracker:
             dist = cosine(w_init.flatten(), w_curr.flatten())
             distances.append(dist)
         mean_distance = np.mean(distances)
-        
-        # (Prints removed as requested)
-        # print(f"[LayerRotationTracker] Mean Cosine Distance: {mean_distance:.4f}")
-        
         return mean_distance
+
+    def calculate_angle(self, current_epoch, total_epochs):
+        """
+        Calculates the angle based on recent distances, regardless of start_epoch.
+        """
+        if len(self.cosine_distances_mean) < 2:  # Need at least 2 points for slope
+            return 0.0
+
+        # Use all available points up to current epoch
+        recent_distances = np.array(self.cosine_distances_mean).reshape(-1, 1)
+        
+        # Create normalized epoch array for all available points
+        epochs_ndarray = np.arange(1, total_epochs + 1).reshape(-1, 1)
+        scaler = MinMaxScaler(feature_range=(0, 1))
+        epochs_norm = scaler.fit_transform(epochs_ndarray)
+        epochs_norm_1d = epochs_norm.flatten()
+
+        # Select the window of normalized epochs for available points
+        epochs_window = epochs_norm_1d[:len(recent_distances)]
+        recent_distances_norm_1d = recent_distances.flatten()
+
+        # Linear fit and angle calculation
+        slope, _ = np.polyfit(epochs_window, recent_distances_norm_1d, 1)
+        angle = np.degrees(np.arctan(slope))
+        
+        return angle
 
     def update_and_check_stability(self, model, current_epoch, total_epochs):
         """
         Returns:
             stable (bool): True if rotation is considered "stable" this epoch.
-            angle (float): The computed angle this epoch (0 if insufficient data).
+            angle (float): The computed angle this epoch.
         """
         # 1) Calculate mean cosine distance
         distance_mean = self.calculate_mean_cosine_distance(model)
         self.cosine_distances_mean.append(distance_mean)
 
-        # Default angle = 0.0 (if we don't have enough data)
-        angle = 0.0
+        # Always calculate angle using all available points
+        angle = self.calculate_angle(current_epoch, total_epochs)
+
+        # Initialize stable as False
         stable = False
 
-        # 2) Only compute slope/angle if we have at least `start_epoch` points
+        # Only check stability if we have enough points (start_epoch)
         if len(self.cosine_distances_mean) >= self.start_epoch:
-            # Take the last 'start_epoch' distances
+            # Take the last 'start_epoch' distances for stability check
             recent_distances = self.cosine_distances_mean[-self.start_epoch:]
             recent_distances = np.array(recent_distances).reshape(-1, 1)
 
-            # Create an array of epochs [1..total_epochs] and normalize with MinMaxScaler
+            # Create normalized epoch array
             epochs_ndarray = np.arange(1, total_epochs + 1).reshape(-1, 1)
             scaler = MinMaxScaler(feature_range=(0, 1))
             epochs_norm = scaler.fit_transform(epochs_ndarray)
             epochs_norm_1d = epochs_norm.flatten()
 
-            # Select the window of normalized epochs
-            # E.g., if current_epoch=10 and start_epoch=5 => we take [5..10) => indices 5..9
+            # Select window for stability check
             start_index = current_epoch - self.start_epoch
             end_index = current_epoch
             if start_index < 0:
                 start_index = 0
 
             epochs_window = epochs_norm_1d[start_index:end_index]
-
-            # Linear fit (degree=1) using epochs_window (x) and the cosine distances (y)
             recent_distances_norm_1d = recent_distances.flatten()
-            slope, intercept = np.polyfit(epochs_window, recent_distances_norm_1d, 1)
+            
+            # Calculate slope for stability check
+            slope, _ = np.polyfit(epochs_window, recent_distances_norm_1d, 1)
+            stability_angle = np.degrees(np.arctan(slope))
 
-            # Convert slope to angle in degrees
-            angle = np.degrees(np.arctan(slope))
-            print(f"[LayerRotationTracker] Angle: {angle:.2f}° (slope-based)")
-
-            # 3) If angle < threshold => increment self.consecutive_stable_count
-            if angle < self.angle_threshold:
+            # Update stability counters based on stability_angle
+            if stability_angle < self.angle_threshold:
                 self.consecutive_stable_count += 1
             else:
                 self.consecutive_stable_count = 0
 
-            # 4) If we reached 'stable_epochs_needed', mark stable as True
             if self.consecutive_stable_count >= self.stable_epochs_needed:
                 stable = True
+
+            print(f"[LayerRotationTracker] Angle: {angle:.2f}° (slope-based)")
 
         return stable, angle

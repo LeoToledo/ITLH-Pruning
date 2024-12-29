@@ -8,35 +8,32 @@ import keras
 from tensorflow.python.data import Dataset
 
 
-def fine_tuning(model, x_train, y_train, x_test, y_test):
-    if len(model.input.shape.as_list()) == 3:
-        model.compile(loss='categorical_crossentropy', optimizer='Adam', metrics=['accuracy'])
-        model.fit(x_train, y_train, batch_size=512, verbose=0, epochs=10)
-    else:
-        batch_size = 1024
-        lr = 0.001
-        schedule = [(100, lr / 10), (150, lr / 100)]
-        lr_scheduler = custom_callbacks.LearningRateScheduler(init_lr=lr, schedule=schedule)
-        callbacks = [lr_scheduler]
+def fine_tuning_cnn(model, x_train, y_train, x_test, y_test):
 
-        sgd = keras.optimizers.SGD(learning_rate=lr, decay=1e-6, momentum=0.9, nesterov=True)
-        model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
-        for ep in range(0, 200):
-            y_tmp = np.concatenate((y_train, y_train, y_train))
-            x_tmp = np.concatenate(
-                (data_augmentation(x_train),
-                 data_augmentation(x_train),
-                 data_augmentation(x_train)))
+    batch_size = 1024
+    lr = 0.001
+    schedule = [(100, lr / 10), (150, lr / 100)]
+    lr_scheduler = custom_callbacks.LearningRateScheduler(init_lr=lr, schedule=schedule)
+    callbacks = [lr_scheduler]
 
-            x_tmp = Dataset.from_tensor_slices((x_tmp, y_tmp)).shuffle(4 * batch_size).batch(batch_size)
+    sgd = keras.optimizers.SGD(learning_rate=lr, decay=1e-6, momentum=0.9, nesterov=True)
+    model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
+    for ep in range(0, 200):
+        y_tmp = np.concatenate((y_train, y_train, y_train))
+        x_tmp = np.concatenate(
+            (data_augmentation(x_train),
+                data_augmentation(x_train),
+                data_augmentation(x_train)))
 
-            model.fit(x_tmp, batch_size=batch_size, verbose=2,
-                      callbacks=callbacks,
-                      epochs=ep, initial_epoch=ep - 1)
+        x_tmp = Dataset.from_tensor_slices((x_tmp, y_tmp)).shuffle(4 * batch_size).batch(batch_size)
 
-            if ep % 5 == 0:
-                acc = accuracy_score(np.argmax(y_test, axis=1), np.argmax(model.predict(x_test, verbose=0), axis=1))
-                print('Accuracy [{:.4f}]'.format(acc), flush=True)
+        model.fit(x_tmp, batch_size=batch_size, verbose=2,
+                    callbacks=callbacks,
+                    epochs=ep, initial_epoch=ep - 1)
+
+        if ep % 5 == 0:
+            acc = accuracy_score(np.argmax(y_test, axis=1), np.argmax(model.predict(x_test, verbose=0), axis=1))
+            print('Accuracy [{:.4f}]'.format(acc), flush=True)
 
     return model
 
