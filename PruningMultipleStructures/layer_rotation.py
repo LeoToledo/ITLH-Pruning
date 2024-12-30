@@ -3,11 +3,15 @@ from scipy.spatial.distance import cosine
 import math
 from sklearn.preprocessing import MinMaxScaler
 
+
 class LayerRotationTracker:
     """
     Tracks how much each layer's weights have "rotated" (changed in direction)
-    compared to the initial weights, using cosine distance, replicating
-    the logic of angle (slope) calculation from the original article.
+    compared to the initial weights, using cosine distance.
+
+    Now enhanced with:
+      - A 'window_size' to focus on only the last N epochs (local slope).
+      - A simpler local slope calculation if we have just a few data points.
     """
 
     def __init__(
@@ -16,35 +20,43 @@ class LayerRotationTracker:
         layer_names=None,
         start_epoch=5,
         angle_threshold=45.0,
-        stable_epochs_needed=2
+        stable_epochs_needed=2,
+        window_size=10,            # Nova configuração para definir a quantidade de épocas recentes na janela
+        use_local_normalization=True  # Se True, normaliza apenas a janela (pode desativar se quiser)
     ):
         """
         Args:
             model: Keras model
-            layer_names: list of layer names (optional).
-            start_epoch: number of epochs used in linear regression (5 in the article).
-            angle_threshold: angle threshold (45° by default, as in the article).
+            layer_names: list of layer names to track (optional).
+            start_epoch: only start checking stability after these many epochs.
+            angle_threshold: slope-based angle threshold (in degrees).
             stable_epochs_needed: number of consecutive epochs that must be below
-                                  the angle threshold before returning True.
+                                  angle_threshold to declare "stable".
+            window_size: how many recent epochs to consider when computing slope.
+            use_local_normalization: if True, normalizes epochs in [0,1] within the
+                                     window; if False, uses epochs "as is".
         """
         self.start_epoch = start_epoch
         self.angle_threshold = angle_threshold
         self.stable_epochs_needed = stable_epochs_needed
+        self.window_size = window_size
+        self.use_local_normalization = use_local_normalization
+
         self.consecutive_stable_count = 0
 
-        # If layer_names is not specified, we use all layers that have weights
+        # Se layer_names não for especificado, rastreia todas as camadas com pesos
         if layer_names is None:
             self.layer_names = [layer.name for layer in model.layers if len(layer.get_weights()) > 0]
         else:
             self.layer_names = layer_names
 
-        # Save initial weights
+        # Salva pesos iniciais para referência
         self.initial_weights = []
         for name in self.layer_names:
             w_init = model.get_layer(name).get_weights()[0]
             self.initial_weights.append(w_init.copy())
 
-        # List for storing mean cosine distances
+        # Lista que armazena a média da distância cosseno a cada época
         self.cosine_distances_mean = []
 
     def calculate_mean_cosine_distance(self, model):
@@ -59,82 +71,97 @@ class LayerRotationTracker:
         mean_distance = np.mean(distances)
         return mean_distance
 
-    def calculate_angle(self, current_epoch, total_epochs):
+    def compute_local_slope_angle(self, distances, epochs):
         """
-        Calculates the angle based on recent distances, regardless of start_epoch.
+        Faz um cálculo "local" do slope baseando-se SOMENTE nos últimos points da janela.
+        - distances: array/list dos valores de distância cosseno, restringidos à janela
+        - epochs: array/list das épocas correspondentes, também restrito à janela
+
+        Retorna o ângulo em graus baseado no slope. Se só houver 2 pontos, calcula diferença direta.
         """
-        if len(self.cosine_distances_mean) < 2:  # Need at least 2 points for slope
+        # Se tivermos menos de 2 pontos, não é possível calcular slope
+        if len(distances) < 2:
             return 0.0
 
-        # Use all available points up to current epoch
-        recent_distances = np.array(self.cosine_distances_mean).reshape(-1, 1)
-        
-        # Create normalized epoch array for all available points
-        epochs_ndarray = np.arange(1, total_epochs + 1).reshape(-1, 1)
-        scaler = MinMaxScaler(feature_range=(0, 1))
-        epochs_norm = scaler.fit_transform(epochs_ndarray)
-        epochs_norm_1d = epochs_norm.flatten()
+        # Se forem apenas 2 pontos, cálculo direto do "slope" = (dist2 - dist1) / (epoch2 - epoch1)
+        if len(distances) == 2:
+            d1, d2 = distances
+            e1, e2 = epochs
+            # slope é a variação em função do delta de épocas
+            slope = (d2 - d1) / (max(e2 - e1, 1e-5))  # evita divisão por zero
+            # Converte slope -> ângulo
+            angle = np.degrees(np.arctan(slope))
+            return angle
 
-        # Select the window of normalized epochs for available points
-        epochs_window = epochs_norm_1d[:len(recent_distances)]
-        recent_distances_norm_1d = recent_distances.flatten()
+        # Caso geral (>= 3 pontos), podemos usar np.polyfit
+        if self.use_local_normalization:
+            # Normaliza epochs dentro da própria janela
+            scaler = MinMaxScaler(feature_range=(0, 1))
+            epochs_reshaped = np.array(epochs).reshape(-1, 1)
+            epochs_norm = scaler.fit_transform(epochs_reshaped).flatten()
+            slope, _ = np.polyfit(epochs_norm, distances, 1)
+        else:
+            # Usa epochs como estão
+            slope, _ = np.polyfit(epochs, distances, 1)
 
-        # Linear fit and angle calculation
-        slope, _ = np.polyfit(epochs_window, recent_distances_norm_1d, 1)
         angle = np.degrees(np.arctan(slope))
-        
+        return angle
+
+    def calculate_angle(self):
+        """
+        Calcula o ângulo (slope) usando apenas as últimas `window_size` distâncias.
+        Retorna 0.0 caso não haja dados suficientes.
+        """
+        if len(self.cosine_distances_mean) < 2:
+            return 0.0
+
+        # Pega apenas as últimas N (self.window_size) distâncias
+        recent_distances = self.cosine_distances_mean[-self.window_size:]
+        # Cria um vetor de épocas que corresponde a esses pontos finais
+        # (Por exemplo, se já passamos de 50 épocas, e window_size=10,
+        #  vamos criar algo como [41,42,...,50] ou algo nesse sentido)
+        last_epoch = len(self.cosine_distances_mean)  # total de épocas já registradas
+        start_index = max(last_epoch - self.window_size, 0)  # índice para pegar as distâncias
+        epochs_window = list(range(start_index + 1, last_epoch + 1))  # +1 pois época começa em 1,2,...
+
+        # Converte para arrays
+        recent_distances = np.array(recent_distances)
+        epochs_window = np.array(epochs_window)
+
+        # Calcula slope local (ângulo) nessa janela
+        angle = self.compute_local_slope_angle(recent_distances, epochs_window)
         return angle
 
     def update_and_check_stability(self, model, current_epoch, total_epochs):
         """
-        Returns:
-            stable (bool): True if rotation is considered "stable" this epoch.
-            angle (float): The computed angle this epoch.
+        Passo principal a ser chamado a cada época. 
+        Retorna:
+            stable (bool): True se consideramos que estabilizou nessa época.
+            angle (float): O ângulo calculado (para debug/log).
         """
-        # 1) Calculate mean cosine distance
+        # 1) Calcula e armazena a distância cosseno média
         distance_mean = self.calculate_mean_cosine_distance(model)
         self.cosine_distances_mean.append(distance_mean)
 
-        # Always calculate angle using all available points
-        angle = self.calculate_angle(current_epoch, total_epochs)
+        # 2) Calcula o ângulo local (slope baseado somente na janela)
+        angle = self.calculate_angle()
 
-        # Initialize stable as False
+        # Inicialmente, assume que não está estável
         stable = False
 
-        # Only check stability if we have enough points (start_epoch)
+        # Só começa a checar estabilidade se len >= start_epoch
         if len(self.cosine_distances_mean) >= self.start_epoch:
-            # Take the last 'start_epoch' distances for stability check
-            recent_distances = self.cosine_distances_mean[-self.start_epoch:]
-            recent_distances = np.array(recent_distances).reshape(-1, 1)
-
-            # Create normalized epoch array
-            epochs_ndarray = np.arange(1, total_epochs + 1).reshape(-1, 1)
-            scaler = MinMaxScaler(feature_range=(0, 1))
-            epochs_norm = scaler.fit_transform(epochs_ndarray)
-            epochs_norm_1d = epochs_norm.flatten()
-
-            # Select window for stability check
-            start_index = current_epoch - self.start_epoch
-            end_index = current_epoch
-            if start_index < 0:
-                start_index = 0
-
-            epochs_window = epochs_norm_1d[start_index:end_index]
-            recent_distances_norm_1d = recent_distances.flatten()
-            
-            # Calculate slope for stability check
-            slope, _ = np.polyfit(epochs_window, recent_distances_norm_1d, 1)
-            stability_angle = np.degrees(np.arctan(slope))
-
-            # Update stability counters based on stability_angle
-            if stability_angle < self.angle_threshold:
+            # Basicamente, se angle < threshold, incrementa; senão, zera
+            if abs(angle) < self.angle_threshold:
                 self.consecutive_stable_count += 1
             else:
                 self.consecutive_stable_count = 0
 
+            # Se já ficamos 'stable_epochs_needed' épocas consecutivas com ângulo baixo, definimos como estável
             if self.consecutive_stable_count >= self.stable_epochs_needed:
                 stable = True
 
-            print(f"[LayerRotationTracker] Angle: {angle:.2f}° (slope-based)")
+            print(f"[LayerRotationTracker] local angle: {angle:.2f}°  "
+                  f"(consecutive_stable_count={self.consecutive_stable_count}, stable={stable})")
 
         return stable, angle

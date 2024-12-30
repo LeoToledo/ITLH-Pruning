@@ -18,9 +18,11 @@ from pruning_criteria import criteria_layer as cl
 
 sys.path.insert(0, '../utils')
 import custom_functions as func
-from layer_rotation import LayerRotationTracker
 
-# IMPORTANT: We only import the data_augmentation function from custom_functions
+# -------------------------------------------------------------------------
+# Aqui importamos a nova versão do LayerRotationTracker
+# -------------------------------------------------------------------------
+from layer_rotation import LayerRotationTracker
 from custom_functions import data_augmentation
 
 # -------------------------------------------------------------------------
@@ -59,9 +61,11 @@ MAX_EPOCHS = 500
 LEARNING_RATE = 0.001
 MOMENTUM = 0.9
 BATCH_SIZE = 512
-ROTATION_START_EPOCH = 600
-ROTATION_ANGLE_THRESHOLD = 1
-ROTATION_STABLE_EPOCHS = 200
+
+# -- Parâmetros do novo tracker de rotação --
+ROTATION_START_EPOCH = 20
+ROTATION_ANGLE_THRESHOLD = 0.058
+ROTATION_STABLE_EPOCHS = 5
 
 # -------------------------------------------------------------------------
 # New Fine-Tuning Setup & Single-Epoch Functions
@@ -102,8 +106,8 @@ def fine_tuning_epoch(model, x_train, y_train, batch_size, callbacks):
     )
 
     # Create tf.data.Dataset from augmented data
-    x_tmp_ds = Dataset.from_tensor_slices((x_tmp, y_tmp))\
-                      .shuffle(4 * batch_size)\
+    x_tmp_ds = Dataset.from_tensor_slices((x_tmp, y_tmp)) \
+                      .shuffle(4 * batch_size) \
                       .batch(batch_size)
 
     # Fit the model for one epoch
@@ -128,12 +132,12 @@ def predict_in_batches(model, X, batch_size=32):
     dataset = tf.data.Dataset.from_tensor_slices(X)\
         .batch(batch_size)\
         .prefetch(tf.data.AUTOTUNE)
-    
+
     predictions = []
     for batch in dataset:
         batch_pred = model.predict(batch, verbose=0)
         predictions.append(batch_pred)
-    
+
     return np.vstack(predictions)
 
 
@@ -146,7 +150,7 @@ def statistics(model):
     flops, _ = func.compute_flops(model)
     blocks = rl.count_blocks(model)
     memory = func.memory_usage(1, model)
-    
+
     print(f'Blocks {blocks} Parameters [{n_params}] Filters [{n_filters}] '
           f'FLOPS [{flops}] Memory [{memory:.6f}]', flush=True)
     return flops
@@ -159,19 +163,19 @@ def prune(model, p_filter, p_layer, criterion_filter, criterion_layer, X_train, 
     # Clear memory before pruning
     gc.collect()
     tf.keras.backend.clear_session()
-    
+
     # Filter pruning
     allowed_layers_filters = rf.layer_to_prune_filters(model)
     filter_method = cf.criteria(criterion_filter)
     scores_filter = filter_method.scores(model, X_train, y_train, allowed_layers_filters)
     pruned_model_filter = rf.rebuild_network(model, scores_filter, p_filter)
-    
+
     # Layer pruning
     allowed_layers = rl.blocks_to_prune(model)
     layer_method = cl.criteria(criterion_layer)
     scores_layer = layer_method.scores(model, X_train, y_train, allowed_layers)
     pruned_model_layer = rl.rebuild_network(model, scores_layer, p_layer)
-    
+
     return pruned_model_filter, pruned_model_layer
 
 
@@ -200,7 +204,7 @@ if __name__ == '__main__':
     X_train, y_train, X_test, y_test, X_val, y_val = func.cifar_resnet_data(
         debug=False, validation_set=True
     )
-    
+
     model = func.load_model(ARCHITECTURE_NAME)
     rf.architecture_name = ARCHITECTURE_NAME
     rl.architecture_name = ARCHITECTURE_NAME
@@ -221,14 +225,16 @@ if __name__ == '__main__':
     print(f'Unpruned [{ARCHITECTURE_NAME}] Validation Accuracy [{initial_acc_val}]')
 
     # ---------------------------------------------------------------------
-    # Rotation Tracker
+    # Rotation Tracker (usando a versão nova, com window_size e local normalization)
     # ---------------------------------------------------------------------
     rotation_tracker = LayerRotationTracker(
         model=model,
         layer_names=None,
         start_epoch=ROTATION_START_EPOCH,
         angle_threshold=ROTATION_ANGLE_THRESHOLD,
-        stable_epochs_needed=ROTATION_STABLE_EPOCHS
+        stable_epochs_needed=ROTATION_STABLE_EPOCHS,
+        window_size=10,               # <-- JANELA DE ÉPOCAS
+        use_local_normalization=True  # <-- SE TRUE, NORMALIZA EPOCHS NA JANELA
     )
 
     best_val_acc = initial_acc_val
@@ -293,16 +299,16 @@ if __name__ == '__main__':
             # 7) If stable, prune
             if stable:
                 print(f"[Epoch {epoch_idx}] Rotation is stable! Initiating pruning...", flush=True)
-                
+
                 gc.collect()
                 tf.keras.backend.clear_session()
-                
+
                 pruned_model_filter, pruned_model_layer = prune(
                     model, P_FILTER, P_LAYER,
                     CRITERION_FILTER, CRITERION_LAYER,
                     X_train, y_train
                 )
-                
+
                 model, chosen_structure = winner_pruned_model(
                     pruned_model_filter, pruned_model_layer,
                     best_pruned_criteria='flops'
@@ -329,10 +335,15 @@ if __name__ == '__main__':
                 rotation_tracker = LayerRotationTracker(
                     model=model,
                     layer_names=None,
-                    start_epoch=ROTATION_START_EPOCH,
+                    start_epoch=15,
                     angle_threshold=ROTATION_ANGLE_THRESHOLD,
-                    stable_epochs_needed=ROTATION_STABLE_EPOCHS
+                    stable_epochs_needed=ROTATION_STABLE_EPOCHS,
+                    window_size=5,
+                    use_local_normalization=True
                 )
+
+                # --- FIX: Re-compile pruned model before continuing training ---
+                model, callbacks = setup_fine_tuning_cnn(model, LEARNING_RATE)
 
                 train_record["pruning_info"] = (
                     f"Pruned with structure={chosen_structure}, new_val_acc={new_acc_val:.4f}"
@@ -348,6 +359,6 @@ if __name__ == '__main__':
         print(f"Error occurred: {str(e)}")
         # Save the final model in case of crash
         model.save("final_model_crash.h5")
-    
+
     finally:
         log_file.close()
