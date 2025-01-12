@@ -1,167 +1,168 @@
+# layer_rotation.py
+
 import numpy as np
 from scipy.spatial.distance import cosine
-import math
 from sklearn.preprocessing import MinMaxScaler
-
 
 class LayerRotationTracker:
     """
-    Tracks how much each layer's weights have "rotated" (changed in direction)
-    compared to the initial weights, using cosine distance.
-
-    Now enhanced with:
-      - A 'window_size' to focus on only the last N epochs (local slope).
-      - A simpler local slope calculation if we have just a few data points.
+    Classe que rastreia a variação (distância cosseno) dos pesos de determinadas camadas
+    ao longo do treinamento, calculando o ângulo de inclinação via regressão linear
+    numa janela de épocas. Se o ângulo for menor que um limiar (angle_threshold)
+    por 'stable_epochs_needed' épocas consecutivas, consideramos que a rotação está "estável".
     """
 
     def __init__(
         self,
         model,
         layer_names=None,
-        start_epoch=5,
-        angle_threshold=45.0,
-        stable_epochs_needed=2,
-        window_size=10,            # Nova configuração para definir a quantidade de épocas recentes na janela
-        use_local_normalization=True  # Se True, normaliza apenas a janela (pode desativar se quiser)
+        start_epoch=600,
+        angle_threshold=1.0,
+        stable_epochs_needed=200,
+        window_size=5
     ):
         """
-        Args:
-            model: Keras model
-            layer_names: list of layer names to track (optional).
-            start_epoch: only start checking stability after these many epochs.
-            angle_threshold: slope-based angle threshold (in degrees).
-            stable_epochs_needed: number of consecutive epochs that must be below
-                                  angle_threshold to declare "stable".
-            window_size: how many recent epochs to consider when computing slope.
-            use_local_normalization: if True, normalizes epochs in [0,1] within the
-                                     window; if False, uses epochs "as is".
+        Parâmetros:
+            model: O modelo Keras/TensorFlow do qual se extrairão os pesos iniciais.
+            layer_names: Lista de nomes de camadas a serem rastreadas. Se None, pega
+                         todas as camadas com pesos (excluindo bias).
+            start_epoch: Época a partir da qual começa a verificar a rotação.
+            angle_threshold: Valor do ângulo (em graus) abaixo do qual consideramos
+                             "estável" na janela corrente.
+            stable_epochs_needed: Quantas épocas seguidas precisam estar "estáveis"
+                                  para considerarmos a rotação verdadeiramente estável.
+            window_size: Tamanho da janela de épocas usada no cálculo da regressão linear.
         """
         self.start_epoch = start_epoch
         self.angle_threshold = angle_threshold
         self.stable_epochs_needed = stable_epochs_needed
         self.window_size = window_size
-        self.use_local_normalization = use_local_normalization
 
-        self.consecutive_stable_count = 0
-
-        # Se layer_names não for especificado, rastreia todas as camadas com pesos
+        # Se não for especificado, usaremos todas as camadas que tiverem pesos (matriz de pesos)
         if layer_names is None:
-            self.layer_names = [layer.name for layer in model.layers if len(layer.get_weights()) > 0]
-        else:
-            self.layer_names = layer_names
+            layer_names = [
+                layer.name for layer in model.layers
+                if layer.get_weights() and len(layer.get_weights()[0].shape) > 0
+            ]
+        self.layer_names = layer_names
 
-        # Salva pesos iniciais para referência
-        self.initial_weights = []
-        for name in self.layer_names:
-            w_init = model.get_layer(name).get_weights()[0]
-            self.initial_weights.append(w_init.copy())
+        # Guarda pesos iniciais das camadas
+        self.initial_weights = [model.get_layer(name).get_weights()[0] for name in self.layer_names]
 
-        # Lista que armazena a média da distância cosseno a cada época
+        # Listas para armazenar o histórico das distâncias médias ao longo das épocas
         self.cosine_distances_mean = []
 
-    def calculate_mean_cosine_distance(self, model):
-        """
-        Calculates the average cosine distance between current weights and initial weights.
-        """
-        current_weights = [model.get_layer(name).get_weights()[0] for name in self.layer_names]
-        distances = []
-        for w_init, w_curr in zip(self.initial_weights, current_weights):
-            dist = cosine(w_init.flatten(), w_curr.flatten())
-            distances.append(dist)
-        mean_distance = np.mean(distances)
-        return mean_distance
-
-    def compute_local_slope_angle(self, distances, epochs):
-        """
-        Faz um cálculo "local" do slope baseando-se SOMENTE nos últimos points da janela.
-        - distances: array/list dos valores de distância cosseno, restringidos à janela
-        - epochs: array/list das épocas correspondentes, também restrito à janela
-
-        Retorna o ângulo em graus baseado no slope. Se só houver 2 pontos, calcula diferença direta.
-        """
-        # Se tivermos menos de 2 pontos, não é possível calcular slope
-        if len(distances) < 2:
-            return 0.0
-
-        # Se forem apenas 2 pontos, cálculo direto do "slope" = (dist2 - dist1) / (epoch2 - epoch1)
-        if len(distances) == 2:
-            d1, d2 = distances
-            e1, e2 = epochs
-            # slope é a variação em função do delta de épocas
-            slope = (d2 - d1) / (max(e2 - e1, 1e-5))  # evita divisão por zero
-            # Converte slope -> ângulo
-            angle = np.degrees(np.arctan(slope))
-            return angle
-
-        # Caso geral (>= 3 pontos), podemos usar np.polyfit
-        if self.use_local_normalization:
-            # Normaliza epochs dentro da própria janela
-            scaler = MinMaxScaler(feature_range=(0, 1))
-            epochs_reshaped = np.array(epochs).reshape(-1, 1)
-            epochs_norm = scaler.fit_transform(epochs_reshaped).flatten()
-            slope, _ = np.polyfit(epochs_norm, distances, 1)
-        else:
-            # Usa epochs como estão
-            slope, _ = np.polyfit(epochs, distances, 1)
-
-        angle = np.degrees(np.arctan(slope))
-        return angle
-
-    def calculate_angle(self):
-        """
-        Calcula o ângulo (slope) usando apenas as últimas `window_size` distâncias.
-        Retorna 0.0 caso não haja dados suficientes.
-        """
-        if len(self.cosine_distances_mean) < 2:
-            return 0.0
-
-        # Pega apenas as últimas N (self.window_size) distâncias
-        recent_distances = self.cosine_distances_mean[-self.window_size:]
-        # Cria um vetor de épocas que corresponde a esses pontos finais
-        # (Por exemplo, se já passamos de 50 épocas, e window_size=10,
-        #  vamos criar algo como [41,42,...,50] ou algo nesse sentido)
-        last_epoch = len(self.cosine_distances_mean)  # total de épocas já registradas
-        start_index = max(last_epoch - self.window_size, 0)  # índice para pegar as distâncias
-        epochs_window = list(range(start_index + 1, last_epoch + 1))  # +1 pois época começa em 1,2,...
-
-        # Converte para arrays
-        recent_distances = np.array(recent_distances)
-        epochs_window = np.array(epochs_window)
-
-        # Calcula slope local (ângulo) nessa janela
-        angle = self.compute_local_slope_angle(recent_distances, epochs_window)
-        return angle
+        # Contador de épocas seguidas em que a rotação permanece estável
+        self.stable_epochs_count = 0
 
     def update_and_check_stability(self, model, current_epoch, total_epochs):
         """
-        Passo principal a ser chamado a cada época. 
+        Atualiza a distância cosseno com base nos pesos atuais do modelo
+        e verifica se a rotação está estável, retornando:
+            stable (bool), angle (float)
+
+        Parâmetros:
+            model: O modelo Keras/TensorFlow atual.
+            current_epoch: Época atual (1-based).
+            total_epochs: Número total de épocas (para normalização, ex. 500).
+
         Retorna:
-            stable (bool): True se consideramos que estabilizou nessa época.
-            angle (float): O ângulo calculado (para debug/log).
+            stable (bool): Se atingiu ou não estabilidade (rotação < limiar).
+            angle (float): O ângulo calculado na janela recente.
         """
-        # 1) Calcula e armazena a distância cosseno média
-        distance_mean = self.calculate_mean_cosine_distance(model)
-        self.cosine_distances_mean.append(distance_mean)
+        # Antes de 'start_epoch', não fazemos o cálculo (retorna False, angle = 0.0)
+        if current_epoch < self.start_epoch:
+            return False, 0.0
 
-        # 2) Calcula o ângulo local (slope baseado somente na janela)
-        angle = self.calculate_angle()
+        # Calcula a distância média e armazena
+        cosine_distance_mean = np.mean(
+            calculate_cosine_distance(self.initial_weights, self._get_current_weights(model))
+        )
+        self.cosine_distances_mean.append(cosine_distance_mean)
 
-        # Inicialmente, assume que não está estável
-        stable = False
+        # Se não temos ainda a janela mínima de épocas, retorna instável
+        if len(self.cosine_distances_mean) < self.window_size:
+            return False, 0.0
 
-        # Só começa a checar estabilidade se len >= start_epoch
-        if len(self.cosine_distances_mean) >= self.start_epoch:
-            # Basicamente, se angle < threshold, incrementa; senão, zera
-            if abs(angle) < self.angle_threshold:
-                self.consecutive_stable_count += 1
-            else:
-                self.consecutive_stable_count = 0
+        # Caso contrário, calculamos a inclinação e o ângulo
+        stable_now, angle = self._check_rotation_angle_criterion(
+            model=model,
+            layer_names=self.layer_names,
+            window_size=self.window_size,
+            epoch=current_epoch,
+            epochs=total_epochs
+        )
 
-            # Se já ficamos 'stable_epochs_needed' épocas consecutivas com ângulo baixo, definimos como estável
-            if self.consecutive_stable_count >= self.stable_epochs_needed:
-                stable = True
+        # Se está estável nesta época, incrementa o contador; senão, reseta
+        if stable_now:
+            self.stable_epochs_count += 1
+        else:
+            self.stable_epochs_count = 0
 
-            print(f"[LayerRotationTracker] local angle: {angle:.2f}°  "
-                  f"(consecutive_stable_count={self.consecutive_stable_count}, stable={stable})")
+        # Se o contador de épocas estáveis atingiu o necessário, retornamos True
+        is_stable = (self.stable_epochs_count >= self.stable_epochs_needed)
+        return is_stable, angle
 
-        return stable, angle
+    def _get_current_weights(self, model):
+        """
+        Retorna a lista de pesos (sem bias) para as camadas especificadas em self.layer_names.
+        """
+        return [model.get_layer(name).get_weights()[0] for name in self.layer_names]
+
+    def _check_rotation_angle_criterion(self, model, layer_names, window_size, epoch, epochs):
+  
+        # usamos self._get_current_weights, mas mantemos a consistência com o seu snippet)
+        current_weights = [model.get_layer(name).get_weights()[0] for name in layer_names]
+
+        # Calcula a distância cosseno (média) entre os pesos atuais e os pesos iniciais
+        cosine_distance_mean = np.mean(
+            calculate_cosine_distance(self.initial_weights, current_weights)
+        )
+        print(f"\nMean cosine distance: {cosine_distance_mean:.4f}", flush=True)
+
+        # Verifica se temos pelo menos 'window_size' distâncias para analisar
+        if len(self.cosine_distances_mean) >= window_size:
+            # Pega os últimos 'window_size' pontos
+            recent_distances = self.cosine_distances_mean[-window_size:]
+            recent_distances = np.array(recent_distances).reshape(-1, 1)
+
+            # Cria um array de épocas de 1 até 'epochs' e normaliza
+            epochs_ndarray = np.arange(1, epochs + 1).reshape(-1, 1)
+            scaler = MinMaxScaler(feature_range=(0, 1))
+            epochs_norm = scaler.fit_transform(epochs_ndarray)
+
+            # Flatten
+            recent_distances_norm_1d = recent_distances.flatten()
+            epochs_norm_1d = epochs_norm.flatten()
+
+            # Selecionar a janela atual de 'window_size' pontos
+            epochs_window = epochs_norm_1d[epoch - window_size : epoch]
+
+            print("Epochs window (normalized):", epochs_window)
+            print("Recent distances (original scale):", recent_distances_norm_1d)
+
+            # Ajusta uma linha de regressão linear aos pontos
+            slope, intercept = np.polyfit(epochs_window, recent_distances_norm_1d, 1)
+
+            # Converte a inclinação para um ângulo em graus
+            angle = np.degrees(np.arctan(slope))
+            print(f"\nAngle: {angle:.2f}°", flush=True)
+
+            # Verifica se o ângulo é menor que o limiar definido (angle_threshold)
+            if angle < self.angle_threshold:
+                return True, angle
+
+            return False, angle
+
+        # Se não há janela suficiente, definimos que está instável e ângulo 0
+        return False, 0.0
+
+
+def calculate_cosine_distance(weights1, weights2):
+
+    distances = []
+    distance = np.array([
+        cosine(w1.flatten(), w2.flatten()) for w1, w2 in zip(weights1, weights2)
+    ])
+    distances.append(distance)
+    return distances

@@ -9,21 +9,28 @@ from keras.activations import *
 from sklearn.metrics import accuracy_score
 from tensorflow.keras.optimizers import SGD
 from tensorflow.keras.mixed_precision import set_global_policy
+from tensorflow.python.data import Dataset
 import tensorflow as tf
 
 import rebuild_filters as rf
 import rebuild_layers as rl
 from pruning_criteria import criteria_filter as cf
 from pruning_criteria import criteria_layer as cl
+import random
 
 sys.path.insert(0, '../utils')
 import custom_functions as func
-
-# -------------------------------------------------------------------------
-# Aqui importamos a nova versão do LayerRotationTracker
-# -------------------------------------------------------------------------
 from layer_rotation import LayerRotationTracker
+
+# IMPORTANT: We only import the data_augmentation function from custom_functions
 from custom_functions import data_augmentation
+
+# Definir semente para o Python
+random.seed(2)
+# Definir semente para o NumPy
+np.random.seed(2)
+# Definir semente para o TensorFlow
+tf.random.set_seed(2)
 
 # -------------------------------------------------------------------------
 # Memory management setup
@@ -60,12 +67,10 @@ MAX_EPOCHS = 500
 # Keep your global LR and batch size here
 LEARNING_RATE = 0.001
 MOMENTUM = 0.9
-BATCH_SIZE = 512
-
-# -- Parâmetros do novo tracker de rotação --
-ROTATION_START_EPOCH = 20
-ROTATION_ANGLE_THRESHOLD = 0.058
-ROTATION_STABLE_EPOCHS = 5
+BATCH_SIZE = 1024
+ROTATION_START_EPOCH = 600
+ROTATION_ANGLE_THRESHOLD = 1
+ROTATION_STABLE_EPOCHS = 200
 
 # -------------------------------------------------------------------------
 # New Fine-Tuning Setup & Single-Epoch Functions
@@ -95,7 +100,6 @@ def fine_tuning_epoch(model, x_train, y_train, batch_size, callbacks):
     Trains the model for exactly one epoch using data augmentation (tripling the data).
     Returns the final training accuracy of that epoch.
     """
-    from tensorflow.python.data import Dataset
 
     # Data augmentation: triple your training data for the single epoch
     y_tmp = np.concatenate((y_train, y_train, y_train))
@@ -132,12 +136,12 @@ def predict_in_batches(model, X, batch_size=32):
     dataset = tf.data.Dataset.from_tensor_slices(X)\
         .batch(batch_size)\
         .prefetch(tf.data.AUTOTUNE)
-
+    
     predictions = []
     for batch in dataset:
         batch_pred = model.predict(batch, verbose=0)
         predictions.append(batch_pred)
-
+    
     return np.vstack(predictions)
 
 
@@ -150,7 +154,7 @@ def statistics(model):
     flops, _ = func.compute_flops(model)
     blocks = rl.count_blocks(model)
     memory = func.memory_usage(1, model)
-
+    
     print(f'Blocks {blocks} Parameters [{n_params}] Filters [{n_filters}] '
           f'FLOPS [{flops}] Memory [{memory:.6f}]', flush=True)
     return flops
@@ -163,19 +167,19 @@ def prune(model, p_filter, p_layer, criterion_filter, criterion_layer, X_train, 
     # Clear memory before pruning
     gc.collect()
     tf.keras.backend.clear_session()
-
+    
     # Filter pruning
     allowed_layers_filters = rf.layer_to_prune_filters(model)
     filter_method = cf.criteria(criterion_filter)
     scores_filter = filter_method.scores(model, X_train, y_train, allowed_layers_filters)
     pruned_model_filter = rf.rebuild_network(model, scores_filter, p_filter)
-
+    
     # Layer pruning
     allowed_layers = rl.blocks_to_prune(model)
     layer_method = cl.criteria(criterion_layer)
     scores_layer = layer_method.scores(model, X_train, y_train, allowed_layers)
     pruned_model_layer = rl.rebuild_network(model, scores_layer, p_layer)
-
+    
     return pruned_model_filter, pruned_model_layer
 
 
@@ -195,7 +199,7 @@ def winner_pruned_model(pruned_model_filter, pruned_model_layer, best_pruned_cri
 # Main
 # -------------------------------------------------------------------------
 if __name__ == '__main__':
-    np.random.seed(2)
+
     print(f'Architecture [{ARCHITECTURE_NAME}] p_filter[{P_FILTER}] p_layer[{P_LAYER}]', flush=True)
 
     # ---------------------------------------------------------------------
@@ -204,7 +208,7 @@ if __name__ == '__main__':
     X_train, y_train, X_test, y_test, X_val, y_val = func.cifar_resnet_data(
         debug=False, validation_set=True
     )
-
+    
     model = func.load_model(ARCHITECTURE_NAME)
     rf.architecture_name = ARCHITECTURE_NAME
     rl.architecture_name = ARCHITECTURE_NAME
@@ -225,16 +229,14 @@ if __name__ == '__main__':
     print(f'Unpruned [{ARCHITECTURE_NAME}] Validation Accuracy [{initial_acc_val}]')
 
     # ---------------------------------------------------------------------
-    # Rotation Tracker (usando a versão nova, com window_size e local normalization)
+    # Rotation Tracker
     # ---------------------------------------------------------------------
     rotation_tracker = LayerRotationTracker(
         model=model,
         layer_names=None,
         start_epoch=ROTATION_START_EPOCH,
         angle_threshold=ROTATION_ANGLE_THRESHOLD,
-        stable_epochs_needed=ROTATION_STABLE_EPOCHS,
-        window_size=10,               # <-- JANELA DE ÉPOCAS
-        use_local_normalization=True  # <-- SE TRUE, NORMALIZA EPOCHS NA JANELA
+        stable_epochs_needed=ROTATION_STABLE_EPOCHS
     )
 
     best_val_acc = initial_acc_val
@@ -248,117 +250,100 @@ if __name__ == '__main__':
     # ---------------------------------------------------------------------
     # Main Training Loop (fine-tuning + pruning + rotation check)
     # ---------------------------------------------------------------------
-    try:
-        final_model_for_each_epoch = []
-        for epoch_idx in range(1, MAX_EPOCHS + 1):
-            print(f"\n==== EPOCH {epoch_idx} / {MAX_EPOCHS} ====")
+    final_model_for_each_epoch = []
+    for epoch_idx in range(1, MAX_EPOCHS + 1):
+        print(f"\n==== EPOCH {epoch_idx} / {MAX_EPOCHS} ====")
 
-            # Memory cleanup every 5 epochs
-            if epoch_idx % 5 == 0:
-                gc.collect()
-                tf.keras.backend.clear_session()
+        # Memory cleanup every 5 epochs
+        if epoch_idx % 5 == 0:
+            gc.collect()
+            tf.keras.backend.clear_session()
 
-            # 1) Fine-Tuning for 1 Epoch
-            current_acc_train = fine_tuning_epoch(model, X_train, y_train, BATCH_SIZE, callbacks)
+        # 1) Fine-Tuning for 1 Epoch
+        current_acc_train = fine_tuning_epoch(model, X_train, y_train, BATCH_SIZE, callbacks)
 
-            # 2) Compute Test Accuracy
-            y_pred_test = predict_in_batches(model, X_test, BATCH_SIZE)
-            current_acc_test = accuracy_score(np.argmax(y_test, axis=1), np.argmax(y_pred_test, axis=1))
-            print(f"Epoch [{epoch_idx}] Train Accuracy: {current_acc_train:.4f} | Test Accuracy: {current_acc_test:.4f}")
+        # 2) Compute Test Accuracy
+        y_pred_test = predict_in_batches(model, X_test, BATCH_SIZE)
+        current_acc_test = accuracy_score(np.argmax(y_test, axis=1), np.argmax(y_pred_test, axis=1))
+        print(f"Epoch [{epoch_idx}] Train Accuracy: {current_acc_train:.4f} | Test Accuracy: {current_acc_test:.4f}")
 
-            # 3) Compute Validation Accuracy
-            y_pred_val = predict_in_batches(model, X_val, BATCH_SIZE)
-            current_acc_val = accuracy_score(np.argmax(y_val, axis=1), np.argmax(y_pred_val, axis=1))
-            print(f"Epoch [{epoch_idx}] Validation Accuracy: {current_acc_val:.4f}")
+        # 3) Compute Validation Accuracy
+        y_pred_val = predict_in_batches(model, X_val, BATCH_SIZE)
+        current_acc_val = accuracy_score(np.argmax(y_val, axis=1), np.argmax(y_pred_val, axis=1))
+        print(f"Epoch [{epoch_idx}] Validation Accuracy: {current_acc_val:.4f}")
 
-            # 4) Check if better than best_val_acc & save model
-            if current_acc_val > best_val_acc:
-                best_val_acc = current_acc_val
-                model.save("best_model.h5")
-                print(f"Validation accuracy improved to {current_acc_val:.4f}. Model saved.")
+        # 4) Check if better than best_val_acc & save model
+        if current_acc_val > best_val_acc:
+            best_val_acc = current_acc_val
+            model.save("best_model.h5")
+            print(f"Validation accuracy improved to {current_acc_val:.4f}. Model saved.")
 
-            # 5) Rotation check
-            stable, angle = rotation_tracker.update_and_check_stability(
-                model=model,
-                current_epoch=epoch_idx,
-                total_epochs=MAX_EPOCHS
+        # 5) Rotation check
+        stable, angle = rotation_tracker.update_and_check_stability(
+            model=model,
+            current_epoch=epoch_idx,
+            total_epochs=MAX_EPOCHS
+        )
+
+        # 6) Compute FLOPs
+        epoch_flops, _ = func.compute_flops(model)
+        train_record = {
+            "epoch": epoch_idx,
+            "train_acc": float(current_acc_train),
+            "val_acc": float(current_acc_val),
+            "test_acc": float(current_acc_test),
+            "flops": int(epoch_flops),
+            "angle": float(angle),
+            "pruning_info": None
+        }
+
+        # 7) If stable, prune
+        if stable:
+            print(f"[Epoch {epoch_idx}] Rotation is stable! Initiating pruning...", flush=True)
+            
+            pruned_model_filter, pruned_model_layer = prune(
+                model, P_FILTER, P_LAYER,
+                CRITERION_FILTER, CRITERION_LAYER,
+                X_train, y_train
+            )
+            
+            model, chosen_structure = winner_pruned_model(
+                pruned_model_filter, pruned_model_layer,
+                best_pruned_criteria='flops'
             )
 
-            # 6) Compute FLOPs
-            epoch_flops, _ = func.compute_flops(model)
-            train_record = {
-                "epoch": epoch_idx,
-                "train_acc": float(current_acc_train),
-                "val_acc": float(current_acc_val),
-                "test_acc": float(current_acc_test),
-                "flops": int(epoch_flops),
-                "angle": float(angle),
-                "pruning_info": None
-            }
+            model.save("pruned_model.h5")
+            print("Pruned model saved as pruned_model.h5.")
 
-            # 7) If stable, prune
-            if stable:
-                print(f"[Epoch {epoch_idx}] Rotation is stable! Initiating pruning...", flush=True)
+            # Re-check val/test after pruning
+            new_acc_test = accuracy_score(
+                np.argmax(y_test, axis=1),
+                np.argmax(predict_in_batches(model, X_test, BATCH_SIZE), axis=1)
+            )
+            new_acc_val = accuracy_score(
+                np.argmax(y_val, axis=1),
+                np.argmax(predict_in_batches(model, X_val, BATCH_SIZE), axis=1)
+            )
 
-                gc.collect()
-                tf.keras.backend.clear_session()
+            current_flops = statistics(model)
+            best_val_acc = new_acc_val
+            model.save("best_model.h5")
 
-                pruned_model_filter, pruned_model_layer = prune(
-                    model, P_FILTER, P_LAYER,
-                    CRITERION_FILTER, CRITERION_LAYER,
-                    X_train, y_train
-                )
+            # Re-init rotation tracker
+            rotation_tracker = LayerRotationTracker(
+                model=model,
+                layer_names=None,
+                start_epoch=ROTATION_START_EPOCH,
+                angle_threshold=ROTATION_ANGLE_THRESHOLD,
+                stable_epochs_needed=ROTATION_STABLE_EPOCHS
+            )
 
-                model, chosen_structure = winner_pruned_model(
-                    pruned_model_filter, pruned_model_layer,
-                    best_pruned_criteria='flops'
-                )
+            train_record["pruning_info"] = (
+                f"Pruned with structure={chosen_structure}, new_val_acc={new_acc_val:.4f}"
+            )
 
-                model.save("pruned_model.h5")
-                print("Pruned model saved as pruned_model.h5.")
+        # Write JSON log
+        log_file.write(json.dumps(train_record) + "\n")
+        log_file.flush()
 
-                # Re-check val/test after pruning
-                new_acc_test = accuracy_score(
-                    np.argmax(y_test, axis=1),
-                    np.argmax(predict_in_batches(model, X_test, BATCH_SIZE), axis=1)
-                )
-                new_acc_val = accuracy_score(
-                    np.argmax(y_val, axis=1),
-                    np.argmax(predict_in_batches(model, X_val, BATCH_SIZE), axis=1)
-                )
-
-                current_flops = statistics(model)
-                best_val_acc = new_acc_val
-                model.save("best_model.h5")
-
-                # Re-init rotation tracker
-                rotation_tracker = LayerRotationTracker(
-                    model=model,
-                    layer_names=None,
-                    start_epoch=15,
-                    angle_threshold=ROTATION_ANGLE_THRESHOLD,
-                    stable_epochs_needed=ROTATION_STABLE_EPOCHS,
-                    window_size=5,
-                    use_local_normalization=True
-                )
-
-                # --- FIX: Re-compile pruned model before continuing training ---
-                model, callbacks = setup_fine_tuning_cnn(model, LEARNING_RATE)
-
-                train_record["pruning_info"] = (
-                    f"Pruned with structure={chosen_structure}, new_val_acc={new_acc_val:.4f}"
-                )
-
-            # Write JSON log
-            log_file.write(json.dumps(train_record) + "\n")
-            log_file.flush()
-
-            final_model_for_each_epoch.append(model)
-
-    except Exception as e:
-        print(f"Error occurred: {str(e)}")
-        # Save the final model in case of crash
-        model.save("final_model_crash.h5")
-
-    finally:
-        log_file.close()
+        final_model_for_each_epoch.append(model)
