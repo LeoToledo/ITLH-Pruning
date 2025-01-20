@@ -145,46 +145,59 @@ def generate_data_augmentation(x_train):
     return datagen
 
 
-def cifar_resnet_data(debug=True, validation_set=False):
+def cifar_resnet_data(validation_split=0.2, random_state=42):
+    """
+    Carrega e prepara os dados do CIFAR-10 para treinamento e validação.
+    
+    Args:
+        validation_split (float): Proporção dos dados para validação (entre 0 e 1)
+        random_state (int): Semente para reproducibilidade
+        
+    Returns:
+        tuple: (x_train, y_train, x_val, y_val)
+    """
     import tensorflow as tf
-    print('Debuging Mode') if debug is True else print('Real Mode')
-
-    (x_train, y_train), (x_test, y_test) = tf.keras.datasets.cifar10.load_data()
-
-    x_train = x_train.astype('float32') / 255
-    x_test = x_test.astype('float32') / 255
-
-    x_train_mean = np.mean(x_train, axis=0)
-    x_train -= x_train_mean
-    x_test -= x_train_mean
-
-    if debug:
-        # random_train = random.sample(range(200), 40)
-        # idx_train = random_train[0:31]
-        # idx_test = random_train[31:41]
-
-        idx_train = [4, 5, 32, 6, 24, 41, 38, 39, 59, 58, 28, 20, 27, 40, 51, 95, 103, 104, 84, 85, 87, 62, 8, 92, 67,
-                     71, 76, 93, 129, 76]
-        idx_test = [9, 25, 0, 22, 24, 4, 20, 1, 11, 3]
-
-        x_train = x_train[idx_train]
-        y_train = y_train[idx_train]
-
-        x_test = x_test[idx_test]
-        y_test = y_test[idx_test]
-
+    import numpy as np
+    
+    # Configurar seed para reproducibilidade
+    np.random.seed(random_state)
+    tf.random.set_seed(random_state)
+    
+    # Carregar dados CIFAR-10
+    (x_all, y_all), _ = tf.keras.datasets.cifar10.load_data()
+    
+    # Embaralhar os índices
+    total_samples = len(x_all)
+    indices = np.random.permutation(total_samples)
+    
+    # Calcular o ponto de divisão para validação
+    val_size = int(total_samples * validation_split)
+    train_indices = indices[val_size:]
+    val_indices = indices[:val_size]
+    
+    # Separar dados de treino e validação
+    x_train = x_all[train_indices]
+    y_train = y_all[train_indices]
+    x_val = x_all[val_indices]
+    y_val = y_all[val_indices]
+    
+    # Converter para float32 e normalizar para [0,1]
+    x_train = x_train.astype('float32') / 255.0
+    x_val = x_val.astype('float32') / 255.0
+    
+    # Calcular média e desvio padrão apenas do conjunto de treino
+    train_mean = np.mean(x_train, axis=0)
+    train_std = np.std(x_train, axis=0) + 1e-7  # Evitar divisão por zero
+    
+    # Normalizar (z-score normalization)
+    x_train = (x_train - train_mean) / train_std
+    x_val = (x_val - train_mean) / train_std
+    
+    # Converter labels para one-hot encoding
     y_train = tf.keras.utils.to_categorical(y_train, 10)
-    y_test = tf.keras.utils.to_categorical(y_test, 10)
-    # y_test = np.argmax(y_test, axis=1)
-
-    if validation_set is False:
-        return x_train, y_train, x_test, y_test
-    else:
-        datagen = generate_data_augmentation(x_train)
-        for x_val, y_val in datagen.flow(x_train, y_train, batch_size=5000):
-            break
-        return x_train, y_train, x_test, y_test, x_val, y_val
-
+    y_val = tf.keras.utils.to_categorical(y_val, 10)
+    
+    return x_train, y_train, x_val, y_val
 
 def count_filters(model):
     import keras

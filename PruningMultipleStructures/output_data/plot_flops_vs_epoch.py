@@ -3,37 +3,40 @@ import json
 import numpy as np
 import os
 from matplotlib.transforms import Bbox
+from reportlab.lib import colors
+from reportlab.lib.pagesizes import letter
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
+from reportlab.lib.units import inch
 
-# Configurações do plot com estilo mais limpo
-plt.style.use('seaborn-v0_8-whitegrid')
+# Configuração para estilo mais adequado para publicação
 plt.rcParams.update({
     'font.family': 'serif',
-    'font.size': 10,
-    'axes.labelsize': 12,
-    'axes.titlesize': 12,
-    'xtick.labelsize': 10,
-    'ytick.labelsize': 10,
-    'legend.fontsize': 10,
-    'figure.figsize': (12, 6),
+    'font.size': 12,
+    'axes.labelsize': 14,
+    'axes.titlesize': 14,
+    'xtick.labelsize': 12,
+    'ytick.labelsize': 12,
+    'legend.fontsize': 12,
+    'figure.figsize': (8, 6),
     'axes.grid': True,
-    'grid.alpha': 0.2
+    'grid.alpha': 0.3
 })
 
-def get_non_overlapping_position(ax, x, y, existing_boxes, box_height=40, box_width=100):
-    """
-    Encontra uma posição não sobreposta para a caixa de anotação
-    """
-    positions = [(10, 10), (10, -40), (-100, 10), (-100, -40)]  # Possíveis posições relativas
+def get_non_overlapping_position(ax, x, y, existing_boxes, box_height=25, box_width=70):
+    positions = [
+        (10, 15), (10, -25),  # direita
+        (-70, 15), (-70, -25),  # esquerda
+        (10, 40), (-70, 40),   # mais acima
+        (10, -50), (-70, -50)  # mais abaixo
+    ]
     text_box = None
     
     for dx, dy in positions:
-        # Calcula as coordenadas da caixa
         display_coords = ax.transData.transform((x, y))
         text_coords = (display_coords[0] + dx, display_coords[1] + dy)
         box = Bbox([[text_coords[0], text_coords[1]], 
                    [text_coords[0] + box_width, text_coords[1] + box_height]])
         
-        # Verifica sobreposição com caixas existentes
         overlap = False
         for existing_box in existing_boxes:
             if existing_box.overlaps(box):
@@ -44,85 +47,71 @@ def get_non_overlapping_position(ax, x, y, existing_boxes, box_height=40, box_wi
             text_box = box
             return (dx, dy), text_box
             
-    # Se todas as posições estiverem ocupadas, retorna a última tentativa
     return positions[0], box
 
 def format_flops(x, p):
-    """
-    Formata os FLOPs em uma notação mais legível (M para milhões)
-    """
     return f'{x/1e6:.1f}M'
 
-def main():
-    # Definir o caminho do arquivo
-    file_path = './pruning/train_log.jsonl'
+def create_accuracy_flops_table(data_points, output_dir):
+    """
+    Cria uma tabela PDF com os dados de acurácia máxima vs redução de FLOPs
+    """
+    output_path = os.path.join(output_dir, "accuracy_vs_flops.pdf")
+    doc = SimpleDocTemplate(output_path, pagesize=letter)
+    elements = []
 
-    if not os.path.exists(file_path):
-        raise FileNotFoundError(f"O arquivo {file_path} não foi encontrado!")
+    table_data = [['FLOPs (M)', 'Reduction (%)', 'Max Val Acc (%)']]
+    
+    for flops, reduction, acc in data_points:
+        table_data.append([
+            f'{flops/1e6:.1f}',
+            f'{reduction:.1f}',
+            f'{acc*100:.2f}'
+        ])
 
-    # Carregar e processar dados
-    epochs = []
-    flops = []
-    pruning_events = []
-    pruning_epochs = []
-    pruning_flops = []
-    prev_flops = None
+    t = Table(table_data)
+    t.setStyle(TableStyle([
+        ('BACKGROUND', (0, 0), (-1, 0), colors.grey),
+        ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+        ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('FONTSIZE', (0, 0), (-1, 0), 12),
+        ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+        ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
+        ('TEXTCOLOR', (0, 1), (-1, -1), colors.black),
+        ('FONTNAME', (0, 1), (-1, -1), 'Helvetica'),
+        ('FONTSIZE', (0, 1), (-1, -1), 10),
+        ('GRID', (0, 0), (-1, -1), 1, colors.black),
+        ('VALIGN', (0, 0), (-1, -1), 'MIDDLE')
+    ]))
+    
+    elements.append(t)
+    doc.build(elements)
 
-    with open(file_path, 'r') as f:
-        for line in f:
-            entry = json.loads(line)
-            epochs.append(entry['epoch'])
-            current_flops = entry['flops']
-            flops.append(current_flops)
-            
-            # Detectar mudanças nos FLOPs
-            if prev_flops is not None and current_flops != prev_flops:
-                pruning_epochs.append(entry['epoch'])
-                pruning_flops.append(current_flops)
-                if entry['pruning_info'] is not None:
-                    pruning_type = entry['pruning_info'].split('structure=')[1].split(',')[0] if 'structure=' in entry['pruning_info'] else 'unknown'
-                    pruning_events.append(f"Pruning: {pruning_type}")
-                else:
-                    pruning_events.append("FLOPs changed")
-                    
-            prev_flops = current_flops
+def create_flops_plot(epochs, flops, pruning_epochs, pruning_flops, pruning_events, 
+                     initial_flops, output_dir, existing_boxes):
+    plt.figure(figsize=(8, 6))
+    ax = plt.gca()
+    
+    plt.plot(epochs, flops, color='#2ca02c', linewidth=1.5, label='FLOPs')
 
-    # Criar o plot
-    fig, ax = plt.subplots(dpi=100)
-
-    # Plot principal dos FLOPs
-    ax.plot(epochs, flops, color='#2ca02c', linewidth=1.5, label='FLOPs')
-
-    # Rastrear caixas de anotação existentes
-    existing_boxes = []
-
-    # Adicionar marcadores para eventos de mudança nos FLOPs
     for epoch, flop_value, event in zip(pruning_epochs, pruning_flops, pruning_events):
-        # Adicionar marcador menor
-        ax.scatter(epoch, flop_value, color='red', s=40, zorder=5, alpha=0.7)
+        plt.scatter(epoch, flop_value, color='red', s=30, zorder=5, alpha=0.7)
         
-        # Calcular a redução percentual de FLOPs
-        idx = epochs.index(epoch)
-        if idx > 0:
-            prev_flops_value = flops[idx - 1]
-            reduction = (prev_flops_value - flop_value) / prev_flops_value * 100
-            annotation_text = f"{event}\n({reduction:.1f}% reduction)"
-        else:
-            annotation_text = event
+        reduction = (initial_flops - flop_value) / initial_flops * 100
+        annotation_text = f'-{reduction:.1f}%'
 
-        # Encontrar posição não sobreposta para a anotação
         (dx, dy), text_box = get_non_overlapping_position(ax, epoch, flop_value, existing_boxes)
         
-        # Adicionar anotação com estilo mais limpo
-        ax.annotate(annotation_text,
+        plt.annotate(annotation_text,
                    xy=(epoch, flop_value),
                    xytext=(dx, dy),
                    textcoords='offset points',
                    ha='left' if dx > 0 else 'right',
                    va='bottom' if dy > 0 else 'top',
-                   bbox=dict(boxstyle='round,pad=0.3', 
-                           fc='#fff7d1',  # Amarelo mais suave
-                           ec='#666666',   # Borda mais escura
+                   bbox=dict(boxstyle='round,pad=0.2', 
+                           fc='#fff7d1',
+                           ec='#666666',
                            alpha=0.7,
                            linewidth=0.5),
                    arrowprops=dict(arrowstyle='->', 
@@ -133,22 +122,91 @@ def main():
         
         existing_boxes.append(text_box)
 
-    # Configurar o plot
-    ax.set_xlabel('Epoch')
-    ax.set_ylabel('FLOPs')
-    ax.set_title('FLOPs Evolution with Pruning Events')
-    ax.grid(True, linestyle='--', alpha=0.2)
-    ax.legend(loc='upper right')
-
-    # Formatar o eixo y para usar notação científica mais legível
+    plt.xlabel('Epoch')
+    plt.ylabel('FLOPs')
+    plt.title('FLOPs Evolution with Pruning Events')
+    plt.grid(True, linestyle='--', alpha=0.3)
+    plt.legend(loc='upper right')
+    
     ax.yaxis.set_major_formatter(plt.FuncFormatter(format_flops))
-
-    # Ajustar o layout
+    
     plt.tight_layout()
-
-    # Salvar a figura
-    plt.savefig('flops_plot.png', bbox_inches='tight', dpi=300)
+    output_path = os.path.join(output_dir, 'flops_plot.png')
+    plt.savefig(output_path, bbox_inches='tight', dpi=600)
     plt.close()
+
+def main():
+    file_path = './pruning/train_log.jsonl'
+    #file_path = './no_pruning/train_log.jsonl'
+
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f"O arquivo {file_path} não foi encontrado!")
+
+    output_dir = os.path.dirname(file_path)
+    print(f"Usando arquivo: {file_path}")
+    print(f"Salvando plots em: {output_dir}")
+
+    epochs = []
+    flops = []
+    val_accs = []
+    pruning_events = []
+    pruning_epochs = []
+    pruning_flops = []
+    prev_flops = None
+    initial_flops = None
+    stage_data = []
+    
+    # Variáveis para rastrear o período atual
+    current_period_start = 0
+    current_max_val_acc = 0
+    
+    with open(file_path, 'r') as f:
+        data = [json.loads(line) for line in f]
+        
+    for i, entry in enumerate(data):
+        epochs.append(entry['epoch'])
+        current_flops = entry['flops']
+        val_accs.append(entry['val_acc'])
+        flops.append(current_flops)
+        
+        if initial_flops is None:
+            initial_flops = current_flops
+            
+        # Atualizar máximo do período atual
+        current_max_val_acc = max(current_max_val_acc, entry['val_acc'])
+            
+        # Detectar mudança nos FLOPs ou último epoch
+        if (prev_flops is not None and current_flops != prev_flops) or i == len(data) - 1:
+            if i == len(data) - 1 and current_flops == prev_flops:
+                # Incluir o último ponto na máxima do período atual
+                current_max_val_acc = max(current_max_val_acc, entry['val_acc'])
+                
+            pruning_epochs.append(entry['epoch'])
+            pruning_flops.append(current_flops)
+            
+            # Calcular redução em relação ao inicial
+            reduction = (initial_flops - (prev_flops or current_flops)) / initial_flops * 100
+            
+            # Adicionar dados do período que está terminando
+            stage_data.append((prev_flops or current_flops, reduction, current_max_val_acc))
+            
+            # Resetar para o próximo período
+            current_period_start = i
+            current_max_val_acc = entry['val_acc']
+            
+            if entry['pruning_info'] is not None:
+                pruning_type = entry['pruning_info'].split('structure=')[1].split(',')[0] if 'structure=' in entry['pruning_info'] else 'unknown'
+                pruning_events.append(f"Pruning: {pruning_type}")
+            else:
+                pruning_events.append("FLOPs changed")
+                    
+        prev_flops = current_flops
+
+    # Criar plots e tabela
+    existing_boxes = []
+    create_flops_plot(epochs, flops, pruning_epochs, pruning_flops, pruning_events, 
+                     initial_flops, output_dir, existing_boxes)
+    create_accuracy_flops_table(stage_data, output_dir)
 
 if __name__ == "__main__":
     main()

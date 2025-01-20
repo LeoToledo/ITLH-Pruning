@@ -1,500 +1,600 @@
-{"epoch": 1, "train_acc": 0.27639999985694885, "val_acc": 0.2516, "test_acc": 0.2801, "flops": 125747840, "angle": 0.0, "pruning_info": null}
-{"epoch": 2, "train_acc": 0.3854733407497406, "val_acc": 0.3828, "test_acc": 0.4185, "flops": 125747840, "angle": 0.005886150157408895, "pruning_info": null}
-{"epoch": 3, "train_acc": 0.4279933273792267, "val_acc": 0.421, "test_acc": 0.4418, "flops": 125747840, "angle": 0.01201428198054141, "pruning_info": null}
-{"epoch": 4, "train_acc": 0.45662665367126465, "val_acc": 0.453, "test_acc": 0.4833, "flops": 125747840, "angle": 0.018421412255433246, "pruning_info": null}
-{"epoch": 5, "train_acc": 0.4811733365058899, "val_acc": 0.473, "test_acc": 0.5024, "flops": 125747840, "angle": 0.02546028419134659, "pruning_info": null}
-{"epoch": 6, "train_acc": 0.5022666454315186, "val_acc": 0.4952, "test_acc": 0.515, "flops": 125747840, "angle": 0.03290360436656804, "pruning_info": null}
-{"epoch": 7, "train_acc": 0.5219533443450928, "val_acc": 0.509, "test_acc": 0.5322, "flops": 125747840, "angle": 0.0404378544071361, "pruning_info": null}
-{"epoch": 8, "train_acc": 0.5366533398628235, "val_acc": 0.5134, "test_acc": 0.5516, "flops": 125747840, "angle": 0.04783030165324253, "pruning_info": null}
-{"epoch": 9, "train_acc": 0.5500466823577881, "val_acc": 0.5284, "test_acc": 0.5545, "flops": 125747840, "angle": 0.05513430784933693, "pruning_info": null}
-{"epoch": 10, "train_acc": 0.5626333355903625, "val_acc": 0.5354, "test_acc": 0.5691, "flops": 125747840, "angle": 0.06246217330507812, "pruning_info": null}
-{"epoch": 11, "train_acc": 0.5735733509063721, "val_acc": 0.535, "test_acc": 0.5887, "flops": 125747840, "angle": 0.06364678707889779, "pruning_info": null}
-{"epoch": 12, "train_acc": 0.5828199982643127, "val_acc": 0.55, "test_acc": 0.5959, "flops": 125747840, "angle": 0.06427099132893443, "pruning_info": null}
-{"epoch": 13, "train_acc": 0.591480016708374, "val_acc": 0.555, "test_acc": 0.6054, "flops": 125747840, "angle": 0.06457150311407776, "pruning_info": null}
-{"epoch": 14, "train_acc": 0.6001733541488647, "val_acc": 0.5672, "test_acc": 0.6109, "flops": 125747840, "angle": 0.06460228480682391, "pruning_info": null}
-{"epoch": 15, "train_acc": 0.6079000234603882, "val_acc": 0.5524, "test_acc": 0.6118, "flops": 125747840, "angle": 0.06449277903915664, "pruning_info": null}
-{"epoch": 16, "train_acc": 0.6164399981498718, "val_acc": 0.582, "test_acc": 0.6299, "flops": 125747840, "angle": 0.0645630035656044, "pruning_info": null}
-{"epoch": 17, "train_acc": 0.6231266856193542, "val_acc": 0.5942, "test_acc": 0.6359, "flops": 125747840, "angle": 0.06479242183964744, "pruning_info": null}
-{"epoch": 18, "train_acc": 0.6280866861343384, "val_acc": 0.5956, "test_acc": 0.6338, "flops": 125747840, "angle": 0.0649078418164981, "pruning_info": null}
-{"epoch": 19, "train_acc": 0.635860025882721, "val_acc": 0.5966, "test_acc": 0.647, "flops": 125747840, "angle": 0.06505258292847665, "pruning_info": null}
-{"epoch": 20, "train_acc": 0.6437133550643921, "val_acc": 0.6008, "test_acc": 0.6451, "flops": 125747840, "angle": 0.06515801495347805, "pruning_info": null}
-{"epoch": 21, "train_acc": 0.6483266949653625, "val_acc": 0.6128, "test_acc": 0.6541, "flops": 125747840, "angle": 0.06526639437254028, "pruning_info": null}
-{"epoch": 22, "train_acc": 0.6535400152206421, "val_acc": 0.6078, "test_acc": 0.6602, "flops": 125747840, "angle": 0.06522693668708203, "pruning_info": null}
-{"epoch": 23, "train_acc": 0.6601666808128357, "val_acc": 0.6162, "test_acc": 0.6656, "flops": 125747840, "angle": 0.06518656592741869, "pruning_info": null}
-{"epoch": 24, "train_acc": 0.6654999852180481, "val_acc": 0.6212, "test_acc": 0.6653, "flops": 125747840, "angle": 0.0651635063450285, "pruning_info": null}
-{"epoch": 25, "train_acc": 0.6712599992752075, "val_acc": 0.6228, "test_acc": 0.6728, "flops": 125747840, "angle": 0.06501791418887516, "pruning_info": null}
-{"epoch": 26, "train_acc": 0.6753399968147278, "val_acc": 0.6304, "test_acc": 0.6796, "flops": 125747840, "angle": 0.06490373577935292, "pruning_info": null}
-{"epoch": 27, "train_acc": 0.6794066429138184, "val_acc": 0.6264, "test_acc": 0.6799, "flops": 125747840, "angle": 0.06485962175800829, "pruning_info": null}
-{"epoch": 28, "train_acc": 0.6851333379745483, "val_acc": 0.625, "test_acc": 0.677, "flops": 125747840, "angle": 0.0646517101650929, "pruning_info": null}
-{"epoch": 29, "train_acc": 0.6889066696166992, "val_acc": 0.6416, "test_acc": 0.6873, "flops": 125747840, "angle": 0.06453973613160507, "pruning_info": null}
-{"epoch": 30, "train_acc": 0.6940799951553345, "val_acc": 0.6488, "test_acc": 0.691, "flops": 125747840, "angle": 0.06427728184956917, "pruning_info": null}
-{"epoch": 31, "train_acc": 0.6998000144958496, "val_acc": 0.647, "test_acc": 0.6949, "flops": 125747840, "angle": 0.06423668626675981, "pruning_info": null}
-{"epoch": 32, "train_acc": 0.7021733522415161, "val_acc": 0.6568, "test_acc": 0.6967, "flops": 125747840, "angle": 0.06423625898224818, "pruning_info": null}
-{"epoch": 33, "train_acc": 0.7058066725730896, "val_acc": 0.6572, "test_acc": 0.7016, "flops": 125747840, "angle": 0.0642090798725989, "pruning_info": null}
-{"epoch": 34, "train_acc": 0.7095933556556702, "val_acc": 0.65, "test_acc": 0.7053, "flops": 125747840, "angle": 0.064071915228381, "pruning_info": null}
-{"epoch": 35, "train_acc": 0.7143599987030029, "val_acc": 0.6576, "test_acc": 0.7008, "flops": 125747840, "angle": 0.063847415794171, "pruning_info": null}
-{"epoch": 36, "train_acc": 0.7172066569328308, "val_acc": 0.6654, "test_acc": 0.7066, "flops": 125747840, "angle": 0.06362496178780731, "pruning_info": null}
-{"epoch": 37, "train_acc": 0.7218733429908752, "val_acc": 0.6726, "test_acc": 0.7138, "flops": 125747840, "angle": 0.06352518085411757, "pruning_info": null}
-{"epoch": 38, "train_acc": 0.7245533466339111, "val_acc": 0.665, "test_acc": 0.717, "flops": 125747840, "angle": 0.06339164184112689, "pruning_info": null}
-{"epoch": 39, "train_acc": 0.7275733351707458, "val_acc": 0.6538, "test_acc": 0.7162, "flops": 125747840, "angle": 0.06315948529900109, "pruning_info": null}
-{"epoch": 40, "train_acc": 0.7322266697883606, "val_acc": 0.6786, "test_acc": 0.7225, "flops": 125747840, "angle": 0.062899526068048, "pruning_info": null}
-{"epoch": 41, "train_acc": 0.7358866930007935, "val_acc": 0.675, "test_acc": 0.7203, "flops": 125747840, "angle": 0.06265384017262632, "pruning_info": null}
-{"epoch": 42, "train_acc": 0.7392266392707825, "val_acc": 0.6738, "test_acc": 0.7273, "flops": 125747840, "angle": 0.06251350241878212, "pruning_info": null}
-{"epoch": 43, "train_acc": 0.7404933571815491, "val_acc": 0.678, "test_acc": 0.7282, "flops": 125747840, "angle": 0.062300654397282274, "pruning_info": null}
-{"epoch": 44, "train_acc": 0.7448266744613647, "val_acc": 0.6612, "test_acc": 0.7221, "flops": 125747840, "angle": 0.062202794031773555, "pruning_info": null}
-{"epoch": 45, "train_acc": 0.7480733394622803, "val_acc": 0.6826, "test_acc": 0.7323, "flops": 125747840, "angle": 0.06199514909675798, "pruning_info": null}
-{"epoch": 46, "train_acc": 0.7510133385658264, "val_acc": 0.689, "test_acc": 0.7323, "flops": 125747840, "angle": 0.06188180864653738, "pruning_info": null}
-{"epoch": 47, "train_acc": 0.7528466582298279, "val_acc": 0.6794, "test_acc": 0.7338, "flops": 125747840, "angle": 0.06178134720384091, "pruning_info": null}
-{"epoch": 48, "train_acc": 0.7571933269500732, "val_acc": 0.6766, "test_acc": 0.7392, "flops": 125747840, "angle": 0.06175852247785423, "pruning_info": null}
-{"epoch": 49, "train_acc": 0.7599599957466125, "val_acc": 0.6946, "test_acc": 0.7413, "flops": 125747840, "angle": 0.06166830337574106, "pruning_info": null}
-{"epoch": 50, "train_acc": 0.7627999782562256, "val_acc": 0.691, "test_acc": 0.738, "flops": 125747840, "angle": 0.061750981112363657, "pruning_info": null}
-{"epoch": 51, "train_acc": 0.7650200128555298, "val_acc": 0.6946, "test_acc": 0.7455, "flops": 125747840, "angle": 0.06169091405620993, "pruning_info": null}
-{"epoch": 52, "train_acc": 0.7671800255775452, "val_acc": 0.696, "test_acc": 0.7407, "flops": 125747840, "angle": 0.06169654483905591, "pruning_info": null}
-{"epoch": 53, "train_acc": 0.771613359451294, "val_acc": 0.6866, "test_acc": 0.7481, "flops": 125747840, "angle": 0.061565905778044695, "pruning_info": null}
-{"epoch": 54, "train_acc": 0.7744133472442627, "val_acc": 0.6954, "test_acc": 0.7483, "flops": 125747840, "angle": 0.061228281367653924, "pruning_info": null}
-{"epoch": 55, "train_acc": 0.7753400206565857, "val_acc": 0.7108, "test_acc": 0.7473, "flops": 125747840, "angle": 0.06085230410430555, "pruning_info": null}
-{"epoch": 56, "train_acc": 0.7785999774932861, "val_acc": 0.7212, "test_acc": 0.7542, "flops": 125747840, "angle": 0.06053736461143665, "pruning_info": null}
-{"epoch": 57, "train_acc": 0.7815200090408325, "val_acc": 0.6846, "test_acc": 0.7506, "flops": 125747840, "angle": 0.06025636077541412, "pruning_info": null}
-{"epoch": 58, "train_acc": 0.7831133604049683, "val_acc": 0.712, "test_acc": 0.761, "flops": 125747840, "angle": 0.06000660032572701, "pruning_info": null}
-{"epoch": 59, "train_acc": 0.7852333188056946, "val_acc": 0.6992, "test_acc": 0.7538, "flops": 125747840, "angle": 0.05987017506303369, "pruning_info": null}
-{"epoch": 60, "train_acc": 0.7885466814041138, "val_acc": 0.7132, "test_acc": 0.7594, "flops": 125747840, "angle": 0.059837711838709576, "pruning_info": null}
-{"epoch": 61, "train_acc": 0.7902133464813232, "val_acc": 0.705, "test_acc": 0.756, "flops": 125747840, "angle": 0.05966759531161904, "pruning_info": null}
-{"epoch": 62, "train_acc": 0.7936133146286011, "val_acc": 0.712, "test_acc": 0.7625, "flops": 125747840, "angle": 0.05952849880065267, "pruning_info": null}
-{"epoch": 63, "train_acc": 0.7946199774742126, "val_acc": 0.7002, "test_acc": 0.7595, "flops": 125747840, "angle": 0.05954418825258535, "pruning_info": null}
-{"epoch": 64, "train_acc": 0.7955600023269653, "val_acc": 0.7122, "test_acc": 0.7647, "flops": 125747840, "angle": 0.05938749257065339, "pruning_info": null}
-{"epoch": 65, "train_acc": 0.7981399893760681, "val_acc": 0.6858, "test_acc": 0.7564, "flops": 125747840, "angle": 0.05917526433284828, "pruning_info": null}
-{"epoch": 66, "train_acc": 0.8021399974822998, "val_acc": 0.7246, "test_acc": 0.7602, "flops": 125747840, "angle": 0.05898351016807758, "pruning_info": null}
-{"epoch": 67, "train_acc": 0.8033599853515625, "val_acc": 0.7286, "test_acc": 0.7668, "flops": 125747840, "angle": 0.05881895550749484, "pruning_info": null}
-{"epoch": 68, "train_acc": 0.8056399822235107, "val_acc": 0.7038, "test_acc": 0.7655, "flops": 125747840, "angle": 0.05866628200119674, "pruning_info": null}
-{"epoch": 69, "train_acc": 0.8067933320999146, "val_acc": 0.7318, "test_acc": 0.7681, "flops": 125747840, "angle": 0.058682906365436056, "pruning_info": null}
-{"epoch": 70, "train_acc": 0.809066653251648, "val_acc": 0.7256, "test_acc": 0.7734, "flops": 125747840, "angle": 0.05866240821777737, "pruning_info": null}
-{"epoch": 71, "train_acc": 0.8109866380691528, "val_acc": 0.7226, "test_acc": 0.7732, "flops": 125747840, "angle": 0.05846329133724646, "pruning_info": null}
-{"epoch": 72, "train_acc": 0.8122199773788452, "val_acc": 0.7184, "test_acc": 0.7726, "flops": 125747840, "angle": 0.05818264070030827, "pruning_info": null}
-{"epoch": 73, "train_acc": 0.8142133355140686, "val_acc": 0.7268, "test_acc": 0.7757, "flops": 125747840, "angle": 0.058040484895952114, "pruning_info": null}
-{"epoch": 74, "train_acc": 0.8161600232124329, "val_acc": 0.7444, "test_acc": 0.7784, "flops": 125747840, "angle": 0.058011346634396256, "pruning_info": null}
-{"epoch": 75, "train_acc": 0.8182533383369446, "val_acc": 0.7296, "test_acc": 0.7785, "flops": 125747840, "angle": 0.057919914076575776, "pruning_info": null}
-{"epoch": 76, "train_acc": 0.8212199807167053, "val_acc": 0.7284, "test_acc": 0.7687, "flops": 125747840, "angle": 0.057908978589685425, "pruning_info": null}
-{"epoch": 77, "train_acc": 0.82069331407547, "val_acc": 0.7398, "test_acc": 0.7807, "flops": 125747840, "angle": 0.05776279435086602, "pruning_info": null}
-{"epoch": 78, "train_acc": 0.8238000273704529, "val_acc": 0.737, "test_acc": 0.7809, "flops": 125747840, "angle": 0.05762522809390229, "pruning_info": null}
-{"epoch": 79, "train_acc": 0.8256800174713135, "val_acc": 0.7282, "test_acc": 0.7757, "flops": 125747840, "angle": 0.05746979739799303, "pruning_info": "Pruned with structure=filter, new_val_acc=0.2994"}
-{"epoch": 80, "train_acc": 0.784393310546875, "val_acc": 0.7292, "test_acc": 0.7686, "flops": 115997312, "angle": 0.0, "pruning_info": null}
-{"epoch": 81, "train_acc": 0.8029599785804749, "val_acc": 0.7338, "test_acc": 0.7682, "flops": 115997312, "angle": 0.0016544031132710885, "pruning_info": null}
-{"epoch": 82, "train_acc": 0.8093933463096619, "val_acc": 0.7282, "test_acc": 0.7828, "flops": 115997312, "angle": 0.0032802248742284197, "pruning_info": null}
-{"epoch": 83, "train_acc": 0.8143333196640015, "val_acc": 0.7288, "test_acc": 0.7757, "flops": 115997312, "angle": 0.004924560369051572, "pruning_info": null}
-{"epoch": 84, "train_acc": 0.817193329334259, "val_acc": 0.7404, "test_acc": 0.7784, "flops": 115997312, "angle": 0.006646087623276692, "pruning_info": null}
-{"epoch": 85, "train_acc": 0.8192200064659119, "val_acc": 0.757, "test_acc": 0.7808, "flops": 115997312, "angle": 0.006831839651725153, "pruning_info": null}
-{"epoch": 86, "train_acc": 0.8226333260536194, "val_acc": 0.7456, "test_acc": 0.7842, "flops": 115997312, "angle": 0.007084791777842835, "pruning_info": null}
-{"epoch": 87, "train_acc": 0.8247066736221313, "val_acc": 0.742, "test_acc": 0.7828, "flops": 115997312, "angle": 0.007305397566696587, "pruning_info": null}
-{"epoch": 88, "train_acc": 0.8263999819755554, "val_acc": 0.7444, "test_acc": 0.7928, "flops": 115997312, "angle": 0.007622341626163658, "pruning_info": null}
-{"epoch": 89, "train_acc": 0.8302266597747803, "val_acc": 0.7344, "test_acc": 0.783, "flops": 115997312, "angle": 0.00795926328095043, "pruning_info": null}
-{"epoch": 90, "train_acc": 0.8320800065994263, "val_acc": 0.7274, "test_acc": 0.7843, "flops": 115997312, "angle": 0.008372455080950985, "pruning_info": null}
-{"epoch": 91, "train_acc": 0.8335333466529846, "val_acc": 0.7456, "test_acc": 0.7908, "flops": 115997312, "angle": 0.008810370369130665, "pruning_info": null}
-{"epoch": 92, "train_acc": 0.8363533616065979, "val_acc": 0.7288, "test_acc": 0.7843, "flops": 115997312, "angle": 0.009070178425588198, "pruning_info": null}
-{"epoch": 93, "train_acc": 0.8366600275039673, "val_acc": 0.7656, "test_acc": 0.7962, "flops": 115997312, "angle": 0.009407173102953435, "pruning_info": null}
-{"epoch": 94, "train_acc": 0.8385800123214722, "val_acc": 0.7476, "test_acc": 0.7889, "flops": 115997312, "angle": 0.009715012424274303, "pruning_info": null}
-{"epoch": 95, "train_acc": 0.8399999737739563, "val_acc": 0.7472, "test_acc": 0.7923, "flops": 115997312, "angle": 0.01007524518267646, "pruning_info": null}
-{"epoch": 96, "train_acc": 0.8430266380310059, "val_acc": 0.7502, "test_acc": 0.791, "flops": 115997312, "angle": 0.010354831875149868, "pruning_info": null}
-{"epoch": 97, "train_acc": 0.8451533317565918, "val_acc": 0.7494, "test_acc": 0.7959, "flops": 115997312, "angle": 0.010594206424621793, "pruning_info": null}
-{"epoch": 98, "train_acc": 0.8458399772644043, "val_acc": 0.7542, "test_acc": 0.7927, "flops": 115997312, "angle": 0.010906407719722063, "pruning_info": "Pruned with structure=layer, new_val_acc=0.4228"}
-{"epoch": 99, "train_acc": 0.8035600185394287, "val_acc": 0.7306, "test_acc": 0.7792, "flops": 107223680, "angle": 0.0, "pruning_info": null}
-{"epoch": 100, "train_acc": 0.8228999972343445, "val_acc": 0.7404, "test_acc": 0.788, "flops": 107223680, "angle": 0.0018741675518055617, "pruning_info": null}
-{"epoch": 101, "train_acc": 0.8297200202941895, "val_acc": 0.7212, "test_acc": 0.7805, "flops": 107223680, "angle": 0.0036508073625580472, "pruning_info": null}
-{"epoch": 102, "train_acc": 0.832966685295105, "val_acc": 0.7282, "test_acc": 0.7937, "flops": 107223680, "angle": 0.005442286402891828, "pruning_info": null}
-{"epoch": 103, "train_acc": 0.8376133441925049, "val_acc": 0.7398, "test_acc": 0.7877, "flops": 107223680, "angle": 0.007250214448868776, "pruning_info": null}
-{"epoch": 104, "train_acc": 0.8386399745941162, "val_acc": 0.7466, "test_acc": 0.7973, "flops": 107223680, "angle": 0.007262955313659537, "pruning_info": null}
-{"epoch": 105, "train_acc": 0.8421466946601868, "val_acc": 0.7446, "test_acc": 0.7942, "flops": 107223680, "angle": 0.007385769589720842, "pruning_info": null}
-{"epoch": 106, "train_acc": 0.8433399796485901, "val_acc": 0.7416, "test_acc": 0.7964, "flops": 107223680, "angle": 0.0076258155577001545, "pruning_info": null}
-{"epoch": 107, "train_acc": 0.8464199900627136, "val_acc": 0.7314, "test_acc": 0.7972, "flops": 107223680, "angle": 0.007926433247335584, "pruning_info": null}
-{"epoch": 108, "train_acc": 0.8483733534812927, "val_acc": 0.766, "test_acc": 0.7916, "flops": 107223680, "angle": 0.008200323478698762, "pruning_info": null}
-{"epoch": 109, "train_acc": 0.850820004940033, "val_acc": 0.7344, "test_acc": 0.786, "flops": 107223680, "angle": 0.00846313018407251, "pruning_info": null}
-{"epoch": 110, "train_acc": 0.8530333042144775, "val_acc": 0.7454, "test_acc": 0.7958, "flops": 107223680, "angle": 0.008653413959041888, "pruning_info": null}
-{"epoch": 111, "train_acc": 0.8529866933822632, "val_acc": 0.7556, "test_acc": 0.7933, "flops": 107223680, "angle": 0.008944774855722053, "pruning_info": null}
-{"epoch": 112, "train_acc": 0.8566733598709106, "val_acc": 0.7448, "test_acc": 0.7943, "flops": 107223680, "angle": 0.009255047143099543, "pruning_info": null}
-{"epoch": 113, "train_acc": 0.8573399782180786, "val_acc": 0.76, "test_acc": 0.8016, "flops": 107223680, "angle": 0.009607298809609357, "pruning_info": null}
-{"epoch": 114, "train_acc": 0.8601733446121216, "val_acc": 0.7562, "test_acc": 0.801, "flops": 107223680, "angle": 0.0100111934086322, "pruning_info": null}
-{"epoch": 115, "train_acc": 0.8612866401672363, "val_acc": 0.7684, "test_acc": 0.8025, "flops": 107223680, "angle": 0.010405415292805312, "pruning_info": null}
-{"epoch": 116, "train_acc": 0.8618599772453308, "val_acc": 0.7572, "test_acc": 0.7975, "flops": 107223680, "angle": 0.010709138071670097, "pruning_info": null}
-{"epoch": 117, "train_acc": 0.8634533286094666, "val_acc": 0.7352, "test_acc": 0.7946, "flops": 107223680, "angle": 0.01100212507657613, "pruning_info": "Pruned with structure=layer, new_val_acc=0.4196"}
-{"epoch": 118, "train_acc": 0.8332133293151855, "val_acc": 0.765, "test_acc": 0.7756, "flops": 98671232, "angle": 0.0, "pruning_info": null}
-{"epoch": 119, "train_acc": 0.848246693611145, "val_acc": 0.7212, "test_acc": 0.7956, "flops": 98671232, "angle": 0.001231143616110372, "pruning_info": null}
-{"epoch": 120, "train_acc": 0.8539466857910156, "val_acc": 0.754, "test_acc": 0.8009, "flops": 98671232, "angle": 0.0024316555695876444, "pruning_info": null}
-{"epoch": 121, "train_acc": 0.8566200137138367, "val_acc": 0.7408, "test_acc": 0.7952, "flops": 98671232, "angle": 0.0036791802379796358, "pruning_info": null}
-{"epoch": 122, "train_acc": 0.8579066395759583, "val_acc": 0.7602, "test_acc": 0.8002, "flops": 98671232, "angle": 0.004980257977006117, "pruning_info": null}
-{"epoch": 123, "train_acc": 0.859333336353302, "val_acc": 0.7308, "test_acc": 0.7884, "flops": 98671232, "angle": 0.005153430766226415, "pruning_info": null}
-{"epoch": 124, "train_acc": 0.8628133535385132, "val_acc": 0.725, "test_acc": 0.7913, "flops": 98671232, "angle": 0.005479781451424771, "pruning_info": null}
-{"epoch": 125, "train_acc": 0.8650933504104614, "val_acc": 0.7668, "test_acc": 0.7985, "flops": 98671232, "angle": 0.005829976189725483, "pruning_info": null}
-{"epoch": 126, "train_acc": 0.8671600222587585, "val_acc": 0.7446, "test_acc": 0.798, "flops": 98671232, "angle": 0.006213498434783891, "pruning_info": null}
-{"epoch": 127, "train_acc": 0.869053304195404, "val_acc": 0.7582, "test_acc": 0.8093, "flops": 98671232, "angle": 0.006564207062126179, "pruning_info": null}
-{"epoch": 128, "train_acc": 0.8707200288772583, "val_acc": 0.7544, "test_acc": 0.8009, "flops": 98671232, "angle": 0.0068575989801256156, "pruning_info": null}
-{"epoch": 129, "train_acc": 0.8717399835586548, "val_acc": 0.7646, "test_acc": 0.8067, "flops": 98671232, "angle": 0.007262060868657019, "pruning_info": null}
-{"epoch": 130, "train_acc": 0.8732466697692871, "val_acc": 0.7398, "test_acc": 0.7966, "flops": 98671232, "angle": 0.0076835528753140744, "pruning_info": null}
-{"epoch": 131, "train_acc": 0.8736533522605896, "val_acc": 0.7672, "test_acc": 0.8003, "flops": 98671232, "angle": 0.008061335532226618, "pruning_info": null}
-{"epoch": 132, "train_acc": 0.8750933408737183, "val_acc": 0.7616, "test_acc": 0.8046, "flops": 98671232, "angle": 0.008430285513479612, "pruning_info": null}
-{"epoch": 133, "train_acc": 0.8791599869728088, "val_acc": 0.7524, "test_acc": 0.7982, "flops": 98671232, "angle": 0.008755692441908491, "pruning_info": null}
-{"epoch": 134, "train_acc": 0.8797533512115479, "val_acc": 0.7602, "test_acc": 0.8056, "flops": 98671232, "angle": 0.009031981903342132, "pruning_info": null}
-{"epoch": 135, "train_acc": 0.8812800049781799, "val_acc": 0.7726, "test_acc": 0.8105, "flops": 98671232, "angle": 0.009336580376217837, "pruning_info": null}
-{"epoch": 136, "train_acc": 0.8819800019264221, "val_acc": 0.7616, "test_acc": 0.8047, "flops": 98671232, "angle": 0.009581167095152193, "pruning_info": "Pruned with structure=layer, new_val_acc=0.2052"}
-{"epoch": 137, "train_acc": 0.7871866822242737, "val_acc": 0.7326, "test_acc": 0.7754, "flops": 89823872, "angle": 0.0, "pruning_info": null}
-{"epoch": 138, "train_acc": 0.8318266868591309, "val_acc": 0.7264, "test_acc": 0.7877, "flops": 89823872, "angle": 0.00575652443075164, "pruning_info": null}
-{"epoch": 139, "train_acc": 0.8433933258056641, "val_acc": 0.7458, "test_acc": 0.7984, "flops": 89823872, "angle": 0.010460955229367278, "pruning_info": null}
-{"epoch": 140, "train_acc": 0.8494200110435486, "val_acc": 0.747, "test_acc": 0.7952, "flops": 89823872, "angle": 0.014682096615252858, "pruning_info": null}
-{"epoch": 141, "train_acc": 0.8542133569717407, "val_acc": 0.7482, "test_acc": 0.8018, "flops": 89823872, "angle": 0.018506521860967694, "pruning_info": null}
-{"epoch": 142, "train_acc": 0.8573799729347229, "val_acc": 0.7492, "test_acc": 0.8065, "flops": 89823872, "angle": 0.016721264187041483, "pruning_info": null}
-{"epoch": 143, "train_acc": 0.8618133068084717, "val_acc": 0.7464, "test_acc": 0.8108, "flops": 89823872, "angle": 0.015774173069699644, "pruning_info": null}
-{"epoch": 144, "train_acc": 0.8645600080490112, "val_acc": 0.7512, "test_acc": 0.8039, "flops": 89823872, "angle": 0.015437471063240601, "pruning_info": null}
-{"epoch": 145, "train_acc": 0.8659266829490662, "val_acc": 0.7632, "test_acc": 0.8115, "flops": 89823872, "angle": 0.015334420479767763, "pruning_info": null}
-{"epoch": 146, "train_acc": 0.8687266707420349, "val_acc": 0.7376, "test_acc": 0.7997, "flops": 89823872, "angle": 0.015134201619883422, "pruning_info": null}
-{"epoch": 147, "train_acc": 0.8727200031280518, "val_acc": 0.7678, "test_acc": 0.8134, "flops": 89823872, "angle": 0.014992352442998107, "pruning_info": null}
-{"epoch": 148, "train_acc": 0.8736266493797302, "val_acc": 0.754, "test_acc": 0.8088, "flops": 89823872, "angle": 0.014836479205959086, "pruning_info": null}
-{"epoch": 149, "train_acc": 0.8749866485595703, "val_acc": 0.7632, "test_acc": 0.815, "flops": 89823872, "angle": 0.01497047521606284, "pruning_info": null}
-{"epoch": 150, "train_acc": 0.8777133226394653, "val_acc": 0.7536, "test_acc": 0.8075, "flops": 89823872, "angle": 0.015070249836198545, "pruning_info": null}
-{"epoch": 151, "train_acc": 0.8799399733543396, "val_acc": 0.7152, "test_acc": 0.7978, "flops": 89823872, "angle": 0.015115247458994617, "pruning_info": null}
-{"epoch": 152, "train_acc": 0.8818466663360596, "val_acc": 0.7784, "test_acc": 0.8159, "flops": 89823872, "angle": 0.015161295337817557, "pruning_info": null}
-{"epoch": 153, "train_acc": 0.8839933276176453, "val_acc": 0.7738, "test_acc": 0.8156, "flops": 89823872, "angle": 0.015262208982526011, "pruning_info": null}
-{"epoch": 154, "train_acc": 0.8846333622932434, "val_acc": 0.7514, "test_acc": 0.8062, "flops": 89823872, "angle": 0.01550121474071996, "pruning_info": null}
-{"epoch": 155, "train_acc": 0.8858533501625061, "val_acc": 0.7542, "test_acc": 0.8081, "flops": 89823872, "angle": 0.01574208413588072, "pruning_info": "Pruned with structure=layer, new_val_acc=0.3404"}
-{"epoch": 156, "train_acc": 0.8250066637992859, "val_acc": 0.6902, "test_acc": 0.7825, "flops": 81123968, "angle": 0.0, "pruning_info": null}
-{"epoch": 157, "train_acc": 0.8530733585357666, "val_acc": 0.7178, "test_acc": 0.7947, "flops": 81123968, "angle": 0.003876198057775732, "pruning_info": null}
-{"epoch": 158, "train_acc": 0.8615599870681763, "val_acc": 0.7294, "test_acc": 0.8031, "flops": 81123968, "angle": 0.007259353447254895, "pruning_info": null}
-{"epoch": 159, "train_acc": 0.8665400147438049, "val_acc": 0.757, "test_acc": 0.8117, "flops": 81123968, "angle": 0.010539615316896104, "pruning_info": null}
-{"epoch": 160, "train_acc": 0.8698933124542236, "val_acc": 0.7402, "test_acc": 0.8059, "flops": 81123968, "angle": 0.013806115613243812, "pruning_info": null}
-{"epoch": 161, "train_acc": 0.873313307762146, "val_acc": 0.7606, "test_acc": 0.8169, "flops": 81123968, "angle": 0.013256687450739768, "pruning_info": null}
-{"epoch": 162, "train_acc": 0.8753399848937988, "val_acc": 0.7434, "test_acc": 0.8083, "flops": 81123968, "angle": 0.01306276848870698, "pruning_info": null}
-{"epoch": 163, "train_acc": 0.878986656665802, "val_acc": 0.7864, "test_acc": 0.8123, "flops": 81123968, "angle": 0.012846605957437647, "pruning_info": null}
-{"epoch": 164, "train_acc": 0.8815266489982605, "val_acc": 0.7412, "test_acc": 0.808, "flops": 81123968, "angle": 0.012792135658148227, "pruning_info": null}
-{"epoch": 165, "train_acc": 0.8841800093650818, "val_acc": 0.7538, "test_acc": 0.8134, "flops": 81123968, "angle": 0.012800519349119771, "pruning_info": null}
-{"epoch": 166, "train_acc": 0.8838933110237122, "val_acc": 0.7572, "test_acc": 0.8111, "flops": 81123968, "angle": 0.012896694189129901, "pruning_info": null}
-{"epoch": 167, "train_acc": 0.8872466683387756, "val_acc": 0.7568, "test_acc": 0.8109, "flops": 81123968, "angle": 0.013229822310086516, "pruning_info": null}
-{"epoch": 168, "train_acc": 0.8886399865150452, "val_acc": 0.7976, "test_acc": 0.8215, "flops": 81123968, "angle": 0.01352419116758162, "pruning_info": null}
-{"epoch": 169, "train_acc": 0.8901399970054626, "val_acc": 0.77, "test_acc": 0.8209, "flops": 81123968, "angle": 0.013759872503515161, "pruning_info": null}
-{"epoch": 170, "train_acc": 0.8920199871063232, "val_acc": 0.7922, "test_acc": 0.8204, "flops": 81123968, "angle": 0.01394689295394525, "pruning_info": null}
-{"epoch": 171, "train_acc": 0.8950600028038025, "val_acc": 0.7726, "test_acc": 0.8207, "flops": 81123968, "angle": 0.014015332230972549, "pruning_info": null}
-{"epoch": 172, "train_acc": 0.8970266580581665, "val_acc": 0.766, "test_acc": 0.8174, "flops": 81123968, "angle": 0.01427382472411604, "pruning_info": null}
-{"epoch": 173, "train_acc": 0.8978066444396973, "val_acc": 0.7864, "test_acc": 0.8229, "flops": 81123968, "angle": 0.014554346730844929, "pruning_info": null}
-{"epoch": 174, "train_acc": 0.8994733095169067, "val_acc": 0.7996, "test_acc": 0.8237, "flops": 81123968, "angle": 0.014710574498961387, "pruning_info": "Pruned with structure=layer, new_val_acc=0.5362"}
-{"epoch": 175, "train_acc": 0.8423466682434082, "val_acc": 0.7666, "test_acc": 0.812, "flops": 72424064, "angle": 0.0, "pruning_info": null}
-{"epoch": 176, "train_acc": 0.8612866401672363, "val_acc": 0.7468, "test_acc": 0.8137, "flops": 72424064, "angle": 0.001655712948303334, "pruning_info": null}
-{"epoch": 177, "train_acc": 0.8687933087348938, "val_acc": 0.7672, "test_acc": 0.8191, "flops": 72424064, "angle": 0.0033365196458446144, "pruning_info": null}
-{"epoch": 178, "train_acc": 0.8723533153533936, "val_acc": 0.759, "test_acc": 0.8188, "flops": 72424064, "angle": 0.005113777577788048, "pruning_info": null}
-{"epoch": 179, "train_acc": 0.8769800066947937, "val_acc": 0.7626, "test_acc": 0.8149, "flops": 72424064, "angle": 0.006928575334520624, "pruning_info": null}
-{"epoch": 180, "train_acc": 0.8788800239562988, "val_acc": 0.7532, "test_acc": 0.8171, "flops": 72424064, "angle": 0.007212463794709181, "pruning_info": null}
-{"epoch": 181, "train_acc": 0.8812133073806763, "val_acc": 0.7698, "test_acc": 0.8209, "flops": 72424064, "angle": 0.0075216570628954494, "pruning_info": null}
-{"epoch": 182, "train_acc": 0.8828799724578857, "val_acc": 0.7734, "test_acc": 0.8199, "flops": 72424064, "angle": 0.007831411282254173, "pruning_info": null}
-{"epoch": 183, "train_acc": 0.8858799934387207, "val_acc": 0.7642, "test_acc": 0.8162, "flops": 72424064, "angle": 0.008225434499518845, "pruning_info": null}
-{"epoch": 184, "train_acc": 0.8876466751098633, "val_acc": 0.7744, "test_acc": 0.8296, "flops": 72424064, "angle": 0.00863487442168532, "pruning_info": null}
-{"epoch": 185, "train_acc": 0.8892999887466431, "val_acc": 0.7804, "test_acc": 0.8254, "flops": 72424064, "angle": 0.009089000732319883, "pruning_info": null}
-{"epoch": 186, "train_acc": 0.8908733129501343, "val_acc": 0.779, "test_acc": 0.8268, "flops": 72424064, "angle": 0.00947578794637999, "pruning_info": null}
-{"epoch": 187, "train_acc": 0.8927666544914246, "val_acc": 0.7634, "test_acc": 0.8235, "flops": 72424064, "angle": 0.00983803393309896, "pruning_info": null}
-{"epoch": 188, "train_acc": 0.8943399786949158, "val_acc": 0.7716, "test_acc": 0.8169, "flops": 72424064, "angle": 0.010142447530028133, "pruning_info": null}
-{"epoch": 189, "train_acc": 0.8963133096694946, "val_acc": 0.7792, "test_acc": 0.8224, "flops": 72424064, "angle": 0.010528268324197934, "pruning_info": null}
-{"epoch": 190, "train_acc": 0.8960400223731995, "val_acc": 0.7308, "test_acc": 0.8078, "flops": 72424064, "angle": 0.010948271698472624, "pruning_info": null}
-{"epoch": 191, "train_acc": 0.8985066413879395, "val_acc": 0.791, "test_acc": 0.8267, "flops": 72424064, "angle": 0.011325459446024738, "pruning_info": null}
-{"epoch": 192, "train_acc": 0.8994733095169067, "val_acc": 0.7756, "test_acc": 0.8214, "flops": 72424064, "angle": 0.011697762247399254, "pruning_info": null}
-{"epoch": 193, "train_acc": 0.9017666578292847, "val_acc": 0.7726, "test_acc": 0.8241, "flops": 72424064, "angle": 0.011941587321725518, "pruning_info": "Pruned with structure=layer, new_val_acc=0.4112"}
-{"epoch": 194, "train_acc": 0.829913318157196, "val_acc": 0.718, "test_acc": 0.7796, "flops": 63650432, "angle": 0.0, "pruning_info": null}
-{"epoch": 195, "train_acc": 0.8574733138084412, "val_acc": 0.7588, "test_acc": 0.8076, "flops": 63650432, "angle": 0.003198465073583545, "pruning_info": null}
-{"epoch": 196, "train_acc": 0.8647466897964478, "val_acc": 0.7582, "test_acc": 0.8046, "flops": 63650432, "angle": 0.006180358886790726, "pruning_info": null}
-{"epoch": 197, "train_acc": 0.8711133599281311, "val_acc": 0.742, "test_acc": 0.8117, "flops": 63650432, "angle": 0.009045682190619592, "pruning_info": null}
-{"epoch": 198, "train_acc": 0.8743266463279724, "val_acc": 0.7824, "test_acc": 0.823, "flops": 63650432, "angle": 0.011976455943676556, "pruning_info": null}
-{"epoch": 199, "train_acc": 0.8774266839027405, "val_acc": 0.7814, "test_acc": 0.8193, "flops": 63650432, "angle": 0.011648110656800508, "pruning_info": null}
-{"epoch": 200, "train_acc": 0.8793266415596008, "val_acc": 0.7708, "test_acc": 0.8189, "flops": 63650432, "angle": 0.011690498174518692, "pruning_info": null}
-{"epoch": 201, "train_acc": 0.8830333352088928, "val_acc": 0.7742, "test_acc": 0.8129, "flops": 63650432, "angle": 0.011853510446570514, "pruning_info": null}
-{"epoch": 202, "train_acc": 0.8843466639518738, "val_acc": 0.7536, "test_acc": 0.8113, "flops": 63650432, "angle": 0.012042969270191954, "pruning_info": null}
-{"epoch": 203, "train_acc": 0.8862733244895935, "val_acc": 0.7886, "test_acc": 0.8254, "flops": 63650432, "angle": 0.012467482532177073, "pruning_info": null}
-{"epoch": 204, "train_acc": 0.8883533477783203, "val_acc": 0.7808, "test_acc": 0.8209, "flops": 63650432, "angle": 0.01269239280886587, "pruning_info": null}
-{"epoch": 205, "train_acc": 0.8906800150871277, "val_acc": 0.8032, "test_acc": 0.8352, "flops": 63650432, "angle": 0.012953720387369144, "pruning_info": null}
-{"epoch": 206, "train_acc": 0.8923066854476929, "val_acc": 0.7496, "test_acc": 0.8179, "flops": 63650432, "angle": 0.013221922149391253, "pruning_info": null}
-{"epoch": 207, "train_acc": 0.8944533467292786, "val_acc": 0.7466, "test_acc": 0.8082, "flops": 63650432, "angle": 0.013329681259412716, "pruning_info": null}
-{"epoch": 208, "train_acc": 0.8945466876029968, "val_acc": 0.7466, "test_acc": 0.8179, "flops": 63650432, "angle": 0.013566216979672358, "pruning_info": null}
-{"epoch": 209, "train_acc": 0.8973333239555359, "val_acc": 0.8028, "test_acc": 0.83, "flops": 63650432, "angle": 0.013801426712719226, "pruning_info": null}
-{"epoch": 210, "train_acc": 0.8983333110809326, "val_acc": 0.7744, "test_acc": 0.829, "flops": 63650432, "angle": 0.013984054061207871, "pruning_info": null}
-{"epoch": 211, "train_acc": 0.9005600214004517, "val_acc": 0.798, "test_acc": 0.8318, "flops": 63650432, "angle": 0.014345396637405097, "pruning_info": null}
-{"epoch": 212, "train_acc": 0.9019666910171509, "val_acc": 0.793, "test_acc": 0.834, "flops": 63650432, "angle": 0.014565733720248154, "pruning_info": "Pruned with structure=layer, new_val_acc=0.2720"}
-{"epoch": 213, "train_acc": 0.8200600147247314, "val_acc": 0.7166, "test_acc": 0.7962, "flops": 54876800, "angle": 0.0, "pruning_info": null}
-{"epoch": 214, "train_acc": 0.8539933562278748, "val_acc": 0.7014, "test_acc": 0.8025, "flops": 54876800, "angle": 0.004784734835313509, "pruning_info": null}
-{"epoch": 215, "train_acc": 0.8624533414840698, "val_acc": 0.7496, "test_acc": 0.8154, "flops": 54876800, "angle": 0.009178058213996445, "pruning_info": null}
-{"epoch": 216, "train_acc": 0.8676199913024902, "val_acc": 0.7612, "test_acc": 0.8168, "flops": 54876800, "angle": 0.013290712351630653, "pruning_info": null}
-{"epoch": 217, "train_acc": 0.8732666373252869, "val_acc": 0.7604, "test_acc": 0.8201, "flops": 54876800, "angle": 0.017347931582835804, "pruning_info": null}
-{"epoch": 218, "train_acc": 0.8755866885185242, "val_acc": 0.7748, "test_acc": 0.8285, "flops": 54876800, "angle": 0.016635264041585093, "pruning_info": null}
-{"epoch": 219, "train_acc": 0.878279983997345, "val_acc": 0.7678, "test_acc": 0.8262, "flops": 54876800, "angle": 0.016325983945050852, "pruning_info": null}
-{"epoch": 220, "train_acc": 0.8812599778175354, "val_acc": 0.7296, "test_acc": 0.8086, "flops": 54876800, "angle": 0.01620794364997132, "pruning_info": null}
-{"epoch": 221, "train_acc": 0.8834599852561951, "val_acc": 0.7512, "test_acc": 0.8185, "flops": 54876800, "angle": 0.016142439439437845, "pruning_info": null}
-{"epoch": 222, "train_acc": 0.8844266533851624, "val_acc": 0.769, "test_acc": 0.8281, "flops": 54876800, "angle": 0.016206381560196794, "pruning_info": null}
-{"epoch": 223, "train_acc": 0.8875466585159302, "val_acc": 0.7914, "test_acc": 0.8323, "flops": 54876800, "angle": 0.016510383431955874, "pruning_info": null}
-{"epoch": 224, "train_acc": 0.8880733251571655, "val_acc": 0.7696, "test_acc": 0.8262, "flops": 54876800, "angle": 0.016840473814346252, "pruning_info": null}
-{"epoch": 225, "train_acc": 0.8905733227729797, "val_acc": 0.7718, "test_acc": 0.8317, "flops": 54876800, "angle": 0.017109739699256176, "pruning_info": null}
-{"epoch": 226, "train_acc": 0.8929933309555054, "val_acc": 0.7664, "test_acc": 0.8262, "flops": 54876800, "angle": 0.017347616784195125, "pruning_info": null}
-{"epoch": 227, "train_acc": 0.8952933549880981, "val_acc": 0.7742, "test_acc": 0.8293, "flops": 54876800, "angle": 0.017309753605831077, "pruning_info": null}
-{"epoch": 228, "train_acc": 0.8958733081817627, "val_acc": 0.7578, "test_acc": 0.82, "flops": 54876800, "angle": 0.017370303121019587, "pruning_info": null}
-{"epoch": 229, "train_acc": 0.8972266912460327, "val_acc": 0.7738, "test_acc": 0.8335, "flops": 54876800, "angle": 0.01751550491935867, "pruning_info": null}
-{"epoch": 230, "train_acc": 0.8990799784660339, "val_acc": 0.774, "test_acc": 0.8308, "flops": 54876800, "angle": 0.017706616418433914, "pruning_info": null}
-{"epoch": 231, "train_acc": 0.9004600048065186, "val_acc": 0.7756, "test_acc": 0.835, "flops": 54876800, "angle": 0.018164414348000753, "pruning_info": "Pruned with structure=layer, new_val_acc=0.4354"}
-{"epoch": 232, "train_acc": 0.8195000290870667, "val_acc": 0.6706, "test_acc": 0.7783, "flops": 46324352, "angle": 0.0, "pruning_info": null}
-{"epoch": 233, "train_acc": 0.8521199822425842, "val_acc": 0.729, "test_acc": 0.8072, "flops": 46324352, "angle": 0.005539820675082475, "pruning_info": null}
-{"epoch": 234, "train_acc": 0.8610133528709412, "val_acc": 0.7508, "test_acc": 0.8189, "flops": 46324352, "angle": 0.010681753145539432, "pruning_info": null}
-{"epoch": 235, "train_acc": 0.8666800260543823, "val_acc": 0.7498, "test_acc": 0.8204, "flops": 46324352, "angle": 0.015623803767940777, "pruning_info": null}
-{"epoch": 236, "train_acc": 0.8708999752998352, "val_acc": 0.766, "test_acc": 0.8229, "flops": 46324352, "angle": 0.020319983125512264, "pruning_info": null}
-{"epoch": 237, "train_acc": 0.8755000233650208, "val_acc": 0.7452, "test_acc": 0.8221, "flops": 46324352, "angle": 0.01941607932868174, "pruning_info": null}
-{"epoch": 238, "train_acc": 0.8779000043869019, "val_acc": 0.7422, "test_acc": 0.8196, "flops": 46324352, "angle": 0.018965909983387055, "pruning_info": null}
-{"epoch": 239, "train_acc": 0.880246639251709, "val_acc": 0.759, "test_acc": 0.8207, "flops": 46324352, "angle": 0.018604518810478452, "pruning_info": null}
-{"epoch": 240, "train_acc": 0.8823599815368652, "val_acc": 0.7704, "test_acc": 0.833, "flops": 46324352, "angle": 0.018559707621649286, "pruning_info": null}
-{"epoch": 241, "train_acc": 0.8853200078010559, "val_acc": 0.7638, "test_acc": 0.8279, "flops": 46324352, "angle": 0.018521123082779353, "pruning_info": null}
-{"epoch": 242, "train_acc": 0.8867400288581848, "val_acc": 0.75, "test_acc": 0.8217, "flops": 46324352, "angle": 0.018584966818527646, "pruning_info": null}
-{"epoch": 243, "train_acc": 0.8895466923713684, "val_acc": 0.7672, "test_acc": 0.8256, "flops": 46324352, "angle": 0.01880694908650484, "pruning_info": null}
-{"epoch": 244, "train_acc": 0.889793336391449, "val_acc": 0.773, "test_acc": 0.8359, "flops": 46324352, "angle": 0.019073257803580167, "pruning_info": null}
-{"epoch": 245, "train_acc": 0.8919066786766052, "val_acc": 0.7816, "test_acc": 0.8331, "flops": 46324352, "angle": 0.019457028169754077, "pruning_info": null}
-{"epoch": 246, "train_acc": 0.8934800028800964, "val_acc": 0.7494, "test_acc": 0.8244, "flops": 46324352, "angle": 0.01959781739731737, "pruning_info": null}
-{"epoch": 247, "train_acc": 0.8962266445159912, "val_acc": 0.753, "test_acc": 0.8184, "flops": 46324352, "angle": 0.01974598313045818, "pruning_info": null}
-{"epoch": 248, "train_acc": 0.8973866701126099, "val_acc": 0.7918, "test_acc": 0.832, "flops": 46324352, "angle": 0.019837921592644133, "pruning_info": null}
-{"epoch": 249, "train_acc": 0.8995000123977661, "val_acc": 0.7632, "test_acc": 0.8286, "flops": 46324352, "angle": 0.020107955496857857, "pruning_info": null}
-{"epoch": 250, "train_acc": 0.8992800116539001, "val_acc": 0.799, "test_acc": 0.8313, "flops": 46324352, "angle": 0.020560586573924552, "pruning_info": "Pruned with structure=layer, new_val_acc=0.3596"}
-{"epoch": 251, "train_acc": 0.7021600008010864, "val_acc": 0.6302, "test_acc": 0.7249, "flops": 37624448, "angle": 0.0, "pruning_info": null}
-{"epoch": 252, "train_acc": 0.7549999952316284, "val_acc": 0.6458, "test_acc": 0.7454, "flops": 37624448, "angle": 0.008954888877877574, "pruning_info": null}
-{"epoch": 253, "train_acc": 0.7740466594696045, "val_acc": 0.6778, "test_acc": 0.7632, "flops": 37624448, "angle": 0.017722031812101715, "pruning_info": null}
-{"epoch": 254, "train_acc": 0.7885866761207581, "val_acc": 0.6784, "test_acc": 0.7582, "flops": 37624448, "angle": 0.02627260236098171, "pruning_info": null}
-{"epoch": 255, "train_acc": 0.7966333627700806, "val_acc": 0.6932, "test_acc": 0.7765, "flops": 37624448, "angle": 0.03462327761149089, "pruning_info": null}
-{"epoch": 256, "train_acc": 0.8056600093841553, "val_acc": 0.6884, "test_acc": 0.7834, "flops": 37624448, "angle": 0.03398457940797453, "pruning_info": null}
-{"epoch": 257, "train_acc": 0.8114933371543884, "val_acc": 0.7246, "test_acc": 0.7893, "flops": 37624448, "angle": 0.03344300934505685, "pruning_info": null}
-{"epoch": 258, "train_acc": 0.8175399899482727, "val_acc": 0.6904, "test_acc": 0.7811, "flops": 37624448, "angle": 0.033017301374950854, "pruning_info": null}
-{"epoch": 259, "train_acc": 0.8212199807167053, "val_acc": 0.7108, "test_acc": 0.7962, "flops": 37624448, "angle": 0.03264136628684583, "pruning_info": null}
-{"epoch": 260, "train_acc": 0.8268399834632874, "val_acc": 0.7266, "test_acc": 0.8012, "flops": 37624448, "angle": 0.03227759314502577, "pruning_info": null}
-{"epoch": 261, "train_acc": 0.8298333287239075, "val_acc": 0.729, "test_acc": 0.8037, "flops": 37624448, "angle": 0.03210112810703964, "pruning_info": null}
-{"epoch": 262, "train_acc": 0.8331800103187561, "val_acc": 0.7258, "test_acc": 0.7998, "flops": 37624448, "angle": 0.03198719707375274, "pruning_info": null}
-{"epoch": 263, "train_acc": 0.8361799716949463, "val_acc": 0.7154, "test_acc": 0.8039, "flops": 37624448, "angle": 0.031958770895917775, "pruning_info": null}
-{"epoch": 264, "train_acc": 0.8391666412353516, "val_acc": 0.7462, "test_acc": 0.8081, "flops": 37624448, "angle": 0.03203521413198729, "pruning_info": null}
-{"epoch": 265, "train_acc": 0.8415066599845886, "val_acc": 0.7304, "test_acc": 0.8095, "flops": 37624448, "angle": 0.032097231968357565, "pruning_info": null}
-{"epoch": 266, "train_acc": 0.8451533317565918, "val_acc": 0.7608, "test_acc": 0.81, "flops": 37624448, "angle": 0.03228945527500435, "pruning_info": null}
-{"epoch": 267, "train_acc": 0.8445666432380676, "val_acc": 0.7496, "test_acc": 0.8146, "flops": 37624448, "angle": 0.03243207598280312, "pruning_info": null}
-{"epoch": 268, "train_acc": 0.8484266400337219, "val_acc": 0.7402, "test_acc": 0.8097, "flops": 37624448, "angle": 0.03250236456404474, "pruning_info": null}
-{"epoch": 269, "train_acc": 0.8500333428382874, "val_acc": 0.7192, "test_acc": 0.8081, "flops": 37624448, "angle": 0.032614562023431694, "pruning_info": "Pruned with structure=layer, new_val_acc=0.2314"}
-{"epoch": 270, "train_acc": 0.7347333431243896, "val_acc": 0.6354, "test_acc": 0.737, "flops": 28924544, "angle": 0.0, "pruning_info": null}
-{"epoch": 271, "train_acc": 0.7913200259208679, "val_acc": 0.682, "test_acc": 0.7718, "flops": 28924544, "angle": 0.01529401042006799, "pruning_info": null}
-{"epoch": 272, "train_acc": 0.803213357925415, "val_acc": 0.7046, "test_acc": 0.7892, "flops": 28924544, "angle": 0.028234885247361292, "pruning_info": null}
-{"epoch": 273, "train_acc": 0.8101266622543335, "val_acc": 0.6952, "test_acc": 0.7918, "flops": 28924544, "angle": 0.040051273231397795, "pruning_info": null}
-{"epoch": 274, "train_acc": 0.8155733346939087, "val_acc": 0.707, "test_acc": 0.7962, "flops": 28924544, "angle": 0.05130516412475429, "pruning_info": null}
-{"epoch": 275, "train_acc": 0.821619987487793, "val_acc": 0.7202, "test_acc": 0.8003, "flops": 28924544, "angle": 0.047458931231296124, "pruning_info": null}
-{"epoch": 276, "train_acc": 0.824720025062561, "val_acc": 0.7158, "test_acc": 0.7958, "flops": 28924544, "angle": 0.045886587463948206, "pruning_info": null}
-{"epoch": 277, "train_acc": 0.8281533122062683, "val_acc": 0.7246, "test_acc": 0.8042, "flops": 28924544, "angle": 0.04533260649832003, "pruning_info": null}
-{"epoch": 278, "train_acc": 0.8310866951942444, "val_acc": 0.7206, "test_acc": 0.8065, "flops": 28924544, "angle": 0.044760037824097966, "pruning_info": null}
-{"epoch": 279, "train_acc": 0.8346333503723145, "val_acc": 0.7144, "test_acc": 0.8065, "flops": 28924544, "angle": 0.04419418505170412, "pruning_info": null}
-{"epoch": 280, "train_acc": 0.8378666639328003, "val_acc": 0.7306, "test_acc": 0.803, "flops": 28924544, "angle": 0.04358432855143952, "pruning_info": null}
-{"epoch": 281, "train_acc": 0.8379466533660889, "val_acc": 0.7438, "test_acc": 0.812, "flops": 28924544, "angle": 0.04328304571805659, "pruning_info": null}
-{"epoch": 282, "train_acc": 0.8417533040046692, "val_acc": 0.7402, "test_acc": 0.8091, "flops": 28924544, "angle": 0.04370408635295608, "pruning_info": null}
-{"epoch": 283, "train_acc": 0.844486653804779, "val_acc": 0.7388, "test_acc": 0.8157, "flops": 28924544, "angle": 0.04383770562152388, "pruning_info": null}
-{"epoch": 284, "train_acc": 0.8447800278663635, "val_acc": 0.7374, "test_acc": 0.8176, "flops": 28924544, "angle": 0.04433004606994786, "pruning_info": null}
-{"epoch": 285, "train_acc": 0.8480600118637085, "val_acc": 0.7356, "test_acc": 0.8164, "flops": 28924544, "angle": 0.04464160836884596, "pruning_info": null}
-{"epoch": 286, "train_acc": 0.8492066860198975, "val_acc": 0.7284, "test_acc": 0.8134, "flops": 28924544, "angle": 0.045024845370710276, "pruning_info": null}
-{"epoch": 287, "train_acc": 0.8501200079917908, "val_acc": 0.7368, "test_acc": 0.8156, "flops": 28924544, "angle": 0.04528206359676307, "pruning_info": null}
-{"epoch": 288, "train_acc": 0.8531399965286255, "val_acc": 0.7604, "test_acc": 0.8243, "flops": 28924544, "angle": 0.04505932796322182, "pruning_info": "Pruned with structure=layer, new_val_acc=0.3532"}
-{"epoch": 289, "train_acc": 0.7887799739837646, "val_acc": 0.6918, "test_acc": 0.7839, "flops": 24648320, "angle": 0.0, "pruning_info": null}
-{"epoch": 290, "train_acc": 0.8183799982070923, "val_acc": 0.6988, "test_acc": 0.793, "flops": 24648320, "angle": 0.0067666430770031314, "pruning_info": null}
-{"epoch": 291, "train_acc": 0.8247666954994202, "val_acc": 0.7176, "test_acc": 0.7992, "flops": 24648320, "angle": 0.012982995749868118, "pruning_info": null}
-{"epoch": 292, "train_acc": 0.8286533355712891, "val_acc": 0.7246, "test_acc": 0.8125, "flops": 24648320, "angle": 0.019342025713287785, "pruning_info": null}
-{"epoch": 293, "train_acc": 0.8336466550827026, "val_acc": 0.7254, "test_acc": 0.8115, "flops": 24648320, "angle": 0.02572150847899576, "pruning_info": null}
-{"epoch": 294, "train_acc": 0.8363000154495239, "val_acc": 0.7144, "test_acc": 0.8065, "flops": 24648320, "angle": 0.025534049082358744, "pruning_info": null}
-{"epoch": 295, "train_acc": 0.8407866954803467, "val_acc": 0.7276, "test_acc": 0.8146, "flops": 24648320, "angle": 0.025921437391089472, "pruning_info": null}
-{"epoch": 296, "train_acc": 0.8423866629600525, "val_acc": 0.7278, "test_acc": 0.8148, "flops": 24648320, "angle": 0.026455041975475085, "pruning_info": null}
-{"epoch": 297, "train_acc": 0.8450133204460144, "val_acc": 0.735, "test_acc": 0.8186, "flops": 24648320, "angle": 0.027133500139651334, "pruning_info": null}
-{"epoch": 298, "train_acc": 0.8464333415031433, "val_acc": 0.7262, "test_acc": 0.8151, "flops": 24648320, "angle": 0.027757015664543347, "pruning_info": null}
-{"epoch": 299, "train_acc": 0.848246693611145, "val_acc": 0.719, "test_acc": 0.8109, "flops": 24648320, "angle": 0.028337984085564694, "pruning_info": null}
-{"epoch": 300, "train_acc": 0.8502333164215088, "val_acc": 0.724, "test_acc": 0.8162, "flops": 24648320, "angle": 0.02897395871047639, "pruning_info": null}
-{"epoch": 301, "train_acc": 0.8509200215339661, "val_acc": 0.742, "test_acc": 0.8222, "flops": 24648320, "angle": 0.029806659011855814, "pruning_info": null}
-{"epoch": 302, "train_acc": 0.8516200184822083, "val_acc": 0.7472, "test_acc": 0.8243, "flops": 24648320, "angle": 0.030670192541887225, "pruning_info": null}
-{"epoch": 303, "train_acc": 0.8540400266647339, "val_acc": 0.7296, "test_acc": 0.8217, "flops": 24648320, "angle": 0.031356467659384775, "pruning_info": null}
-{"epoch": 304, "train_acc": 0.8553400039672852, "val_acc": 0.7558, "test_acc": 0.8242, "flops": 24648320, "angle": 0.031973820454904225, "pruning_info": null}
-{"epoch": 305, "train_acc": 0.8573399782180786, "val_acc": 0.7514, "test_acc": 0.8256, "flops": 24648320, "angle": 0.0327085822545269, "pruning_info": null}
-{"epoch": 306, "train_acc": 0.8592466711997986, "val_acc": 0.7478, "test_acc": 0.8249, "flops": 24648320, "angle": 0.03352085834469926, "pruning_info": null}
-{"epoch": 307, "train_acc": 0.8599466681480408, "val_acc": 0.7558, "test_acc": 0.8248, "flops": 24648320, "angle": 0.03428934600975858, "pruning_info": "Pruned with structure=filter, new_val_acc=0.3996"}
-{"epoch": 308, "train_acc": 0.8302266597747803, "val_acc": 0.7356, "test_acc": 0.8136, "flops": 22897280, "angle": 0.0, "pruning_info": null}
-{"epoch": 309, "train_acc": 0.8440133333206177, "val_acc": 0.727, "test_acc": 0.8187, "flops": 22897280, "angle": 0.004685541292566215, "pruning_info": null}
-{"epoch": 310, "train_acc": 0.8485066890716553, "val_acc": 0.741, "test_acc": 0.8095, "flops": 22897280, "angle": 0.008971001766598681, "pruning_info": null}
-{"epoch": 311, "train_acc": 0.8517933487892151, "val_acc": 0.7692, "test_acc": 0.8231, "flops": 22897280, "angle": 0.013677937558987633, "pruning_info": null}
-{"epoch": 312, "train_acc": 0.8533999919891357, "val_acc": 0.7196, "test_acc": 0.8131, "flops": 22897280, "angle": 0.018299215857522654, "pruning_info": null}
-{"epoch": 313, "train_acc": 0.8552733063697815, "val_acc": 0.7322, "test_acc": 0.8229, "flops": 22897280, "angle": 0.01839525114286864, "pruning_info": null}
-{"epoch": 314, "train_acc": 0.8574933409690857, "val_acc": 0.743, "test_acc": 0.8273, "flops": 22897280, "angle": 0.01900927754511785, "pruning_info": null}
-{"epoch": 315, "train_acc": 0.8594800233840942, "val_acc": 0.7302, "test_acc": 0.8223, "flops": 22897280, "angle": 0.019425323358878435, "pruning_info": null}
-{"epoch": 316, "train_acc": 0.8602799773216248, "val_acc": 0.7602, "test_acc": 0.8311, "flops": 22897280, "angle": 0.020247818471135725, "pruning_info": null}
-{"epoch": 317, "train_acc": 0.861299991607666, "val_acc": 0.7272, "test_acc": 0.8261, "flops": 22897280, "angle": 0.0210873541634822, "pruning_info": null}
-{"epoch": 318, "train_acc": 0.8621666431427002, "val_acc": 0.7262, "test_acc": 0.825, "flops": 22897280, "angle": 0.0221005145395399, "pruning_info": null}
-{"epoch": 319, "train_acc": 0.8631133437156677, "val_acc": 0.7518, "test_acc": 0.8253, "flops": 22897280, "angle": 0.022960117782791382, "pruning_info": null}
-{"epoch": 320, "train_acc": 0.8646000027656555, "val_acc": 0.7424, "test_acc": 0.8281, "flops": 22897280, "angle": 0.02378016614600421, "pruning_info": null}
-{"epoch": 321, "train_acc": 0.8668000102043152, "val_acc": 0.7294, "test_acc": 0.8301, "flops": 22897280, "angle": 0.02458351586563332, "pruning_info": null}
-{"epoch": 322, "train_acc": 0.8684066534042358, "val_acc": 0.7586, "test_acc": 0.8319, "flops": 22897280, "angle": 0.025100523401735412, "pruning_info": null}
-{"epoch": 323, "train_acc": 0.8680866956710815, "val_acc": 0.7598, "test_acc": 0.837, "flops": 22897280, "angle": 0.02586529262552733, "pruning_info": null}
-{"epoch": 324, "train_acc": 0.8692799806594849, "val_acc": 0.7526, "test_acc": 0.8376, "flops": 22897280, "angle": 0.026455452402565947, "pruning_info": null}
-{"epoch": 325, "train_acc": 0.8706866502761841, "val_acc": 0.733, "test_acc": 0.8286, "flops": 22897280, "angle": 0.027406319207348016, "pruning_info": null}
-{"epoch": 326, "train_acc": 0.8719666600227356, "val_acc": 0.7792, "test_acc": 0.8381, "flops": 22897280, "angle": 0.028528232460938132, "pruning_info": "Pruned with structure=filter, new_val_acc=0.3584"}
-{"epoch": 327, "train_acc": 0.8455133438110352, "val_acc": 0.7324, "test_acc": 0.8207, "flops": 21275264, "angle": 0.0, "pruning_info": null}
-{"epoch": 328, "train_acc": 0.8553133606910706, "val_acc": 0.742, "test_acc": 0.8211, "flops": 21275264, "angle": 0.004548094299492963, "pruning_info": null}
-{"epoch": 329, "train_acc": 0.8606933355331421, "val_acc": 0.7522, "test_acc": 0.8275, "flops": 21275264, "angle": 0.00901192178749541, "pruning_info": null}
-{"epoch": 330, "train_acc": 0.8628466725349426, "val_acc": 0.7518, "test_acc": 0.8322, "flops": 21275264, "angle": 0.013331578094681319, "pruning_info": null}
-{"epoch": 331, "train_acc": 0.8639799952507019, "val_acc": 0.7544, "test_acc": 0.8323, "flops": 21275264, "angle": 0.017832867064679323, "pruning_info": null}
-{"epoch": 332, "train_acc": 0.8667666912078857, "val_acc": 0.748, "test_acc": 0.8296, "flops": 21275264, "angle": 0.017986124768621943, "pruning_info": null}
-{"epoch": 333, "train_acc": 0.8671533465385437, "val_acc": 0.7688, "test_acc": 0.8355, "flops": 21275264, "angle": 0.018352696577943643, "pruning_info": null}
-{"epoch": 334, "train_acc": 0.8691133260726929, "val_acc": 0.7562, "test_acc": 0.8309, "flops": 21275264, "angle": 0.019004594307135452, "pruning_info": null}
-{"epoch": 335, "train_acc": 0.8701733350753784, "val_acc": 0.7564, "test_acc": 0.8302, "flops": 21275264, "angle": 0.0196334459425805, "pruning_info": null}
-{"epoch": 336, "train_acc": 0.8709400296211243, "val_acc": 0.7394, "test_acc": 0.8275, "flops": 21275264, "angle": 0.020209671840981703, "pruning_info": null}
-{"epoch": 337, "train_acc": 0.8717666864395142, "val_acc": 0.7506, "test_acc": 0.8347, "flops": 21275264, "angle": 0.020809366031051223, "pruning_info": null}
-{"epoch": 338, "train_acc": 0.8730466961860657, "val_acc": 0.7586, "test_acc": 0.8355, "flops": 21275264, "angle": 0.02149354015933351, "pruning_info": null}
-{"epoch": 339, "train_acc": 0.8745333552360535, "val_acc": 0.7428, "test_acc": 0.8292, "flops": 21275264, "angle": 0.022003867407033473, "pruning_info": null}
-{"epoch": 340, "train_acc": 0.8745266795158386, "val_acc": 0.7606, "test_acc": 0.8371, "flops": 21275264, "angle": 0.022786762512000708, "pruning_info": null}
-{"epoch": 341, "train_acc": 0.87690669298172, "val_acc": 0.7498, "test_acc": 0.8349, "flops": 21275264, "angle": 0.023409125668329187, "pruning_info": null}
-{"epoch": 342, "train_acc": 0.8768066763877869, "val_acc": 0.7826, "test_acc": 0.8401, "flops": 21275264, "angle": 0.024183392901174557, "pruning_info": null}
-{"epoch": 343, "train_acc": 0.878279983997345, "val_acc": 0.7512, "test_acc": 0.8372, "flops": 21275264, "angle": 0.025117093684791657, "pruning_info": null}
-{"epoch": 344, "train_acc": 0.8786799907684326, "val_acc": 0.7396, "test_acc": 0.8341, "flops": 21275264, "angle": 0.025871212730703315, "pruning_info": null}
-{"epoch": 345, "train_acc": 0.8801733255386353, "val_acc": 0.777, "test_acc": 0.8371, "flops": 21275264, "angle": 0.026524239133005056, "pruning_info": "Pruned with structure=filter, new_val_acc=0.4262"}
-{"epoch": 346, "train_acc": 0.8452733159065247, "val_acc": 0.718, "test_acc": 0.8185, "flops": 19653248, "angle": 0.0, "pruning_info": null}
-{"epoch": 347, "train_acc": 0.8595600128173828, "val_acc": 0.7526, "test_acc": 0.8247, "flops": 19653248, "angle": 0.006090341758881168, "pruning_info": null}
-{"epoch": 348, "train_acc": 0.864080011844635, "val_acc": 0.7432, "test_acc": 0.8238, "flops": 19653248, "angle": 0.011608421003962494, "pruning_info": null}
-{"epoch": 349, "train_acc": 0.866266667842865, "val_acc": 0.7638, "test_acc": 0.836, "flops": 19653248, "angle": 0.017017204910655986, "pruning_info": null}
-{"epoch": 350, "train_acc": 0.8692533373832703, "val_acc": 0.7632, "test_acc": 0.833, "flops": 19653248, "angle": 0.022373434593760812, "pruning_info": null}
-{"epoch": 351, "train_acc": 0.8703266382217407, "val_acc": 0.7484, "test_acc": 0.8253, "flops": 19653248, "angle": 0.021997289273489224, "pruning_info": null}
-{"epoch": 352, "train_acc": 0.8710600137710571, "val_acc": 0.763, "test_acc": 0.8265, "flops": 19653248, "angle": 0.02216858403935866, "pruning_info": null}
-{"epoch": 353, "train_acc": 0.873520016670227, "val_acc": 0.756, "test_acc": 0.8275, "flops": 19653248, "angle": 0.022460411905253382, "pruning_info": null}
-{"epoch": 354, "train_acc": 0.8744133114814758, "val_acc": 0.7798, "test_acc": 0.8349, "flops": 19653248, "angle": 0.02275561127689748, "pruning_info": null}
-{"epoch": 355, "train_acc": 0.8758933544158936, "val_acc": 0.7698, "test_acc": 0.8346, "flops": 19653248, "angle": 0.023152865908556256, "pruning_info": null}
-{"epoch": 356, "train_acc": 0.8773599863052368, "val_acc": 0.7624, "test_acc": 0.8365, "flops": 19653248, "angle": 0.023680719620039505, "pruning_info": null}
-{"epoch": 357, "train_acc": 0.8779066801071167, "val_acc": 0.7904, "test_acc": 0.837, "flops": 19653248, "angle": 0.024236857900667676, "pruning_info": null}
-{"epoch": 358, "train_acc": 0.8778799772262573, "val_acc": 0.7558, "test_acc": 0.834, "flops": 19653248, "angle": 0.02461311860910717, "pruning_info": null}
-{"epoch": 359, "train_acc": 0.8791666626930237, "val_acc": 0.7504, "test_acc": 0.8347, "flops": 19653248, "angle": 0.02507684810516839, "pruning_info": null}
-{"epoch": 360, "train_acc": 0.8801933526992798, "val_acc": 0.7722, "test_acc": 0.8419, "flops": 19653248, "angle": 0.025763339754467488, "pruning_info": null}
-{"epoch": 361, "train_acc": 0.8809800148010254, "val_acc": 0.7688, "test_acc": 0.8387, "flops": 19653248, "angle": 0.02652892997978809, "pruning_info": null}
-{"epoch": 362, "train_acc": 0.8811600208282471, "val_acc": 0.7554, "test_acc": 0.8348, "flops": 19653248, "angle": 0.027397392165048023, "pruning_info": null}
-{"epoch": 363, "train_acc": 0.8840199708938599, "val_acc": 0.7672, "test_acc": 0.8363, "flops": 19653248, "angle": 0.027887866330094095, "pruning_info": null}
-{"epoch": 364, "train_acc": 0.883953332901001, "val_acc": 0.743, "test_acc": 0.8298, "flops": 19653248, "angle": 0.028446897698147778, "pruning_info": "Pruned with structure=filter, new_val_acc=0.4684"}
-{"epoch": 365, "train_acc": 0.8421599864959717, "val_acc": 0.7182, "test_acc": 0.7907, "flops": 18031232, "angle": 0.0, "pruning_info": null}
-{"epoch": 366, "train_acc": 0.860313355922699, "val_acc": 0.761, "test_acc": 0.8228, "flops": 18031232, "angle": 0.007815866133948548, "pruning_info": null}
-{"epoch": 367, "train_acc": 0.8636733293533325, "val_acc": 0.7458, "test_acc": 0.8219, "flops": 18031232, "angle": 0.015109902361640325, "pruning_info": null}
-{"epoch": 368, "train_acc": 0.8677133321762085, "val_acc": 0.7498, "test_acc": 0.8253, "flops": 18031232, "angle": 0.021562104003099103, "pruning_info": null}
-{"epoch": 369, "train_acc": 0.8687599897384644, "val_acc": 0.749, "test_acc": 0.8329, "flops": 18031232, "angle": 0.027993599155513953, "pruning_info": null}
-{"epoch": 370, "train_acc": 0.8710333108901978, "val_acc": 0.7726, "test_acc": 0.8342, "flops": 18031232, "angle": 0.02641557587917356, "pruning_info": null}
-{"epoch": 371, "train_acc": 0.8734466433525085, "val_acc": 0.7576, "test_acc": 0.8286, "flops": 18031232, "angle": 0.025431364079405192, "pruning_info": null}
-{"epoch": 372, "train_acc": 0.8735399842262268, "val_acc": 0.7734, "test_acc": 0.838, "flops": 18031232, "angle": 0.025501053588906048, "pruning_info": null}
-{"epoch": 373, "train_acc": 0.8757133483886719, "val_acc": 0.7388, "test_acc": 0.8255, "flops": 18031232, "angle": 0.025605336437596674, "pruning_info": null}
-{"epoch": 374, "train_acc": 0.8770933151245117, "val_acc": 0.7876, "test_acc": 0.8427, "flops": 18031232, "angle": 0.026362435792615043, "pruning_info": null}
-{"epoch": 375, "train_acc": 0.8783000111579895, "val_acc": 0.7704, "test_acc": 0.8364, "flops": 18031232, "angle": 0.027243414265059152, "pruning_info": null}
-{"epoch": 376, "train_acc": 0.8794800043106079, "val_acc": 0.7704, "test_acc": 0.8389, "flops": 18031232, "angle": 0.027804604390297163, "pruning_info": null}
-{"epoch": 377, "train_acc": 0.8792266845703125, "val_acc": 0.7738, "test_acc": 0.836, "flops": 18031232, "angle": 0.028687979650913294, "pruning_info": null}
-{"epoch": 378, "train_acc": 0.8809666633605957, "val_acc": 0.771, "test_acc": 0.8369, "flops": 18031232, "angle": 0.028912394585215412, "pruning_info": null}
-{"epoch": 379, "train_acc": 0.8813333511352539, "val_acc": 0.7862, "test_acc": 0.839, "flops": 18031232, "angle": 0.029076099463340596, "pruning_info": null}
-{"epoch": 380, "train_acc": 0.8829399943351746, "val_acc": 0.7664, "test_acc": 0.8383, "flops": 18031232, "angle": 0.02937596392173574, "pruning_info": null}
-{"epoch": 381, "train_acc": 0.8831400275230408, "val_acc": 0.7932, "test_acc": 0.8379, "flops": 18031232, "angle": 0.02958291575481973, "pruning_info": null}
-{"epoch": 382, "train_acc": 0.8843066692352295, "val_acc": 0.796, "test_acc": 0.8271, "flops": 18031232, "angle": 0.030132932678775478, "pruning_info": null}
-{"epoch": 383, "train_acc": 0.8845466375350952, "val_acc": 0.7808, "test_acc": 0.8305, "flops": 18031232, "angle": 0.03072816009679639, "pruning_info": "Pruned with structure=filter, new_val_acc=0.1272"}
-{"epoch": 384, "train_acc": 0.8376266956329346, "val_acc": 0.7256, "test_acc": 0.8131, "flops": 16538240, "angle": 0.0, "pruning_info": null}
-{"epoch": 385, "train_acc": 0.8569333553314209, "val_acc": 0.752, "test_acc": 0.8239, "flops": 16538240, "angle": 0.010206352061211718, "pruning_info": null}
-{"epoch": 386, "train_acc": 0.8616533279418945, "val_acc": 0.7762, "test_acc": 0.8226, "flops": 16538240, "angle": 0.01986995428953823, "pruning_info": null}
-{"epoch": 387, "train_acc": 0.8667133450508118, "val_acc": 0.7436, "test_acc": 0.8267, "flops": 16538240, "angle": 0.02850394681294096, "pruning_info": null}
-{"epoch": 388, "train_acc": 0.8686333298683167, "val_acc": 0.752, "test_acc": 0.83, "flops": 16538240, "angle": 0.036389845884343554, "pruning_info": null}
-{"epoch": 389, "train_acc": 0.8706799745559692, "val_acc": 0.769, "test_acc": 0.8272, "flops": 16538240, "angle": 0.034313405676817024, "pruning_info": null}
-{"epoch": 390, "train_acc": 0.8735533356666565, "val_acc": 0.7498, "test_acc": 0.8276, "flops": 16538240, "angle": 0.03287062314350115, "pruning_info": null}
-{"epoch": 391, "train_acc": 0.8729599714279175, "val_acc": 0.786, "test_acc": 0.8328, "flops": 16538240, "angle": 0.03256815145556893, "pruning_info": null}
-{"epoch": 392, "train_acc": 0.8757333159446716, "val_acc": 0.789, "test_acc": 0.828, "flops": 16538240, "angle": 0.03265669691695455, "pruning_info": null}
-{"epoch": 393, "train_acc": 0.8764600157737732, "val_acc": 0.7644, "test_acc": 0.8362, "flops": 16538240, "angle": 0.0327978606780212, "pruning_info": null}
-{"epoch": 394, "train_acc": 0.8764866590499878, "val_acc": 0.7818, "test_acc": 0.8314, "flops": 16538240, "angle": 0.03339662091015952, "pruning_info": null}
-{"epoch": 395, "train_acc": 0.8782733082771301, "val_acc": 0.767, "test_acc": 0.8297, "flops": 16538240, "angle": 0.033495625387760214, "pruning_info": null}
-{"epoch": 396, "train_acc": 0.8792666792869568, "val_acc": 0.7766, "test_acc": 0.834, "flops": 16538240, "angle": 0.03360242948834737, "pruning_info": null}
-{"epoch": 397, "train_acc": 0.8809733390808105, "val_acc": 0.7682, "test_acc": 0.8343, "flops": 16538240, "angle": 0.03374085658336127, "pruning_info": null}
-{"epoch": 398, "train_acc": 0.8823466897010803, "val_acc": 0.7778, "test_acc": 0.8362, "flops": 16538240, "angle": 0.03388747165905588, "pruning_info": null}
-{"epoch": 399, "train_acc": 0.8824466466903687, "val_acc": 0.7646, "test_acc": 0.8321, "flops": 16538240, "angle": 0.034630872094301095, "pruning_info": null}
-{"epoch": 400, "train_acc": 0.8838000297546387, "val_acc": 0.771, "test_acc": 0.8367, "flops": 16538240, "angle": 0.03531979267116135, "pruning_info": null}
-{"epoch": 401, "train_acc": 0.884713351726532, "val_acc": 0.7922, "test_acc": 0.8392, "flops": 16538240, "angle": 0.035924375582176475, "pruning_info": null}
-{"epoch": 402, "train_acc": 0.8850133419036865, "val_acc": 0.7406, "test_acc": 0.8303, "flops": 16538240, "angle": 0.036800523354998754, "pruning_info": "Pruned with structure=filter, new_val_acc=0.2368"}
-{"epoch": 403, "train_acc": 0.8344133496284485, "val_acc": 0.7128, "test_acc": 0.7997, "flops": 15045248, "angle": 0.0, "pruning_info": null}
-{"epoch": 404, "train_acc": 0.8560866713523865, "val_acc": 0.7318, "test_acc": 0.8133, "flops": 15045248, "angle": 0.011984524418268444, "pruning_info": null}
-{"epoch": 405, "train_acc": 0.8603866696357727, "val_acc": 0.742, "test_acc": 0.8219, "flops": 15045248, "angle": 0.02239184411948777, "pruning_info": null}
-{"epoch": 406, "train_acc": 0.8650866746902466, "val_acc": 0.776, "test_acc": 0.8246, "flops": 15045248, "angle": 0.032703359531525866, "pruning_info": null}
-{"epoch": 407, "train_acc": 0.8674933314323425, "val_acc": 0.7476, "test_acc": 0.828, "flops": 15045248, "angle": 0.04238751262270768, "pruning_info": null}
-{"epoch": 408, "train_acc": 0.869046688079834, "val_acc": 0.7758, "test_acc": 0.8308, "flops": 15045248, "angle": 0.040336213162833576, "pruning_info": null}
-{"epoch": 409, "train_acc": 0.8708400130271912, "val_acc": 0.736, "test_acc": 0.8171, "flops": 15045248, "angle": 0.03898615511316699, "pruning_info": null}
-{"epoch": 410, "train_acc": 0.8727800250053406, "val_acc": 0.7872, "test_acc": 0.8275, "flops": 15045248, "angle": 0.03833588471632665, "pruning_info": null}
-{"epoch": 411, "train_acc": 0.8745266795158386, "val_acc": 0.7526, "test_acc": 0.8273, "flops": 15045248, "angle": 0.038643728017766235, "pruning_info": null}
-{"epoch": 412, "train_acc": 0.8762066960334778, "val_acc": 0.7592, "test_acc": 0.8286, "flops": 15045248, "angle": 0.03906002869817016, "pruning_info": null}
-{"epoch": 413, "train_acc": 0.8765733242034912, "val_acc": 0.7308, "test_acc": 0.8163, "flops": 15045248, "angle": 0.03956233521179369, "pruning_info": null}
-{"epoch": 414, "train_acc": 0.8784133195877075, "val_acc": 0.7688, "test_acc": 0.8305, "flops": 15045248, "angle": 0.039359056880260535, "pruning_info": null}
-{"epoch": 415, "train_acc": 0.8787266612052917, "val_acc": 0.782, "test_acc": 0.8336, "flops": 15045248, "angle": 0.0396822513080573, "pruning_info": null}
-{"epoch": 416, "train_acc": 0.879859983921051, "val_acc": 0.7484, "test_acc": 0.8298, "flops": 15045248, "angle": 0.03990124402915663, "pruning_info": null}
-{"epoch": 417, "train_acc": 0.8806066513061523, "val_acc": 0.761, "test_acc": 0.834, "flops": 15045248, "angle": 0.040528151995903754, "pruning_info": null}
-{"epoch": 418, "train_acc": 0.8821333050727844, "val_acc": 0.7762, "test_acc": 0.8371, "flops": 15045248, "angle": 0.04107656882036381, "pruning_info": null}
-{"epoch": 419, "train_acc": 0.8829399943351746, "val_acc": 0.773, "test_acc": 0.8353, "flops": 15045248, "angle": 0.04153239395668031, "pruning_info": null}
-{"epoch": 420, "train_acc": 0.8823866844177246, "val_acc": 0.776, "test_acc": 0.8342, "flops": 15045248, "angle": 0.04210825856020916, "pruning_info": null}
-{"epoch": 421, "train_acc": 0.8846733570098877, "val_acc": 0.7792, "test_acc": 0.8404, "flops": 15045248, "angle": 0.04200861538140858, "pruning_info": "Pruned with structure=filter, new_val_acc=0.3978"}
-{"epoch": 422, "train_acc": 0.8368066549301147, "val_acc": 0.7392, "test_acc": 0.8025, "flops": 13810304, "angle": 0.0, "pruning_info": null}
-{"epoch": 423, "train_acc": 0.8562333583831787, "val_acc": 0.7364, "test_acc": 0.8056, "flops": 13810304, "angle": 0.012131009352520069, "pruning_info": null}
-{"epoch": 424, "train_acc": 0.8611800074577332, "val_acc": 0.711, "test_acc": 0.8106, "flops": 13810304, "angle": 0.0222672396039129, "pruning_info": null}
-{"epoch": 425, "train_acc": 0.8640933036804199, "val_acc": 0.7404, "test_acc": 0.8203, "flops": 13810304, "angle": 0.03212048082135814, "pruning_info": null}
-{"epoch": 426, "train_acc": 0.8670933246612549, "val_acc": 0.7378, "test_acc": 0.8205, "flops": 13810304, "angle": 0.04150462558981346, "pruning_info": null}
-{"epoch": 427, "train_acc": 0.8680800199508667, "val_acc": 0.781, "test_acc": 0.8245, "flops": 13810304, "angle": 0.03891624459578068, "pruning_info": null}
-{"epoch": 428, "train_acc": 0.8711000084877014, "val_acc": 0.7568, "test_acc": 0.8268, "flops": 13810304, "angle": 0.03809259536137961, "pruning_info": null}
-{"epoch": 429, "train_acc": 0.8725466728210449, "val_acc": 0.766, "test_acc": 0.8132, "flops": 13810304, "angle": 0.037439643227722016, "pruning_info": null}
-{"epoch": 430, "train_acc": 0.8736799955368042, "val_acc": 0.7492, "test_acc": 0.8323, "flops": 13810304, "angle": 0.0375933844208742, "pruning_info": null}
-{"epoch": 431, "train_acc": 0.8750200271606445, "val_acc": 0.7656, "test_acc": 0.8326, "flops": 13810304, "angle": 0.037829531817980544, "pruning_info": null}
-{"epoch": 432, "train_acc": 0.8745200037956238, "val_acc": 0.755, "test_acc": 0.8218, "flops": 13810304, "angle": 0.03804146466533402, "pruning_info": null}
-{"epoch": 433, "train_acc": 0.8758800029754639, "val_acc": 0.7698, "test_acc": 0.8358, "flops": 13810304, "angle": 0.038610658729262476, "pruning_info": null}
-{"epoch": 434, "train_acc": 0.8780333399772644, "val_acc": 0.7684, "test_acc": 0.8345, "flops": 13810304, "angle": 0.039073987560681936, "pruning_info": null}
-{"epoch": 435, "train_acc": 0.8795666694641113, "val_acc": 0.755, "test_acc": 0.8272, "flops": 13810304, "angle": 0.03959586090151133, "pruning_info": null}
-{"epoch": 436, "train_acc": 0.8800333142280579, "val_acc": 0.7728, "test_acc": 0.8375, "flops": 13810304, "angle": 0.040332131151485234, "pruning_info": null}
-{"epoch": 437, "train_acc": 0.8814066648483276, "val_acc": 0.7734, "test_acc": 0.8339, "flops": 13810304, "angle": 0.040675750459872075, "pruning_info": null}
-{"epoch": 438, "train_acc": 0.8813266754150391, "val_acc": 0.7796, "test_acc": 0.836, "flops": 13810304, "angle": 0.041260498336333065, "pruning_info": null}
-{"epoch": 439, "train_acc": 0.8826333284378052, "val_acc": 0.773, "test_acc": 0.8342, "flops": 13810304, "angle": 0.04189332157367381, "pruning_info": null}
-{"epoch": 440, "train_acc": 0.8836866617202759, "val_acc": 0.7656, "test_acc": 0.8333, "flops": 13810304, "angle": 0.04279700672856768, "pruning_info": "Pruned with structure=filter, new_val_acc=0.3748"}
-{"epoch": 441, "train_acc": 0.8411333560943604, "val_acc": 0.7458, "test_acc": 0.805, "flops": 12575360, "angle": 0.0, "pruning_info": null}
-{"epoch": 442, "train_acc": 0.8580266833305359, "val_acc": 0.7452, "test_acc": 0.8161, "flops": 12575360, "angle": 0.010689903730196511, "pruning_info": null}
-{"epoch": 443, "train_acc": 0.8598999977111816, "val_acc": 0.753, "test_acc": 0.8216, "flops": 12575360, "angle": 0.021055562514659138, "pruning_info": null}
-{"epoch": 444, "train_acc": 0.8646399974822998, "val_acc": 0.7732, "test_acc": 0.8054, "flops": 12575360, "angle": 0.03053176132973817, "pruning_info": null}
-{"epoch": 445, "train_acc": 0.866433322429657, "val_acc": 0.7642, "test_acc": 0.8284, "flops": 12575360, "angle": 0.03969437683132324, "pruning_info": null}
-{"epoch": 446, "train_acc": 0.8695533275604248, "val_acc": 0.723, "test_acc": 0.8147, "flops": 12575360, "angle": 0.03828858166402572, "pruning_info": null}
-{"epoch": 447, "train_acc": 0.8699399828910828, "val_acc": 0.7612, "test_acc": 0.8282, "flops": 12575360, "angle": 0.03788324047902415, "pruning_info": null}
-{"epoch": 448, "train_acc": 0.8719666600227356, "val_acc": 0.77, "test_acc": 0.8164, "flops": 12575360, "angle": 0.03804698427657813, "pruning_info": null}
-{"epoch": 449, "train_acc": 0.8721733093261719, "val_acc": 0.7674, "test_acc": 0.8224, "flops": 12575360, "angle": 0.03871981606795207, "pruning_info": null}
-{"epoch": 450, "train_acc": 0.8725266456604004, "val_acc": 0.7608, "test_acc": 0.8229, "flops": 12575360, "angle": 0.03898436252881139, "pruning_info": null}
-{"epoch": 451, "train_acc": 0.8750733137130737, "val_acc": 0.7574, "test_acc": 0.8292, "flops": 12575360, "angle": 0.03906543135214508, "pruning_info": null}
-{"epoch": 452, "train_acc": 0.8764466643333435, "val_acc": 0.7862, "test_acc": 0.8287, "flops": 12575360, "angle": 0.03958212628594817, "pruning_info": null}
-{"epoch": 453, "train_acc": 0.8772066831588745, "val_acc": 0.77, "test_acc": 0.8236, "flops": 12575360, "angle": 0.040895647622590646, "pruning_info": null}
-{"epoch": 454, "train_acc": 0.8779799938201904, "val_acc": 0.7766, "test_acc": 0.8237, "flops": 12575360, "angle": 0.04225177601098928, "pruning_info": null}
-{"epoch": 455, "train_acc": 0.8780666589736938, "val_acc": 0.7828, "test_acc": 0.8267, "flops": 12575360, "angle": 0.04324032674639433, "pruning_info": null}
-{"epoch": 456, "train_acc": 0.8801866769790649, "val_acc": 0.7466, "test_acc": 0.8283, "flops": 12575360, "angle": 0.043352099089335794, "pruning_info": null}
-{"epoch": 457, "train_acc": 0.8806599974632263, "val_acc": 0.7726, "test_acc": 0.8278, "flops": 12575360, "angle": 0.04306671022587186, "pruning_info": null}
-{"epoch": 458, "train_acc": 0.8822600245475769, "val_acc": 0.775, "test_acc": 0.8292, "flops": 12575360, "angle": 0.043910843975812415, "pruning_info": null}
-{"epoch": 459, "train_acc": 0.8817333579063416, "val_acc": 0.767, "test_acc": 0.824, "flops": 12575360, "angle": 0.04474439721532438, "pruning_info": "Pruned with structure=filter, new_val_acc=0.1970"}
-{"epoch": 460, "train_acc": 0.8148999810218811, "val_acc": 0.7574, "test_acc": 0.7849, "flops": 11469440, "angle": 0.0, "pruning_info": null}
-{"epoch": 461, "train_acc": 0.8465866446495056, "val_acc": 0.738, "test_acc": 0.8002, "flops": 11469440, "angle": 0.025207410790778106, "pruning_info": null}
-{"epoch": 462, "train_acc": 0.8540400266647339, "val_acc": 0.7346, "test_acc": 0.8074, "flops": 11469440, "angle": 0.045800694236805675, "pruning_info": null}
-{"epoch": 463, "train_acc": 0.8574933409690857, "val_acc": 0.7538, "test_acc": 0.8164, "flops": 11469440, "angle": 0.06406368308216513, "pruning_info": null}
-{"epoch": 464, "train_acc": 0.8599133491516113, "val_acc": 0.7676, "test_acc": 0.8254, "flops": 11469440, "angle": 0.08084637939383627, "pruning_info": null}
-{"epoch": 465, "train_acc": 0.8624533414840698, "val_acc": 0.7676, "test_acc": 0.823, "flops": 11469440, "angle": 0.07176825447299755, "pruning_info": null}
-{"epoch": 466, "train_acc": 0.8646000027656555, "val_acc": 0.7684, "test_acc": 0.8238, "flops": 11469440, "angle": 0.067066559624194, "pruning_info": null}
-{"epoch": 467, "train_acc": 0.8660533428192139, "val_acc": 0.7698, "test_acc": 0.8233, "flops": 11469440, "angle": 0.06488226502889473, "pruning_info": null}
-{"epoch": 468, "train_acc": 0.8678600192070007, "val_acc": 0.7488, "test_acc": 0.8207, "flops": 11469440, "angle": 0.06452037171789467, "pruning_info": null}
-{"epoch": 469, "train_acc": 0.8693533539772034, "val_acc": 0.7724, "test_acc": 0.826, "flops": 11469440, "angle": 0.06451096024435304, "pruning_info": null}
-{"epoch": 470, "train_acc": 0.8709800243377686, "val_acc": 0.7804, "test_acc": 0.8346, "flops": 11469440, "angle": 0.0630889503887492, "pruning_info": null}
-{"epoch": 471, "train_acc": 0.8728799819946289, "val_acc": 0.751, "test_acc": 0.8183, "flops": 11469440, "angle": 0.06181427872226545, "pruning_info": null}
-{"epoch": 472, "train_acc": 0.873906672000885, "val_acc": 0.7754, "test_acc": 0.8292, "flops": 11469440, "angle": 0.06094239278362655, "pruning_info": null}
-{"epoch": 473, "train_acc": 0.8745533227920532, "val_acc": 0.7694, "test_acc": 0.8324, "flops": 11469440, "angle": 0.061195435402119344, "pruning_info": null}
-{"epoch": 474, "train_acc": 0.8761133551597595, "val_acc": 0.7818, "test_acc": 0.8272, "flops": 11469440, "angle": 0.06079603039073513, "pruning_info": null}
-{"epoch": 475, "train_acc": 0.876966655254364, "val_acc": 0.7712, "test_acc": 0.8279, "flops": 11469440, "angle": 0.060509341823813526, "pruning_info": null}
-{"epoch": 476, "train_acc": 0.8770999908447266, "val_acc": 0.7706, "test_acc": 0.8297, "flops": 11469440, "angle": 0.060367819316716524, "pruning_info": null}
-{"epoch": 477, "train_acc": 0.878766655921936, "val_acc": 0.7726, "test_acc": 0.8263, "flops": 11469440, "angle": 0.05986330054812642, "pruning_info": null}
-{"epoch": 478, "train_acc": 0.8797133564949036, "val_acc": 0.7582, "test_acc": 0.832, "flops": 11469440, "angle": 0.060731449741759806, "pruning_info": null}
-{"epoch": 479, "train_acc": 0.8798999786376953, "val_acc": 0.791, "test_acc": 0.8327, "flops": 11469440, "angle": 0.06126105263999963, "pruning_info": null}
-{"epoch": 480, "train_acc": 0.8812866806983948, "val_acc": 0.7508, "test_acc": 0.8262, "flops": 11469440, "angle": 0.062443761371218855, "pruning_info": null}
-{"epoch": 481, "train_acc": 0.8806800246238708, "val_acc": 0.7478, "test_acc": 0.8301, "flops": 11469440, "angle": 0.06309232292953049, "pruning_info": null}
-{"epoch": 482, "train_acc": 0.8829066753387451, "val_acc": 0.7514, "test_acc": 0.831, "flops": 11469440, "angle": 0.06216596297654005, "pruning_info": null}
-{"epoch": 483, "train_acc": 0.8829933404922485, "val_acc": 0.7788, "test_acc": 0.8355, "flops": 11469440, "angle": 0.06285664623561973, "pruning_info": null}
-{"epoch": 484, "train_acc": 0.8834800124168396, "val_acc": 0.7784, "test_acc": 0.8293, "flops": 11469440, "angle": 0.06375839442395377, "pruning_info": null}
-{"epoch": 485, "train_acc": 0.8836733102798462, "val_acc": 0.74, "test_acc": 0.8263, "flops": 11469440, "angle": 0.06382483332296579, "pruning_info": null}
-{"epoch": 486, "train_acc": 0.8833933472633362, "val_acc": 0.7782, "test_acc": 0.8329, "flops": 11469440, "angle": 0.06332073187542211, "pruning_info": null}
-{"epoch": 487, "train_acc": 0.8853866457939148, "val_acc": 0.7538, "test_acc": 0.8182, "flops": 11469440, "angle": 0.06239415521824054, "pruning_info": null}
-{"epoch": 488, "train_acc": 0.8865866661071777, "val_acc": 0.7682, "test_acc": 0.8323, "flops": 11469440, "angle": 0.06345902202641919, "pruning_info": null}
-{"epoch": 489, "train_acc": 0.8860999941825867, "val_acc": 0.7786, "test_acc": 0.8343, "flops": 11469440, "angle": 0.06431203679860217, "pruning_info": null}
-{"epoch": 490, "train_acc": 0.8868333101272583, "val_acc": 0.773, "test_acc": 0.839, "flops": 11469440, "angle": 0.06386636898973261, "pruning_info": null}
-{"epoch": 491, "train_acc": 0.8880599737167358, "val_acc": 0.7662, "test_acc": 0.8412, "flops": 11469440, "angle": 0.06388676411619502, "pruning_info": null}
-{"epoch": 492, "train_acc": 0.8883399963378906, "val_acc": 0.7534, "test_acc": 0.8241, "flops": 11469440, "angle": 0.06394941194477692, "pruning_info": null}
-{"epoch": 493, "train_acc": 0.8882799744606018, "val_acc": 0.777, "test_acc": 0.8383, "flops": 11469440, "angle": 0.0648842819096833, "pruning_info": null}
-{"epoch": 494, "train_acc": 0.8890066742897034, "val_acc": 0.7718, "test_acc": 0.8331, "flops": 11469440, "angle": 0.06455308069862987, "pruning_info": null}
-{"epoch": 495, "train_acc": 0.8897333145141602, "val_acc": 0.7904, "test_acc": 0.8389, "flops": 11469440, "angle": 0.06370204442060717, "pruning_info": null}
-{"epoch": 496, "train_acc": 0.890126645565033, "val_acc": 0.7708, "test_acc": 0.8352, "flops": 11469440, "angle": 0.06428555229161356, "pruning_info": null}
-{"epoch": 497, "train_acc": 0.8902999758720398, "val_acc": 0.7826, "test_acc": 0.8391, "flops": 11469440, "angle": 0.06512604935375743, "pruning_info": null}
-{"epoch": 498, "train_acc": 0.8912333250045776, "val_acc": 0.7622, "test_acc": 0.8393, "flops": 11469440, "angle": 0.066855395169514, "pruning_info": null}
-{"epoch": 499, "train_acc": 0.891040027141571, "val_acc": 0.8132, "test_acc": 0.8403, "flops": 11469440, "angle": 0.06704355880151171, "pruning_info": null}
-{"epoch": 500, "train_acc": 0.8917999863624573, "val_acc": 0.771, "test_acc": 0.8309, "flops": 11469440, "angle": 0.06636690733986804, "pruning_info": null}
+{"epoch": 1, "train_acc": 0.527608335018158, "val_acc": 0.3932, "flops": 125747840, "angle": 0.0, "pruning_info": null}
+{"epoch": 2, "train_acc": 0.698158323764801, "val_acc": 0.6783, "flops": 125747840, "angle": 79.65188880015498, "pruning_info": null}
+{"epoch": 3, "train_acc": 0.7584750056266785, "val_acc": 0.6934, "flops": 125747840, "angle": 79.25281810289118, "pruning_info": null}
+{"epoch": 4, "train_acc": 0.7907666563987732, "val_acc": 0.7467, "flops": 125747840, "angle": 78.91054425147422, "pruning_info": null}
+{"epoch": 5, "train_acc": 0.815416693687439, "val_acc": 0.7717, "flops": 125747840, "angle": 78.62488246325711, "pruning_info": null}
+{"epoch": 6, "train_acc": 0.8314916491508484, "val_acc": 0.7642, "flops": 125747840, "angle": 78.38216223594311, "pruning_info": null}
+{"epoch": 7, "train_acc": 0.8453666567802429, "val_acc": 0.7767, "flops": 125747840, "angle": 78.20078673765566, "pruning_info": null}
+{"epoch": 8, "train_acc": 0.8552500009536743, "val_acc": 0.8404, "flops": 125747840, "angle": 78.06928778526922, "pruning_info": null}
+{"epoch": 9, "train_acc": 0.8648333549499512, "val_acc": 0.8056, "flops": 125747840, "angle": 77.96750442870321, "pruning_info": null}
+{"epoch": 10, "train_acc": 0.8738499879837036, "val_acc": 0.8057, "flops": 125747840, "angle": 77.87790548828309, "pruning_info": null}
+{"epoch": 11, "train_acc": 0.8804749846458435, "val_acc": 0.7964, "flops": 125747840, "angle": 77.8150330228207, "pruning_info": null}
+{"epoch": 12, "train_acc": 0.8865416646003723, "val_acc": 0.8064, "flops": 125747840, "angle": 77.76506173573397, "pruning_info": null}
+{"epoch": 13, "train_acc": 0.8917916417121887, "val_acc": 0.8555, "flops": 125747840, "angle": 77.71591232552014, "pruning_info": null}
+{"epoch": 14, "train_acc": 0.8968666791915894, "val_acc": 0.7703, "flops": 125747840, "angle": 77.68487387455713, "pruning_info": null}
+{"epoch": 15, "train_acc": 0.9019749760627747, "val_acc": 0.8104, "flops": 125747840, "angle": 77.65467513706051, "pruning_info": null}
+{"epoch": 16, "train_acc": 0.9061083197593689, "val_acc": 0.8232, "flops": 125747840, "angle": 77.62820539386726, "pruning_info": null}
+{"epoch": 17, "train_acc": 0.9119083285331726, "val_acc": 0.8194, "flops": 125747840, "angle": 77.59168276172105, "pruning_info": null}
+{"epoch": 18, "train_acc": 0.9149916768074036, "val_acc": 0.8116, "flops": 125747840, "angle": 77.56171261290567, "pruning_info": null}
+{"epoch": 19, "train_acc": 0.916991651058197, "val_acc": 0.8605, "flops": 125747840, "angle": 77.53514369730375, "pruning_info": null}
+{"epoch": 20, "train_acc": 0.920283317565918, "val_acc": 0.8538, "flops": 125747840, "angle": 77.50629581201548, "pruning_info": null}
+{"epoch": 21, "train_acc": 0.9226999878883362, "val_acc": 0.851, "flops": 125747840, "angle": 77.47814216236492, "pruning_info": null}
+{"epoch": 22, "train_acc": 0.9253416657447815, "val_acc": 0.8261, "flops": 125747840, "angle": 77.45130627870412, "pruning_info": null}
+{"epoch": 23, "train_acc": 0.9283166527748108, "val_acc": 0.8017, "flops": 125747840, "angle": 77.42178078733762, "pruning_info": null}
+{"epoch": 24, "train_acc": 0.9293166399002075, "val_acc": 0.8737, "flops": 125747840, "angle": 77.38975382759193, "pruning_info": null}
+{"epoch": 25, "train_acc": 0.9317499995231628, "val_acc": 0.8525, "flops": 125747840, "angle": 77.35469007239762, "pruning_info": null}
+{"epoch": 26, "train_acc": 0.9343000054359436, "val_acc": 0.8655, "flops": 125747840, "angle": 77.31300877331911, "pruning_info": null}
+{"epoch": 27, "train_acc": 0.9361916780471802, "val_acc": 0.8845, "flops": 125747840, "angle": 77.27000767520592, "pruning_info": null}
+{"epoch": 28, "train_acc": 0.9376833438873291, "val_acc": 0.8437, "flops": 125747840, "angle": 77.22281654802855, "pruning_info": null}
+{"epoch": 29, "train_acc": 0.9388833045959473, "val_acc": 0.8243, "flops": 125747840, "angle": 77.17277001269291, "pruning_info": null}
+{"epoch": 30, "train_acc": 0.9415249824523926, "val_acc": 0.8249, "flops": 125747840, "angle": 77.11644018172014, "pruning_info": null}
+{"epoch": 31, "train_acc": 0.9419999718666077, "val_acc": 0.8336, "flops": 125747840, "angle": 77.05632279290525, "pruning_info": null}
+{"epoch": 32, "train_acc": 0.9436166882514954, "val_acc": 0.8678, "flops": 125747840, "angle": 76.99167477938082, "pruning_info": null}
+{"epoch": 33, "train_acc": 0.9461166858673096, "val_acc": 0.8554, "flops": 125747840, "angle": 76.92370894677465, "pruning_info": null}
+{"epoch": 34, "train_acc": 0.9465833306312561, "val_acc": 0.8608, "flops": 125747840, "angle": 76.84953278350717, "pruning_info": null}
+{"epoch": 35, "train_acc": 0.9478166699409485, "val_acc": 0.8427, "flops": 125747840, "angle": 76.7727606652157, "pruning_info": null}
+{"epoch": 36, "train_acc": 0.9484166502952576, "val_acc": 0.8692, "flops": 125747840, "angle": 76.69440994376878, "pruning_info": null}
+{"epoch": 37, "train_acc": 0.9491750001907349, "val_acc": 0.8446, "flops": 125747840, "angle": 76.61283850607617, "pruning_info": null}
+{"epoch": 38, "train_acc": 0.95107501745224, "val_acc": 0.866, "flops": 125747840, "angle": 76.52730019647238, "pruning_info": null}
+{"epoch": 39, "train_acc": 0.9519583582878113, "val_acc": 0.8544, "flops": 125747840, "angle": 76.43915863662535, "pruning_info": null}
+{"epoch": 40, "train_acc": 0.9523000121116638, "val_acc": 0.8492, "flops": 125747840, "angle": 76.3483386316919, "pruning_info": null}
+{"epoch": 41, "train_acc": 0.9539416432380676, "val_acc": 0.8545, "flops": 125747840, "angle": 76.25440256275793, "pruning_info": null}
+{"epoch": 42, "train_acc": 0.9543583393096924, "val_acc": 0.8762, "flops": 125747840, "angle": 76.15546590763834, "pruning_info": null}
+{"epoch": 43, "train_acc": 0.9544583559036255, "val_acc": 0.8481, "flops": 125747840, "angle": 76.05443350967928, "pruning_info": null}
+{"epoch": 44, "train_acc": 0.9564999938011169, "val_acc": 0.8838, "flops": 125747840, "angle": 75.9498440814665, "pruning_info": null}
+{"epoch": 45, "train_acc": 0.9565416574478149, "val_acc": 0.8393, "flops": 125747840, "angle": 75.84149253480106, "pruning_info": null}
+{"epoch": 46, "train_acc": 0.9563416838645935, "val_acc": 0.8894, "flops": 125747840, "angle": 75.73088390489113, "pruning_info": null}
+{"epoch": 47, "train_acc": 0.958466649055481, "val_acc": 0.8475, "flops": 125747840, "angle": 75.61803386422218, "pruning_info": null}
+{"epoch": 48, "train_acc": 0.9582666754722595, "val_acc": 0.847, "flops": 125747840, "angle": 75.5036424102253, "pruning_info": null}
+{"epoch": 49, "train_acc": 0.9592000246047974, "val_acc": 0.8896, "flops": 125747840, "angle": 75.38661335947057, "pruning_info": null}
+{"epoch": 50, "train_acc": 0.9591583609580994, "val_acc": 0.8835, "flops": 125747840, "angle": 75.26741689577237, "pruning_info": null}
+{"epoch": 51, "train_acc": 0.960391640663147, "val_acc": 0.8637, "flops": 125747840, "angle": 75.14640150063943, "pruning_info": null}
+{"epoch": 52, "train_acc": 0.960266649723053, "val_acc": 0.8298, "flops": 125747840, "angle": 75.02220870801607, "pruning_info": null}
+{"epoch": 53, "train_acc": 0.9608666896820068, "val_acc": 0.8339, "flops": 125747840, "angle": 74.89644585097643, "pruning_info": null}
+{"epoch": 54, "train_acc": 0.9604499936103821, "val_acc": 0.8778, "flops": 125747840, "angle": 74.76882273932256, "pruning_info": "Pruned with structure=filter, new_val_acc=0.8357"}
+{"epoch": 55, "train_acc": 0.9469833374023438, "val_acc": 0.8627, "flops": 115997312, "angle": 0.0, "pruning_info": null}
+{"epoch": 56, "train_acc": 0.9506499767303467, "val_acc": 0.869, "flops": 115997312, "angle": 70.81059126486292, "pruning_info": null}
+{"epoch": 57, "train_acc": 0.9545666575431824, "val_acc": 0.8656, "flops": 115997312, "angle": 68.98297600717581, "pruning_info": null}
+{"epoch": 58, "train_acc": 0.9549583196640015, "val_acc": 0.8842, "flops": 115997312, "angle": 67.63365511985057, "pruning_info": null}
+{"epoch": 59, "train_acc": 0.9566583037376404, "val_acc": 0.8618, "flops": 115997312, "angle": 66.41060984237885, "pruning_info": null}
+{"epoch": 60, "train_acc": 0.9576833248138428, "val_acc": 0.8663, "flops": 115997312, "angle": 65.17486469897477, "pruning_info": null}
+{"epoch": 61, "train_acc": 0.9587083458900452, "val_acc": 0.8865, "flops": 115997312, "angle": 64.25329553830277, "pruning_info": null}
+{"epoch": 62, "train_acc": 0.9585999846458435, "val_acc": 0.8818, "flops": 115997312, "angle": 63.42861870844328, "pruning_info": null}
+{"epoch": 63, "train_acc": 0.9596750140190125, "val_acc": 0.8658, "flops": 115997312, "angle": 62.624270530282395, "pruning_info": null}
+{"epoch": 64, "train_acc": 0.960183322429657, "val_acc": 0.8687, "flops": 115997312, "angle": 61.956605429566885, "pruning_info": null}
+{"epoch": 65, "train_acc": 0.9610333442687988, "val_acc": 0.876, "flops": 115997312, "angle": 61.30535044675658, "pruning_info": null}
+{"epoch": 66, "train_acc": 0.9617666602134705, "val_acc": 0.8784, "flops": 115997312, "angle": 60.75373991522853, "pruning_info": null}
+{"epoch": 67, "train_acc": 0.9611166715621948, "val_acc": 0.8723, "flops": 115997312, "angle": 60.261504241483166, "pruning_info": null}
+{"epoch": 68, "train_acc": 0.9617416858673096, "val_acc": 0.8382, "flops": 115997312, "angle": 59.78032008363976, "pruning_info": null}
+{"epoch": 69, "train_acc": 0.9627666473388672, "val_acc": 0.8888, "flops": 115997312, "angle": 59.30450496008428, "pruning_info": null}
+{"epoch": 70, "train_acc": 0.9639166593551636, "val_acc": 0.8543, "flops": 115997312, "angle": 58.879225457717176, "pruning_info": null}
+{"epoch": 71, "train_acc": 0.9621583223342896, "val_acc": 0.8211, "flops": 115997312, "angle": 58.50714262857647, "pruning_info": null}
+{"epoch": 72, "train_acc": 0.9645916819572449, "val_acc": 0.8818, "flops": 115997312, "angle": 58.17758430960156, "pruning_info": null}
+{"epoch": 73, "train_acc": 0.9648916721343994, "val_acc": 0.8863, "flops": 115997312, "angle": 57.82578710100775, "pruning_info": null}
+{"epoch": 74, "train_acc": 0.9647666811943054, "val_acc": 0.8816, "flops": 115997312, "angle": 57.48508528489143, "pruning_info": null}
+{"epoch": 75, "train_acc": 0.963949978351593, "val_acc": 0.8687, "flops": 115997312, "angle": 57.198710114370186, "pruning_info": null}
+{"epoch": 76, "train_acc": 0.9662333130836487, "val_acc": 0.8638, "flops": 115997312, "angle": 56.90990773105778, "pruning_info": null}
+{"epoch": 77, "train_acc": 0.9649249911308289, "val_acc": 0.8593, "flops": 115997312, "angle": 56.64950135610991, "pruning_info": null}
+{"epoch": 78, "train_acc": 0.9660666584968567, "val_acc": 0.8855, "flops": 115997312, "angle": 56.39984895054801, "pruning_info": null}
+{"epoch": 79, "train_acc": 0.9665666818618774, "val_acc": 0.8615, "flops": 115997312, "angle": 56.18223496573985, "pruning_info": null}
+{"epoch": 80, "train_acc": 0.9663333296775818, "val_acc": 0.8806, "flops": 115997312, "angle": 55.9659764344321, "pruning_info": null}
+{"epoch": 81, "train_acc": 0.9675666689872742, "val_acc": 0.8801, "flops": 115997312, "angle": 55.766775759135186, "pruning_info": null}
+{"epoch": 82, "train_acc": 0.9679416418075562, "val_acc": 0.8519, "flops": 115997312, "angle": 55.580495505069266, "pruning_info": null}
+{"epoch": 83, "train_acc": 0.9669166803359985, "val_acc": 0.8793, "flops": 115997312, "angle": 55.398698622561035, "pruning_info": "Pruned with structure=layer, new_val_acc=0.8241"}
+{"epoch": 84, "train_acc": 0.9615083336830139, "val_acc": 0.8854, "flops": 107149952, "angle": 0.0, "pruning_info": null}
+{"epoch": 85, "train_acc": 0.9635249972343445, "val_acc": 0.8692, "flops": 107149952, "angle": 72.30811944887104, "pruning_info": null}
+{"epoch": 86, "train_acc": 0.963491678237915, "val_acc": 0.88, "flops": 107149952, "angle": 70.38616190670149, "pruning_info": null}
+{"epoch": 87, "train_acc": 0.9644583463668823, "val_acc": 0.891, "flops": 107149952, "angle": 69.22894700914891, "pruning_info": null}
+{"epoch": 88, "train_acc": 0.9656916856765747, "val_acc": 0.8856, "flops": 107149952, "angle": 67.90638303733614, "pruning_info": null}
+{"epoch": 89, "train_acc": 0.9663500189781189, "val_acc": 0.8583, "flops": 107149952, "angle": 66.576328513381, "pruning_info": null}
+{"epoch": 90, "train_acc": 0.9660500288009644, "val_acc": 0.8813, "flops": 107149952, "angle": 65.48952569805392, "pruning_info": null}
+{"epoch": 91, "train_acc": 0.9676166772842407, "val_acc": 0.8818, "flops": 107149952, "angle": 64.48634728928721, "pruning_info": null}
+{"epoch": 92, "train_acc": 0.96690833568573, "val_acc": 0.887, "flops": 107149952, "angle": 63.57950663970959, "pruning_info": null}
+{"epoch": 93, "train_acc": 0.9667666554450989, "val_acc": 0.8623, "flops": 107149952, "angle": 62.74411330666675, "pruning_info": null}
+{"epoch": 94, "train_acc": 0.9678750038146973, "val_acc": 0.8549, "flops": 107149952, "angle": 61.92184728384751, "pruning_info": null}
+{"epoch": 95, "train_acc": 0.9680083394050598, "val_acc": 0.8697, "flops": 107149952, "angle": 61.090051315874796, "pruning_info": null}
+{"epoch": 96, "train_acc": 0.9680749773979187, "val_acc": 0.8654, "flops": 107149952, "angle": 60.32967993712946, "pruning_info": null}
+{"epoch": 97, "train_acc": 0.9692749977111816, "val_acc": 0.8466, "flops": 107149952, "angle": 59.607467353863164, "pruning_info": null}
+{"epoch": 98, "train_acc": 0.9693250060081482, "val_acc": 0.8857, "flops": 107149952, "angle": 58.94339697512806, "pruning_info": null}
+{"epoch": 99, "train_acc": 0.968458354473114, "val_acc": 0.8427, "flops": 107149952, "angle": 58.33074096573669, "pruning_info": null}
+{"epoch": 100, "train_acc": 0.9856749773025513, "val_acc": 0.9149, "flops": 107149952, "angle": 57.289334420543355, "pruning_info": null}
+{"epoch": 101, "train_acc": 0.9917666912078857, "val_acc": 0.9186, "flops": 107149952, "angle": 55.99541478465641, "pruning_info": null}
+{"epoch": 102, "train_acc": 0.9934166669845581, "val_acc": 0.9199, "flops": 107149952, "angle": 54.534904321067216, "pruning_info": null}
+{"epoch": 103, "train_acc": 0.994391679763794, "val_acc": 0.9169, "flops": 107149952, "angle": 52.965682800530494, "pruning_info": null}
+{"epoch": 104, "train_acc": 0.9952083230018616, "val_acc": 0.9189, "flops": 107149952, "angle": 51.32381281334796, "pruning_info": null}
+{"epoch": 105, "train_acc": 0.9957500100135803, "val_acc": 0.9192, "flops": 107149952, "angle": 49.63706046792062, "pruning_info": null}
+{"epoch": 106, "train_acc": 0.9958833456039429, "val_acc": 0.918, "flops": 107149952, "angle": 47.930024518115104, "pruning_info": null}
+{"epoch": 107, "train_acc": 0.9962000250816345, "val_acc": 0.9177, "flops": 107149952, "angle": 46.21861719115148, "pruning_info": null}
+{"epoch": 108, "train_acc": 0.9965999722480774, "val_acc": 0.9202, "flops": 107149952, "angle": 44.51933073915884, "pruning_info": null}
+{"epoch": 109, "train_acc": 0.9966916441917419, "val_acc": 0.9195, "flops": 107149952, "angle": 42.84286890736765, "pruning_info": null}
+{"epoch": 110, "train_acc": 0.996874988079071, "val_acc": 0.9178, "flops": 107149952, "angle": 41.19812427079783, "pruning_info": null}
+{"epoch": 111, "train_acc": 0.9970166683197021, "val_acc": 0.9218, "flops": 107149952, "angle": 39.59339098780974, "pruning_info": null}
+{"epoch": 112, "train_acc": 0.9973416924476624, "val_acc": 0.9202, "flops": 107149952, "angle": 38.035358553097325, "pruning_info": "Pruned with structure=layer, new_val_acc=0.8830"}
+{"epoch": 113, "train_acc": 0.9687749743461609, "val_acc": 0.8867, "flops": 98376320, "angle": 0.0, "pruning_info": null}
+{"epoch": 114, "train_acc": 0.9639250040054321, "val_acc": 0.8561, "flops": 98376320, "angle": 74.53517404451947, "pruning_info": null}
+{"epoch": 115, "train_acc": 0.9631083607673645, "val_acc": 0.8862, "flops": 98376320, "angle": 73.44952576836093, "pruning_info": null}
+{"epoch": 116, "train_acc": 0.9624416828155518, "val_acc": 0.8761, "flops": 98376320, "angle": 72.07441230597927, "pruning_info": null}
+{"epoch": 117, "train_acc": 0.9633499979972839, "val_acc": 0.8848, "flops": 98376320, "angle": 70.78726503266026, "pruning_info": null}
+{"epoch": 118, "train_acc": 0.964775025844574, "val_acc": 0.8803, "flops": 98376320, "angle": 69.49967722594269, "pruning_info": null}
+{"epoch": 119, "train_acc": 0.9663083553314209, "val_acc": 0.8601, "flops": 98376320, "angle": 68.3608813287602, "pruning_info": null}
+{"epoch": 120, "train_acc": 0.9653750061988831, "val_acc": 0.8846, "flops": 98376320, "angle": 67.18795794413296, "pruning_info": null}
+{"epoch": 121, "train_acc": 0.9674999713897705, "val_acc": 0.8923, "flops": 98376320, "angle": 66.1213214368509, "pruning_info": null}
+{"epoch": 122, "train_acc": 0.9677249789237976, "val_acc": 0.8807, "flops": 98376320, "angle": 65.11750926319722, "pruning_info": null}
+{"epoch": 123, "train_acc": 0.984375, "val_acc": 0.9151, "flops": 98376320, "angle": 63.31625587940818, "pruning_info": null}
+{"epoch": 124, "train_acc": 0.991183340549469, "val_acc": 0.9186, "flops": 98376320, "angle": 61.09716054962776, "pruning_info": null}
+{"epoch": 125, "train_acc": 0.9928833246231079, "val_acc": 0.9229, "flops": 98376320, "angle": 58.62715788084801, "pruning_info": null}
+{"epoch": 126, "train_acc": 0.9939916729927063, "val_acc": 0.9222, "flops": 98376320, "angle": 56.00521943890852, "pruning_info": null}
+{"epoch": 127, "train_acc": 0.9942166805267334, "val_acc": 0.9207, "flops": 98376320, "angle": 53.302777919979384, "pruning_info": null}
+{"epoch": 128, "train_acc": 0.995199978351593, "val_acc": 0.922, "flops": 98376320, "angle": 50.575783260613875, "pruning_info": null}
+{"epoch": 129, "train_acc": 0.9956750273704529, "val_acc": 0.9219, "flops": 98376320, "angle": 47.867997575542965, "pruning_info": null}
+{"epoch": 130, "train_acc": 0.9957333207130432, "val_acc": 0.9216, "flops": 98376320, "angle": 45.20807442483895, "pruning_info": null}
+{"epoch": 131, "train_acc": 0.9960416555404663, "val_acc": 0.9219, "flops": 98376320, "angle": 42.6284113373393, "pruning_info": null}
+{"epoch": 132, "train_acc": 0.9964749813079834, "val_acc": 0.9212, "flops": 98376320, "angle": 40.150813434058385, "pruning_info": null}
+{"epoch": 133, "train_acc": 0.9963916540145874, "val_acc": 0.9229, "flops": 98376320, "angle": 37.78772423909707, "pruning_info": null}
+{"epoch": 134, "train_acc": 0.9970166683197021, "val_acc": 0.9243, "flops": 98376320, "angle": 35.544425733353, "pruning_info": null}
+{"epoch": 135, "train_acc": 0.9971250295639038, "val_acc": 0.9239, "flops": 98376320, "angle": 33.42829082818224, "pruning_info": null}
+{"epoch": 136, "train_acc": 0.9972083568572998, "val_acc": 0.9233, "flops": 98376320, "angle": 31.43942563062173, "pruning_info": null}
+{"epoch": 137, "train_acc": 0.9971333146095276, "val_acc": 0.9247, "flops": 98376320, "angle": 29.57807875999042, "pruning_info": null}
+{"epoch": 138, "train_acc": 0.996833324432373, "val_acc": 0.9253, "flops": 98376320, "angle": 27.84058300799691, "pruning_info": null}
+{"epoch": 139, "train_acc": 0.9975083470344543, "val_acc": 0.9222, "flops": 98376320, "angle": 26.21879958519765, "pruning_info": null}
+{"epoch": 140, "train_acc": 0.9973666667938232, "val_acc": 0.9217, "flops": 98376320, "angle": 24.711846969704578, "pruning_info": null}
+{"epoch": 141, "train_acc": 0.9976083040237427, "val_acc": 0.9238, "flops": 98376320, "angle": 23.310699232904426, "pruning_info": "Pruned with structure=layer, new_val_acc=0.8892"}
+{"epoch": 142, "train_acc": 0.9436249732971191, "val_acc": 0.8718, "flops": 89750144, "angle": 0.0, "pruning_info": null}
+{"epoch": 143, "train_acc": 0.9530583620071411, "val_acc": 0.8868, "flops": 89750144, "angle": 72.9535961493551, "pruning_info": null}
+{"epoch": 144, "train_acc": 0.9576249718666077, "val_acc": 0.8549, "flops": 89750144, "angle": 70.79491690853308, "pruning_info": null}
+{"epoch": 145, "train_acc": 0.9603416919708252, "val_acc": 0.8709, "flops": 89750144, "angle": 69.30500540178228, "pruning_info": null}
+{"epoch": 146, "train_acc": 0.9612833261489868, "val_acc": 0.8688, "flops": 89750144, "angle": 67.82913231196243, "pruning_info": null}
+{"epoch": 147, "train_acc": 0.9636250138282776, "val_acc": 0.8828, "flops": 89750144, "angle": 66.38005106488833, "pruning_info": null}
+{"epoch": 148, "train_acc": 0.9641583561897278, "val_acc": 0.8611, "flops": 89750144, "angle": 65.08774976067022, "pruning_info": null}
+{"epoch": 149, "train_acc": 0.9649166464805603, "val_acc": 0.866, "flops": 89750144, "angle": 63.91583467565949, "pruning_info": null}
+{"epoch": 150, "train_acc": 0.9639416933059692, "val_acc": 0.8745, "flops": 89750144, "angle": 62.892197735301956, "pruning_info": null}
+{"epoch": 151, "train_acc": 0.9657833576202393, "val_acc": 0.862, "flops": 89750144, "angle": 61.86824134128276, "pruning_info": null}
+{"epoch": 152, "train_acc": 0.9722166657447815, "val_acc": 0.912, "flops": 89750144, "angle": 60.08436309967477, "pruning_info": null}
+{"epoch": 153, "train_acc": 0.9811166524887085, "val_acc": 0.9142, "flops": 89750144, "angle": 57.88051059088115, "pruning_info": null}
+{"epoch": 154, "train_acc": 0.9839666485786438, "val_acc": 0.9155, "flops": 89750144, "angle": 55.435093577225544, "pruning_info": null}
+{"epoch": 155, "train_acc": 0.9856666922569275, "val_acc": 0.9158, "flops": 89750144, "angle": 52.85587593810417, "pruning_info": null}
+{"epoch": 156, "train_acc": 0.9870166778564453, "val_acc": 0.916, "flops": 89750144, "angle": 50.21746799239643, "pruning_info": null}
+{"epoch": 157, "train_acc": 0.9879083037376404, "val_acc": 0.917, "flops": 89750144, "angle": 47.57398764838422, "pruning_info": null}
+{"epoch": 158, "train_acc": 0.9881916642189026, "val_acc": 0.9188, "flops": 89750144, "angle": 44.96672882741893, "pruning_info": null}
+{"epoch": 159, "train_acc": 0.9886833429336548, "val_acc": 0.9191, "flops": 89750144, "angle": 42.42692501362727, "pruning_info": null}
+{"epoch": 160, "train_acc": 0.9891833066940308, "val_acc": 0.9191, "flops": 89750144, "angle": 39.97786420155736, "pruning_info": null}
+{"epoch": 161, "train_acc": 0.9892083406448364, "val_acc": 0.92, "flops": 89750144, "angle": 37.63570257298689, "pruning_info": null}
+{"epoch": 162, "train_acc": 0.9897833466529846, "val_acc": 0.9206, "flops": 89750144, "angle": 35.41082149592749, "pruning_info": null}
+{"epoch": 163, "train_acc": 0.9902166724205017, "val_acc": 0.92, "flops": 89750144, "angle": 33.30888019924482, "pruning_info": null}
+{"epoch": 164, "train_acc": 0.9910500049591064, "val_acc": 0.9202, "flops": 89750144, "angle": 31.331666299274314, "pruning_info": null}
+{"epoch": 165, "train_acc": 0.9906666874885559, "val_acc": 0.9205, "flops": 89750144, "angle": 29.477857675922177, "pruning_info": null}
+{"epoch": 166, "train_acc": 0.9910833239555359, "val_acc": 0.9208, "flops": 89750144, "angle": 27.744779281021806, "pruning_info": null}
+{"epoch": 167, "train_acc": 0.9914916753768921, "val_acc": 0.9209, "flops": 89750144, "angle": 26.12766716954632, "pruning_info": null}
+{"epoch": 168, "train_acc": 0.9910749793052673, "val_acc": 0.9211, "flops": 89750144, "angle": 24.62078719820224, "pruning_info": null}
+{"epoch": 169, "train_acc": 0.9914416670799255, "val_acc": 0.9214, "flops": 89750144, "angle": 23.21778945456267, "pruning_info": null}
+{"epoch": 170, "train_acc": 0.9916499853134155, "val_acc": 0.9213, "flops": 89750144, "angle": 21.912752614799135, "pruning_info": "Pruned with structure=layer, new_val_acc=0.8271"}
+{"epoch": 171, "train_acc": 0.9503250122070312, "val_acc": 0.8607, "flops": 80976512, "angle": 0.0, "pruning_info": null}
+{"epoch": 172, "train_acc": 0.9554666876792908, "val_acc": 0.8899, "flops": 80976512, "angle": 74.08926791009952, "pruning_info": null}
+{"epoch": 173, "train_acc": 0.9582333564758301, "val_acc": 0.879, "flops": 80976512, "angle": 72.13099881896768, "pruning_info": null}
+{"epoch": 174, "train_acc": 0.9604583382606506, "val_acc": 0.8733, "flops": 80976512, "angle": 70.75215302702729, "pruning_info": null}
+{"epoch": 175, "train_acc": 0.9606916904449463, "val_acc": 0.8832, "flops": 80976512, "angle": 69.59445221400375, "pruning_info": null}
+{"epoch": 176, "train_acc": 0.9613333344459534, "val_acc": 0.8694, "flops": 80976512, "angle": 68.43423485600898, "pruning_info": null}
+{"epoch": 177, "train_acc": 0.9617499709129333, "val_acc": 0.8428, "flops": 80976512, "angle": 67.30766136904498, "pruning_info": null}
+{"epoch": 178, "train_acc": 0.9640083312988281, "val_acc": 0.8671, "flops": 80976512, "angle": 66.19373567729414, "pruning_info": null}
+{"epoch": 179, "train_acc": 0.9643333554267883, "val_acc": 0.8943, "flops": 80976512, "angle": 65.05393402574953, "pruning_info": null}
+{"epoch": 180, "train_acc": 0.9643750190734863, "val_acc": 0.8843, "flops": 80976512, "angle": 64.05514811267199, "pruning_info": null}
+{"epoch": 181, "train_acc": 0.973716676235199, "val_acc": 0.9076, "flops": 80976512, "angle": 62.33909555819274, "pruning_info": null}
+{"epoch": 182, "train_acc": 0.980733335018158, "val_acc": 0.912, "flops": 80976512, "angle": 60.222714669076225, "pruning_info": null}
+{"epoch": 183, "train_acc": 0.9818833470344543, "val_acc": 0.9146, "flops": 80976512, "angle": 57.86610866538637, "pruning_info": null}
+{"epoch": 184, "train_acc": 0.9837833046913147, "val_acc": 0.9159, "flops": 80976512, "angle": 55.36677248188341, "pruning_info": null}
+{"epoch": 185, "train_acc": 0.9855916500091553, "val_acc": 0.9166, "flops": 80976512, "angle": 52.79247906688423, "pruning_info": null}
+{"epoch": 186, "train_acc": 0.9865416884422302, "val_acc": 0.9179, "flops": 80976512, "angle": 50.19393879492118, "pruning_info": null}
+{"epoch": 187, "train_acc": 0.9868416786193848, "val_acc": 0.917, "flops": 80976512, "angle": 47.61213748374746, "pruning_info": null}
+{"epoch": 188, "train_acc": 0.9873499870300293, "val_acc": 0.9182, "flops": 80976512, "angle": 45.07741724073806, "pruning_info": null}
+{"epoch": 189, "train_acc": 0.987666666507721, "val_acc": 0.9182, "flops": 80976512, "angle": 42.6143987034077, "pruning_info": null}
+{"epoch": 190, "train_acc": 0.9885416626930237, "val_acc": 0.9187, "flops": 80976512, "angle": 40.242301777554204, "pruning_info": null}
+{"epoch": 191, "train_acc": 0.9889083504676819, "val_acc": 0.92, "flops": 80976512, "angle": 37.97324298821002, "pruning_info": null}
+{"epoch": 192, "train_acc": 0.9891666769981384, "val_acc": 0.9194, "flops": 80976512, "angle": 35.81573301243715, "pruning_info": null}
+{"epoch": 193, "train_acc": 0.9891499876976013, "val_acc": 0.9185, "flops": 80976512, "angle": 33.774115134347355, "pruning_info": null}
+{"epoch": 194, "train_acc": 0.9896583557128906, "val_acc": 0.9195, "flops": 80976512, "angle": 31.85020925224498, "pruning_info": null}
+{"epoch": 195, "train_acc": 0.9898666739463806, "val_acc": 0.9197, "flops": 80976512, "angle": 30.04249133256414, "pruning_info": null}
+{"epoch": 196, "train_acc": 0.9901833534240723, "val_acc": 0.9208, "flops": 80976512, "angle": 28.348133818810783, "pruning_info": null}
+{"epoch": 197, "train_acc": 0.9906166791915894, "val_acc": 0.9201, "flops": 80976512, "angle": 26.762869259965676, "pruning_info": null}
+{"epoch": 198, "train_acc": 0.9904666543006897, "val_acc": 0.9209, "flops": 80976512, "angle": 25.281208566795993, "pruning_info": null}
+{"epoch": 199, "train_acc": 0.990933358669281, "val_acc": 0.9215, "flops": 80976512, "angle": 23.898539626936472, "pruning_info": "Pruned with structure=layer, new_val_acc=0.5303"}
+{"epoch": 200, "train_acc": 0.9430500268936157, "val_acc": 0.8262, "flops": 72202880, "angle": 0.0, "pruning_info": null}
+{"epoch": 201, "train_acc": 0.9503833055496216, "val_acc": 0.8701, "flops": 72202880, "angle": 77.02267861790105, "pruning_info": null}
+{"epoch": 202, "train_acc": 0.9533166885375977, "val_acc": 0.863, "flops": 72202880, "angle": 75.5281966361566, "pruning_info": null}
+{"epoch": 203, "train_acc": 0.9542166590690613, "val_acc": 0.8906, "flops": 72202880, "angle": 74.15359265431044, "pruning_info": null}
+{"epoch": 204, "train_acc": 0.9561916589736938, "val_acc": 0.8562, "flops": 72202880, "angle": 72.8863451946412, "pruning_info": null}
+{"epoch": 205, "train_acc": 0.9585000276565552, "val_acc": 0.8829, "flops": 72202880, "angle": 71.69514896850171, "pruning_info": null}
+{"epoch": 206, "train_acc": 0.9585000276565552, "val_acc": 0.8756, "flops": 72202880, "angle": 70.68385920645844, "pruning_info": null}
+{"epoch": 207, "train_acc": 0.9588500261306763, "val_acc": 0.8731, "flops": 72202880, "angle": 69.6897677277514, "pruning_info": null}
+{"epoch": 208, "train_acc": 0.9612249732017517, "val_acc": 0.8811, "flops": 72202880, "angle": 68.6739739792185, "pruning_info": null}
+{"epoch": 209, "train_acc": 0.9607083201408386, "val_acc": 0.8899, "flops": 72202880, "angle": 67.72033874483864, "pruning_info": null}
+{"epoch": 210, "train_acc": 0.9710416793823242, "val_acc": 0.9061, "flops": 72202880, "angle": 66.15266879676457, "pruning_info": null}
+{"epoch": 211, "train_acc": 0.9783583283424377, "val_acc": 0.9099, "flops": 72202880, "angle": 64.22309632185583, "pruning_info": null}
+{"epoch": 212, "train_acc": 0.9804750084877014, "val_acc": 0.9113, "flops": 72202880, "angle": 62.061262056382034, "pruning_info": null}
+{"epoch": 213, "train_acc": 0.9825916886329651, "val_acc": 0.913, "flops": 72202880, "angle": 59.746147135326396, "pruning_info": null}
+{"epoch": 214, "train_acc": 0.9827499985694885, "val_acc": 0.9122, "flops": 72202880, "angle": 57.33429441864764, "pruning_info": null}
+{"epoch": 215, "train_acc": 0.9844083189964294, "val_acc": 0.9129, "flops": 72202880, "angle": 54.869669277145626, "pruning_info": null}
+{"epoch": 216, "train_acc": 0.9856166839599609, "val_acc": 0.9129, "flops": 72202880, "angle": 52.38706275220361, "pruning_info": null}
+{"epoch": 217, "train_acc": 0.9857416749000549, "val_acc": 0.9136, "flops": 72202880, "angle": 49.91671628566702, "pruning_info": null}
+{"epoch": 218, "train_acc": 0.9857666492462158, "val_acc": 0.9146, "flops": 72202880, "angle": 47.483099910663654, "pruning_info": null}
+{"epoch": 219, "train_acc": 0.9867249727249146, "val_acc": 0.9145, "flops": 72202880, "angle": 45.10637712715276, "pruning_info": null}
+{"epoch": 220, "train_acc": 0.9876083135604858, "val_acc": 0.9161, "flops": 72202880, "angle": 42.8024026340418, "pruning_info": null}
+{"epoch": 221, "train_acc": 0.9878749847412109, "val_acc": 0.9159, "flops": 72202880, "angle": 40.583546771779424, "pruning_info": null}
+{"epoch": 222, "train_acc": 0.9872416853904724, "val_acc": 0.9164, "flops": 72202880, "angle": 38.458396898364335, "pruning_info": null}
+{"epoch": 223, "train_acc": 0.9878249764442444, "val_acc": 0.9164, "flops": 72202880, "angle": 36.4328838234476, "pruning_info": null}
+{"epoch": 224, "train_acc": 0.988016664981842, "val_acc": 0.9168, "flops": 72202880, "angle": 34.509116279232906, "pruning_info": null}
+{"epoch": 225, "train_acc": 0.9890666604042053, "val_acc": 0.9169, "flops": 72202880, "angle": 32.6884699190445, "pruning_info": null}
+{"epoch": 226, "train_acc": 0.9886666536331177, "val_acc": 0.9163, "flops": 72202880, "angle": 30.970081036749015, "pruning_info": null}
+{"epoch": 227, "train_acc": 0.9888250231742859, "val_acc": 0.9163, "flops": 72202880, "angle": 29.351309458319868, "pruning_info": null}
+{"epoch": 228, "train_acc": 0.9890750050544739, "val_acc": 0.9168, "flops": 72202880, "angle": 27.82887101514043, "pruning_info": "Pruned with structure=layer, new_val_acc=0.8405"}
+{"epoch": 229, "train_acc": 0.9487500190734863, "val_acc": 0.8279, "flops": 63502976, "angle": 0.0, "pruning_info": null}
+{"epoch": 230, "train_acc": 0.9544333219528198, "val_acc": 0.8734, "flops": 63502976, "angle": 74.05340618368363, "pruning_info": null}
+{"epoch": 231, "train_acc": 0.9574333429336548, "val_acc": 0.859, "flops": 63502976, "angle": 71.67875521504658, "pruning_info": null}
+{"epoch": 232, "train_acc": 0.958008348941803, "val_acc": 0.8893, "flops": 63502976, "angle": 70.19763374124022, "pruning_info": null}
+{"epoch": 233, "train_acc": 0.9602166414260864, "val_acc": 0.868, "flops": 63502976, "angle": 68.74429878514154, "pruning_info": null}
+{"epoch": 234, "train_acc": 0.9602166414260864, "val_acc": 0.856, "flops": 63502976, "angle": 67.58513803452026, "pruning_info": null}
+{"epoch": 235, "train_acc": 0.9602749943733215, "val_acc": 0.8908, "flops": 63502976, "angle": 66.37722519729856, "pruning_info": null}
+{"epoch": 236, "train_acc": 0.9616166949272156, "val_acc": 0.8928, "flops": 63502976, "angle": 65.31487317885174, "pruning_info": null}
+{"epoch": 237, "train_acc": 0.9627416729927063, "val_acc": 0.8776, "flops": 63502976, "angle": 64.34515800998841, "pruning_info": null}
+{"epoch": 238, "train_acc": 0.961899995803833, "val_acc": 0.882, "flops": 63502976, "angle": 63.38898088465778, "pruning_info": null}
+{"epoch": 239, "train_acc": 0.9712666869163513, "val_acc": 0.9073, "flops": 63502976, "angle": 61.68560209607255, "pruning_info": null}
+{"epoch": 240, "train_acc": 0.9792916774749756, "val_acc": 0.9104, "flops": 63502976, "angle": 59.56693482924087, "pruning_info": null}
+{"epoch": 241, "train_acc": 0.9812833070755005, "val_acc": 0.9115, "flops": 63502976, "angle": 57.2023826313136, "pruning_info": null}
+{"epoch": 242, "train_acc": 0.9829333424568176, "val_acc": 0.9127, "flops": 63502976, "angle": 54.69411246837559, "pruning_info": null}
+{"epoch": 243, "train_acc": 0.984541654586792, "val_acc": 0.9146, "flops": 63502976, "angle": 52.1125995295102, "pruning_info": null}
+{"epoch": 244, "train_acc": 0.9850249886512756, "val_acc": 0.9157, "flops": 63502976, "angle": 49.510419889735566, "pruning_info": null}
+{"epoch": 245, "train_acc": 0.9857166409492493, "val_acc": 0.9166, "flops": 63502976, "angle": 46.92934079522516, "pruning_info": null}
+{"epoch": 246, "train_acc": 0.9863166809082031, "val_acc": 0.9166, "flops": 63502976, "angle": 44.39985850818143, "pruning_info": null}
+{"epoch": 247, "train_acc": 0.9868416786193848, "val_acc": 0.917, "flops": 63502976, "angle": 41.94619123957936, "pruning_info": null}
+{"epoch": 248, "train_acc": 0.9873916506767273, "val_acc": 0.9168, "flops": 63502976, "angle": 39.58625918471813, "pruning_info": null}
+{"epoch": 249, "train_acc": 0.9878583550453186, "val_acc": 0.9172, "flops": 63502976, "angle": 37.33254594476068, "pruning_info": null}
+{"epoch": 250, "train_acc": 0.988141655921936, "val_acc": 0.917, "flops": 63502976, "angle": 35.19301263071463, "pruning_info": null}
+{"epoch": 251, "train_acc": 0.9877166748046875, "val_acc": 0.9179, "flops": 63502976, "angle": 33.170905978099555, "pruning_info": null}
+{"epoch": 252, "train_acc": 0.9884583353996277, "val_acc": 0.9172, "flops": 63502976, "angle": 31.26724761335354, "pruning_info": null}
+{"epoch": 253, "train_acc": 0.9888833165168762, "val_acc": 0.9171, "flops": 63502976, "angle": 29.480355805452632, "pruning_info": null}
+{"epoch": 254, "train_acc": 0.9891666769981384, "val_acc": 0.9183, "flops": 63502976, "angle": 27.807169214281927, "pruning_info": null}
+{"epoch": 255, "train_acc": 0.9896083474159241, "val_acc": 0.9182, "flops": 63502976, "angle": 26.24296818403577, "pruning_info": null}
+{"epoch": 256, "train_acc": 0.9895166754722595, "val_acc": 0.9182, "flops": 63502976, "angle": 24.782323850775946, "pruning_info": null}
+{"epoch": 257, "train_acc": 0.989674985408783, "val_acc": 0.9191, "flops": 63502976, "angle": 23.41944678869114, "pruning_info": "Pruned with structure=layer, new_val_acc=0.8177"}
+{"epoch": 258, "train_acc": 0.9318749904632568, "val_acc": 0.8681, "flops": 54729344, "angle": 0.0, "pruning_info": null}
+{"epoch": 259, "train_acc": 0.944308340549469, "val_acc": 0.8486, "flops": 54729344, "angle": 75.28777880488896, "pruning_info": null}
+{"epoch": 260, "train_acc": 0.9469000101089478, "val_acc": 0.8708, "flops": 54729344, "angle": 73.79008179788715, "pruning_info": null}
+{"epoch": 261, "train_acc": 0.9494749903678894, "val_acc": 0.8856, "flops": 54729344, "angle": 72.12858138879922, "pruning_info": null}
+{"epoch": 262, "train_acc": 0.950908362865448, "val_acc": 0.8796, "flops": 54729344, "angle": 70.60568382794524, "pruning_info": null}
+{"epoch": 263, "train_acc": 0.9541916847229004, "val_acc": 0.8699, "flops": 54729344, "angle": 69.35562358278338, "pruning_info": null}
+{"epoch": 264, "train_acc": 0.9543499946594238, "val_acc": 0.8841, "flops": 54729344, "angle": 68.28490276516469, "pruning_info": null}
+{"epoch": 265, "train_acc": 0.9555333256721497, "val_acc": 0.8744, "flops": 54729344, "angle": 67.26499946711209, "pruning_info": null}
+{"epoch": 266, "train_acc": 0.9574416875839233, "val_acc": 0.8695, "flops": 54729344, "angle": 66.32741967676921, "pruning_info": null}
+{"epoch": 267, "train_acc": 0.9566083550453186, "val_acc": 0.8437, "flops": 54729344, "angle": 65.40334128973637, "pruning_info": null}
+{"epoch": 268, "train_acc": 0.9651166796684265, "val_acc": 0.9046, "flops": 54729344, "angle": 63.78162426834373, "pruning_info": null}
+{"epoch": 269, "train_acc": 0.9748166799545288, "val_acc": 0.907, "flops": 54729344, "angle": 61.76008639509508, "pruning_info": null}
+{"epoch": 270, "train_acc": 0.9773833155632019, "val_acc": 0.909, "flops": 54729344, "angle": 59.49270125377644, "pruning_info": null}
+{"epoch": 271, "train_acc": 0.9784416556358337, "val_acc": 0.9108, "flops": 54729344, "angle": 57.071062718536105, "pruning_info": null}
+{"epoch": 272, "train_acc": 0.9803000092506409, "val_acc": 0.9104, "flops": 54729344, "angle": 54.561315621175645, "pruning_info": null}
+{"epoch": 273, "train_acc": 0.9803416728973389, "val_acc": 0.9114, "flops": 54729344, "angle": 52.01194173369789, "pruning_info": null}
+{"epoch": 274, "train_acc": 0.9819583296775818, "val_acc": 0.9125, "flops": 54729344, "angle": 49.46353719390141, "pruning_info": null}
+{"epoch": 275, "train_acc": 0.9829666614532471, "val_acc": 0.9129, "flops": 54729344, "angle": 46.94701834072671, "pruning_info": null}
+{"epoch": 276, "train_acc": 0.9830666780471802, "val_acc": 0.9136, "flops": 54729344, "angle": 44.48752694531018, "pruning_info": null}
+{"epoch": 277, "train_acc": 0.9841333627700806, "val_acc": 0.9136, "flops": 54729344, "angle": 42.105022039380266, "pruning_info": null}
+{"epoch": 278, "train_acc": 0.9838833212852478, "val_acc": 0.9142, "flops": 54729344, "angle": 39.81321348947263, "pruning_info": null}
+{"epoch": 279, "train_acc": 0.9847916960716248, "val_acc": 0.9135, "flops": 54729344, "angle": 37.623439417588976, "pruning_info": null}
+{"epoch": 280, "train_acc": 0.9846583604812622, "val_acc": 0.9146, "flops": 54729344, "angle": 35.541094304405476, "pruning_info": null}
+{"epoch": 281, "train_acc": 0.984749972820282, "val_acc": 0.9143, "flops": 54729344, "angle": 33.57030198349953, "pruning_info": null}
+{"epoch": 282, "train_acc": 0.98580002784729, "val_acc": 0.9154, "flops": 54729344, "angle": 31.711008511870656, "pruning_info": null}
+{"epoch": 283, "train_acc": 0.9858999848365784, "val_acc": 0.9154, "flops": 54729344, "angle": 29.96155555700171, "pruning_info": null}
+{"epoch": 284, "train_acc": 0.9858333468437195, "val_acc": 0.9151, "flops": 54729344, "angle": 28.319146370160958, "pruning_info": null}
+{"epoch": 285, "train_acc": 0.9864000082015991, "val_acc": 0.9168, "flops": 54729344, "angle": 26.77993422448262, "pruning_info": null}
+{"epoch": 286, "train_acc": 0.986591637134552, "val_acc": 0.9162, "flops": 54729344, "angle": 25.338911592785937, "pruning_info": "Pruned with structure=layer, new_val_acc=0.8513"}
+{"epoch": 287, "train_acc": 0.9433916807174683, "val_acc": 0.8647, "flops": 46176896, "angle": 0.0, "pruning_info": null}
+{"epoch": 288, "train_acc": 0.9496833086013794, "val_acc": 0.8636, "flops": 46176896, "angle": 72.39703320264444, "pruning_info": null}
+{"epoch": 289, "train_acc": 0.9517166614532471, "val_acc": 0.8549, "flops": 46176896, "angle": 70.3974359560705, "pruning_info": null}
+{"epoch": 290, "train_acc": 0.9528499841690063, "val_acc": 0.8744, "flops": 46176896, "angle": 68.77960942507134, "pruning_info": null}
+{"epoch": 291, "train_acc": 0.9545166492462158, "val_acc": 0.8699, "flops": 46176896, "angle": 67.27315573384206, "pruning_info": null}
+{"epoch": 292, "train_acc": 0.9554583430290222, "val_acc": 0.8676, "flops": 46176896, "angle": 65.89446410704113, "pruning_info": null}
+{"epoch": 293, "train_acc": 0.9555416703224182, "val_acc": 0.8804, "flops": 46176896, "angle": 65.02321637877637, "pruning_info": null}
+{"epoch": 294, "train_acc": 0.9559666514396667, "val_acc": 0.8654, "flops": 46176896, "angle": 64.00467668177684, "pruning_info": null}
+{"epoch": 295, "train_acc": 0.9578750133514404, "val_acc": 0.8641, "flops": 46176896, "angle": 63.040475376352, "pruning_info": null}
+{"epoch": 296, "train_acc": 0.9570666551589966, "val_acc": 0.8664, "flops": 46176896, "angle": 62.094733737108285, "pruning_info": null}
+{"epoch": 297, "train_acc": 0.9643333554267883, "val_acc": 0.9054, "flops": 46176896, "angle": 60.37004591035196, "pruning_info": null}
+{"epoch": 298, "train_acc": 0.9726999998092651, "val_acc": 0.9078, "flops": 46176896, "angle": 58.20995360531683, "pruning_info": null}
+{"epoch": 299, "train_acc": 0.9765250086784363, "val_acc": 0.9087, "flops": 46176896, "angle": 55.79824930757054, "pruning_info": null}
+{"epoch": 300, "train_acc": 0.9782249927520752, "val_acc": 0.9089, "flops": 46176896, "angle": 53.24483330828536, "pruning_info": null}
+{"epoch": 301, "train_acc": 0.9800666570663452, "val_acc": 0.9099, "flops": 46176896, "angle": 50.62491920669581, "pruning_info": null}
+{"epoch": 302, "train_acc": 0.9806249737739563, "val_acc": 0.9102, "flops": 46176896, "angle": 47.993834590539365, "pruning_info": null}
+{"epoch": 303, "train_acc": 0.9811416864395142, "val_acc": 0.9108, "flops": 46176896, "angle": 45.392761308915766, "pruning_info": null}
+{"epoch": 304, "train_acc": 0.9819416403770447, "val_acc": 0.9119, "flops": 46176896, "angle": 42.854152814665085, "pruning_info": null}
+{"epoch": 305, "train_acc": 0.982616662979126, "val_acc": 0.9121, "flops": 46176896, "angle": 40.401976592303534, "pruning_info": null}
+{"epoch": 306, "train_acc": 0.9835083484649658, "val_acc": 0.9124, "flops": 46176896, "angle": 38.05405518858944, "pruning_info": null}
+{"epoch": 307, "train_acc": 0.9835083484649658, "val_acc": 0.9126, "flops": 46176896, "angle": 35.8204168142689, "pruning_info": null}
+{"epoch": 308, "train_acc": 0.9844083189964294, "val_acc": 0.9128, "flops": 46176896, "angle": 33.70737351905075, "pruning_info": null}
+{"epoch": 309, "train_acc": 0.9845666885375977, "val_acc": 0.9142, "flops": 46176896, "angle": 31.717977151744336, "pruning_info": null}
+{"epoch": 310, "train_acc": 0.9846000075340271, "val_acc": 0.9142, "flops": 46176896, "angle": 29.850528161180563, "pruning_info": null}
+{"epoch": 311, "train_acc": 0.9847999811172485, "val_acc": 0.9137, "flops": 46176896, "angle": 28.102733393757408, "pruning_info": null}
+{"epoch": 312, "train_acc": 0.9853500127792358, "val_acc": 0.9143, "flops": 46176896, "angle": 26.470501047580317, "pruning_info": null}
+{"epoch": 313, "train_acc": 0.985883355140686, "val_acc": 0.9147, "flops": 46176896, "angle": 24.94859403763579, "pruning_info": null}
+{"epoch": 314, "train_acc": 0.9856500029563904, "val_acc": 0.9158, "flops": 46176896, "angle": 23.531242871931113, "pruning_info": null}
+{"epoch": 315, "train_acc": 0.9860833287239075, "val_acc": 0.9156, "flops": 46176896, "angle": 22.21206571337871, "pruning_info": "Pruned with structure=layer, new_val_acc=0.6435"}
+{"epoch": 316, "train_acc": 0.8768166899681091, "val_acc": 0.8132, "flops": 37476992, "angle": 0.0, "pruning_info": null}
+{"epoch": 317, "train_acc": 0.9046750068664551, "val_acc": 0.8386, "flops": 37476992, "angle": 78.22283056986934, "pruning_info": null}
+{"epoch": 318, "train_acc": 0.9129499793052673, "val_acc": 0.8107, "flops": 37476992, "angle": 76.76336238971835, "pruning_info": null}
+{"epoch": 319, "train_acc": 0.9188249707221985, "val_acc": 0.8606, "flops": 37476992, "angle": 75.5823393234028, "pruning_info": null}
+{"epoch": 320, "train_acc": 0.9219333529472351, "val_acc": 0.8336, "flops": 37476992, "angle": 74.62404917335498, "pruning_info": null}
+{"epoch": 321, "train_acc": 0.9252416491508484, "val_acc": 0.8249, "flops": 37476992, "angle": 73.68185200940137, "pruning_info": null}
+{"epoch": 322, "train_acc": 0.9272750020027161, "val_acc": 0.8674, "flops": 37476992, "angle": 72.82635931384651, "pruning_info": null}
+{"epoch": 323, "train_acc": 0.9296833276748657, "val_acc": 0.8618, "flops": 37476992, "angle": 71.98029854345863, "pruning_info": null}
+{"epoch": 324, "train_acc": 0.9304749965667725, "val_acc": 0.8174, "flops": 37476992, "angle": 71.16154666183085, "pruning_info": null}
+{"epoch": 325, "train_acc": 0.9327750205993652, "val_acc": 0.8826, "flops": 37476992, "angle": 70.38298941342985, "pruning_info": null}
+{"epoch": 326, "train_acc": 0.9447000026702881, "val_acc": 0.9014, "flops": 37476992, "angle": 69.02444655997685, "pruning_info": null}
+{"epoch": 327, "train_acc": 0.9539333581924438, "val_acc": 0.9034, "flops": 37476992, "angle": 67.3184189962137, "pruning_info": null}
+{"epoch": 328, "train_acc": 0.9567499756813049, "val_acc": 0.9055, "flops": 37476992, "angle": 65.38265283856624, "pruning_info": null}
+{"epoch": 329, "train_acc": 0.9580333232879639, "val_acc": 0.9057, "flops": 37476992, "angle": 63.28637022685129, "pruning_info": null}
+{"epoch": 330, "train_acc": 0.9591416716575623, "val_acc": 0.906, "flops": 37476992, "angle": 61.07756674479997, "pruning_info": null}
+{"epoch": 331, "train_acc": 0.9600083231925964, "val_acc": 0.9059, "flops": 37476992, "angle": 58.793648186810394, "pruning_info": null}
+{"epoch": 332, "train_acc": 0.9616166949272156, "val_acc": 0.9071, "flops": 37476992, "angle": 56.4658170712365, "pruning_info": null}
+{"epoch": 333, "train_acc": 0.9611666798591614, "val_acc": 0.9062, "flops": 37476992, "angle": 54.12099193099416, "pruning_info": null}
+{"epoch": 334, "train_acc": 0.9626666903495789, "val_acc": 0.9072, "flops": 37476992, "angle": 51.78277422143049, "pruning_info": null}
+{"epoch": 335, "train_acc": 0.9627666473388672, "val_acc": 0.9073, "flops": 37476992, "angle": 49.470275091145474, "pruning_info": null}
+{"epoch": 336, "train_acc": 0.9640583395957947, "val_acc": 0.908, "flops": 37476992, "angle": 47.20188626918914, "pruning_info": null}
+{"epoch": 337, "train_acc": 0.9637666940689087, "val_acc": 0.909, "flops": 37476992, "angle": 44.9911958865347, "pruning_info": null}
+{"epoch": 338, "train_acc": 0.9646166563034058, "val_acc": 0.9085, "flops": 37476992, "angle": 42.849469760280265, "pruning_info": null}
+{"epoch": 339, "train_acc": 0.9642249941825867, "val_acc": 0.9069, "flops": 37476992, "angle": 40.78552134726477, "pruning_info": null}
+{"epoch": 340, "train_acc": 0.9658916592597961, "val_acc": 0.9077, "flops": 37476992, "angle": 38.80517734003744, "pruning_info": null}
+{"epoch": 341, "train_acc": 0.9654666781425476, "val_acc": 0.9083, "flops": 37476992, "angle": 36.912593091248084, "pruning_info": null}
+{"epoch": 342, "train_acc": 0.9663333296775818, "val_acc": 0.9079, "flops": 37476992, "angle": 35.110287791889355, "pruning_info": null}
+{"epoch": 343, "train_acc": 0.9667916893959045, "val_acc": 0.9078, "flops": 37476992, "angle": 33.398946493541935, "pruning_info": null}
+{"epoch": 344, "train_acc": 0.9670833349227905, "val_acc": 0.9081, "flops": 37476992, "angle": 31.776418490356118, "pruning_info": "Pruned with structure=layer, new_val_acc=0.7069"}
+{"epoch": 345, "train_acc": 0.9041833281517029, "val_acc": 0.8208, "flops": 28924544, "angle": 0.0, "pruning_info": null}
+{"epoch": 346, "train_acc": 0.9151250123977661, "val_acc": 0.8397, "flops": 28924544, "angle": 73.25341399192115, "pruning_info": null}
+{"epoch": 347, "train_acc": 0.9187333583831787, "val_acc": 0.8545, "flops": 28924544, "angle": 71.40753888365785, "pruning_info": null}
+{"epoch": 348, "train_acc": 0.9211999773979187, "val_acc": 0.8547, "flops": 28924544, "angle": 69.90581029327171, "pruning_info": null}
+{"epoch": 349, "train_acc": 0.9236583113670349, "val_acc": 0.8547, "flops": 28924544, "angle": 68.57740363794795, "pruning_info": null}
+{"epoch": 350, "train_acc": 0.9262416958808899, "val_acc": 0.8509, "flops": 28924544, "angle": 67.35054353236087, "pruning_info": null}
+{"epoch": 351, "train_acc": 0.9269499778747559, "val_acc": 0.8354, "flops": 28924544, "angle": 66.26664804423473, "pruning_info": null}
+{"epoch": 352, "train_acc": 0.9276666641235352, "val_acc": 0.8652, "flops": 28924544, "angle": 65.49432189611089, "pruning_info": null}
+{"epoch": 353, "train_acc": 0.9299833178520203, "val_acc": 0.8753, "flops": 28924544, "angle": 64.54218954396582, "pruning_info": null}
+{"epoch": 354, "train_acc": 0.9306416511535645, "val_acc": 0.8713, "flops": 28924544, "angle": 63.734522116848055, "pruning_info": null}
+{"epoch": 355, "train_acc": 0.9401999711990356, "val_acc": 0.8904, "flops": 28924544, "angle": 62.13289764875053, "pruning_info": null}
+{"epoch": 356, "train_acc": 0.9515083432197571, "val_acc": 0.893, "flops": 28924544, "angle": 60.09180322763026, "pruning_info": null}
+{"epoch": 357, "train_acc": 0.9537916779518127, "val_acc": 0.8943, "flops": 28924544, "angle": 57.79016779004896, "pruning_info": null}
+{"epoch": 358, "train_acc": 0.9558166861534119, "val_acc": 0.8942, "flops": 28924544, "angle": 55.333117100998805, "pruning_info": null}
+{"epoch": 359, "train_acc": 0.9578750133514404, "val_acc": 0.8957, "flops": 28924544, "angle": 52.793609386285134, "pruning_info": null}
+{"epoch": 360, "train_acc": 0.9582666754722595, "val_acc": 0.8965, "flops": 28924544, "angle": 50.224804743692204, "pruning_info": null}
+{"epoch": 361, "train_acc": 0.9588083624839783, "val_acc": 0.8978, "flops": 28924544, "angle": 47.66690163543566, "pruning_info": null}
+{"epoch": 362, "train_acc": 0.9596583247184753, "val_acc": 0.897, "flops": 28924544, "angle": 45.15227444639509, "pruning_info": null}
+{"epoch": 363, "train_acc": 0.9596666693687439, "val_acc": 0.8986, "flops": 28924544, "angle": 42.70539441166186, "pruning_info": null}
+{"epoch": 364, "train_acc": 0.9606666564941406, "val_acc": 0.8992, "flops": 28924544, "angle": 40.345761606930715, "pruning_info": null}
+{"epoch": 365, "train_acc": 0.961691677570343, "val_acc": 0.9012, "flops": 28924544, "angle": 38.08663733616244, "pruning_info": null}
+{"epoch": 366, "train_acc": 0.9622833132743835, "val_acc": 0.901, "flops": 28924544, "angle": 35.937211598500994, "pruning_info": null}
+{"epoch": 367, "train_acc": 0.9631916880607605, "val_acc": 0.9022, "flops": 28924544, "angle": 33.90272491857916, "pruning_info": null}
+{"epoch": 368, "train_acc": 0.9623833298683167, "val_acc": 0.9018, "flops": 28924544, "angle": 31.98425852847498, "pruning_info": null}
+{"epoch": 369, "train_acc": 0.9630500078201294, "val_acc": 0.9022, "flops": 28924544, "angle": 30.180505682092495, "pruning_info": null}
+{"epoch": 370, "train_acc": 0.9631333351135254, "val_acc": 0.9021, "flops": 28924544, "angle": 28.489444160174216, "pruning_info": null}
+{"epoch": 371, "train_acc": 0.9635916948318481, "val_acc": 0.9034, "flops": 28924544, "angle": 26.905952833320264, "pruning_info": null}
+{"epoch": 372, "train_acc": 0.9639833569526672, "val_acc": 0.9031, "flops": 28924544, "angle": 25.425859627912953, "pruning_info": null}
+{"epoch": 373, "train_acc": 0.96506667137146, "val_acc": 0.9041, "flops": 28924544, "angle": 24.043860789603514, "pruning_info": "Pruned with structure=layer, new_val_acc=0.7273"}
+{"epoch": 374, "train_acc": 0.9057250022888184, "val_acc": 0.8509, "flops": 24648320, "angle": 0.0, "pruning_info": null}
+{"epoch": 375, "train_acc": 0.9142500162124634, "val_acc": 0.8529, "flops": 24648320, "angle": 70.44031402444571, "pruning_info": null}
+{"epoch": 376, "train_acc": 0.9197250008583069, "val_acc": 0.8595, "flops": 24648320, "angle": 68.77240325368625, "pruning_info": null}
+{"epoch": 377, "train_acc": 0.9209333062171936, "val_acc": 0.8493, "flops": 24648320, "angle": 67.17615021563991, "pruning_info": null}
+{"epoch": 378, "train_acc": 0.9243416786193848, "val_acc": 0.8739, "flops": 24648320, "angle": 65.24257408735986, "pruning_info": null}
+{"epoch": 379, "train_acc": 0.925083339214325, "val_acc": 0.8184, "flops": 24648320, "angle": 63.9919027014363, "pruning_info": null}
+{"epoch": 380, "train_acc": 0.9258666634559631, "val_acc": 0.8586, "flops": 24648320, "angle": 62.801428345509365, "pruning_info": null}
+{"epoch": 381, "train_acc": 0.9272500276565552, "val_acc": 0.8667, "flops": 24648320, "angle": 61.712856902071096, "pruning_info": null}
+{"epoch": 382, "train_acc": 0.9291750192642212, "val_acc": 0.8727, "flops": 24648320, "angle": 60.693383257295, "pruning_info": null}
+{"epoch": 383, "train_acc": 0.9293166399002075, "val_acc": 0.8499, "flops": 24648320, "angle": 59.815169203426585, "pruning_info": null}
+{"epoch": 384, "train_acc": 0.9378583431243896, "val_acc": 0.8877, "flops": 24648320, "angle": 58.054966670644696, "pruning_info": null}
+{"epoch": 385, "train_acc": 0.9486500024795532, "val_acc": 0.8924, "flops": 24648320, "angle": 55.83467989190522, "pruning_info": null}
+{"epoch": 386, "train_acc": 0.9516000151634216, "val_acc": 0.8942, "flops": 24648320, "angle": 53.360103877947054, "pruning_info": null}
+{"epoch": 387, "train_acc": 0.9541083574295044, "val_acc": 0.8961, "flops": 24648320, "angle": 50.753701299225206, "pruning_info": null}
+{"epoch": 388, "train_acc": 0.9547916650772095, "val_acc": 0.8969, "flops": 24648320, "angle": 48.095066151515425, "pruning_info": null}
+{"epoch": 389, "train_acc": 0.9556499719619751, "val_acc": 0.8984, "flops": 24648320, "angle": 45.443171008079155, "pruning_info": null}
+{"epoch": 390, "train_acc": 0.9575833082199097, "val_acc": 0.8977, "flops": 24648320, "angle": 42.84318145006263, "pruning_info": null}
+{"epoch": 391, "train_acc": 0.9584500193595886, "val_acc": 0.8991, "flops": 24648320, "angle": 40.32442573001085, "pruning_info": null}
+{"epoch": 392, "train_acc": 0.958133339881897, "val_acc": 0.8986, "flops": 24648320, "angle": 37.907891151324655, "pruning_info": null}
+{"epoch": 393, "train_acc": 0.9584583044052124, "val_acc": 0.8986, "flops": 24648320, "angle": 35.61029592528043, "pruning_info": null}
+{"epoch": 394, "train_acc": 0.9595666527748108, "val_acc": 0.899, "flops": 24648320, "angle": 33.439152642943434, "pruning_info": null}
+{"epoch": 395, "train_acc": 0.9589916467666626, "val_acc": 0.8998, "flops": 24648320, "angle": 31.39765390131565, "pruning_info": null}
+{"epoch": 396, "train_acc": 0.9606333374977112, "val_acc": 0.8998, "flops": 24648320, "angle": 29.48669431092615, "pruning_info": null}
+{"epoch": 397, "train_acc": 0.9607333540916443, "val_acc": 0.8988, "flops": 24648320, "angle": 27.702246984086806, "pruning_info": null}
+{"epoch": 398, "train_acc": 0.9613666534423828, "val_acc": 0.9, "flops": 24648320, "angle": 26.040552176747966, "pruning_info": null}
+{"epoch": 399, "train_acc": 0.9612083435058594, "val_acc": 0.8997, "flops": 24648320, "angle": 24.495701725419536, "pruning_info": null}
+{"epoch": 400, "train_acc": 0.962149977684021, "val_acc": 0.9006, "flops": 24648320, "angle": 23.060425134359214, "pruning_info": null}
+{"epoch": 401, "train_acc": 0.9617833495140076, "val_acc": 0.9005, "flops": 24648320, "angle": 21.727427201837784, "pruning_info": null}
+{"epoch": 402, "train_acc": 0.9623500108718872, "val_acc": 0.9003, "flops": 24648320, "angle": 20.49008191763938, "pruning_info": "Pruned with structure=filter, new_val_acc=0.7884"}
+{"epoch": 403, "train_acc": 0.913391649723053, "val_acc": 0.8548, "flops": 22897280, "angle": 0.0, "pruning_info": null}
+{"epoch": 404, "train_acc": 0.9172499775886536, "val_acc": 0.8574, "flops": 22897280, "angle": 66.8459556320892, "pruning_info": null}
+{"epoch": 405, "train_acc": 0.9218083620071411, "val_acc": 0.8508, "flops": 22897280, "angle": 64.11683750938859, "pruning_info": null}
+{"epoch": 406, "train_acc": 0.9227499961853027, "val_acc": 0.8562, "flops": 22897280, "angle": 62.410536585286444, "pruning_info": null}
+{"epoch": 407, "train_acc": 0.9239416718482971, "val_acc": 0.8628, "flops": 22897280, "angle": 60.69799080388807, "pruning_info": null}
+{"epoch": 408, "train_acc": 0.9248250126838684, "val_acc": 0.8631, "flops": 22897280, "angle": 59.28513986632997, "pruning_info": null}
+{"epoch": 409, "train_acc": 0.926925003528595, "val_acc": 0.8634, "flops": 22897280, "angle": 57.85436175672619, "pruning_info": null}
+{"epoch": 410, "train_acc": 0.9276166558265686, "val_acc": 0.874, "flops": 22897280, "angle": 56.500041107601156, "pruning_info": null}
+{"epoch": 411, "train_acc": 0.9280666708946228, "val_acc": 0.8629, "flops": 22897280, "angle": 55.43355119295028, "pruning_info": null}
+{"epoch": 412, "train_acc": 0.9293833374977112, "val_acc": 0.8326, "flops": 22897280, "angle": 54.341817076171345, "pruning_info": null}
+{"epoch": 413, "train_acc": 0.9379749894142151, "val_acc": 0.8934, "flops": 22897280, "angle": 52.35047545489028, "pruning_info": null}
+{"epoch": 414, "train_acc": 0.9476249814033508, "val_acc": 0.8945, "flops": 22897280, "angle": 49.91274349592794, "pruning_info": null}
+{"epoch": 415, "train_acc": 0.9495833516120911, "val_acc": 0.8969, "flops": 22897280, "angle": 47.25912420271161, "pruning_info": null}
+{"epoch": 416, "train_acc": 0.9535750150680542, "val_acc": 0.8981, "flops": 22897280, "angle": 44.52578389640966, "pruning_info": null}
+{"epoch": 417, "train_acc": 0.9537916779518127, "val_acc": 0.8983, "flops": 22897280, "angle": 41.80118966985773, "pruning_info": null}
+{"epoch": 418, "train_acc": 0.95496666431427, "val_acc": 0.8963, "flops": 22897280, "angle": 39.14389114371238, "pruning_info": null}
+{"epoch": 419, "train_acc": 0.956516683101654, "val_acc": 0.8979, "flops": 22897280, "angle": 36.58862966622692, "pruning_info": null}
+{"epoch": 420, "train_acc": 0.9574416875839233, "val_acc": 0.8982, "flops": 22897280, "angle": 34.16133324224909, "pruning_info": null}
+{"epoch": 421, "train_acc": 0.9577666521072388, "val_acc": 0.8994, "flops": 22897280, "angle": 31.87597096334264, "pruning_info": null}
+{"epoch": 422, "train_acc": 0.9589916467666626, "val_acc": 0.8994, "flops": 22897280, "angle": 29.73931758945805, "pruning_info": null}
+{"epoch": 423, "train_acc": 0.9594500064849854, "val_acc": 0.8988, "flops": 22897280, "angle": 27.751619097170803, "pruning_info": null}
+{"epoch": 424, "train_acc": 0.9593250155448914, "val_acc": 0.8993, "flops": 22897280, "angle": 25.908662524135124, "pruning_info": null}
+{"epoch": 425, "train_acc": 0.9603999853134155, "val_acc": 0.9006, "flops": 22897280, "angle": 24.20570006984703, "pruning_info": null}
+{"epoch": 426, "train_acc": 0.9603333473205566, "val_acc": 0.9001, "flops": 22897280, "angle": 22.634040796822955, "pruning_info": null}
+{"epoch": 427, "train_acc": 0.9603999853134155, "val_acc": 0.9008, "flops": 22897280, "angle": 21.18618178572466, "pruning_info": null}
+{"epoch": 428, "train_acc": 0.9614166617393494, "val_acc": 0.8999, "flops": 22897280, "angle": 19.851648732655974, "pruning_info": null}
+{"epoch": 429, "train_acc": 0.9605666399002075, "val_acc": 0.9005, "flops": 22897280, "angle": 18.621728361209676, "pruning_info": null}
+{"epoch": 430, "train_acc": 0.9620166420936584, "val_acc": 0.9002, "flops": 22897280, "angle": 17.48876517997211, "pruning_info": null}
+{"epoch": 431, "train_acc": 0.9624500274658203, "val_acc": 0.9006, "flops": 22897280, "angle": 16.444813106135573, "pruning_info": "Pruned with structure=filter, new_val_acc=0.7791"}
+{"epoch": 432, "train_acc": 0.9107249975204468, "val_acc": 0.8552, "flops": 21275264, "angle": 0.0, "pruning_info": null}
+{"epoch": 433, "train_acc": 0.9189500212669373, "val_acc": 0.8303, "flops": 21275264, "angle": 66.66542489520812, "pruning_info": null}
+{"epoch": 434, "train_acc": 0.9207749962806702, "val_acc": 0.8495, "flops": 21275264, "angle": 64.08342627901244, "pruning_info": null}
+{"epoch": 435, "train_acc": 0.9227749705314636, "val_acc": 0.85, "flops": 21275264, "angle": 62.32364966207446, "pruning_info": null}
+{"epoch": 436, "train_acc": 0.9232749938964844, "val_acc": 0.8637, "flops": 21275264, "angle": 60.73049179519635, "pruning_info": null}
+{"epoch": 437, "train_acc": 0.9253666400909424, "val_acc": 0.8499, "flops": 21275264, "angle": 59.32666751581537, "pruning_info": null}
+{"epoch": 438, "train_acc": 0.9252833127975464, "val_acc": 0.8629, "flops": 21275264, "angle": 58.128175601869216, "pruning_info": null}
+{"epoch": 439, "train_acc": 0.9269083142280579, "val_acc": 0.8793, "flops": 21275264, "angle": 56.90502122572596, "pruning_info": null}
+{"epoch": 440, "train_acc": 0.9279416799545288, "val_acc": 0.8467, "flops": 21275264, "angle": 55.664543002366514, "pruning_info": null}
+{"epoch": 441, "train_acc": 0.9281583428382874, "val_acc": 0.8719, "flops": 21275264, "angle": 54.416011653597614, "pruning_info": null}
+{"epoch": 442, "train_acc": 0.9364833235740662, "val_acc": 0.8863, "flops": 21275264, "angle": 52.32709463166523, "pruning_info": null}
+{"epoch": 443, "train_acc": 0.9466249942779541, "val_acc": 0.8903, "flops": 21275264, "angle": 49.81310389413772, "pruning_info": null}
+{"epoch": 444, "train_acc": 0.9498999714851379, "val_acc": 0.8918, "flops": 21275264, "angle": 47.10061924825388, "pruning_info": null}
+{"epoch": 445, "train_acc": 0.9527833461761475, "val_acc": 0.893, "flops": 21275264, "angle": 44.32095422449026, "pruning_info": null}
+{"epoch": 446, "train_acc": 0.9533166885375977, "val_acc": 0.893, "flops": 21275264, "angle": 41.55953998722377, "pruning_info": null}
+{"epoch": 447, "train_acc": 0.9556333422660828, "val_acc": 0.8949, "flops": 21275264, "angle": 38.872548953361004, "pruning_info": null}
+{"epoch": 448, "train_acc": 0.9557416439056396, "val_acc": 0.8955, "flops": 21275264, "angle": 36.29999677060945, "pruning_info": null}
+{"epoch": 449, "train_acc": 0.9563666582107544, "val_acc": 0.8955, "flops": 21275264, "angle": 33.862426331498746, "pruning_info": null}
+{"epoch": 450, "train_acc": 0.9573083519935608, "val_acc": 0.897, "flops": 21275264, "angle": 31.572068372784532, "pruning_info": null}
+{"epoch": 451, "train_acc": 0.9572250247001648, "val_acc": 0.897, "flops": 21275264, "angle": 29.43508412604343, "pruning_info": null}
+{"epoch": 452, "train_acc": 0.9578666687011719, "val_acc": 0.8974, "flops": 21275264, "angle": 27.451024885836347, "pruning_info": null}
+{"epoch": 453, "train_acc": 0.9581416845321655, "val_acc": 0.8983, "flops": 21275264, "angle": 25.614299313599748, "pruning_info": null}
+{"epoch": 454, "train_acc": 0.958091676235199, "val_acc": 0.8971, "flops": 21275264, "angle": 23.917596465473693, "pruning_info": null}
+{"epoch": 455, "train_acc": 0.9588750004768372, "val_acc": 0.8981, "flops": 21275264, "angle": 22.354095489026054, "pruning_info": null}
+{"epoch": 456, "train_acc": 0.9602749943733215, "val_acc": 0.8976, "flops": 21275264, "angle": 20.91491986454453, "pruning_info": null}
+{"epoch": 457, "train_acc": 0.9607833623886108, "val_acc": 0.8982, "flops": 21275264, "angle": 19.590682629962117, "pruning_info": null}
+{"epoch": 458, "train_acc": 0.9607833623886108, "val_acc": 0.8972, "flops": 21275264, "angle": 18.372122009472296, "pruning_info": null}
+{"epoch": 459, "train_acc": 0.961525022983551, "val_acc": 0.8976, "flops": 21275264, "angle": 17.24974162921209, "pruning_info": null}
+{"epoch": 460, "train_acc": 0.9610833525657654, "val_acc": 0.897, "flops": 21275264, "angle": 16.21527686681701, "pruning_info": "Pruned with structure=filter, new_val_acc=0.7606"}
+{"epoch": 461, "train_acc": 0.9103000164031982, "val_acc": 0.8396, "flops": 19653248, "angle": 0.0, "pruning_info": null}
+{"epoch": 462, "train_acc": 0.9166416525840759, "val_acc": 0.8325, "flops": 19653248, "angle": 67.40022736705312, "pruning_info": null}
+{"epoch": 463, "train_acc": 0.9195749759674072, "val_acc": 0.8483, "flops": 19653248, "angle": 64.31750768492545, "pruning_info": null}
+{"epoch": 464, "train_acc": 0.9205916523933411, "val_acc": 0.8629, "flops": 19653248, "angle": 62.37394040709073, "pruning_info": null}
+{"epoch": 465, "train_acc": 0.9223333597183228, "val_acc": 0.8642, "flops": 19653248, "angle": 60.2641644586327, "pruning_info": null}
+{"epoch": 466, "train_acc": 0.923966646194458, "val_acc": 0.8013, "flops": 19653248, "angle": 58.3771407742555, "pruning_info": null}
+{"epoch": 467, "train_acc": 0.9235583543777466, "val_acc": 0.8513, "flops": 19653248, "angle": 57.016505747720394, "pruning_info": null}
+{"epoch": 468, "train_acc": 0.9241750240325928, "val_acc": 0.8597, "flops": 19653248, "angle": 55.77497552114332, "pruning_info": null}
+{"epoch": 469, "train_acc": 0.9250916838645935, "val_acc": 0.8546, "flops": 19653248, "angle": 54.531137026027196, "pruning_info": null}
+{"epoch": 470, "train_acc": 0.9260166883468628, "val_acc": 0.8579, "flops": 19653248, "angle": 53.370480346417686, "pruning_info": null}
+{"epoch": 471, "train_acc": 0.9374750256538391, "val_acc": 0.8898, "flops": 19653248, "angle": 51.33743079980096, "pruning_info": null}
+{"epoch": 472, "train_acc": 0.944350004196167, "val_acc": 0.8903, "flops": 19653248, "angle": 48.86192700038066, "pruning_info": null}
+{"epoch": 473, "train_acc": 0.949358344078064, "val_acc": 0.8921, "flops": 19653248, "angle": 46.179451417563875, "pruning_info": null}
+{"epoch": 474, "train_acc": 0.9493416547775269, "val_acc": 0.8916, "flops": 19653248, "angle": 43.427851367712705, "pruning_info": null}
+{"epoch": 475, "train_acc": 0.9512749910354614, "val_acc": 0.892, "flops": 19653248, "angle": 40.69335945129471, "pruning_info": null}
+{"epoch": 476, "train_acc": 0.9523500204086304, "val_acc": 0.8935, "flops": 19653248, "angle": 38.03461896686434, "pruning_info": null}
+{"epoch": 477, "train_acc": 0.9531499743461609, "val_acc": 0.8915, "flops": 19653248, "angle": 35.48951843187134, "pruning_info": null}
+{"epoch": 478, "train_acc": 0.9538499712944031, "val_acc": 0.8932, "flops": 19653248, "angle": 33.081533889070776, "pruning_info": null}
+{"epoch": 479, "train_acc": 0.9548916816711426, "val_acc": 0.8931, "flops": 19653248, "angle": 30.81961035664567, "pruning_info": null}
+{"epoch": 480, "train_acc": 0.95496666431427, "val_acc": 0.8934, "flops": 19653248, "angle": 28.71154527774561, "pruning_info": null}
+{"epoch": 481, "train_acc": 0.9561916589736938, "val_acc": 0.8945, "flops": 19653248, "angle": 26.7556074497817, "pruning_info": null}
+{"epoch": 482, "train_acc": 0.9554166793823242, "val_acc": 0.8939, "flops": 19653248, "angle": 24.946934525394546, "pruning_info": null}
+{"epoch": 483, "train_acc": 0.9569249749183655, "val_acc": 0.8948, "flops": 19653248, "angle": 23.27889670300386, "pruning_info": null}
+{"epoch": 484, "train_acc": 0.9577249884605408, "val_acc": 0.8945, "flops": 19653248, "angle": 21.742556761219753, "pruning_info": null}
+{"epoch": 485, "train_acc": 0.9581500291824341, "val_acc": 0.8948, "flops": 19653248, "angle": 20.328718156723014, "pruning_info": null}
+{"epoch": 486, "train_acc": 0.9571833610534668, "val_acc": 0.8939, "flops": 19653248, "angle": 19.028978419999067, "pruning_info": null}
+{"epoch": 487, "train_acc": 0.9591333270072937, "val_acc": 0.8944, "flops": 19653248, "angle": 17.833607592890782, "pruning_info": null}
+{"epoch": 488, "train_acc": 0.9581249952316284, "val_acc": 0.8949, "flops": 19653248, "angle": 16.7340957030113, "pruning_info": null}
+{"epoch": 489, "train_acc": 0.9579499959945679, "val_acc": 0.8947, "flops": 19653248, "angle": 15.720820450259167, "pruning_info": "Pruned with structure=filter, new_val_acc=0.7156"}
+{"epoch": 490, "train_acc": 0.9044833183288574, "val_acc": 0.8358, "flops": 18031232, "angle": 0.0, "pruning_info": null}
+{"epoch": 491, "train_acc": 0.9126583337783813, "val_acc": 0.8573, "flops": 18031232, "angle": 67.3584073356556, "pruning_info": null}
+{"epoch": 492, "train_acc": 0.9149249792098999, "val_acc": 0.8315, "flops": 18031232, "angle": 64.56556094852786, "pruning_info": null}
+{"epoch": 493, "train_acc": 0.916408360004425, "val_acc": 0.8396, "flops": 18031232, "angle": 62.663322909212965, "pruning_info": null}
+{"epoch": 494, "train_acc": 0.917900025844574, "val_acc": 0.8045, "flops": 18031232, "angle": 60.668140453621184, "pruning_info": null}
+{"epoch": 495, "train_acc": 0.9175666570663452, "val_acc": 0.8515, "flops": 18031232, "angle": 59.11590352849824, "pruning_info": null}
+{"epoch": 496, "train_acc": 0.9199416637420654, "val_acc": 0.8567, "flops": 18031232, "angle": 57.62513771668131, "pruning_info": null}
+{"epoch": 497, "train_acc": 0.919783353805542, "val_acc": 0.8616, "flops": 18031232, "angle": 56.2942434450106, "pruning_info": null}
+{"epoch": 498, "train_acc": 0.9220333099365234, "val_acc": 0.8595, "flops": 18031232, "angle": 55.35049581796171, "pruning_info": null}
+{"epoch": 499, "train_acc": 0.9228083491325378, "val_acc": 0.8351, "flops": 18031232, "angle": 54.19087477088657, "pruning_info": null}
+{"epoch": 500, "train_acc": 0.9338416457176208, "val_acc": 0.8873, "flops": 18031232, "angle": 52.15696679375225, "pruning_info": null}
+{"epoch": 501, "train_acc": 0.9419000148773193, "val_acc": 0.89, "flops": 18031232, "angle": 49.68463724369454, "pruning_info": null}
+{"epoch": 502, "train_acc": 0.9449583292007446, "val_acc": 0.8926, "flops": 18031232, "angle": 47.004933362421156, "pruning_info": null}
+{"epoch": 503, "train_acc": 0.9466500282287598, "val_acc": 0.8919, "flops": 18031232, "angle": 44.24997359864597, "pruning_info": null}
+{"epoch": 504, "train_acc": 0.9483916759490967, "val_acc": 0.8928, "flops": 18031232, "angle": 41.508141318888626, "pruning_info": null}
+{"epoch": 505, "train_acc": 0.9495083093643188, "val_acc": 0.8926, "flops": 18031232, "angle": 38.83620077457644, "pruning_info": null}
+{"epoch": 506, "train_acc": 0.9504166841506958, "val_acc": 0.8931, "flops": 18031232, "angle": 36.272994246236955, "pruning_info": null}
+{"epoch": 507, "train_acc": 0.94964998960495, "val_acc": 0.8928, "flops": 18031232, "angle": 33.842182141974575, "pruning_info": null}
+{"epoch": 508, "train_acc": 0.9523249864578247, "val_acc": 0.8934, "flops": 18031232, "angle": 31.557483785604486, "pruning_info": null}
+{"epoch": 509, "train_acc": 0.9517333507537842, "val_acc": 0.8935, "flops": 18031232, "angle": 29.422311238886238, "pruning_info": null}
+{"epoch": 510, "train_acc": 0.9526583552360535, "val_acc": 0.8937, "flops": 18031232, "angle": 27.439938447482028, "pruning_info": null}
+{"epoch": 511, "train_acc": 0.9533416628837585, "val_acc": 0.8937, "flops": 18031232, "angle": 25.60454851129762, "pruning_info": null}
+{"epoch": 512, "train_acc": 0.9529500007629395, "val_acc": 0.8943, "flops": 18031232, "angle": 23.909058258104906, "pruning_info": null}
+{"epoch": 513, "train_acc": 0.9531333446502686, "val_acc": 0.8937, "flops": 18031232, "angle": 22.345438288305374, "pruning_info": null}
+{"epoch": 514, "train_acc": 0.9547416567802429, "val_acc": 0.8942, "flops": 18031232, "angle": 20.905965798286648, "pruning_info": null}
+{"epoch": 515, "train_acc": 0.9541416764259338, "val_acc": 0.894, "flops": 18031232, "angle": 19.579763254960056, "pruning_info": null}
+{"epoch": 516, "train_acc": 0.9552000164985657, "val_acc": 0.8944, "flops": 18031232, "angle": 18.3587860013868, "pruning_info": null}
+{"epoch": 517, "train_acc": 0.9540916681289673, "val_acc": 0.8952, "flops": 18031232, "angle": 17.23445052769309, "pruning_info": null}
+{"epoch": 518, "train_acc": 0.9548249840736389, "val_acc": 0.8961, "flops": 18031232, "angle": 16.19840445605755, "pruning_info": "Pruned with structure=filter, new_val_acc=0.8034"}
+{"epoch": 519, "train_acc": 0.9018833041191101, "val_acc": 0.8069, "flops": 16538240, "angle": 0.0, "pruning_info": null}
+{"epoch": 520, "train_acc": 0.9100666642189026, "val_acc": 0.8392, "flops": 16538240, "angle": 67.69000829895779, "pruning_info": null}
+{"epoch": 521, "train_acc": 0.9132000207901001, "val_acc": 0.8558, "flops": 16538240, "angle": 64.63564312418697, "pruning_info": null}
+{"epoch": 522, "train_acc": 0.9143416881561279, "val_acc": 0.851, "flops": 16538240, "angle": 62.7197441239298, "pruning_info": null}
+{"epoch": 523, "train_acc": 0.9149166941642761, "val_acc": 0.8307, "flops": 16538240, "angle": 60.900392042098, "pruning_info": null}
+{"epoch": 524, "train_acc": 0.9175916910171509, "val_acc": 0.8584, "flops": 16538240, "angle": 59.00066189377725, "pruning_info": null}
+{"epoch": 525, "train_acc": 0.9166333079338074, "val_acc": 0.8634, "flops": 16538240, "angle": 57.50809429968775, "pruning_info": null}
+{"epoch": 526, "train_acc": 0.9175249934196472, "val_acc": 0.8477, "flops": 16538240, "angle": 56.27905346606973, "pruning_info": null}
+{"epoch": 527, "train_acc": 0.9190833568572998, "val_acc": 0.7894, "flops": 16538240, "angle": 55.42125161677429, "pruning_info": null}
+{"epoch": 528, "train_acc": 0.918274998664856, "val_acc": 0.8512, "flops": 16538240, "angle": 54.35354233236043, "pruning_info": null}
+{"epoch": 529, "train_acc": 0.9291750192642212, "val_acc": 0.8827, "flops": 16538240, "angle": 52.38154196446288, "pruning_info": null}
+{"epoch": 530, "train_acc": 0.9379416704177856, "val_acc": 0.887, "flops": 16538240, "angle": 49.951723571255386, "pruning_info": null}
+{"epoch": 531, "train_acc": 0.9407833218574524, "val_acc": 0.8899, "flops": 16538240, "angle": 47.30349073840092, "pruning_info": null}
+{"epoch": 532, "train_acc": 0.9425250291824341, "val_acc": 0.8901, "flops": 16538240, "angle": 44.572517997495616, "pruning_info": null}
+{"epoch": 533, "train_acc": 0.9436249732971191, "val_acc": 0.89, "flops": 16538240, "angle": 41.846331058696244, "pruning_info": null}
+{"epoch": 534, "train_acc": 0.9452916383743286, "val_acc": 0.8906, "flops": 16538240, "angle": 39.18449061465942, "pruning_info": null}
+{"epoch": 535, "train_acc": 0.9466000199317932, "val_acc": 0.8911, "flops": 16538240, "angle": 36.62755574951901, "pruning_info": null}
+{"epoch": 536, "train_acc": 0.9477750062942505, "val_acc": 0.8896, "flops": 16538240, "angle": 34.194862849318454, "pruning_info": null}
+{"epoch": 537, "train_acc": 0.9468916654586792, "val_acc": 0.8923, "flops": 16538240, "angle": 31.904427268419564, "pruning_info": null}
+{"epoch": 538, "train_acc": 0.9478916525840759, "val_acc": 0.8927, "flops": 16538240, "angle": 29.763011039425326, "pruning_info": null}
+{"epoch": 539, "train_acc": 0.9485750198364258, "val_acc": 0.8921, "flops": 16538240, "angle": 27.77041888996584, "pruning_info": null}
+{"epoch": 540, "train_acc": 0.949691653251648, "val_acc": 0.8924, "flops": 16538240, "angle": 25.92492966592364, "pruning_info": null}
+{"epoch": 541, "train_acc": 0.9492416381835938, "val_acc": 0.8913, "flops": 16538240, "angle": 24.217946696341617, "pruning_info": null}
+{"epoch": 542, "train_acc": 0.9503499865531921, "val_acc": 0.8936, "flops": 16538240, "angle": 22.642800750427043, "pruning_info": null}
+{"epoch": 543, "train_acc": 0.9503083229064941, "val_acc": 0.893, "flops": 16538240, "angle": 21.190465900908478, "pruning_info": null}
+{"epoch": 544, "train_acc": 0.9504166841506958, "val_acc": 0.8936, "flops": 16538240, "angle": 19.852765301583613, "pruning_info": null}
+{"epoch": 545, "train_acc": 0.9503333568572998, "val_acc": 0.8933, "flops": 16538240, "angle": 18.619505523092243, "pruning_info": null}
+{"epoch": 546, "train_acc": 0.9513000249862671, "val_acc": 0.894, "flops": 16538240, "angle": 17.483351929350015, "pruning_info": null}
+{"epoch": 547, "train_acc": 0.9524416923522949, "val_acc": 0.8941, "flops": 16538240, "angle": 16.435854461029855, "pruning_info": "Pruned with structure=filter, new_val_acc=0.6693"}
+{"epoch": 548, "train_acc": 0.8964583277702332, "val_acc": 0.8311, "flops": 15045248, "angle": 0.0, "pruning_info": null}
+{"epoch": 549, "train_acc": 0.9055833220481873, "val_acc": 0.8375, "flops": 15045248, "angle": 66.69437763041294, "pruning_info": null}
+{"epoch": 550, "train_acc": 0.90604168176651, "val_acc": 0.835, "flops": 15045248, "angle": 64.5840762128279, "pruning_info": null}
+{"epoch": 551, "train_acc": 0.9104833602905273, "val_acc": 0.8422, "flops": 15045248, "angle": 61.89118647900966, "pruning_info": null}
+{"epoch": 552, "train_acc": 0.9100666642189026, "val_acc": 0.8546, "flops": 15045248, "angle": 60.22203843948121, "pruning_info": null}
+{"epoch": 553, "train_acc": 0.9110416769981384, "val_acc": 0.839, "flops": 15045248, "angle": 58.782263830626206, "pruning_info": null}
+{"epoch": 554, "train_acc": 0.913391649723053, "val_acc": 0.8634, "flops": 15045248, "angle": 57.322610790566664, "pruning_info": null}
+{"epoch": 555, "train_acc": 0.9130083322525024, "val_acc": 0.8468, "flops": 15045248, "angle": 56.058138477502226, "pruning_info": null}
+{"epoch": 556, "train_acc": 0.9149249792098999, "val_acc": 0.8563, "flops": 15045248, "angle": 54.86466016661797, "pruning_info": null}
+{"epoch": 557, "train_acc": 0.9147499799728394, "val_acc": 0.8408, "flops": 15045248, "angle": 53.82723353060321, "pruning_info": null}
+{"epoch": 558, "train_acc": 0.9234916567802429, "val_acc": 0.8832, "flops": 15045248, "angle": 51.85568023593228, "pruning_info": null}
+{"epoch": 559, "train_acc": 0.9339500069618225, "val_acc": 0.8854, "flops": 15045248, "angle": 49.417659709127925, "pruning_info": null}
+{"epoch": 560, "train_acc": 0.9367333054542542, "val_acc": 0.8872, "flops": 15045248, "angle": 46.75614639039054, "pruning_info": null}
+{"epoch": 561, "train_acc": 0.9387333393096924, "val_acc": 0.8883, "flops": 15045248, "angle": 44.01537288978617, "pruning_info": null}
+{"epoch": 562, "train_acc": 0.9395250082015991, "val_acc": 0.8898, "flops": 15045248, "angle": 41.2838891638926, "pruning_info": null}
+{"epoch": 563, "train_acc": 0.941474974155426, "val_acc": 0.8898, "flops": 15045248, "angle": 38.61924955657907, "pruning_info": null}
+{"epoch": 564, "train_acc": 0.9424416422843933, "val_acc": 0.8907, "flops": 15045248, "angle": 36.06305942010708, "pruning_info": null}
+{"epoch": 565, "train_acc": 0.943008303642273, "val_acc": 0.8903, "flops": 15045248, "angle": 33.64102068288675, "pruning_info": null}
+{"epoch": 566, "train_acc": 0.944058358669281, "val_acc": 0.8909, "flops": 15045248, "angle": 31.36338830788645, "pruning_info": null}
+{"epoch": 567, "train_acc": 0.9447416663169861, "val_acc": 0.8911, "flops": 15045248, "angle": 29.23744843204747, "pruning_info": null}
+{"epoch": 568, "train_acc": 0.9452416896820068, "val_acc": 0.8924, "flops": 15045248, "angle": 27.263292920806027, "pruning_info": null}
+{"epoch": 569, "train_acc": 0.9452499747276306, "val_acc": 0.8923, "flops": 15045248, "angle": 25.436752026951098, "pruning_info": null}
+{"epoch": 570, "train_acc": 0.9453166723251343, "val_acc": 0.8925, "flops": 15045248, "angle": 23.75000561618762, "pruning_info": null}
+{"epoch": 571, "train_acc": 0.9456666707992554, "val_acc": 0.8933, "flops": 15045248, "angle": 22.19382409808839, "pruning_info": null}
+{"epoch": 572, "train_acc": 0.9466833472251892, "val_acc": 0.8932, "flops": 15045248, "angle": 20.76169027093074, "pruning_info": null}
+{"epoch": 573, "train_acc": 0.9468333125114441, "val_acc": 0.8924, "flops": 15045248, "angle": 19.44279430827382, "pruning_info": null}
+{"epoch": 574, "train_acc": 0.9472000002861023, "val_acc": 0.8928, "flops": 15045248, "angle": 18.228604845203932, "pruning_info": null}
+{"epoch": 575, "train_acc": 0.9476500153541565, "val_acc": 0.8922, "flops": 15045248, "angle": 17.11157059670437, "pruning_info": null}
+{"epoch": 576, "train_acc": 0.9473000168800354, "val_acc": 0.8917, "flops": 15045248, "angle": 16.082923544908738, "pruning_info": "Pruned with structure=filter, new_val_acc=0.7500"}
+{"epoch": 577, "train_acc": 0.8985499739646912, "val_acc": 0.8322, "flops": 13810304, "angle": 0.0, "pruning_info": null}
+{"epoch": 578, "train_acc": 0.9035999774932861, "val_acc": 0.8505, "flops": 13810304, "angle": 63.34582717135094, "pruning_info": null}
+{"epoch": 579, "train_acc": 0.9058833122253418, "val_acc": 0.8557, "flops": 13810304, "angle": 61.99929895288003, "pruning_info": null}
+{"epoch": 580, "train_acc": 0.9073833227157593, "val_acc": 0.8414, "flops": 13810304, "angle": 59.77118962072545, "pruning_info": null}
+{"epoch": 581, "train_acc": 0.9085333347320557, "val_acc": 0.8502, "flops": 13810304, "angle": 57.463978180692635, "pruning_info": null}
+{"epoch": 582, "train_acc": 0.9094250202178955, "val_acc": 0.8283, "flops": 13810304, "angle": 55.35297607477083, "pruning_info": null}
+{"epoch": 583, "train_acc": 0.9103416800498962, "val_acc": 0.8267, "flops": 13810304, "angle": 53.60072224284896, "pruning_info": null}
+{"epoch": 584, "train_acc": 0.911383330821991, "val_acc": 0.8027, "flops": 13810304, "angle": 51.97433830231619, "pruning_info": null}
+{"epoch": 585, "train_acc": 0.9127833247184753, "val_acc": 0.8574, "flops": 13810304, "angle": 50.92187484651124, "pruning_info": null}
+{"epoch": 586, "train_acc": 0.913308322429657, "val_acc": 0.8525, "flops": 13810304, "angle": 49.77937402284241, "pruning_info": null}
+{"epoch": 587, "train_acc": 0.9225500226020813, "val_acc": 0.8806, "flops": 13810304, "angle": 47.677375665979085, "pruning_info": null}
+{"epoch": 588, "train_acc": 0.9320083260536194, "val_acc": 0.885, "flops": 13810304, "angle": 45.13581332294756, "pruning_info": null}
+{"epoch": 589, "train_acc": 0.9342250227928162, "val_acc": 0.8851, "flops": 13810304, "angle": 42.41529434262944, "pruning_info": null}
+{"epoch": 590, "train_acc": 0.9377166628837585, "val_acc": 0.8854, "flops": 13810304, "angle": 39.65990355229345, "pruning_info": null}
+{"epoch": 591, "train_acc": 0.9379000067710876, "val_acc": 0.8853, "flops": 13810304, "angle": 36.95920371433568, "pruning_info": null}
+{"epoch": 592, "train_acc": 0.939674973487854, "val_acc": 0.8861, "flops": 13810304, "angle": 34.3680356552532, "pruning_info": null}
+{"epoch": 593, "train_acc": 0.9401583075523376, "val_acc": 0.8864, "flops": 13810304, "angle": 31.915625998025003, "pruning_info": null}
+{"epoch": 594, "train_acc": 0.9398750066757202, "val_acc": 0.8865, "flops": 13810304, "angle": 29.6196135188709, "pruning_info": null}
+{"epoch": 595, "train_acc": 0.9402250051498413, "val_acc": 0.8855, "flops": 13810304, "angle": 27.486935383526376, "pruning_info": null}
+{"epoch": 596, "train_acc": 0.9418083429336548, "val_acc": 0.887, "flops": 13810304, "angle": 25.516828958830228, "pruning_info": null}
+{"epoch": 597, "train_acc": 0.9422416687011719, "val_acc": 0.8866, "flops": 13810304, "angle": 23.703563671805487, "pruning_info": null}
+{"epoch": 598, "train_acc": 0.9429333209991455, "val_acc": 0.8879, "flops": 13810304, "angle": 22.039284987131197, "pruning_info": null}
+{"epoch": 599, "train_acc": 0.9438999891281128, "val_acc": 0.8879, "flops": 13810304, "angle": 20.5143079386237, "pruning_info": null}
+{"epoch": 600, "train_acc": 0.9438166618347168, "val_acc": 0.8876, "flops": 13810304, "angle": 19.11758589660897, "pruning_info": null}

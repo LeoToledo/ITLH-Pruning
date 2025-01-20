@@ -12,7 +12,7 @@ plt.rcParams.update({
     'xtick.labelsize': 12,
     'ytick.labelsize': 12,
     'legend.fontsize': 12,
-    'figure.figsize': (12, 4),
+    'figure.figsize': (8, 6),  # Ajustado para plots individuais
     'axes.grid': True,
     'grid.alpha': 0.3
 })
@@ -29,31 +29,24 @@ def detect_pruning_points(data):
     
     return pruning_epochs
 
+# Definir o caminho do arquivo
+file_path = './pruning/train_log.jsonl'
+#file_path = './no_pruning/train_log.jsonl'
+
+if not os.path.exists(file_path):
+    raise FileNotFoundError(f"O arquivo {file_path} não foi encontrado!")
+
+# Extrair o diretório do arquivo de entrada
+output_dir = os.path.dirname(file_path)
+print(f"Usando arquivo: {file_path}")
+print(f"Salvando plots em: {output_dir}")
+
 # Carregar e processar dados
 data = []
 epochs = []
 train_acc = []
 val_acc = []
-test_acc = []
 flops = []
-
-# Tentar diferentes caminhos possíveis para o arquivo
-file_paths = [
-    '../train_log.jsonl',  # Caminho relativo mencionado
-    'train_log.jsonl',     # Na pasta atual
-    'paste.txt'            # Nome original
-]
-
-file_path = None
-for path in file_paths:
-    if os.path.exists(path):
-        file_path = path
-        break
-
-if file_path is None:
-    raise FileNotFoundError(f"Não foi possível encontrar o arquivo de dados. Tentei os seguintes caminhos: {file_paths}")
-
-print(f"Usando arquivo: {file_path}")
 
 with open(file_path, 'r') as f:
     for line in f:
@@ -62,53 +55,64 @@ with open(file_path, 'r') as f:
         epochs.append(entry['epoch'])
         train_acc.append(entry['train_acc'])
         val_acc.append(entry['val_acc'])
-        test_acc.append(entry['test_acc'])
         flops.append(entry['flops'])
 
 pruning_epochs = detect_pruning_points(data)
 
-# Criar os três subplots
-fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(18, 5))
-fig.subplots_adjust(wspace=0.3)
+# Função para criar e salvar plot individual
+def create_accuracy_plot(epochs, acc_data, title, ylabel, filename, pruning_epochs):
+    plt.figure(figsize=(8, 6))
+    ax = plt.gca()
+    
+    # Plot principal com linha mais fina
+    plt.plot(epochs, acc_data, linewidth=1.5, label=ylabel)
+    
+    # Linhas verticais para eventos de poda
+    for ep in pruning_epochs:
+        plt.axvline(x=epochs[ep], color='#d62728', linestyle='--', alpha=0.5, linewidth=1)
+    
+    # Configuração dos eixos com mais detalhes no eixo y
+    plt.xlabel('Epoch')
+    plt.ylabel(ylabel)
+    plt.title(title)
+    
+    # Ajustar limites e ticks do eixo y para mais detalhes na região de interesse
+    min_acc = min(acc_data)
+    y_min = max(0, min_acc - 0.1)  # Garantir que não fique negativo
+    plt.ylim(y_min, 1.02)  # Limite superior um pouco acima de 1 para visualização
+    
+    # Mais ticks no eixo y, especialmente na região de interesse (0.8-1.0)
+    y_ticks = np.concatenate([
+        np.arange(round(y_min, 1), 0.8, 0.1),  # Ticks espaçados de 0.1 até 0.8
+        np.arange(0.8, 1.02, 0.02)  # Ticks mais detalhados de 0.8 até 1.0
+    ])
+    plt.yticks(y_ticks)
+    
+    # Grade e legenda
+    plt.grid(True, linestyle='--', alpha=0.3)
+    plt.legend()
+    
+    # Ajustar layout e salvar
+    plt.tight_layout()
+    output_path = os.path.join(output_dir, filename)
+    plt.savefig(output_path, bbox_inches='tight', dpi=600)  # Aumentada a resolução
+    plt.close()
 
-# Plot 1: Training Accuracy
-ax1.plot(epochs, train_acc, color='#1f77b4', linewidth=2, label='Training Acc.')
-for ep in pruning_epochs:
-    ax1.axvline(x=epochs[ep], color='#d62728', linestyle='--', alpha=0.5)
-ax1.set_xlabel('Epoch')
-ax1.set_ylabel('Training Accuracy')
-ax1.set_title('(a) Training Accuracy vs. Epoch')
-ax1.grid(True, linestyle='--', alpha=0.3)
-ax1.set_ylim(0, 1.1)
+# Criar plots individuais
+create_accuracy_plot(
+    epochs, 
+    train_acc, 
+    'Training Accuracy vs. Epoch', 
+    'Training Accuracy', 
+    'training_accuracy.png',
+    pruning_epochs
+)
 
-# Plot 2: Validation Accuracy
-ax2.plot(epochs, val_acc, color='#2ca02c', linewidth=2, label='Validation Acc.')
-for ep in pruning_epochs:
-    ax2.axvline(x=epochs[ep], color='#d62728', linestyle='--', alpha=0.5)
-ax2.set_xlabel('Epoch')
-ax2.set_ylabel('Validation Accuracy')
-ax2.set_title('(b) Validation Accuracy vs. Epoch')
-ax2.grid(True, linestyle='--', alpha=0.3)
-ax2.set_ylim(0, 1.1)
-
-# Plot 3: Test Accuracy
-ax3.plot(epochs, test_acc, color='#ff7f0e', linewidth=2, label='Test Acc.')
-for ep in pruning_epochs:
-    ax3.axvline(x=epochs[ep], color='#d62728', linestyle='--', alpha=0.5)
-ax3.set_xlabel('Epoch')
-ax3.set_ylabel('Test Accuracy')
-ax3.set_title('(c) Test Accuracy vs. Epoch')
-ax3.grid(True, linestyle='--', alpha=0.3)
-ax3.set_ylim(0, 1.1)
-
-# Adicionar legenda nos três gráficos
-for ax in [ax1, ax2, ax3]:
-    ax.legend()
-
-# Ajustar o layout
-plt.tight_layout()
-
-# Salvar a figura
-#plt.savefig('accuracy_plots.pdf', bbox_inches='tight', dpi=300)
-plt.savefig('accuracy_plots.png', bbox_inches='tight', dpi=300)
-plt.close()
+create_accuracy_plot(
+    epochs, 
+    val_acc, 
+    'Validation Accuracy vs. Epoch', 
+    'Validation Accuracy', 
+    'validation_accuracy.png',
+    pruning_epochs
+)
