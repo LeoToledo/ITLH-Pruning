@@ -1,0 +1,741 @@
+{"hyperparameters": {"ARCHITECTURE_NAME": "ResNet56", "CRITERION_FILTER": "random", "CRITERION_LAYER": "random", "P_FILTER": 0.08, "P_LAYER": 2, "MAX_EPOCHS": 800, "MOMENTUM": 0.9, "BATCH_SIZE": 64, "MIN_INITIAL_TRAIN_EPOCHS": 50, "MIN_POST_PRUNE_TRAIN_EPOCHS": 25, "ROTATION_STABLE_EPOCHS": 5, "ROTATION_DERIVATIVE_THRESHOLD": 0.2, "TRAIN_EPOCHS_AFTER_LR_DROP": 15}}
+{"epoch": 1, "train_acc": 0.516, "val_acc": 0.5431, "flops": 125747840, "angle": 6.9095, "derivative": null, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 2, "train_acc": 0.6836, "val_acc": 0.592, "flops": 125747840, "angle": 9.2557, "derivative": 2.3462, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 3, "train_acc": 0.7488, "val_acc": 0.6806, "flops": 125747840, "angle": 11.0466, "derivative": 1.7909, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 4, "train_acc": 0.7856, "val_acc": 0.7503, "flops": 125747840, "angle": 12.5201, "derivative": 1.4735, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 5, "train_acc": 0.8119, "val_acc": 0.7563, "flops": 125747840, "angle": 13.8077, "derivative": 1.2876, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 6, "train_acc": 0.8283, "val_acc": 0.7382, "flops": 125747840, "angle": 14.9857, "derivative": 1.1779, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 7, "train_acc": 0.8439, "val_acc": 0.7435, "flops": 125747840, "angle": 16.0512, "derivative": 1.0656, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 8, "train_acc": 0.856, "val_acc": 0.7876, "flops": 125747840, "angle": 17.0677, "derivative": 1.0165, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 9, "train_acc": 0.8653, "val_acc": 0.7712, "flops": 125747840, "angle": 18.0167, "derivative": 0.9489, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 10, "train_acc": 0.8742, "val_acc": 0.77, "flops": 125747840, "angle": 18.9427, "derivative": 0.926, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 11, "train_acc": 0.8821, "val_acc": 0.7495, "flops": 125747840, "angle": 19.8172, "derivative": 0.8745, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 12, "train_acc": 0.8872, "val_acc": 0.8189, "flops": 125747840, "angle": 20.6699, "derivative": 0.8527, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 13, "train_acc": 0.8935, "val_acc": 0.8218, "flops": 125747840, "angle": 21.5213, "derivative": 0.8514, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 14, "train_acc": 0.8991, "val_acc": 0.8371, "flops": 125747840, "angle": 22.318, "derivative": 0.7967, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 15, "train_acc": 0.9045, "val_acc": 0.7379, "flops": 125747840, "angle": 23.0602, "derivative": 0.7422, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 16, "train_acc": 0.9077, "val_acc": 0.8157, "flops": 125747840, "angle": 23.8096, "derivative": 0.7494, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 17, "train_acc": 0.9142, "val_acc": 0.8437, "flops": 125747840, "angle": 24.5435, "derivative": 0.7339, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 18, "train_acc": 0.9169, "val_acc": 0.8301, "flops": 125747840, "angle": 25.2292, "derivative": 0.6858, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 19, "train_acc": 0.9198, "val_acc": 0.8244, "flops": 125747840, "angle": 25.88, "derivative": 0.6508, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 20, "train_acc": 0.9227, "val_acc": 0.8499, "flops": 125747840, "angle": 26.5245, "derivative": 0.6445, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 21, "train_acc": 0.9261, "val_acc": 0.8449, "flops": 125747840, "angle": 27.159, "derivative": 0.6345, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 22, "train_acc": 0.9278, "val_acc": 0.8027, "flops": 125747840, "angle": 27.7868, "derivative": 0.6278, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 23, "train_acc": 0.9316, "val_acc": 0.8511, "flops": 125747840, "angle": 28.3462, "derivative": 0.5594, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 24, "train_acc": 0.9323, "val_acc": 0.8801, "flops": 125747840, "angle": 28.9078, "derivative": 0.5617, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 25, "train_acc": 0.9362, "val_acc": 0.8488, "flops": 125747840, "angle": 29.4696, "derivative": 0.5618, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 26, "train_acc": 0.9376, "val_acc": 0.8581, "flops": 125747840, "angle": 30.007, "derivative": 0.5374, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 27, "train_acc": 0.9392, "val_acc": 0.8478, "flops": 125747840, "angle": 30.5356, "derivative": 0.5286, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 28, "train_acc": 0.9409, "val_acc": 0.7965, "flops": 125747840, "angle": 31.0423, "derivative": 0.5067, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 29, "train_acc": 0.9432, "val_acc": 0.8396, "flops": 125747840, "angle": 31.5129, "derivative": 0.4706, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 30, "train_acc": 0.9441, "val_acc": 0.8567, "flops": 125747840, "angle": 31.9688, "derivative": 0.4559, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 31, "train_acc": 0.9456, "val_acc": 0.863, "flops": 125747840, "angle": 32.4655, "derivative": 0.4968, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 32, "train_acc": 0.9469, "val_acc": 0.8432, "flops": 125747840, "angle": 32.9196, "derivative": 0.454, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 33, "train_acc": 0.9495, "val_acc": 0.8379, "flops": 125747840, "angle": 33.3449, "derivative": 0.4254, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 34, "train_acc": 0.9493, "val_acc": 0.8705, "flops": 125747840, "angle": 33.7589, "derivative": 0.414, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 35, "train_acc": 0.9509, "val_acc": 0.8584, "flops": 125747840, "angle": 34.1658, "derivative": 0.4069, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 36, "train_acc": 0.9507, "val_acc": 0.8614, "flops": 125747840, "angle": 34.5489, "derivative": 0.3831, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 37, "train_acc": 0.9525, "val_acc": 0.8703, "flops": 125747840, "angle": 34.9301, "derivative": 0.3812, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 38, "train_acc": 0.9538, "val_acc": 0.8329, "flops": 125747840, "angle": 35.3091, "derivative": 0.379, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 39, "train_acc": 0.9539, "val_acc": 0.8762, "flops": 125747840, "angle": 35.6516, "derivative": 0.3425, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 40, "train_acc": 0.9554, "val_acc": 0.8586, "flops": 125747840, "angle": 35.9816, "derivative": 0.33, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 41, "train_acc": 0.956, "val_acc": 0.8407, "flops": 125747840, "angle": 36.3393, "derivative": 0.3576, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 42, "train_acc": 0.9567, "val_acc": 0.8715, "flops": 125747840, "angle": 36.6436, "derivative": 0.3043, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 43, "train_acc": 0.9579, "val_acc": 0.8748, "flops": 125747840, "angle": 36.9704, "derivative": 0.3268, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 44, "train_acc": 0.9582, "val_acc": 0.8753, "flops": 125747840, "angle": 37.2544, "derivative": 0.2841, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 45, "train_acc": 0.9585, "val_acc": 0.8766, "flops": 125747840, "angle": 37.5482, "derivative": 0.2937, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 46, "train_acc": 0.9589, "val_acc": 0.8765, "flops": 125747840, "angle": 37.8118, "derivative": 0.2636, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 47, "train_acc": 0.9614, "val_acc": 0.8565, "flops": 125747840, "angle": 38.0709, "derivative": 0.2591, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 48, "train_acc": 0.9607, "val_acc": 0.8733, "flops": 125747840, "angle": 38.3661, "derivative": 0.2952, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 49, "train_acc": 0.9613, "val_acc": 0.8871, "flops": 125747840, "angle": 38.6269, "derivative": 0.2608, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 50, "train_acc": 0.9608, "val_acc": 0.887, "flops": 125747840, "angle": 38.877, "derivative": 0.2501, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 51, "train_acc": 0.962, "val_acc": 0.8837, "flops": 125747840, "angle": 39.1164, "derivative": 0.2394, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 52, "train_acc": 0.9629, "val_acc": 0.8693, "flops": 125747840, "angle": 39.3462, "derivative": 0.2298, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 53, "train_acc": 0.962, "val_acc": 0.8838, "flops": 125747840, "angle": 39.5912, "derivative": 0.245, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 54, "train_acc": 0.9646, "val_acc": 0.8875, "flops": 125747840, "angle": 39.8322, "derivative": 0.2409, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 55, "train_acc": 0.9639, "val_acc": 0.8759, "flops": 125747840, "angle": 40.0508, "derivative": 0.2186, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 56, "train_acc": 0.9651, "val_acc": 0.8769, "flops": 125747840, "angle": 40.2594, "derivative": 0.2086, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 57, "train_acc": 0.9648, "val_acc": 0.8806, "flops": 125747840, "angle": 40.4717, "derivative": 0.2123, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 58, "train_acc": 0.9648, "val_acc": 0.8601, "flops": 125747840, "angle": 40.6579, "derivative": 0.1862, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 59, "train_acc": 0.9668, "val_acc": 0.8624, "flops": 125747840, "angle": 40.8756, "derivative": 0.2177, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 60, "train_acc": 0.965, "val_acc": 0.8894, "flops": 125747840, "angle": 41.0756, "derivative": 0.2, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 61, "train_acc": 0.9664, "val_acc": 0.8726, "flops": 125747840, "angle": 41.2546, "derivative": 0.179, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 62, "train_acc": 0.9673, "val_acc": 0.8779, "flops": 125747840, "angle": 41.4479, "derivative": 0.1933, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 63, "train_acc": 0.9664, "val_acc": 0.8796, "flops": 125747840, "angle": 41.6147, "derivative": 0.1668, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 64, "train_acc": 0.9671, "val_acc": 0.8711, "flops": 125747840, "angle": 41.7668, "derivative": 0.1521, "current_lr": 0.01, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 65, "train_acc": 0.9863, "val_acc": 0.9118, "flops": 125747840, "angle": 41.7687, "derivative": 0.0019, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 66, "train_acc": 0.9918, "val_acc": 0.911, "flops": 125747840, "angle": 41.7742, "derivative": 0.0055, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 67, "train_acc": 0.9929, "val_acc": 0.9164, "flops": 125747840, "angle": 41.7731, "derivative": 0.0011, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 68, "train_acc": 0.9943, "val_acc": 0.9176, "flops": 125747840, "angle": 41.7749, "derivative": 0.0018, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 69, "train_acc": 0.9947, "val_acc": 0.9146, "flops": 125747840, "angle": 41.773, "derivative": 0.0019, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 70, "train_acc": 0.9951, "val_acc": 0.9155, "flops": 125747840, "angle": 41.7749, "derivative": 0.0018, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 71, "train_acc": 0.9957, "val_acc": 0.9155, "flops": 125747840, "angle": 41.7754, "derivative": 0.0005, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 72, "train_acc": 0.996, "val_acc": 0.9185, "flops": 125747840, "angle": 41.7778, "derivative": 0.0024, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 73, "train_acc": 0.9962, "val_acc": 0.9189, "flops": 125747840, "angle": 41.774, "derivative": 0.0038, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 74, "train_acc": 0.9966, "val_acc": 0.9191, "flops": 125747840, "angle": 41.7738, "derivative": 0.0002, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 75, "train_acc": 0.9966, "val_acc": 0.9177, "flops": 125747840, "angle": 41.7758, "derivative": 0.002, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 76, "train_acc": 0.9965, "val_acc": 0.9165, "flops": 125747840, "angle": 41.7777, "derivative": 0.0018, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 77, "train_acc": 0.997, "val_acc": 0.9183, "flops": 125747840, "angle": 41.7771, "derivative": 0.0006, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 78, "train_acc": 0.9974, "val_acc": 0.9202, "flops": 125747840, "angle": 41.7783, "derivative": 0.0012, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 79, "train_acc": 0.9971, "val_acc": 0.9161, "flops": 115997312, "angle": 41.7777, "derivative": 0.0006, "current_lr": 0.001, "pruning_info": null}
+{"epoch": 80, "train_acc": 0.9431, "val_acc": 0.8539, "flops": 115997312, "angle": 6.6806, "derivative": null, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 81, "train_acc": 0.9526, "val_acc": 0.8694, "flops": 115997312, "angle": 7.9545, "derivative": 1.2739, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 82, "train_acc": 0.9571, "val_acc": 0.8802, "flops": 115997312, "angle": 8.7804, "derivative": 0.8259, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 83, "train_acc": 0.9596, "val_acc": 0.8344, "flops": 115997312, "angle": 9.4911, "derivative": 0.7108, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 84, "train_acc": 0.9593, "val_acc": 0.8317, "flops": 115997312, "angle": 10.1106, "derivative": 0.6195, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 85, "train_acc": 0.9607, "val_acc": 0.8564, "flops": 115997312, "angle": 10.6665, "derivative": 0.5559, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 86, "train_acc": 0.9619, "val_acc": 0.887, "flops": 115997312, "angle": 11.1078, "derivative": 0.4413, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 87, "train_acc": 0.9628, "val_acc": 0.8735, "flops": 115997312, "angle": 11.573, "derivative": 0.4652, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 88, "train_acc": 0.9642, "val_acc": 0.877, "flops": 115997312, "angle": 11.9744, "derivative": 0.4014, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 89, "train_acc": 0.9632, "val_acc": 0.8667, "flops": 115997312, "angle": 12.3642, "derivative": 0.3898, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 90, "train_acc": 0.9645, "val_acc": 0.8932, "flops": 115997312, "angle": 12.7089, "derivative": 0.3448, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 91, "train_acc": 0.966, "val_acc": 0.8659, "flops": 115997312, "angle": 13.0992, "derivative": 0.3903, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 92, "train_acc": 0.9661, "val_acc": 0.8815, "flops": 115997312, "angle": 13.4236, "derivative": 0.3244, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 93, "train_acc": 0.9661, "val_acc": 0.8821, "flops": 115997312, "angle": 13.742, "derivative": 0.3184, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 94, "train_acc": 0.9669, "val_acc": 0.8584, "flops": 115997312, "angle": 14.0669, "derivative": 0.3248, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 95, "train_acc": 0.9669, "val_acc": 0.8808, "flops": 115997312, "angle": 14.3559, "derivative": 0.289, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 96, "train_acc": 0.9676, "val_acc": 0.868, "flops": 115997312, "angle": 14.6261, "derivative": 0.2702, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 97, "train_acc": 0.9692, "val_acc": 0.8471, "flops": 115997312, "angle": 14.8996, "derivative": 0.2734, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 98, "train_acc": 0.9681, "val_acc": 0.8912, "flops": 115997312, "angle": 15.2084, "derivative": 0.3088, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 99, "train_acc": 0.9695, "val_acc": 0.8693, "flops": 115997312, "angle": 15.4551, "derivative": 0.2467, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 100, "train_acc": 0.9691, "val_acc": 0.8548, "flops": 115997312, "angle": 15.7268, "derivative": 0.2717, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 101, "train_acc": 0.9688, "val_acc": 0.8838, "flops": 115997312, "angle": 15.9879, "derivative": 0.261, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 102, "train_acc": 0.97, "val_acc": 0.8756, "flops": 115997312, "angle": 16.2439, "derivative": 0.256, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 103, "train_acc": 0.9685, "val_acc": 0.8259, "flops": 115997312, "angle": 16.5038, "derivative": 0.2598, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 104, "train_acc": 0.9688, "val_acc": 0.8788, "flops": 115997312, "angle": 16.7491, "derivative": 0.2454, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 105, "train_acc": 0.9686, "val_acc": 0.8864, "flops": 115997312, "angle": 16.9709, "derivative": 0.2218, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 106, "train_acc": 0.9711, "val_acc": 0.8649, "flops": 115997312, "angle": 17.253, "derivative": 0.2821, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 107, "train_acc": 0.9706, "val_acc": 0.8699, "flops": 115997312, "angle": 17.4605, "derivative": 0.2075, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 108, "train_acc": 0.9712, "val_acc": 0.8943, "flops": 115997312, "angle": 17.701, "derivative": 0.2405, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 109, "train_acc": 0.9705, "val_acc": 0.8941, "flops": 115997312, "angle": 17.9262, "derivative": 0.2253, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 110, "train_acc": 0.9715, "val_acc": 0.8691, "flops": 115997312, "angle": 18.1255, "derivative": 0.1992, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 111, "train_acc": 0.972, "val_acc": 0.8596, "flops": 115997312, "angle": 18.3122, "derivative": 0.1867, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 112, "train_acc": 0.9712, "val_acc": 0.863, "flops": 115997312, "angle": 18.5512, "derivative": 0.239, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 113, "train_acc": 0.9714, "val_acc": 0.8832, "flops": 115997312, "angle": 18.7289, "derivative": 0.1776, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 114, "train_acc": 0.9723, "val_acc": 0.8757, "flops": 115997312, "angle": 18.9438, "derivative": 0.2149, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 115, "train_acc": 0.9717, "val_acc": 0.8726, "flops": 115997312, "angle": 19.1585, "derivative": 0.2147, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 116, "train_acc": 0.9709, "val_acc": 0.87, "flops": 115997312, "angle": 19.3682, "derivative": 0.2096, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 117, "train_acc": 0.9719, "val_acc": 0.8579, "flops": 115997312, "angle": 19.5464, "derivative": 0.1783, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 118, "train_acc": 0.9711, "val_acc": 0.8659, "flops": 115997312, "angle": 19.7571, "derivative": 0.2107, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 119, "train_acc": 0.9727, "val_acc": 0.8873, "flops": 115997312, "angle": 19.9594, "derivative": 0.2023, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 120, "train_acc": 0.9723, "val_acc": 0.8875, "flops": 115997312, "angle": 20.1365, "derivative": 0.1771, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 121, "train_acc": 0.9727, "val_acc": 0.8864, "flops": 115997312, "angle": 20.3204, "derivative": 0.1838, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 122, "train_acc": 0.9721, "val_acc": 0.8992, "flops": 115997312, "angle": 20.5153, "derivative": 0.1949, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 123, "train_acc": 0.9739, "val_acc": 0.8833, "flops": 115997312, "angle": 20.648, "derivative": 0.1327, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 124, "train_acc": 0.974, "val_acc": 0.8937, "flops": 115997312, "angle": 20.8327, "derivative": 0.1847, "current_lr": 0.01, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 125, "train_acc": 0.9887, "val_acc": 0.9152, "flops": 115997312, "angle": 20.7862, "derivative": 0.0465, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 126, "train_acc": 0.9936, "val_acc": 0.9176, "flops": 115997312, "angle": 20.7625, "derivative": 0.0237, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 127, "train_acc": 0.9948, "val_acc": 0.9177, "flops": 115997312, "angle": 20.7484, "derivative": 0.0141, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 128, "train_acc": 0.9955, "val_acc": 0.9186, "flops": 115997312, "angle": 20.733, "derivative": 0.0154, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 129, "train_acc": 0.9959, "val_acc": 0.919, "flops": 115997312, "angle": 20.7244, "derivative": 0.0087, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 130, "train_acc": 0.9966, "val_acc": 0.9193, "flops": 115997312, "angle": 20.718, "derivative": 0.0064, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 131, "train_acc": 0.9967, "val_acc": 0.9187, "flops": 115997312, "angle": 20.7085, "derivative": 0.0095, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 132, "train_acc": 0.9973, "val_acc": 0.9205, "flops": 115997312, "angle": 20.7025, "derivative": 0.006, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 133, "train_acc": 0.9976, "val_acc": 0.9205, "flops": 115997312, "angle": 20.6969, "derivative": 0.0056, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 134, "train_acc": 0.9973, "val_acc": 0.9176, "flops": 115997312, "angle": 20.6909, "derivative": 0.0059, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 135, "train_acc": 0.9977, "val_acc": 0.9195, "flops": 115997312, "angle": 20.6839, "derivative": 0.007, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 136, "train_acc": 0.998, "val_acc": 0.9193, "flops": 115997312, "angle": 20.6816, "derivative": 0.0023, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 137, "train_acc": 0.9979, "val_acc": 0.9197, "flops": 115997312, "angle": 20.6779, "derivative": 0.0038, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 138, "train_acc": 0.9978, "val_acc": 0.918, "flops": 115997312, "angle": 20.6748, "derivative": 0.0031, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 139, "train_acc": 0.998, "val_acc": 0.9184, "flops": 107149952, "angle": 20.6713, "derivative": 0.0035, "current_lr": 0.001, "pruning_info": null}
+{"epoch": 140, "train_acc": 0.9591, "val_acc": 0.872, "flops": 107149952, "angle": 6.9839, "derivative": null, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 141, "train_acc": 0.9657, "val_acc": 0.8153, "flops": 107149952, "angle": 8.2178, "derivative": 1.2339, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 142, "train_acc": 0.9669, "val_acc": 0.8307, "flops": 107149952, "angle": 9.0912, "derivative": 0.8734, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 143, "train_acc": 0.9695, "val_acc": 0.8715, "flops": 107149952, "angle": 9.7631, "derivative": 0.672, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 144, "train_acc": 0.9704, "val_acc": 0.879, "flops": 107149952, "angle": 10.3752, "derivative": 0.6121, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 145, "train_acc": 0.9703, "val_acc": 0.8632, "flops": 107149952, "angle": 10.8772, "derivative": 0.502, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 146, "train_acc": 0.9691, "val_acc": 0.8876, "flops": 107149952, "angle": 11.3868, "derivative": 0.5095, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 147, "train_acc": 0.9706, "val_acc": 0.8757, "flops": 107149952, "angle": 11.8229, "derivative": 0.4362, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 148, "train_acc": 0.9713, "val_acc": 0.8829, "flops": 107149952, "angle": 12.1466, "derivative": 0.3237, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 149, "train_acc": 0.9705, "val_acc": 0.8626, "flops": 107149952, "angle": 12.5077, "derivative": 0.361, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 150, "train_acc": 0.9712, "val_acc": 0.8542, "flops": 107149952, "angle": 12.8452, "derivative": 0.3375, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 151, "train_acc": 0.973, "val_acc": 0.8886, "flops": 107149952, "angle": 13.0743, "derivative": 0.2291, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 152, "train_acc": 0.9734, "val_acc": 0.8787, "flops": 107149952, "angle": 13.3687, "derivative": 0.2945, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 153, "train_acc": 0.9733, "val_acc": 0.8724, "flops": 107149952, "angle": 13.6394, "derivative": 0.2706, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 154, "train_acc": 0.9726, "val_acc": 0.8788, "flops": 107149952, "angle": 13.9061, "derivative": 0.2668, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 155, "train_acc": 0.9738, "val_acc": 0.8729, "flops": 107149952, "angle": 14.1721, "derivative": 0.266, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 156, "train_acc": 0.9733, "val_acc": 0.8744, "flops": 107149952, "angle": 14.4007, "derivative": 0.2286, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 157, "train_acc": 0.9739, "val_acc": 0.8891, "flops": 107149952, "angle": 14.6556, "derivative": 0.2548, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 158, "train_acc": 0.9734, "val_acc": 0.8822, "flops": 107149952, "angle": 14.8221, "derivative": 0.1665, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 159, "train_acc": 0.9738, "val_acc": 0.8916, "flops": 107149952, "angle": 15.0501, "derivative": 0.228, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 160, "train_acc": 0.9742, "val_acc": 0.8852, "flops": 107149952, "angle": 15.2683, "derivative": 0.2182, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 161, "train_acc": 0.9744, "val_acc": 0.8617, "flops": 107149952, "angle": 15.5425, "derivative": 0.2742, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 162, "train_acc": 0.9731, "val_acc": 0.8813, "flops": 107149952, "angle": 15.7139, "derivative": 0.1714, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 163, "train_acc": 0.9744, "val_acc": 0.8609, "flops": 107149952, "angle": 15.9153, "derivative": 0.2014, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 164, "train_acc": 0.9747, "val_acc": 0.8848, "flops": 107149952, "angle": 16.0851, "derivative": 0.1698, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 165, "train_acc": 0.9746, "val_acc": 0.874, "flops": 107149952, "angle": 16.251, "derivative": 0.166, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 166, "train_acc": 0.9752, "val_acc": 0.885, "flops": 107149952, "angle": 16.4233, "derivative": 0.1723, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 167, "train_acc": 0.9752, "val_acc": 0.8783, "flops": 107149952, "angle": 16.6272, "derivative": 0.2039, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 168, "train_acc": 0.9763, "val_acc": 0.8852, "flops": 107149952, "angle": 16.7715, "derivative": 0.1443, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 169, "train_acc": 0.976, "val_acc": 0.8854, "flops": 107149952, "angle": 16.9462, "derivative": 0.1746, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 170, "train_acc": 0.9753, "val_acc": 0.8832, "flops": 107149952, "angle": 17.1472, "derivative": 0.201, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 171, "train_acc": 0.9755, "val_acc": 0.877, "flops": 107149952, "angle": 17.3136, "derivative": 0.1664, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 172, "train_acc": 0.9752, "val_acc": 0.8859, "flops": 107149952, "angle": 17.4693, "derivative": 0.1558, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 173, "train_acc": 0.9749, "val_acc": 0.8697, "flops": 107149952, "angle": 17.627, "derivative": 0.1577, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 174, "train_acc": 0.9757, "val_acc": 0.8741, "flops": 107149952, "angle": 17.7664, "derivative": 0.1394, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 175, "train_acc": 0.9742, "val_acc": 0.8764, "flops": 107149952, "angle": 17.9758, "derivative": 0.2094, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 176, "train_acc": 0.9757, "val_acc": 0.8836, "flops": 107149952, "angle": 18.1158, "derivative": 0.14, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 177, "train_acc": 0.9765, "val_acc": 0.8983, "flops": 107149952, "angle": 18.2712, "derivative": 0.1553, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 178, "train_acc": 0.9759, "val_acc": 0.8914, "flops": 107149952, "angle": 18.3811, "derivative": 0.1099, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 179, "train_acc": 0.9764, "val_acc": 0.8938, "flops": 107149952, "angle": 18.5169, "derivative": 0.1358, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 180, "train_acc": 0.977, "val_acc": 0.8962, "flops": 107149952, "angle": 18.6939, "derivative": 0.177, "current_lr": 0.01, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 181, "train_acc": 0.99, "val_acc": 0.9193, "flops": 107149952, "angle": 18.6371, "derivative": 0.0568, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 182, "train_acc": 0.9946, "val_acc": 0.921, "flops": 107149952, "angle": 18.6082, "derivative": 0.0289, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 183, "train_acc": 0.996, "val_acc": 0.9229, "flops": 107149952, "angle": 18.5882, "derivative": 0.0201, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 184, "train_acc": 0.9962, "val_acc": 0.923, "flops": 107149952, "angle": 18.5741, "derivative": 0.0141, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 185, "train_acc": 0.9972, "val_acc": 0.9219, "flops": 107149952, "angle": 18.559, "derivative": 0.0151, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 186, "train_acc": 0.9971, "val_acc": 0.9216, "flops": 107149952, "angle": 18.5479, "derivative": 0.0111, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 187, "train_acc": 0.9976, "val_acc": 0.9234, "flops": 107149952, "angle": 18.5361, "derivative": 0.0119, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 188, "train_acc": 0.9978, "val_acc": 0.9242, "flops": 107149952, "angle": 18.5264, "derivative": 0.0097, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 189, "train_acc": 0.9979, "val_acc": 0.9231, "flops": 107149952, "angle": 18.5166, "derivative": 0.0098, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 190, "train_acc": 0.9979, "val_acc": 0.9241, "flops": 107149952, "angle": 18.5091, "derivative": 0.0075, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 191, "train_acc": 0.9981, "val_acc": 0.9226, "flops": 107149952, "angle": 18.5019, "derivative": 0.0072, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 192, "train_acc": 0.9984, "val_acc": 0.922, "flops": 107149952, "angle": 18.495, "derivative": 0.0069, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 193, "train_acc": 0.9983, "val_acc": 0.9232, "flops": 107149952, "angle": 18.4884, "derivative": 0.0066, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 194, "train_acc": 0.9987, "val_acc": 0.9226, "flops": 107149952, "angle": 18.4815, "derivative": 0.0069, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 195, "train_acc": 0.9988, "val_acc": 0.9241, "flops": 98376320, "angle": 18.4759, "derivative": 0.0056, "current_lr": 0.001, "pruning_info": null}
+{"epoch": 196, "train_acc": 0.9741, "val_acc": 0.8872, "flops": 98376320, "angle": 5.8922, "derivative": null, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 197, "train_acc": 0.9687, "val_acc": 0.8873, "flops": 98376320, "angle": 7.8334, "derivative": 1.9412, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 198, "train_acc": 0.9665, "val_acc": 0.8812, "flops": 98376320, "angle": 9.1475, "derivative": 1.3142, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 199, "train_acc": 0.97, "val_acc": 0.8786, "flops": 98376320, "angle": 9.9506, "derivative": 0.8031, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 200, "train_acc": 0.9706, "val_acc": 0.8685, "flops": 98376320, "angle": 10.614, "derivative": 0.6634, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 201, "train_acc": 0.971, "val_acc": 0.8965, "flops": 98376320, "angle": 11.2096, "derivative": 0.5956, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 202, "train_acc": 0.971, "val_acc": 0.8898, "flops": 98376320, "angle": 11.7541, "derivative": 0.5444, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 203, "train_acc": 0.9716, "val_acc": 0.8949, "flops": 98376320, "angle": 12.1275, "derivative": 0.3734, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 204, "train_acc": 0.9735, "val_acc": 0.8815, "flops": 98376320, "angle": 12.5268, "derivative": 0.3993, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 205, "train_acc": 0.9728, "val_acc": 0.8769, "flops": 98376320, "angle": 12.9319, "derivative": 0.4051, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 206, "train_acc": 0.972, "val_acc": 0.879, "flops": 98376320, "angle": 13.2397, "derivative": 0.3079, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 207, "train_acc": 0.973, "val_acc": 0.8823, "flops": 98376320, "angle": 13.5475, "derivative": 0.3077, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 208, "train_acc": 0.974, "val_acc": 0.8953, "flops": 98376320, "angle": 13.8331, "derivative": 0.2857, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 209, "train_acc": 0.9748, "val_acc": 0.8934, "flops": 98376320, "angle": 14.1105, "derivative": 0.2774, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 210, "train_acc": 0.9736, "val_acc": 0.8685, "flops": 98376320, "angle": 14.3378, "derivative": 0.2273, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 211, "train_acc": 0.9739, "val_acc": 0.8941, "flops": 98376320, "angle": 14.6046, "derivative": 0.2668, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 212, "train_acc": 0.9752, "val_acc": 0.8862, "flops": 98376320, "angle": 14.8749, "derivative": 0.2703, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 213, "train_acc": 0.9752, "val_acc": 0.8781, "flops": 98376320, "angle": 15.0756, "derivative": 0.2008, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 214, "train_acc": 0.9748, "val_acc": 0.8723, "flops": 98376320, "angle": 15.3226, "derivative": 0.247, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 215, "train_acc": 0.975, "val_acc": 0.8711, "flops": 98376320, "angle": 15.4812, "derivative": 0.1586, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 216, "train_acc": 0.9754, "val_acc": 0.8587, "flops": 98376320, "angle": 15.6648, "derivative": 0.1836, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 217, "train_acc": 0.9753, "val_acc": 0.8417, "flops": 98376320, "angle": 15.8998, "derivative": 0.2351, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 218, "train_acc": 0.9753, "val_acc": 0.8995, "flops": 98376320, "angle": 16.1047, "derivative": 0.2049, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 219, "train_acc": 0.9754, "val_acc": 0.8684, "flops": 98376320, "angle": 16.2966, "derivative": 0.1918, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 220, "train_acc": 0.9752, "val_acc": 0.8996, "flops": 98376320, "angle": 16.4605, "derivative": 0.164, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 221, "train_acc": 0.9762, "val_acc": 0.8682, "flops": 98376320, "angle": 16.6642, "derivative": 0.2037, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 222, "train_acc": 0.9772, "val_acc": 0.8586, "flops": 98376320, "angle": 16.8101, "derivative": 0.1458, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 223, "train_acc": 0.9764, "val_acc": 0.8347, "flops": 98376320, "angle": 16.9587, "derivative": 0.1487, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 224, "train_acc": 0.9753, "val_acc": 0.8961, "flops": 98376320, "angle": 17.1427, "derivative": 0.184, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 225, "train_acc": 0.9768, "val_acc": 0.8912, "flops": 98376320, "angle": 17.2955, "derivative": 0.1528, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 226, "train_acc": 0.9775, "val_acc": 0.8878, "flops": 98376320, "angle": 17.3971, "derivative": 0.1016, "current_lr": 0.01, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 227, "train_acc": 0.9901, "val_acc": 0.9158, "flops": 98376320, "angle": 17.3258, "derivative": 0.0713, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 228, "train_acc": 0.9944, "val_acc": 0.9192, "flops": 98376320, "angle": 17.2957, "derivative": 0.0301, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 229, "train_acc": 0.9956, "val_acc": 0.919, "flops": 98376320, "angle": 17.2709, "derivative": 0.0248, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 230, "train_acc": 0.9961, "val_acc": 0.9202, "flops": 98376320, "angle": 17.2525, "derivative": 0.0184, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 231, "train_acc": 0.9966, "val_acc": 0.9228, "flops": 98376320, "angle": 17.2359, "derivative": 0.0167, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 232, "train_acc": 0.9969, "val_acc": 0.9203, "flops": 98376320, "angle": 17.2232, "derivative": 0.0126, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 233, "train_acc": 0.9976, "val_acc": 0.9215, "flops": 98376320, "angle": 17.2131, "derivative": 0.0101, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 234, "train_acc": 0.9975, "val_acc": 0.9226, "flops": 98376320, "angle": 17.2019, "derivative": 0.0112, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 235, "train_acc": 0.9978, "val_acc": 0.9219, "flops": 98376320, "angle": 17.1919, "derivative": 0.01, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 236, "train_acc": 0.9981, "val_acc": 0.9202, "flops": 98376320, "angle": 17.1807, "derivative": 0.0112, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 237, "train_acc": 0.9979, "val_acc": 0.9242, "flops": 98376320, "angle": 17.1706, "derivative": 0.0101, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 238, "train_acc": 0.998, "val_acc": 0.9216, "flops": 98376320, "angle": 17.1622, "derivative": 0.0084, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 239, "train_acc": 0.9983, "val_acc": 0.9234, "flops": 98376320, "angle": 17.1544, "derivative": 0.0078, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 240, "train_acc": 0.9984, "val_acc": 0.9214, "flops": 98376320, "angle": 17.1503, "derivative": 0.0041, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 241, "train_acc": 0.9985, "val_acc": 0.9205, "flops": 89750144, "angle": 17.1445, "derivative": 0.0058, "current_lr": 0.001, "pruning_info": null}
+{"epoch": 242, "train_acc": 0.9523, "val_acc": 0.8565, "flops": 89750144, "angle": 7.5471, "derivative": null, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 243, "train_acc": 0.963, "val_acc": 0.8735, "flops": 89750144, "angle": 8.8126, "derivative": 1.2655, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 244, "train_acc": 0.9654, "val_acc": 0.8311, "flops": 89750144, "angle": 9.7349, "derivative": 0.9223, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 245, "train_acc": 0.968, "val_acc": 0.8848, "flops": 89750144, "angle": 10.3431, "derivative": 0.6082, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 246, "train_acc": 0.9696, "val_acc": 0.8606, "flops": 89750144, "angle": 10.9454, "derivative": 0.6023, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 247, "train_acc": 0.9699, "val_acc": 0.9037, "flops": 89750144, "angle": 11.342, "derivative": 0.3966, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 248, "train_acc": 0.9705, "val_acc": 0.873, "flops": 89750144, "angle": 11.7625, "derivative": 0.4205, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 249, "train_acc": 0.9725, "val_acc": 0.8957, "flops": 89750144, "angle": 12.0938, "derivative": 0.3312, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 250, "train_acc": 0.9726, "val_acc": 0.8975, "flops": 89750144, "angle": 12.4501, "derivative": 0.3563, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 251, "train_acc": 0.9723, "val_acc": 0.88, "flops": 89750144, "angle": 12.8281, "derivative": 0.378, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 252, "train_acc": 0.9729, "val_acc": 0.8786, "flops": 89750144, "angle": 13.1209, "derivative": 0.2928, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 253, "train_acc": 0.9735, "val_acc": 0.8948, "flops": 89750144, "angle": 13.3566, "derivative": 0.2357, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 254, "train_acc": 0.9733, "val_acc": 0.8859, "flops": 89750144, "angle": 13.5962, "derivative": 0.2396, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 255, "train_acc": 0.9741, "val_acc": 0.8883, "flops": 89750144, "angle": 13.8613, "derivative": 0.2651, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 256, "train_acc": 0.9737, "val_acc": 0.8989, "flops": 89750144, "angle": 14.0982, "derivative": 0.2369, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 257, "train_acc": 0.9738, "val_acc": 0.8941, "flops": 89750144, "angle": 14.3274, "derivative": 0.2292, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 258, "train_acc": 0.9749, "val_acc": 0.8537, "flops": 89750144, "angle": 14.5192, "derivative": 0.1919, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 259, "train_acc": 0.9731, "val_acc": 0.8786, "flops": 89750144, "angle": 14.7429, "derivative": 0.2237, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 260, "train_acc": 0.9736, "val_acc": 0.8926, "flops": 89750144, "angle": 14.8882, "derivative": 0.1453, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 261, "train_acc": 0.975, "val_acc": 0.8724, "flops": 89750144, "angle": 15.098, "derivative": 0.2098, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 262, "train_acc": 0.975, "val_acc": 0.8766, "flops": 89750144, "angle": 15.2729, "derivative": 0.1749, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 263, "train_acc": 0.9762, "val_acc": 0.8953, "flops": 89750144, "angle": 15.4243, "derivative": 0.1514, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 264, "train_acc": 0.9746, "val_acc": 0.8955, "flops": 89750144, "angle": 15.6053, "derivative": 0.181, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 265, "train_acc": 0.9751, "val_acc": 0.8548, "flops": 89750144, "angle": 15.8169, "derivative": 0.2116, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 266, "train_acc": 0.9756, "val_acc": 0.8717, "flops": 89750144, "angle": 15.9397, "derivative": 0.1228, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 267, "train_acc": 0.9747, "val_acc": 0.8928, "flops": 89750144, "angle": 16.0966, "derivative": 0.1569, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 268, "train_acc": 0.9762, "val_acc": 0.8838, "flops": 89750144, "angle": 16.2536, "derivative": 0.157, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 269, "train_acc": 0.9763, "val_acc": 0.8606, "flops": 89750144, "angle": 16.3791, "derivative": 0.1255, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 270, "train_acc": 0.976, "val_acc": 0.8777, "flops": 89750144, "angle": 16.5534, "derivative": 0.1743, "current_lr": 0.01, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 271, "train_acc": 0.9887, "val_acc": 0.9141, "flops": 89750144, "angle": 16.4721, "derivative": 0.0813, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 272, "train_acc": 0.9939, "val_acc": 0.9184, "flops": 89750144, "angle": 16.4308, "derivative": 0.0412, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 273, "train_acc": 0.9954, "val_acc": 0.9192, "flops": 89750144, "angle": 16.3992, "derivative": 0.0316, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 274, "train_acc": 0.9959, "val_acc": 0.9163, "flops": 89750144, "angle": 16.3751, "derivative": 0.0241, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 275, "train_acc": 0.9965, "val_acc": 0.9188, "flops": 89750144, "angle": 16.3517, "derivative": 0.0235, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 276, "train_acc": 0.9968, "val_acc": 0.9203, "flops": 89750144, "angle": 16.3354, "derivative": 0.0163, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 277, "train_acc": 0.9973, "val_acc": 0.9206, "flops": 89750144, "angle": 16.3194, "derivative": 0.016, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 278, "train_acc": 0.9975, "val_acc": 0.9206, "flops": 89750144, "angle": 16.3069, "derivative": 0.0125, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 279, "train_acc": 0.9974, "val_acc": 0.9212, "flops": 89750144, "angle": 16.2949, "derivative": 0.012, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 280, "train_acc": 0.9977, "val_acc": 0.9241, "flops": 89750144, "angle": 16.2835, "derivative": 0.0115, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 281, "train_acc": 0.9978, "val_acc": 0.9195, "flops": 89750144, "angle": 16.275, "derivative": 0.0085, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 282, "train_acc": 0.9981, "val_acc": 0.9224, "flops": 89750144, "angle": 16.2654, "derivative": 0.0095, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 283, "train_acc": 0.998, "val_acc": 0.9216, "flops": 89750144, "angle": 16.2562, "derivative": 0.0092, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 284, "train_acc": 0.9979, "val_acc": 0.9226, "flops": 89750144, "angle": 16.2446, "derivative": 0.0116, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 285, "train_acc": 0.9983, "val_acc": 0.9226, "flops": 80976512, "angle": 16.2359, "derivative": 0.0087, "current_lr": 0.001, "pruning_info": null}
+{"epoch": 286, "train_acc": 0.9544, "val_acc": 0.8998, "flops": 80976512, "angle": 7.4136, "derivative": null, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 287, "train_acc": 0.9631, "val_acc": 0.8781, "flops": 80976512, "angle": 8.7139, "derivative": 1.3003, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 288, "train_acc": 0.9659, "val_acc": 0.8602, "flops": 80976512, "angle": 9.6893, "derivative": 0.9754, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 289, "train_acc": 0.9659, "val_acc": 0.8923, "flops": 80976512, "angle": 10.3158, "derivative": 0.6265, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 290, "train_acc": 0.9697, "val_acc": 0.8991, "flops": 80976512, "angle": 10.9015, "derivative": 0.5856, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 291, "train_acc": 0.9692, "val_acc": 0.8854, "flops": 80976512, "angle": 11.4076, "derivative": 0.5062, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 292, "train_acc": 0.9692, "val_acc": 0.8816, "flops": 80976512, "angle": 11.8236, "derivative": 0.416, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 293, "train_acc": 0.9701, "val_acc": 0.8975, "flops": 80976512, "angle": 12.1964, "derivative": 0.3728, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 294, "train_acc": 0.973, "val_acc": 0.8831, "flops": 80976512, "angle": 12.5613, "derivative": 0.3649, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 295, "train_acc": 0.9721, "val_acc": 0.8811, "flops": 80976512, "angle": 12.8408, "derivative": 0.2795, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 296, "train_acc": 0.9716, "val_acc": 0.8765, "flops": 80976512, "angle": 13.1465, "derivative": 0.3057, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 297, "train_acc": 0.9718, "val_acc": 0.8718, "flops": 80976512, "angle": 13.404, "derivative": 0.2575, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 298, "train_acc": 0.9728, "val_acc": 0.8918, "flops": 80976512, "angle": 13.6251, "derivative": 0.2211, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 299, "train_acc": 0.9741, "val_acc": 0.8928, "flops": 80976512, "angle": 13.894, "derivative": 0.2689, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 300, "train_acc": 0.9728, "val_acc": 0.8952, "flops": 80976512, "angle": 14.0998, "derivative": 0.2059, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 301, "train_acc": 0.9744, "val_acc": 0.8893, "flops": 80976512, "angle": 14.2862, "derivative": 0.1864, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 302, "train_acc": 0.9739, "val_acc": 0.8917, "flops": 80976512, "angle": 14.5141, "derivative": 0.2278, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 303, "train_acc": 0.9735, "val_acc": 0.8839, "flops": 80976512, "angle": 14.6785, "derivative": 0.1645, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 304, "train_acc": 0.9735, "val_acc": 0.8869, "flops": 80976512, "angle": 14.8734, "derivative": 0.1949, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 305, "train_acc": 0.9743, "val_acc": 0.8975, "flops": 80976512, "angle": 15.0649, "derivative": 0.1915, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 306, "train_acc": 0.974, "val_acc": 0.9026, "flops": 80976512, "angle": 15.2531, "derivative": 0.1882, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 307, "train_acc": 0.9746, "val_acc": 0.8995, "flops": 80976512, "angle": 15.411, "derivative": 0.1579, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 308, "train_acc": 0.9747, "val_acc": 0.8992, "flops": 80976512, "angle": 15.5438, "derivative": 0.1328, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 309, "train_acc": 0.976, "val_acc": 0.8774, "flops": 80976512, "angle": 15.6669, "derivative": 0.1231, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 310, "train_acc": 0.975, "val_acc": 0.898, "flops": 80976512, "angle": 15.859, "derivative": 0.1921, "current_lr": 0.01, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 311, "train_acc": 0.9886, "val_acc": 0.9156, "flops": 80976512, "angle": 15.7706, "derivative": 0.0884, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 312, "train_acc": 0.994, "val_acc": 0.9179, "flops": 80976512, "angle": 15.7279, "derivative": 0.0427, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 313, "train_acc": 0.9947, "val_acc": 0.9195, "flops": 80976512, "angle": 15.6876, "derivative": 0.0403, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 314, "train_acc": 0.9955, "val_acc": 0.9205, "flops": 80976512, "angle": 15.6616, "derivative": 0.026, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 315, "train_acc": 0.9967, "val_acc": 0.9196, "flops": 80976512, "angle": 15.6446, "derivative": 0.017, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 316, "train_acc": 0.9965, "val_acc": 0.9182, "flops": 80976512, "angle": 15.6242, "derivative": 0.0204, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 317, "train_acc": 0.997, "val_acc": 0.9187, "flops": 80976512, "angle": 15.6049, "derivative": 0.0192, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 318, "train_acc": 0.9969, "val_acc": 0.9195, "flops": 80976512, "angle": 15.5912, "derivative": 0.0137, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 319, "train_acc": 0.9973, "val_acc": 0.9198, "flops": 80976512, "angle": 15.5759, "derivative": 0.0153, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 320, "train_acc": 0.9974, "val_acc": 0.9226, "flops": 80976512, "angle": 15.5654, "derivative": 0.0105, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 321, "train_acc": 0.9977, "val_acc": 0.9233, "flops": 80976512, "angle": 15.553, "derivative": 0.0124, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 322, "train_acc": 0.9978, "val_acc": 0.9202, "flops": 80976512, "angle": 15.5439, "derivative": 0.0091, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 323, "train_acc": 0.998, "val_acc": 0.9205, "flops": 80976512, "angle": 15.5318, "derivative": 0.0121, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 324, "train_acc": 0.9979, "val_acc": 0.9205, "flops": 80976512, "angle": 15.5216, "derivative": 0.0102, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 325, "train_acc": 0.9981, "val_acc": 0.9195, "flops": 72202880, "angle": 15.5146, "derivative": 0.007, "current_lr": 0.001, "pruning_info": null}
+{"epoch": 326, "train_acc": 0.9509, "val_acc": 0.8497, "flops": 72202880, "angle": 7.1939, "derivative": null, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 327, "train_acc": 0.9578, "val_acc": 0.8694, "flops": 72202880, "angle": 8.9846, "derivative": 1.7907, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 328, "train_acc": 0.9589, "val_acc": 0.8871, "flops": 72202880, "angle": 10.1144, "derivative": 1.1297, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 329, "train_acc": 0.9638, "val_acc": 0.868, "flops": 72202880, "angle": 10.9137, "derivative": 0.7993, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 330, "train_acc": 0.9641, "val_acc": 0.8611, "flops": 72202880, "angle": 11.5191, "derivative": 0.6054, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 331, "train_acc": 0.9646, "val_acc": 0.8865, "flops": 72202880, "angle": 12.0704, "derivative": 0.5514, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 332, "train_acc": 0.9653, "val_acc": 0.8777, "flops": 72202880, "angle": 12.5561, "derivative": 0.4856, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 333, "train_acc": 0.9667, "val_acc": 0.8708, "flops": 72202880, "angle": 12.9648, "derivative": 0.4087, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 334, "train_acc": 0.9684, "val_acc": 0.8802, "flops": 72202880, "angle": 13.3416, "derivative": 0.3768, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 335, "train_acc": 0.9689, "val_acc": 0.895, "flops": 72202880, "angle": 13.6812, "derivative": 0.3396, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 336, "train_acc": 0.9677, "val_acc": 0.8798, "flops": 72202880, "angle": 13.9366, "derivative": 0.2555, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 337, "train_acc": 0.9693, "val_acc": 0.8764, "flops": 72202880, "angle": 14.2202, "derivative": 0.2835, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 338, "train_acc": 0.9707, "val_acc": 0.8604, "flops": 72202880, "angle": 14.5515, "derivative": 0.3313, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 339, "train_acc": 0.9697, "val_acc": 0.8586, "flops": 72202880, "angle": 14.826, "derivative": 0.2745, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 340, "train_acc": 0.9707, "val_acc": 0.8756, "flops": 72202880, "angle": 15.1011, "derivative": 0.2751, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 341, "train_acc": 0.9707, "val_acc": 0.8937, "flops": 72202880, "angle": 15.3294, "derivative": 0.2283, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 342, "train_acc": 0.9715, "val_acc": 0.8836, "flops": 72202880, "angle": 15.507, "derivative": 0.1775, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 343, "train_acc": 0.9702, "val_acc": 0.8814, "flops": 72202880, "angle": 15.7392, "derivative": 0.2323, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 344, "train_acc": 0.971, "val_acc": 0.8796, "flops": 72202880, "angle": 15.9131, "derivative": 0.1739, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 345, "train_acc": 0.9722, "val_acc": 0.8862, "flops": 72202880, "angle": 16.1014, "derivative": 0.1882, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 346, "train_acc": 0.9718, "val_acc": 0.8839, "flops": 72202880, "angle": 16.2952, "derivative": 0.1939, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 347, "train_acc": 0.9721, "val_acc": 0.86, "flops": 72202880, "angle": 16.5184, "derivative": 0.2232, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 348, "train_acc": 0.9719, "val_acc": 0.8854, "flops": 72202880, "angle": 16.7054, "derivative": 0.187, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 349, "train_acc": 0.9735, "val_acc": 0.8965, "flops": 72202880, "angle": 16.8111, "derivative": 0.1057, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 350, "train_acc": 0.9739, "val_acc": 0.8913, "flops": 72202880, "angle": 17.0142, "derivative": 0.2031, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 351, "train_acc": 0.973, "val_acc": 0.8935, "flops": 72202880, "angle": 17.1335, "derivative": 0.1193, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 352, "train_acc": 0.9736, "val_acc": 0.8905, "flops": 72202880, "angle": 17.2677, "derivative": 0.1342, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 353, "train_acc": 0.9738, "val_acc": 0.8916, "flops": 72202880, "angle": 17.3982, "derivative": 0.1305, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 354, "train_acc": 0.9722, "val_acc": 0.8842, "flops": 72202880, "angle": 17.5345, "derivative": 0.1363, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 355, "train_acc": 0.9734, "val_acc": 0.8815, "flops": 72202880, "angle": 17.6956, "derivative": 0.1611, "current_lr": 0.01, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 356, "train_acc": 0.988, "val_acc": 0.918, "flops": 72202880, "angle": 17.6157, "derivative": 0.0799, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 357, "train_acc": 0.993, "val_acc": 0.9192, "flops": 72202880, "angle": 17.5763, "derivative": 0.0394, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 358, "train_acc": 0.9942, "val_acc": 0.9168, "flops": 72202880, "angle": 17.5496, "derivative": 0.0266, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 359, "train_acc": 0.9951, "val_acc": 0.9193, "flops": 72202880, "angle": 17.526, "derivative": 0.0237, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 360, "train_acc": 0.9957, "val_acc": 0.9195, "flops": 72202880, "angle": 17.5047, "derivative": 0.0213, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 361, "train_acc": 0.9959, "val_acc": 0.9213, "flops": 72202880, "angle": 17.4908, "derivative": 0.0139, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 362, "train_acc": 0.9963, "val_acc": 0.921, "flops": 72202880, "angle": 17.4764, "derivative": 0.0144, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 363, "train_acc": 0.9966, "val_acc": 0.9209, "flops": 72202880, "angle": 17.4634, "derivative": 0.013, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 364, "train_acc": 0.9967, "val_acc": 0.9224, "flops": 72202880, "angle": 17.4491, "derivative": 0.0143, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 365, "train_acc": 0.997, "val_acc": 0.9224, "flops": 72202880, "angle": 17.4346, "derivative": 0.0146, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 366, "train_acc": 0.9969, "val_acc": 0.9216, "flops": 72202880, "angle": 17.4325, "derivative": 0.0021, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 367, "train_acc": 0.9975, "val_acc": 0.9218, "flops": 72202880, "angle": 17.4284, "derivative": 0.0041, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 368, "train_acc": 0.9971, "val_acc": 0.9219, "flops": 72202880, "angle": 17.4203, "derivative": 0.0081, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 369, "train_acc": 0.9973, "val_acc": 0.9224, "flops": 72202880, "angle": 17.4135, "derivative": 0.0068, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 370, "train_acc": 0.9978, "val_acc": 0.9209, "flops": 63502976, "angle": 17.4083, "derivative": 0.0052, "current_lr": 0.001, "pruning_info": null}
+{"epoch": 371, "train_acc": 0.9515, "val_acc": 0.8642, "flops": 63502976, "angle": 8.1271, "derivative": null, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 372, "train_acc": 0.9615, "val_acc": 0.8765, "flops": 63502976, "angle": 9.4099, "derivative": 1.2828, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 373, "train_acc": 0.9657, "val_acc": 0.8702, "flops": 63502976, "angle": 10.2123, "derivative": 0.8024, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 374, "train_acc": 0.9672, "val_acc": 0.8811, "flops": 63502976, "angle": 10.8741, "derivative": 0.6618, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 375, "train_acc": 0.9682, "val_acc": 0.8909, "flops": 63502976, "angle": 11.4382, "derivative": 0.5641, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 376, "train_acc": 0.9679, "val_acc": 0.8922, "flops": 63502976, "angle": 11.8998, "derivative": 0.4616, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 377, "train_acc": 0.9686, "val_acc": 0.8802, "flops": 63502976, "angle": 12.3185, "derivative": 0.4187, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 378, "train_acc": 0.9693, "val_acc": 0.8653, "flops": 63502976, "angle": 12.6984, "derivative": 0.3799, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 379, "train_acc": 0.9695, "val_acc": 0.9007, "flops": 63502976, "angle": 12.9848, "derivative": 0.2864, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 380, "train_acc": 0.9717, "val_acc": 0.8968, "flops": 63502976, "angle": 13.2711, "derivative": 0.2864, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 381, "train_acc": 0.9718, "val_acc": 0.8847, "flops": 63502976, "angle": 13.5502, "derivative": 0.279, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 382, "train_acc": 0.9712, "val_acc": 0.9024, "flops": 63502976, "angle": 13.8392, "derivative": 0.289, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 383, "train_acc": 0.9708, "val_acc": 0.8725, "flops": 63502976, "angle": 14.1059, "derivative": 0.2668, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 384, "train_acc": 0.9725, "val_acc": 0.8792, "flops": 63502976, "angle": 14.3154, "derivative": 0.2095, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 385, "train_acc": 0.9715, "val_acc": 0.8886, "flops": 63502976, "angle": 14.5962, "derivative": 0.2808, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 386, "train_acc": 0.9716, "val_acc": 0.8869, "flops": 63502976, "angle": 14.7996, "derivative": 0.2033, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 387, "train_acc": 0.9721, "val_acc": 0.8678, "flops": 63502976, "angle": 14.9962, "derivative": 0.1966, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 388, "train_acc": 0.9725, "val_acc": 0.8997, "flops": 63502976, "angle": 15.2108, "derivative": 0.2146, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 389, "train_acc": 0.9711, "val_acc": 0.8816, "flops": 63502976, "angle": 15.3899, "derivative": 0.1791, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 390, "train_acc": 0.9743, "val_acc": 0.882, "flops": 63502976, "angle": 15.5597, "derivative": 0.1698, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 391, "train_acc": 0.9724, "val_acc": 0.8918, "flops": 63502976, "angle": 15.7493, "derivative": 0.1896, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 392, "train_acc": 0.9729, "val_acc": 0.8965, "flops": 63502976, "angle": 15.9278, "derivative": 0.1785, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 393, "train_acc": 0.9731, "val_acc": 0.8952, "flops": 63502976, "angle": 16.0649, "derivative": 0.1372, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 394, "train_acc": 0.9736, "val_acc": 0.8896, "flops": 63502976, "angle": 16.2543, "derivative": 0.1893, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 395, "train_acc": 0.9739, "val_acc": 0.8816, "flops": 63502976, "angle": 16.357, "derivative": 0.1028, "current_lr": 0.01, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 396, "train_acc": 0.9877, "val_acc": 0.9159, "flops": 63502976, "angle": 16.2692, "derivative": 0.0879, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 397, "train_acc": 0.993, "val_acc": 0.9175, "flops": 63502976, "angle": 16.2219, "derivative": 0.0472, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 398, "train_acc": 0.9943, "val_acc": 0.9212, "flops": 63502976, "angle": 16.1856, "derivative": 0.0363, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 399, "train_acc": 0.995, "val_acc": 0.919, "flops": 63502976, "angle": 16.1593, "derivative": 0.0263, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 400, "train_acc": 0.9954, "val_acc": 0.9194, "flops": 63502976, "angle": 16.1338, "derivative": 0.0255, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 401, "train_acc": 0.9959, "val_acc": 0.9212, "flops": 63502976, "angle": 16.1141, "derivative": 0.0196, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 402, "train_acc": 0.9963, "val_acc": 0.9207, "flops": 63502976, "angle": 16.0961, "derivative": 0.0181, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 403, "train_acc": 0.9965, "val_acc": 0.9229, "flops": 63502976, "angle": 16.0804, "derivative": 0.0156, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 404, "train_acc": 0.9967, "val_acc": 0.9229, "flops": 63502976, "angle": 16.0695, "derivative": 0.0109, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 405, "train_acc": 0.9971, "val_acc": 0.921, "flops": 63502976, "angle": 16.0548, "derivative": 0.0147, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 406, "train_acc": 0.9972, "val_acc": 0.9217, "flops": 63502976, "angle": 16.045, "derivative": 0.0098, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 407, "train_acc": 0.9975, "val_acc": 0.9218, "flops": 63502976, "angle": 16.0342, "derivative": 0.0108, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 408, "train_acc": 0.9973, "val_acc": 0.919, "flops": 63502976, "angle": 16.0241, "derivative": 0.0102, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 409, "train_acc": 0.9975, "val_acc": 0.9213, "flops": 63502976, "angle": 16.0165, "derivative": 0.0076, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 410, "train_acc": 0.998, "val_acc": 0.9226, "flops": 54729344, "angle": 16.0062, "derivative": 0.0103, "current_lr": 0.001, "pruning_info": null}
+{"epoch": 411, "train_acc": 0.9344, "val_acc": 0.8811, "flops": 54729344, "angle": 8.4863, "derivative": null, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 412, "train_acc": 0.9514, "val_acc": 0.8552, "flops": 54729344, "angle": 9.8627, "derivative": 1.3764, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 413, "train_acc": 0.9548, "val_acc": 0.846, "flops": 54729344, "angle": 10.6619, "derivative": 0.7991, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 414, "train_acc": 0.9589, "val_acc": 0.8683, "flops": 54729344, "angle": 11.3779, "derivative": 0.716, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 415, "train_acc": 0.961, "val_acc": 0.884, "flops": 54729344, "angle": 11.9709, "derivative": 0.593, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 416, "train_acc": 0.962, "val_acc": 0.8828, "flops": 54729344, "angle": 12.4339, "derivative": 0.4631, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 417, "train_acc": 0.9625, "val_acc": 0.8756, "flops": 54729344, "angle": 12.8638, "derivative": 0.4299, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 418, "train_acc": 0.9644, "val_acc": 0.8894, "flops": 54729344, "angle": 13.2824, "derivative": 0.4186, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 419, "train_acc": 0.9667, "val_acc": 0.8927, "flops": 54729344, "angle": 13.5564, "derivative": 0.274, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 420, "train_acc": 0.9664, "val_acc": 0.8778, "flops": 54729344, "angle": 13.885, "derivative": 0.3286, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 421, "train_acc": 0.9657, "val_acc": 0.8614, "flops": 54729344, "angle": 14.1539, "derivative": 0.2689, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 422, "train_acc": 0.9674, "val_acc": 0.8853, "flops": 54729344, "angle": 14.4481, "derivative": 0.2941, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 423, "train_acc": 0.9671, "val_acc": 0.8905, "flops": 54729344, "angle": 14.746, "derivative": 0.298, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 424, "train_acc": 0.9673, "val_acc": 0.8909, "flops": 54729344, "angle": 15.0094, "derivative": 0.2634, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 425, "train_acc": 0.9676, "val_acc": 0.8913, "flops": 54729344, "angle": 15.1853, "derivative": 0.1759, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 426, "train_acc": 0.9682, "val_acc": 0.8895, "flops": 54729344, "angle": 15.4117, "derivative": 0.2264, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 427, "train_acc": 0.9688, "val_acc": 0.876, "flops": 54729344, "angle": 15.5897, "derivative": 0.1781, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 428, "train_acc": 0.968, "val_acc": 0.8721, "flops": 54729344, "angle": 15.8096, "derivative": 0.2199, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 429, "train_acc": 0.9695, "val_acc": 0.8961, "flops": 54729344, "angle": 16.0284, "derivative": 0.2188, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 430, "train_acc": 0.9703, "val_acc": 0.8966, "flops": 54729344, "angle": 16.2151, "derivative": 0.1867, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 431, "train_acc": 0.9684, "val_acc": 0.8896, "flops": 54729344, "angle": 16.3688, "derivative": 0.1537, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 432, "train_acc": 0.9678, "val_acc": 0.8883, "flops": 54729344, "angle": 16.574, "derivative": 0.2051, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 433, "train_acc": 0.9701, "val_acc": 0.8777, "flops": 54729344, "angle": 16.6707, "derivative": 0.0967, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 434, "train_acc": 0.9693, "val_acc": 0.8619, "flops": 54729344, "angle": 16.8792, "derivative": 0.2085, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 435, "train_acc": 0.97, "val_acc": 0.903, "flops": 54729344, "angle": 16.9563, "derivative": 0.0771, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 436, "train_acc": 0.9704, "val_acc": 0.8833, "flops": 54729344, "angle": 17.1778, "derivative": 0.2215, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 437, "train_acc": 0.97, "val_acc": 0.8902, "flops": 54729344, "angle": 17.2814, "derivative": 0.1036, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 438, "train_acc": 0.9699, "val_acc": 0.8944, "flops": 54729344, "angle": 17.3847, "derivative": 0.1033, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 439, "train_acc": 0.9712, "val_acc": 0.8728, "flops": 54729344, "angle": 17.5565, "derivative": 0.1718, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 440, "train_acc": 0.9699, "val_acc": 0.8869, "flops": 54729344, "angle": 17.6786, "derivative": 0.1221, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 441, "train_acc": 0.9705, "val_acc": 0.8692, "flops": 54729344, "angle": 17.7756, "derivative": 0.097, "current_lr": 0.01, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 442, "train_acc": 0.9855, "val_acc": 0.915, "flops": 54729344, "angle": 17.693, "derivative": 0.0826, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 443, "train_acc": 0.9912, "val_acc": 0.9159, "flops": 54729344, "angle": 17.644, "derivative": 0.049, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 444, "train_acc": 0.993, "val_acc": 0.9206, "flops": 54729344, "angle": 17.6136, "derivative": 0.0304, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 445, "train_acc": 0.9934, "val_acc": 0.9197, "flops": 54729344, "angle": 17.5863, "derivative": 0.0273, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 446, "train_acc": 0.9944, "val_acc": 0.9205, "flops": 54729344, "angle": 17.5638, "derivative": 0.0225, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 447, "train_acc": 0.9948, "val_acc": 0.9193, "flops": 54729344, "angle": 17.5428, "derivative": 0.021, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 448, "train_acc": 0.9952, "val_acc": 0.9185, "flops": 54729344, "angle": 17.5249, "derivative": 0.0179, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 449, "train_acc": 0.9955, "val_acc": 0.9208, "flops": 54729344, "angle": 17.5115, "derivative": 0.0134, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 450, "train_acc": 0.9959, "val_acc": 0.9218, "flops": 54729344, "angle": 17.4975, "derivative": 0.014, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 451, "train_acc": 0.9961, "val_acc": 0.9214, "flops": 54729344, "angle": 17.4869, "derivative": 0.0106, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 452, "train_acc": 0.9963, "val_acc": 0.923, "flops": 54729344, "angle": 17.4788, "derivative": 0.0081, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 453, "train_acc": 0.9963, "val_acc": 0.9228, "flops": 54729344, "angle": 17.4692, "derivative": 0.0096, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 454, "train_acc": 0.9966, "val_acc": 0.9209, "flops": 54729344, "angle": 17.4593, "derivative": 0.01, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 455, "train_acc": 0.9966, "val_acc": 0.9228, "flops": 54729344, "angle": 17.4474, "derivative": 0.0119, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 456, "train_acc": 0.9971, "val_acc": 0.9195, "flops": 46176896, "angle": 17.4386, "derivative": 0.0088, "current_lr": 0.001, "pruning_info": null}
+{"epoch": 457, "train_acc": 0.9481, "val_acc": 0.8748, "flops": 46176896, "angle": 7.366, "derivative": null, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 458, "train_acc": 0.9572, "val_acc": 0.8794, "flops": 46176896, "angle": 8.5709, "derivative": 1.2049, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 459, "train_acc": 0.9592, "val_acc": 0.8858, "flops": 46176896, "angle": 9.3357, "derivative": 0.7648, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 460, "train_acc": 0.9609, "val_acc": 0.8682, "flops": 46176896, "angle": 9.9377, "derivative": 0.602, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 461, "train_acc": 0.9637, "val_acc": 0.8737, "flops": 46176896, "angle": 10.5178, "derivative": 0.5801, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 462, "train_acc": 0.964, "val_acc": 0.887, "flops": 46176896, "angle": 10.903, "derivative": 0.3852, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 463, "train_acc": 0.9642, "val_acc": 0.8824, "flops": 46176896, "angle": 11.2889, "derivative": 0.3859, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 464, "train_acc": 0.9651, "val_acc": 0.8743, "flops": 46176896, "angle": 11.655, "derivative": 0.3661, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 465, "train_acc": 0.9662, "val_acc": 0.8747, "flops": 46176896, "angle": 11.9221, "derivative": 0.2671, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 466, "train_acc": 0.9664, "val_acc": 0.8973, "flops": 46176896, "angle": 12.1645, "derivative": 0.2424, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 467, "train_acc": 0.9672, "val_acc": 0.8932, "flops": 46176896, "angle": 12.4086, "derivative": 0.2441, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 468, "train_acc": 0.9663, "val_acc": 0.8885, "flops": 46176896, "angle": 12.7087, "derivative": 0.3002, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 469, "train_acc": 0.9668, "val_acc": 0.8974, "flops": 46176896, "angle": 12.9478, "derivative": 0.239, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 470, "train_acc": 0.9682, "val_acc": 0.8657, "flops": 46176896, "angle": 13.1394, "derivative": 0.1916, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 471, "train_acc": 0.9679, "val_acc": 0.8933, "flops": 46176896, "angle": 13.291, "derivative": 0.1516, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 472, "train_acc": 0.9679, "val_acc": 0.8841, "flops": 46176896, "angle": 13.4535, "derivative": 0.1625, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 473, "train_acc": 0.9686, "val_acc": 0.8954, "flops": 46176896, "angle": 13.6834, "derivative": 0.2299, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 474, "train_acc": 0.9686, "val_acc": 0.8986, "flops": 46176896, "angle": 13.8872, "derivative": 0.2038, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 475, "train_acc": 0.9696, "val_acc": 0.9014, "flops": 46176896, "angle": 14.0166, "derivative": 0.1294, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 476, "train_acc": 0.9681, "val_acc": 0.8811, "flops": 46176896, "angle": 14.1835, "derivative": 0.1669, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 477, "train_acc": 0.969, "val_acc": 0.8959, "flops": 46176896, "angle": 14.353, "derivative": 0.1695, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 478, "train_acc": 0.9693, "val_acc": 0.8657, "flops": 46176896, "angle": 14.4802, "derivative": 0.1271, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 479, "train_acc": 0.969, "val_acc": 0.8902, "flops": 46176896, "angle": 14.5923, "derivative": 0.1121, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 480, "train_acc": 0.9697, "val_acc": 0.8644, "flops": 46176896, "angle": 14.7115, "derivative": 0.1192, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 481, "train_acc": 0.9685, "val_acc": 0.8955, "flops": 46176896, "angle": 14.914, "derivative": 0.2025, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 482, "train_acc": 0.9703, "val_acc": 0.8823, "flops": 46176896, "angle": 15.0036, "derivative": 0.0896, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 483, "train_acc": 0.9699, "val_acc": 0.8824, "flops": 46176896, "angle": 15.1234, "derivative": 0.1198, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 484, "train_acc": 0.9687, "val_acc": 0.8934, "flops": 46176896, "angle": 15.2536, "derivative": 0.1302, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 485, "train_acc": 0.9707, "val_acc": 0.8784, "flops": 46176896, "angle": 15.3363, "derivative": 0.0827, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 486, "train_acc": 0.9696, "val_acc": 0.8935, "flops": 46176896, "angle": 15.4447, "derivative": 0.1084, "current_lr": 0.01, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 487, "train_acc": 0.9855, "val_acc": 0.9169, "flops": 46176896, "angle": 15.3539, "derivative": 0.0908, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 488, "train_acc": 0.9907, "val_acc": 0.9213, "flops": 46176896, "angle": 15.3032, "derivative": 0.0506, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 489, "train_acc": 0.9921, "val_acc": 0.9216, "flops": 46176896, "angle": 15.2667, "derivative": 0.0365, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 490, "train_acc": 0.9934, "val_acc": 0.9195, "flops": 46176896, "angle": 15.2339, "derivative": 0.0328, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 491, "train_acc": 0.9941, "val_acc": 0.9211, "flops": 46176896, "angle": 15.2115, "derivative": 0.0224, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 492, "train_acc": 0.9945, "val_acc": 0.9224, "flops": 46176896, "angle": 15.1912, "derivative": 0.0203, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 493, "train_acc": 0.9948, "val_acc": 0.9204, "flops": 46176896, "angle": 15.1702, "derivative": 0.0211, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 494, "train_acc": 0.9955, "val_acc": 0.9212, "flops": 46176896, "angle": 15.1508, "derivative": 0.0194, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 495, "train_acc": 0.9954, "val_acc": 0.9219, "flops": 46176896, "angle": 15.1396, "derivative": 0.0112, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 496, "train_acc": 0.9958, "val_acc": 0.922, "flops": 46176896, "angle": 15.1282, "derivative": 0.0113, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 497, "train_acc": 0.9961, "val_acc": 0.9227, "flops": 46176896, "angle": 15.1175, "derivative": 0.0107, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 498, "train_acc": 0.9962, "val_acc": 0.9227, "flops": 46176896, "angle": 15.1041, "derivative": 0.0133, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 499, "train_acc": 0.9965, "val_acc": 0.9235, "flops": 46176896, "angle": 15.0938, "derivative": 0.0103, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 500, "train_acc": 0.997, "val_acc": 0.9222, "flops": 46176896, "angle": 15.085, "derivative": 0.0088, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 501, "train_acc": 0.9968, "val_acc": 0.9218, "flops": 37476992, "angle": 15.0721, "derivative": 0.0129, "current_lr": 0.001, "pruning_info": null}
+{"epoch": 502, "train_acc": 0.8875, "val_acc": 0.838, "flops": 37476992, "angle": 7.8747, "derivative": null, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 503, "train_acc": 0.9155, "val_acc": 0.8663, "flops": 37476992, "angle": 9.4632, "derivative": 1.5886, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 504, "train_acc": 0.924, "val_acc": 0.845, "flops": 37476992, "angle": 10.5914, "derivative": 1.1282, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 505, "train_acc": 0.9269, "val_acc": 0.8563, "flops": 37476992, "angle": 11.4462, "derivative": 0.8548, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 506, "train_acc": 0.9312, "val_acc": 0.8417, "flops": 37476992, "angle": 12.0842, "derivative": 0.6381, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 507, "train_acc": 0.9347, "val_acc": 0.8566, "flops": 37476992, "angle": 12.6644, "derivative": 0.5802, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 508, "train_acc": 0.9369, "val_acc": 0.8585, "flops": 37476992, "angle": 13.1345, "derivative": 0.4701, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 509, "train_acc": 0.9377, "val_acc": 0.8758, "flops": 37476992, "angle": 13.4839, "derivative": 0.3494, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 510, "train_acc": 0.9404, "val_acc": 0.8775, "flops": 37476992, "angle": 13.9082, "derivative": 0.4243, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 511, "train_acc": 0.9417, "val_acc": 0.8617, "flops": 37476992, "angle": 14.1957, "derivative": 0.2875, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 512, "train_acc": 0.943, "val_acc": 0.8081, "flops": 37476992, "angle": 14.5202, "derivative": 0.3245, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 513, "train_acc": 0.9436, "val_acc": 0.8785, "flops": 37476992, "angle": 14.8324, "derivative": 0.3122, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 514, "train_acc": 0.9449, "val_acc": 0.8728, "flops": 37476992, "angle": 15.1648, "derivative": 0.3324, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 515, "train_acc": 0.9451, "val_acc": 0.8639, "flops": 37476992, "angle": 15.4092, "derivative": 0.2444, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 516, "train_acc": 0.9469, "val_acc": 0.8833, "flops": 37476992, "angle": 15.6857, "derivative": 0.2765, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 517, "train_acc": 0.9467, "val_acc": 0.8418, "flops": 37476992, "angle": 15.844, "derivative": 0.1582, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 518, "train_acc": 0.9472, "val_acc": 0.8811, "flops": 37476992, "angle": 16.0556, "derivative": 0.2117, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 519, "train_acc": 0.9482, "val_acc": 0.8839, "flops": 37476992, "angle": 16.2429, "derivative": 0.1873, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 520, "train_acc": 0.9491, "val_acc": 0.8834, "flops": 37476992, "angle": 16.4701, "derivative": 0.2272, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 521, "train_acc": 0.9493, "val_acc": 0.882, "flops": 37476992, "angle": 16.7006, "derivative": 0.2305, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 522, "train_acc": 0.9503, "val_acc": 0.873, "flops": 37476992, "angle": 16.8609, "derivative": 0.1603, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 523, "train_acc": 0.9512, "val_acc": 0.8726, "flops": 37476992, "angle": 17.0114, "derivative": 0.1505, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 524, "train_acc": 0.9505, "val_acc": 0.8799, "flops": 37476992, "angle": 17.1699, "derivative": 0.1585, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 525, "train_acc": 0.9521, "val_acc": 0.8702, "flops": 37476992, "angle": 17.3134, "derivative": 0.1436, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 526, "train_acc": 0.9511, "val_acc": 0.8925, "flops": 37476992, "angle": 17.4757, "derivative": 0.1623, "current_lr": 0.01, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 527, "train_acc": 0.9718, "val_acc": 0.9105, "flops": 37476992, "angle": 17.3785, "derivative": 0.0973, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 528, "train_acc": 0.9786, "val_acc": 0.9119, "flops": 37476992, "angle": 17.3343, "derivative": 0.0442, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 529, "train_acc": 0.9801, "val_acc": 0.9097, "flops": 37476992, "angle": 17.3107, "derivative": 0.0236, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 530, "train_acc": 0.9817, "val_acc": 0.9137, "flops": 37476992, "angle": 17.2868, "derivative": 0.024, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 531, "train_acc": 0.9828, "val_acc": 0.914, "flops": 37476992, "angle": 17.2787, "derivative": 0.0081, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 532, "train_acc": 0.9835, "val_acc": 0.9124, "flops": 37476992, "angle": 17.2686, "derivative": 0.01, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 533, "train_acc": 0.9845, "val_acc": 0.9136, "flops": 37476992, "angle": 17.2671, "derivative": 0.0015, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 534, "train_acc": 0.9847, "val_acc": 0.9141, "flops": 37476992, "angle": 17.2639, "derivative": 0.0032, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 535, "train_acc": 0.9855, "val_acc": 0.9152, "flops": 37476992, "angle": 17.2634, "derivative": 0.0005, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 536, "train_acc": 0.9857, "val_acc": 0.9156, "flops": 37476992, "angle": 17.2643, "derivative": 0.0009, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 537, "train_acc": 0.9859, "val_acc": 0.9143, "flops": 37476992, "angle": 17.2652, "derivative": 0.0009, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 538, "train_acc": 0.9864, "val_acc": 0.9141, "flops": 37476992, "angle": 17.265, "derivative": 0.0002, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 539, "train_acc": 0.9875, "val_acc": 0.9141, "flops": 37476992, "angle": 17.2594, "derivative": 0.0057, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 540, "train_acc": 0.9868, "val_acc": 0.9127, "flops": 37476992, "angle": 17.265, "derivative": 0.0057, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 541, "train_acc": 0.9878, "val_acc": 0.9163, "flops": 28924544, "angle": 17.2724, "derivative": 0.0074, "current_lr": 0.001, "pruning_info": null}
+{"epoch": 542, "train_acc": 0.9087, "val_acc": 0.8601, "flops": 28924544, "angle": 7.321, "derivative": null, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 543, "train_acc": 0.9222, "val_acc": 0.8745, "flops": 28924544, "angle": 8.5167, "derivative": 1.1957, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 544, "train_acc": 0.9296, "val_acc": 0.8624, "flops": 28924544, "angle": 9.2365, "derivative": 0.7198, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 545, "train_acc": 0.9335, "val_acc": 0.8451, "flops": 28924544, "angle": 9.7893, "derivative": 0.5529, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 546, "train_acc": 0.9361, "val_acc": 0.8629, "flops": 28924544, "angle": 10.3191, "derivative": 0.5297, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 547, "train_acc": 0.9358, "val_acc": 0.8538, "flops": 28924544, "angle": 10.7562, "derivative": 0.4372, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 548, "train_acc": 0.9398, "val_acc": 0.8718, "flops": 28924544, "angle": 11.0887, "derivative": 0.3325, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 549, "train_acc": 0.9404, "val_acc": 0.8639, "flops": 28924544, "angle": 11.4481, "derivative": 0.3594, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 550, "train_acc": 0.9395, "val_acc": 0.8671, "flops": 28924544, "angle": 11.8283, "derivative": 0.3803, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 551, "train_acc": 0.9425, "val_acc": 0.8851, "flops": 28924544, "angle": 12.1041, "derivative": 0.2757, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 552, "train_acc": 0.9422, "val_acc": 0.8792, "flops": 28924544, "angle": 12.3437, "derivative": 0.2396, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 553, "train_acc": 0.9438, "val_acc": 0.8556, "flops": 28924544, "angle": 12.6049, "derivative": 0.2612, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 554, "train_acc": 0.944, "val_acc": 0.8244, "flops": 28924544, "angle": 12.7771, "derivative": 0.1722, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 555, "train_acc": 0.9438, "val_acc": 0.8725, "flops": 28924544, "angle": 13.0721, "derivative": 0.2949, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 556, "train_acc": 0.9446, "val_acc": 0.8829, "flops": 28924544, "angle": 13.2546, "derivative": 0.1825, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 557, "train_acc": 0.945, "val_acc": 0.8852, "flops": 28924544, "angle": 13.504, "derivative": 0.2494, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 558, "train_acc": 0.9468, "val_acc": 0.8687, "flops": 28924544, "angle": 13.708, "derivative": 0.204, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 559, "train_acc": 0.9461, "val_acc": 0.8639, "flops": 28924544, "angle": 13.8956, "derivative": 0.1875, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 560, "train_acc": 0.9466, "val_acc": 0.8551, "flops": 28924544, "angle": 13.9689, "derivative": 0.0734, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 561, "train_acc": 0.9465, "val_acc": 0.8861, "flops": 28924544, "angle": 14.2197, "derivative": 0.2508, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 562, "train_acc": 0.9465, "val_acc": 0.8833, "flops": 28924544, "angle": 14.3952, "derivative": 0.1755, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 563, "train_acc": 0.9469, "val_acc": 0.8753, "flops": 28924544, "angle": 14.5477, "derivative": 0.1525, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 564, "train_acc": 0.9488, "val_acc": 0.8692, "flops": 28924544, "angle": 14.6771, "derivative": 0.1294, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 565, "train_acc": 0.9482, "val_acc": 0.8685, "flops": 28924544, "angle": 14.8413, "derivative": 0.1642, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 566, "train_acc": 0.9477, "val_acc": 0.8699, "flops": 28924544, "angle": 14.952, "derivative": 0.1107, "current_lr": 0.01, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 567, "train_acc": 0.9674, "val_acc": 0.9062, "flops": 28924544, "angle": 14.8489, "derivative": 0.1031, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 568, "train_acc": 0.9752, "val_acc": 0.9067, "flops": 28924544, "angle": 14.7983, "derivative": 0.0505, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 569, "train_acc": 0.9774, "val_acc": 0.9091, "flops": 28924544, "angle": 14.7586, "derivative": 0.0397, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 570, "train_acc": 0.9792, "val_acc": 0.9089, "flops": 28924544, "angle": 14.7306, "derivative": 0.028, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 571, "train_acc": 0.9802, "val_acc": 0.9083, "flops": 28924544, "angle": 14.7102, "derivative": 0.0204, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 572, "train_acc": 0.981, "val_acc": 0.906, "flops": 28924544, "angle": 14.6985, "derivative": 0.0117, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 573, "train_acc": 0.9809, "val_acc": 0.9076, "flops": 28924544, "angle": 14.6811, "derivative": 0.0173, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 574, "train_acc": 0.9816, "val_acc": 0.9071, "flops": 28924544, "angle": 14.6643, "derivative": 0.0168, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 575, "train_acc": 0.9826, "val_acc": 0.907, "flops": 28924544, "angle": 14.656, "derivative": 0.0083, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 576, "train_acc": 0.9826, "val_acc": 0.9088, "flops": 28924544, "angle": 14.6465, "derivative": 0.0095, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 577, "train_acc": 0.9837, "val_acc": 0.9094, "flops": 28924544, "angle": 14.6294, "derivative": 0.0171, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 578, "train_acc": 0.9835, "val_acc": 0.9083, "flops": 28924544, "angle": 14.6336, "derivative": 0.0042, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 579, "train_acc": 0.9847, "val_acc": 0.9082, "flops": 28924544, "angle": 14.6311, "derivative": 0.0025, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 580, "train_acc": 0.9843, "val_acc": 0.9085, "flops": 28924544, "angle": 14.623, "derivative": 0.0081, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 581, "train_acc": 0.9851, "val_acc": 0.9096, "flops": 24648320, "angle": 14.6139, "derivative": 0.009, "current_lr": 0.001, "pruning_info": null}
+{"epoch": 582, "train_acc": 0.9105, "val_acc": 0.8492, "flops": 24648320, "angle": 6.8662, "derivative": null, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 583, "train_acc": 0.9266, "val_acc": 0.8723, "flops": 24648320, "angle": 7.9473, "derivative": 1.0811, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 584, "train_acc": 0.9315, "val_acc": 0.8389, "flops": 24648320, "angle": 8.6784, "derivative": 0.731, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 585, "train_acc": 0.9338, "val_acc": 0.8571, "flops": 24648320, "angle": 9.2495, "derivative": 0.5711, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 586, "train_acc": 0.9347, "val_acc": 0.8486, "flops": 24648320, "angle": 9.7621, "derivative": 0.5127, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 587, "train_acc": 0.9369, "val_acc": 0.8356, "flops": 24648320, "angle": 10.0316, "derivative": 0.2695, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 588, "train_acc": 0.9373, "val_acc": 0.8625, "flops": 24648320, "angle": 10.3753, "derivative": 0.3437, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 589, "train_acc": 0.9397, "val_acc": 0.8589, "flops": 24648320, "angle": 10.7147, "derivative": 0.3394, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 590, "train_acc": 0.9377, "val_acc": 0.8574, "flops": 24648320, "angle": 11.0243, "derivative": 0.3095, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 591, "train_acc": 0.9409, "val_acc": 0.8435, "flops": 24648320, "angle": 11.2394, "derivative": 0.2152, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 592, "train_acc": 0.9404, "val_acc": 0.8517, "flops": 24648320, "angle": 11.5396, "derivative": 0.3001, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 593, "train_acc": 0.9413, "val_acc": 0.8783, "flops": 24648320, "angle": 11.7044, "derivative": 0.1648, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 594, "train_acc": 0.9404, "val_acc": 0.8604, "flops": 24648320, "angle": 11.9744, "derivative": 0.27, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 595, "train_acc": 0.9421, "val_acc": 0.8508, "flops": 24648320, "angle": 12.1679, "derivative": 0.1935, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 596, "train_acc": 0.9427, "val_acc": 0.8723, "flops": 24648320, "angle": 12.294, "derivative": 0.1261, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 597, "train_acc": 0.9426, "val_acc": 0.8415, "flops": 24648320, "angle": 12.459, "derivative": 0.165, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 598, "train_acc": 0.9426, "val_acc": 0.8804, "flops": 24648320, "angle": 12.7228, "derivative": 0.2638, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 599, "train_acc": 0.9441, "val_acc": 0.8545, "flops": 24648320, "angle": 12.8579, "derivative": 0.1351, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 600, "train_acc": 0.9435, "val_acc": 0.8704, "flops": 24648320, "angle": 12.9853, "derivative": 0.1274, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 601, "train_acc": 0.9447, "val_acc": 0.8675, "flops": 24648320, "angle": 13.1247, "derivative": 0.1394, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 602, "train_acc": 0.945, "val_acc": 0.8537, "flops": 24648320, "angle": 13.2563, "derivative": 0.1316, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 603, "train_acc": 0.9453, "val_acc": 0.8701, "flops": 24648320, "angle": 13.441, "derivative": 0.1847, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 604, "train_acc": 0.9452, "val_acc": 0.8572, "flops": 24648320, "angle": 13.5853, "derivative": 0.1443, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 605, "train_acc": 0.946, "val_acc": 0.8697, "flops": 24648320, "angle": 13.6882, "derivative": 0.103, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 606, "train_acc": 0.9449, "val_acc": 0.8762, "flops": 24648320, "angle": 13.8424, "derivative": 0.1542, "current_lr": 0.01, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 607, "train_acc": 0.9646, "val_acc": 0.9009, "flops": 24648320, "angle": 13.7085, "derivative": 0.1339, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 608, "train_acc": 0.972, "val_acc": 0.905, "flops": 24648320, "angle": 13.6511, "derivative": 0.0574, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 609, "train_acc": 0.9743, "val_acc": 0.9037, "flops": 24648320, "angle": 13.6087, "derivative": 0.0424, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 610, "train_acc": 0.9757, "val_acc": 0.9019, "flops": 24648320, "angle": 13.5694, "derivative": 0.0393, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 611, "train_acc": 0.9769, "val_acc": 0.9065, "flops": 24648320, "angle": 13.5353, "derivative": 0.034, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 612, "train_acc": 0.9778, "val_acc": 0.9006, "flops": 24648320, "angle": 13.5197, "derivative": 0.0157, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 613, "train_acc": 0.978, "val_acc": 0.9019, "flops": 24648320, "angle": 13.4977, "derivative": 0.022, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 614, "train_acc": 0.9792, "val_acc": 0.9002, "flops": 24648320, "angle": 13.4762, "derivative": 0.0215, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 615, "train_acc": 0.9801, "val_acc": 0.9034, "flops": 24648320, "angle": 13.4479, "derivative": 0.0282, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 616, "train_acc": 0.9806, "val_acc": 0.9016, "flops": 24648320, "angle": 13.4428, "derivative": 0.0052, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 617, "train_acc": 0.9814, "val_acc": 0.9039, "flops": 24648320, "angle": 13.4378, "derivative": 0.005, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 618, "train_acc": 0.9811, "val_acc": 0.9037, "flops": 24648320, "angle": 13.4271, "derivative": 0.0106, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 619, "train_acc": 0.9816, "val_acc": 0.9047, "flops": 24648320, "angle": 13.4186, "derivative": 0.0085, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 620, "train_acc": 0.982, "val_acc": 0.9013, "flops": 24648320, "angle": 13.4118, "derivative": 0.0068, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 621, "train_acc": 0.9812, "val_acc": 0.9026, "flops": 22897280, "angle": 13.4046, "derivative": 0.0071, "current_lr": 0.001, "pruning_info": null}
+{"epoch": 622, "train_acc": 0.9207, "val_acc": 0.8485, "flops": 22897280, "angle": 6.3316, "derivative": null, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 623, "train_acc": 0.9291, "val_acc": 0.8589, "flops": 22897280, "angle": 7.2982, "derivative": 0.9666, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 624, "train_acc": 0.9337, "val_acc": 0.848, "flops": 22897280, "angle": 7.8884, "derivative": 0.5901, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 625, "train_acc": 0.9339, "val_acc": 0.8377, "flops": 22897280, "angle": 8.3487, "derivative": 0.4603, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 626, "train_acc": 0.9353, "val_acc": 0.8591, "flops": 22897280, "angle": 8.7642, "derivative": 0.4155, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 627, "train_acc": 0.9365, "val_acc": 0.8457, "flops": 22897280, "angle": 9.0713, "derivative": 0.3071, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 628, "train_acc": 0.9377, "val_acc": 0.8737, "flops": 22897280, "angle": 9.3303, "derivative": 0.2591, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 629, "train_acc": 0.9395, "val_acc": 0.8479, "flops": 22897280, "angle": 9.7409, "derivative": 0.4106, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 630, "train_acc": 0.9393, "val_acc": 0.8408, "flops": 22897280, "angle": 9.8537, "derivative": 0.1128, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 631, "train_acc": 0.9397, "val_acc": 0.8636, "flops": 22897280, "angle": 10.11, "derivative": 0.2563, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 632, "train_acc": 0.9402, "val_acc": 0.8648, "flops": 22897280, "angle": 10.339, "derivative": 0.229, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 633, "train_acc": 0.9408, "val_acc": 0.8617, "flops": 22897280, "angle": 10.4986, "derivative": 0.1596, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 634, "train_acc": 0.9412, "val_acc": 0.8549, "flops": 22897280, "angle": 10.6656, "derivative": 0.1669, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 635, "train_acc": 0.9423, "val_acc": 0.8575, "flops": 22897280, "angle": 10.8729, "derivative": 0.2073, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 636, "train_acc": 0.9414, "val_acc": 0.8629, "flops": 22897280, "angle": 11.0244, "derivative": 0.1515, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 637, "train_acc": 0.9419, "val_acc": 0.8684, "flops": 22897280, "angle": 11.2021, "derivative": 0.1778, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 638, "train_acc": 0.9419, "val_acc": 0.8739, "flops": 22897280, "angle": 11.3401, "derivative": 0.138, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 639, "train_acc": 0.9427, "val_acc": 0.853, "flops": 22897280, "angle": 11.4874, "derivative": 0.1472, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 640, "train_acc": 0.9429, "val_acc": 0.8755, "flops": 22897280, "angle": 11.666, "derivative": 0.1786, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 641, "train_acc": 0.9441, "val_acc": 0.8578, "flops": 22897280, "angle": 11.7081, "derivative": 0.042, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 642, "train_acc": 0.9428, "val_acc": 0.8657, "flops": 22897280, "angle": 11.8453, "derivative": 0.1373, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 643, "train_acc": 0.9437, "val_acc": 0.8741, "flops": 22897280, "angle": 11.957, "derivative": 0.1117, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 644, "train_acc": 0.9446, "val_acc": 0.8552, "flops": 22897280, "angle": 12.1436, "derivative": 0.1866, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 645, "train_acc": 0.9442, "val_acc": 0.8544, "flops": 22897280, "angle": 12.2445, "derivative": 0.1009, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 646, "train_acc": 0.9439, "val_acc": 0.847, "flops": 22897280, "angle": 12.3428, "derivative": 0.0983, "current_lr": 0.01, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 647, "train_acc": 0.9645, "val_acc": 0.8985, "flops": 22897280, "angle": 12.2142, "derivative": 0.1285, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 648, "train_acc": 0.9725, "val_acc": 0.9006, "flops": 22897280, "angle": 12.1393, "derivative": 0.075, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 649, "train_acc": 0.9739, "val_acc": 0.8965, "flops": 22897280, "angle": 12.0929, "derivative": 0.0464, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 650, "train_acc": 0.9749, "val_acc": 0.8984, "flops": 22897280, "angle": 12.0506, "derivative": 0.0423, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 651, "train_acc": 0.9762, "val_acc": 0.9025, "flops": 22897280, "angle": 12.0317, "derivative": 0.0189, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 652, "train_acc": 0.9769, "val_acc": 0.8993, "flops": 22897280, "angle": 12.0015, "derivative": 0.0302, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 653, "train_acc": 0.9778, "val_acc": 0.8974, "flops": 22897280, "angle": 11.9774, "derivative": 0.0241, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 654, "train_acc": 0.979, "val_acc": 0.9003, "flops": 22897280, "angle": 11.9672, "derivative": 0.0102, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 655, "train_acc": 0.9785, "val_acc": 0.9, "flops": 22897280, "angle": 11.9416, "derivative": 0.0256, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 656, "train_acc": 0.9795, "val_acc": 0.901, "flops": 22897280, "angle": 11.9377, "derivative": 0.0039, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 657, "train_acc": 0.9801, "val_acc": 0.8982, "flops": 22897280, "angle": 11.9056, "derivative": 0.0321, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 658, "train_acc": 0.9797, "val_acc": 0.9033, "flops": 22897280, "angle": 11.9094, "derivative": 0.0039, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 659, "train_acc": 0.9807, "val_acc": 0.9028, "flops": 22897280, "angle": 11.907, "derivative": 0.0025, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 660, "train_acc": 0.9806, "val_acc": 0.8986, "flops": 22897280, "angle": 11.875, "derivative": 0.0319, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 661, "train_acc": 0.9818, "val_acc": 0.901, "flops": 21275264, "angle": 11.8751, "derivative": 0.0001, "current_lr": 0.001, "pruning_info": null}
+{"epoch": 662, "train_acc": 0.916, "val_acc": 0.8332, "flops": 21275264, "angle": 6.7042, "derivative": null, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 663, "train_acc": 0.9248, "val_acc": 0.8398, "flops": 21275264, "angle": 7.6432, "derivative": 0.939, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 664, "train_acc": 0.929, "val_acc": 0.8132, "flops": 21275264, "angle": 8.3193, "derivative": 0.6761, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 665, "train_acc": 0.9318, "val_acc": 0.8554, "flops": 21275264, "angle": 8.7525, "derivative": 0.4332, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 666, "train_acc": 0.933, "val_acc": 0.8502, "flops": 21275264, "angle": 9.2355, "derivative": 0.483, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 667, "train_acc": 0.9343, "val_acc": 0.8577, "flops": 21275264, "angle": 9.5436, "derivative": 0.3081, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 668, "train_acc": 0.9344, "val_acc": 0.8605, "flops": 21275264, "angle": 9.8594, "derivative": 0.3158, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 669, "train_acc": 0.9366, "val_acc": 0.8551, "flops": 21275264, "angle": 10.0986, "derivative": 0.2392, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 670, "train_acc": 0.9366, "val_acc": 0.8605, "flops": 21275264, "angle": 10.341, "derivative": 0.2423, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 671, "train_acc": 0.9373, "val_acc": 0.8524, "flops": 21275264, "angle": 10.5566, "derivative": 0.2156, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 672, "train_acc": 0.9384, "val_acc": 0.8754, "flops": 21275264, "angle": 10.7041, "derivative": 0.1476, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 673, "train_acc": 0.939, "val_acc": 0.8458, "flops": 21275264, "angle": 10.9223, "derivative": 0.2181, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 674, "train_acc": 0.938, "val_acc": 0.8497, "flops": 21275264, "angle": 11.1202, "derivative": 0.1979, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 675, "train_acc": 0.9397, "val_acc": 0.86, "flops": 21275264, "angle": 11.228, "derivative": 0.1078, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 676, "train_acc": 0.9399, "val_acc": 0.8667, "flops": 21275264, "angle": 11.3369, "derivative": 0.1089, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 677, "train_acc": 0.9398, "val_acc": 0.8741, "flops": 21275264, "angle": 11.5748, "derivative": 0.2379, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 678, "train_acc": 0.9396, "val_acc": 0.8685, "flops": 21275264, "angle": 11.6937, "derivative": 0.1189, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 679, "train_acc": 0.9406, "val_acc": 0.8659, "flops": 21275264, "angle": 11.8168, "derivative": 0.1231, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 680, "train_acc": 0.9394, "val_acc": 0.8321, "flops": 21275264, "angle": 11.9916, "derivative": 0.1748, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 681, "train_acc": 0.9386, "val_acc": 0.8715, "flops": 21275264, "angle": 12.0878, "derivative": 0.0962, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 682, "train_acc": 0.9407, "val_acc": 0.8369, "flops": 21275264, "angle": 12.23, "derivative": 0.1422, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 683, "train_acc": 0.942, "val_acc": 0.8721, "flops": 21275264, "angle": 12.3155, "derivative": 0.0855, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 684, "train_acc": 0.9408, "val_acc": 0.863, "flops": 21275264, "angle": 12.4366, "derivative": 0.1211, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 685, "train_acc": 0.9412, "val_acc": 0.8629, "flops": 21275264, "angle": 12.6135, "derivative": 0.1769, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 686, "train_acc": 0.9408, "val_acc": 0.8537, "flops": 21275264, "angle": 12.7498, "derivative": 0.1364, "current_lr": 0.01, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 687, "train_acc": 0.9615, "val_acc": 0.8989, "flops": 21275264, "angle": 12.5762, "derivative": 0.1736, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 688, "train_acc": 0.9697, "val_acc": 0.9009, "flops": 21275264, "angle": 12.514, "derivative": 0.0622, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 689, "train_acc": 0.9717, "val_acc": 0.8986, "flops": 21275264, "angle": 12.4768, "derivative": 0.0372, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 690, "train_acc": 0.9728, "val_acc": 0.9003, "flops": 21275264, "angle": 12.4398, "derivative": 0.037, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 691, "train_acc": 0.9735, "val_acc": 0.8981, "flops": 21275264, "angle": 12.411, "derivative": 0.0288, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 692, "train_acc": 0.9753, "val_acc": 0.8993, "flops": 21275264, "angle": 12.3879, "derivative": 0.0231, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 693, "train_acc": 0.9758, "val_acc": 0.8957, "flops": 21275264, "angle": 12.3726, "derivative": 0.0152, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 694, "train_acc": 0.9764, "val_acc": 0.8964, "flops": 21275264, "angle": 12.3451, "derivative": 0.0275, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 695, "train_acc": 0.977, "val_acc": 0.9005, "flops": 21275264, "angle": 12.3332, "derivative": 0.012, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 696, "train_acc": 0.9777, "val_acc": 0.9007, "flops": 21275264, "angle": 12.3106, "derivative": 0.0226, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 697, "train_acc": 0.9778, "val_acc": 0.9008, "flops": 21275264, "angle": 12.2961, "derivative": 0.0145, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 698, "train_acc": 0.979, "val_acc": 0.9007, "flops": 21275264, "angle": 12.293, "derivative": 0.0032, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 699, "train_acc": 0.979, "val_acc": 0.8981, "flops": 21275264, "angle": 12.2809, "derivative": 0.012, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 700, "train_acc": 0.9791, "val_acc": 0.897, "flops": 21275264, "angle": 12.2764, "derivative": 0.0045, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 701, "train_acc": 0.979, "val_acc": 0.9, "flops": 19653248, "angle": 12.2653, "derivative": 0.0111, "current_lr": 0.001, "pruning_info": null}
+{"epoch": 702, "train_acc": 0.9171, "val_acc": 0.8483, "flops": 19653248, "angle": 6.0781, "derivative": null, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 703, "train_acc": 0.9242, "val_acc": 0.8529, "flops": 19653248, "angle": 7.0933, "derivative": 1.0152, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 704, "train_acc": 0.9284, "val_acc": 0.8428, "flops": 19653248, "angle": 7.7688, "derivative": 0.6755, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 705, "train_acc": 0.9295, "val_acc": 0.8674, "flops": 19653248, "angle": 8.2293, "derivative": 0.4605, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 706, "train_acc": 0.933, "val_acc": 0.8586, "flops": 19653248, "angle": 8.5557, "derivative": 0.3264, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 707, "train_acc": 0.9324, "val_acc": 0.8539, "flops": 19653248, "angle": 8.9389, "derivative": 0.3832, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 708, "train_acc": 0.9339, "val_acc": 0.8768, "flops": 19653248, "angle": 9.2146, "derivative": 0.2757, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 709, "train_acc": 0.9333, "val_acc": 0.8579, "flops": 19653248, "angle": 9.3603, "derivative": 0.1457, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 710, "train_acc": 0.9338, "val_acc": 0.8331, "flops": 19653248, "angle": 9.7173, "derivative": 0.3569, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 711, "train_acc": 0.9363, "val_acc": 0.8625, "flops": 19653248, "angle": 9.8874, "derivative": 0.1701, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 712, "train_acc": 0.9359, "val_acc": 0.8726, "flops": 19653248, "angle": 10.1613, "derivative": 0.2739, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 713, "train_acc": 0.9358, "val_acc": 0.866, "flops": 19653248, "angle": 10.3215, "derivative": 0.1602, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 714, "train_acc": 0.936, "val_acc": 0.8547, "flops": 19653248, "angle": 10.5071, "derivative": 0.1856, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 715, "train_acc": 0.9364, "val_acc": 0.871, "flops": 19653248, "angle": 10.6397, "derivative": 0.1326, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 716, "train_acc": 0.9363, "val_acc": 0.8463, "flops": 19653248, "angle": 10.9094, "derivative": 0.2697, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 717, "train_acc": 0.9376, "val_acc": 0.8525, "flops": 19653248, "angle": 11.014, "derivative": 0.1046, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 718, "train_acc": 0.9368, "val_acc": 0.836, "flops": 19653248, "angle": 11.1449, "derivative": 0.131, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 719, "train_acc": 0.9381, "val_acc": 0.8367, "flops": 19653248, "angle": 11.2263, "derivative": 0.0814, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 720, "train_acc": 0.9377, "val_acc": 0.8567, "flops": 19653248, "angle": 11.3449, "derivative": 0.1186, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 721, "train_acc": 0.9393, "val_acc": 0.8633, "flops": 19653248, "angle": 11.5116, "derivative": 0.1666, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 722, "train_acc": 0.9384, "val_acc": 0.8805, "flops": 19653248, "angle": 11.5624, "derivative": 0.0509, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 723, "train_acc": 0.939, "val_acc": 0.8659, "flops": 19653248, "angle": 11.7211, "derivative": 0.1586, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 724, "train_acc": 0.9383, "val_acc": 0.8164, "flops": 19653248, "angle": 11.8524, "derivative": 0.1313, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 725, "train_acc": 0.9394, "val_acc": 0.8709, "flops": 19653248, "angle": 11.9572, "derivative": 0.1048, "current_lr": 0.01, "pruning_info": null}
+{"epoch": 726, "train_acc": 0.939, "val_acc": 0.869, "flops": 19653248, "angle": 12.0883, "derivative": 0.131, "current_lr": 0.01, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 727, "train_acc": 0.9603, "val_acc": 0.8962, "flops": 19653248, "angle": 11.9349, "derivative": 0.1534, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 728, "train_acc": 0.9669, "val_acc": 0.8969, "flops": 19653248, "angle": 11.8747, "derivative": 0.0602, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 729, "train_acc": 0.9693, "val_acc": 0.8977, "flops": 19653248, "angle": 11.8294, "derivative": 0.0453, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 730, "train_acc": 0.9704, "val_acc": 0.8985, "flops": 19653248, "angle": 11.7942, "derivative": 0.0352, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 731, "train_acc": 0.9719, "val_acc": 0.9001, "flops": 19653248, "angle": 11.753, "derivative": 0.0412, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 732, "train_acc": 0.9735, "val_acc": 0.9016, "flops": 19653248, "angle": 11.7212, "derivative": 0.0318, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 733, "train_acc": 0.974, "val_acc": 0.8991, "flops": 19653248, "angle": 11.6904, "derivative": 0.0309, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 734, "train_acc": 0.9747, "val_acc": 0.9001, "flops": 19653248, "angle": 11.6805, "derivative": 0.0098, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 735, "train_acc": 0.9748, "val_acc": 0.8994, "flops": 19653248, "angle": 11.6548, "derivative": 0.0258, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 736, "train_acc": 0.9759, "val_acc": 0.9004, "flops": 19653248, "angle": 11.633, "derivative": 0.0218, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 737, "train_acc": 0.9754, "val_acc": 0.8996, "flops": 19653248, "angle": 11.6355, "derivative": 0.0025, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 738, "train_acc": 0.9763, "val_acc": 0.8976, "flops": 19653248, "angle": 11.6081, "derivative": 0.0274, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 739, "train_acc": 0.9763, "val_acc": 0.8972, "flops": 19653248, "angle": 11.6053, "derivative": 0.0027, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}
+{"epoch": 740, "train_acc": 0.9766, "val_acc": 0.8968, "flops": 19653248, "angle": 11.5949, "derivative": 0.0104, "current_lr": 0.001, "pruning_info": "Waiting for 15 epochs after LR drop."}

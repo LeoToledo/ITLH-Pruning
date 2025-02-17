@@ -1,140 +1,112 @@
+# layer_rotation.py
+
 import numpy as np
-from scipy.spatial.distance import cosine
 import math
-from sklearn.preprocessing import MinMaxScaler
 
 class LayerRotationTracker:
     """
-    Tracks how much each layer's weights have "rotated" (changed in direction)
-    compared to the initial weights, using cosine distance, replicating
-    the logic of angle (slope) calculation from the original article.
+    Tracks how much each layer's weights have rotated from their initialization.
+    The "angle" here is computed as the average (over tracked layers) of the angle (in degrees)
+    between the weight vectors at initialization and the current weight vectors.
+    When the derivative (i.e. the change in the mean angle from the previous epoch) remains below a
+    set threshold for a number of consecutive epochs, the tracker signals that the model is stable enough
+    to consider pruning.
     """
-
-    def __init__(
-        self,
-        model,
-        layer_names=None,
-        start_epoch=5,
-        angle_threshold=45.0,
-        stable_epochs_needed=2
-    ):
+    def __init__(self, model, layer_names=None, derivative_threshold=0.1, stable_epochs_needed=2):
         """
         Args:
-            model: Keras model
-            layer_names: list of layer names (optional).
-            start_epoch: number of epochs used in linear regression (5 in the article).
-            angle_threshold: angle threshold (45° by default, as in the article).
-            stable_epochs_needed: number of consecutive epochs that must be below
-                                  the angle threshold before returning True.
+            model: Keras model.
+            layer_names: Optional list of layer names to track. If None, all layers with weights are tracked.
+            derivative_threshold: Threshold (in degrees) for the change in angle between epochs below which is considered stable.
+            stable_epochs_needed: Number of consecutive epochs with derivative below the threshold needed to trigger pruning.
         """
-        self.start_epoch = start_epoch
-        self.angle_threshold = angle_threshold
+        self.derivative_threshold = derivative_threshold
         self.stable_epochs_needed = stable_epochs_needed
         self.consecutive_stable_count = 0
+        self.previous_angle = None
 
-        # If layer_names is not specified, we use all layers that have weights
+        # If no specific layers are provided, track all layers that have weights.
         if layer_names is None:
             self.layer_names = [layer.name for layer in model.layers if len(layer.get_weights()) > 0]
         else:
             self.layer_names = layer_names
 
-        # Save initial weights
-        self.initial_weights = []
-        for name in self.layer_names:
-            w_init = model.get_layer(name).get_weights()[0]
-            self.initial_weights.append(w_init.copy())
+        # Store the initial weights from the model as the baseline.
+        self.initial_weights = [model.get_layer(name).get_weights()[0] for name in self.layer_names]
 
-        # List for storing mean cosine distances
-        self.cosine_distances_mean = []
+        # Optional: Log of computed angles for later analysis.
+        self.angles = []
 
-    def calculate_mean_cosine_distance(self, model):
+    def compute_epoch_angle(self, model):
         """
-        Calculates the average cosine distance between current weights and initial weights.
-        """
-        current_weights = [model.get_layer(name).get_weights()[0] for name in self.layer_names]
-        distances = []
-        for w_init, w_curr in zip(self.initial_weights, current_weights):
-            dist = cosine(w_init.flatten(), w_curr.flatten())
-            distances.append(dist)
-        mean_distance = np.mean(distances)
-        return mean_distance
-
-    def calculate_angle(self, current_epoch, total_epochs):
-        """
-        Calculates the angle based on recent distances, regardless of start_epoch.
-        """
-        if len(self.cosine_distances_mean) < 2:  # Need at least 2 points for slope
-            return 0.0
-
-        # Use all available points up to current epoch
-        recent_distances = np.array(self.cosine_distances_mean).reshape(-1, 1)
+        Computes the average angle (in degrees) between the initial weights and the current weights.
         
-        # Create normalized epoch array for all available points
-        epochs_ndarray = np.arange(1, total_epochs + 1).reshape(-1, 1)
-        scaler = MinMaxScaler(feature_range=(0, 1))
-        epochs_norm = scaler.fit_transform(epochs_ndarray)
-        epochs_norm_1d = epochs_norm.flatten()
-
-        # Select the window of normalized epochs for available points
-        epochs_window = epochs_norm_1d[:len(recent_distances)]
-        recent_distances_norm_1d = recent_distances.flatten()
-
-        # Linear fit and angle calculation
-        slope, _ = np.polyfit(epochs_window, recent_distances_norm_1d, 1)
-        angle = np.degrees(np.arctan(slope))
+        Args:
+            model: The current Keras model.
         
-        return angle
-
-    def update_and_check_stability(self, model, current_epoch, total_epochs):
-        """
         Returns:
-            stable (bool): True if rotation is considered "stable" this epoch.
-            angle (float): The computed angle this epoch.
+            mean_angle (float): The average angle (in degrees) computed over all tracked layers.
+            current_weights (list): A list containing the current weights for each tracked layer.
         """
-        # 1) Calculate mean cosine distance
-        distance_mean = self.calculate_mean_cosine_distance(model)
-        self.cosine_distances_mean.append(distance_mean)
+        # Retrieve current weights for each tracked layer.
+        current_weights = [model.get_layer(name).get_weights()[0] for name in self.layer_names]
 
-        # Always calculate angle using all available points
-        angle = self.calculate_angle(current_epoch, total_epochs)
+        angles = []
+        # Compute the angle for each layer between the initial and current weights.
+        for w_init, w_curr in zip(self.initial_weights, current_weights):
+            # Flatten the weight arrays.
+            w_init_flat = w_init.flatten()
+            w_curr_flat = w_curr.flatten()
+            # Compute the norms (adding a small constant for numerical stability).
+            norm_init = np.linalg.norm(w_init_flat) + 1e-8
+            norm_curr = np.linalg.norm(w_curr_flat) + 1e-8
+            # Compute the cosine similarity.
+            cos_sim = np.dot(w_init_flat, w_curr_flat) / (norm_init * norm_curr)
+            # Clip the cosine similarity to the interval [-1, 1] to avoid numerical errors.
+            cos_sim = np.clip(cos_sim, -1.0, 1.0)
+            # Compute the angle (in degrees) from the cosine similarity.
+            angle_deg = np.degrees(np.arccos(cos_sim))
+            angles.append(angle_deg)
+        mean_angle = np.mean(angles)
+        return mean_angle, current_weights
 
-        # Initialize stable as False
-        stable = False
+    def update_and_check_stability(self, model):
+        """
+        Updates the tracker using the current model and checks whether the derivative (change) in the angle
+        from the previous epoch has been below the threshold for enough consecutive epochs to trigger pruning.
+        
+        Args:
+            model: The current Keras model.
+        
+        Returns:
+            stable (bool): True if the derivative has remained below the threshold for the required number of consecutive epochs.
+            mean_angle (float): The computed average angle for the current epoch.
+        """
+        mean_angle, current_weights = self.compute_epoch_angle(model)
 
-        # Only check stability if we have enough points (start_epoch)
-        if len(self.cosine_distances_mean) >= self.start_epoch:
-            # Take the last 'start_epoch' distances for stability check
-            recent_distances = self.cosine_distances_mean[-self.start_epoch:]
-            recent_distances = np.array(recent_distances).reshape(-1, 1)
+        # Log the computed angle.
+        self.angles.append(mean_angle)
+        print(f"[LayerRotationTracker] Mean Angle (from initialization): {mean_angle:.2f}°")
 
-            # Create normalized epoch array
-            epochs_ndarray = np.arange(1, total_epochs + 1).reshape(-1, 1)
-            scaler = MinMaxScaler(feature_range=(0, 1))
-            epochs_norm = scaler.fit_transform(epochs_ndarray)
-            epochs_norm_1d = epochs_norm.flatten()
+        # If this is the first epoch, initialize previous_angle and do not count stability.
+        if self.previous_angle is None:
+            self.previous_angle = mean_angle
+            return False, mean_angle
 
-            # Select window for stability check
-            start_index = current_epoch - self.start_epoch
-            end_index = current_epoch
-            if start_index < 0:
-                start_index = 0
+        # Calculate the derivative (absolute difference between the current and previous mean angle).
+        derivative = abs(mean_angle - self.previous_angle)
+        print(f"[LayerRotationTracker] Angle Derivative: {derivative:.2f}°")
 
-            epochs_window = epochs_norm_1d[start_index:end_index]
-            recent_distances_norm_1d = recent_distances.flatten()
-            
-            # Calculate slope for stability check
-            slope, _ = np.polyfit(epochs_window, recent_distances_norm_1d, 1)
-            stability_angle = np.degrees(np.arctan(slope))
+        # Update previous_angle for the next epoch.
+        self.previous_angle = mean_angle
 
-            # Update stability counters based on stability_angle
-            if stability_angle < self.angle_threshold:
-                self.consecutive_stable_count += 1
-            else:
-                self.consecutive_stable_count = 0
+        # Check whether the derivative is below the threshold.
+        if derivative < self.derivative_threshold:
+            self.consecutive_stable_count += 1
+        else:
+            self.consecutive_stable_count = 0
 
-            if self.consecutive_stable_count >= self.stable_epochs_needed:
-                stable = True
+        # If the derivative has remained below the threshold for enough consecutive epochs, signal stability.
+        stable = self.consecutive_stable_count >= self.stable_epochs_needed
 
-            print(f"[LayerRotationTracker] Angle: {angle:.2f}° (slope-based)")
-
-        return stable, angle
+        return stable, mean_angle
