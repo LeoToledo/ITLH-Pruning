@@ -8,7 +8,7 @@ from sklearn.utils import gen_batches
 from sklearn.utils.extmath import softmax
 
 # architecture_name = 'ResNet'
-n_samples = None
+n_samples = 128
 
 
 class CKA:
@@ -23,8 +23,13 @@ class CKA:
                 (n - 1) * (n - 2)))
 
     def feature_space_linear_cka(self, features_x, features_y, debiased=False):
-        features_x = features_x - np.mean(features_x, 0, keepdims=True)
-        features_y = features_y - np.mean(features_y, 0, keepdims=True)
+        
+        # Convert to float32 to avoid overflow issues
+        features_x = features_x.astype(np.float32)
+        features_y = features_y.astype(np.float32)
+        
+        features_x = features_x - np.mean(features_x, axis=0, keepdims=True)
+        features_y = features_y - np.mean(features_y, axis=0, keepdims=True)
 
         dot_product_similarity = np.linalg.norm(features_x.T.dot(features_y)) ** 2
         normalization_x = np.linalg.norm(features_x.T.dot(features_x))
@@ -32,7 +37,6 @@ class CKA:
 
         if debiased:
             n = features_x.shape[0]
-            # Equivalent to np.sum(features_x ** 2, 1) but avoids an intermediate array.
             sum_squared_rows_x = np.einsum('ij,ij->i', features_x, features_x)
             sum_squared_rows_y = np.einsum('ij,ij->i', features_y, features_y)
             squared_norm_x = np.sum(sum_squared_rows_x)
@@ -47,12 +51,13 @@ class CKA:
             normalization_y = np.sqrt(self._debiased_dot_product_similarity_helper(
                 normalization_y ** 2, sum_squared_rows_y, sum_squared_rows_y,
                 squared_norm_y, squared_norm_y, n))
-
+            
         return dot_product_similarity / (normalization_x * normalization_y)
+
 
     def scores(self, model, X_train=None, y_train=None, allowed_layers=[]):
         output = []
-
+        
         if n_samples:
             y_ = np.argmax(y_train, axis=1)
             sub_sampling = [np.random.choice(np.where(y_ == value)[0], n_samples, replace=False) for value in

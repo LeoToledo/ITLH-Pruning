@@ -25,6 +25,9 @@ import custom_functions as func
 from layer_rotation import LayerRotationTracker
 from custom_functions import data_augmentation
 
+# Import the new module for computing equivalent p_filter.
+from define_p_filter import compute_equivalent_p_filter
+
 # Set seeds for reproducibility
 random.seed(2)
 np.random.seed(2)
@@ -59,29 +62,32 @@ set_global_policy('mixed_float16')
 ARCHITECTURE_NAME = 'ResNet56'
 CRITERION_FILTER = 'CKA'
 CRITERION_LAYER = 'CKA'
-P_FILTER = 0.08
-P_LAYER = 2
-MAX_EPOCHS = 1000
+P_FILTER = 0.08         # (Will be replaced dynamically)
+P_LAYER = 3
+MAX_EPOCHS = 2000
 LEARNING_RATE = 0.01
 MOMENTUM = 0.9
 BATCH_SIZE = 64
 
 # New globals for pruning timing:
 MIN_INITIAL_TRAIN_EPOCHS = 1  # Minimum epochs before the first pruning check
-MIN_POST_PRUNE_TRAIN_EPOCHS = 70  # Minimum epochs after each prune before checking again
+MIN_POST_PRUNE_TRAIN_EPOCHS = 1  # Minimum epochs after each prune before checking again
 
 # Parameters for the rotation tracker derivative:
 ROTATION_STABLE_EPOCHS = 5              # Number of consecutive epochs with derivative below threshold
-ROTATION_DERIVATIVE_THRESHOLD = 0.1       # Threshold (in degrees) for the derivative of weight rotation
+ROTATION_DERIVATIVE_THRESHOLD = 0.08       # Threshold (in degrees) for the derivative of weight rotation
 
 # New globals for waiting after LR drop before pruning:
-TRAIN_EPOCHS_AFTER_LR_DROP_10x = 15  # Number of epochs to train after dropping LR to LEARNING_RATE/10
-TRAIN_EPOCHS_AFTER_LR_DROP_100x = 10  # Number of epochs to train after dropping LR further to LEARNING_RATE/100
+TRAIN_EPOCHS_AFTER_LR_DROP_10x = 20  # Number of epochs to train after dropping LR to LEARNING_RATE/10
+TRAIN_EPOCHS_AFTER_LR_DROP_100x = 15  # Number of epochs to train after dropping LR further to LEARNING_RATE/100
 
 # Global state variables for the LR drop process.
 # lr_drop_stage: 0 = no drop, 1 = dropped to LEARNING_RATE/10, 2 = dropped to LEARNING_RATE/100.
 lr_drop_stage = 0
 epochs_since_lr_drop = 0
+
+# New global: best pruned criteria. Options: 'CKA', 'flops', 'cka_flops_score'
+BEST_PRUNED_CRITERIA = 'cka_flops_score'
 
 # -------------------------------------------------------------------------
 # Modularized Model Saving Function
@@ -212,10 +218,13 @@ import numpy as np  # Ensure numpy is imported
 
 def winner_pruned_model(pruned_model_filter, pruned_model_layer, scores_filter, scores_layer, best_pruned_criteria='flops'):
     """
-    Select the best pruned model based on either FLOPS or the CKA criteria.
+    Select the best pruned model based on either FLOPS, CKA, or the new multiplicative cka_flops_score.
     
     For 'flops', the model with the lower FLOPS is returned.
     For 'CKA', the aggregated (mean) CKA score from the criteria is used.
+    For 'cka_flops_score', the metric is defined as:
+         score = CKA * (min_flops / model_flops)
+    where CKA is the actual CKA (i.e. 1 - aggregated 1-CKA score).
     """
     if best_pruned_criteria == 'flops':
         layers_current_flops, _ = func.compute_flops(pruned_model_layer)
@@ -225,20 +234,48 @@ def winner_pruned_model(pruned_model_filter, pruned_model_layer, scores_filter, 
         return pruned_model_filter, 'filter'
     
     elif best_pruned_criteria == 'CKA':
-        # Aggregate CKA scores from the layer pruning
-        # Here, scores_layer is a list of tuples: (layer_idx, score) where score is a scalar.
+        # Aggregate CKA scores from the layer pruning.
         layer_scores = [score for (_, score) in scores_layer]
         agg_layer_score = np.mean(layer_scores) if layer_scores else float('inf')
         
-        # Aggregate CKA scores from filter pruning
-        # Here, scores_filter is a list of tuples: (layer_idx, list_of_scores) for each filter.
+        # Aggregate CKA scores from filter pruning.
         filter_scores = []
         for (_, score_list) in scores_filter:
             filter_scores.extend(score_list)
         agg_filter_score = np.mean(filter_scores) if filter_scores else float('inf')
         
-        print(f"[Winner Selection: CKA] Aggregated layer score: {agg_layer_score:.4f}, Aggregated filter score: {agg_filter_score:.4f}")
-        if agg_layer_score < agg_filter_score:
+        print(f"[Winner Selection: CKA] Aggregated layer (1-CKA) score: {agg_layer_score:.4f}, Aggregated filter (1-CKA) score: {agg_filter_score:.4f}")
+        actual_agg_layer_cka = 1 - agg_layer_score
+        actual_agg_filter_cka = 1 - agg_filter_score
+        
+        if actual_agg_layer_cka > actual_agg_filter_cka:
+            return pruned_model_layer, 'layer'
+        else:
+            return pruned_model_filter, 'filter'
+    
+    elif best_pruned_criteria == 'cka_flops_score':
+        # Aggregate CKA scores from the layer pruning.
+        layer_scores = [score for (_, score) in scores_layer]
+        agg_layer_score = np.mean(layer_scores) if layer_scores else float('inf')
+        # Aggregate CKA scores from filter pruning.
+        filter_scores = []
+        for (_, score_list) in scores_filter:
+            filter_scores.extend(score_list)
+        agg_filter_score = np.mean(filter_scores) if filter_scores else float('inf')
+        
+        actual_agg_layer_cka = 1 - agg_layer_score
+        actual_agg_filter_cka = 1 - agg_filter_score
+        
+        # Compute FLOPS for both pruned models.
+        flops_layer, _ = func.compute_flops(pruned_model_layer)
+        flops_filter, _ = func.compute_flops(pruned_model_filter)
+        f_min = min(flops_layer, flops_filter)
+        
+        score_layer = actual_agg_layer_cka * (f_min / flops_layer)
+        score_filter = actual_agg_filter_cka * (f_min / flops_filter)
+        
+        print(f"[Winner Selection: cka_flops_score] Score layer: {score_layer:.4f}, Score filter: {score_filter:.4f}")
+        if score_layer > score_filter:
             return pruned_model_layer, 'layer'
         else:
             return pruned_model_filter, 'filter'
@@ -294,7 +331,8 @@ if __name__ == '__main__':
         "ROTATION_STABLE_EPOCHS": ROTATION_STABLE_EPOCHS,
         "ROTATION_DERIVATIVE_THRESHOLD": ROTATION_DERIVATIVE_THRESHOLD,
         "TRAIN_EPOCHS_AFTER_LR_DROP_10x": TRAIN_EPOCHS_AFTER_LR_DROP_10x,
-        "TRAIN_EPOCHS_AFTER_LR_DROP_100x": TRAIN_EPOCHS_AFTER_LR_DROP_100x
+        "TRAIN_EPOCHS_AFTER_LR_DROP_100x": TRAIN_EPOCHS_AFTER_LR_DROP_100x,
+        "BEST_PRUNED_CRITERIA": BEST_PRUNED_CRITERIA
     }
     log_file.write(json.dumps({"hyperparameters": hyperparams}) + "\n")
 
@@ -368,21 +406,89 @@ if __name__ == '__main__':
                 if epochs_since_lr_drop >= TRAIN_EPOCHS_AFTER_LR_DROP_100x:
                     print(f"[Epoch {epoch_idx}] Waiting period complete. Proceeding with pruning.")
                     
-                    # Perform pruning and also obtain the scores from the criteria.
+                    # Compute the equivalent filter pruning ratio based on the target number of layers to prune.
+                    equivalent_p_filter = compute_equivalent_p_filter(model, P_LAYER, X_train, y_train, criterion_layer=CRITERION_LAYER)
+                    
+                    # Perform pruning using the computed equivalent_p_filter.
                     pruned_model_filter, pruned_model_layer, scores_filter, scores_layer = prune(
-                        model, P_FILTER, P_LAYER,
+                        model, equivalent_p_filter, P_LAYER,
                         CRITERION_FILTER, CRITERION_LAYER,
                         X_train, y_train
                     )
                     
-                    # Use the extra 'CKA' option if desired.
-                    # Set best_pruned_criteria to 'CKA' to use the CKA aggregation.
-                    model, chosen_structure = winner_pruned_model(
-                        pruned_model_filter, pruned_model_layer, scores_filter, scores_layer,
-                        best_pruned_criteria='CKA'
-                    )
-                    pruning_info_to_log = chosen_structure
-
+                    # Aggregate CKA scores from the layer pruning.
+                    layer_scores = [score for (_, score) in scores_layer]
+                    agg_layer_score = np.mean(layer_scores) if layer_scores else float('inf')
+                    
+                    # Aggregate CKA scores from filter pruning.
+                    filter_scores = []
+                    for (_, score_list) in scores_filter:
+                        filter_scores.extend(score_list)
+                    agg_filter_score = np.mean(filter_scores) if filter_scores else float('inf')
+                    
+                    # Compute FLOPS for both pruned models.
+                    flops_layer, _ = func.compute_flops(pruned_model_layer)
+                    flops_filter, _ = func.compute_flops(pruned_model_filter)
+                    
+                    # Convert aggregated (1-CKA) scores to actual CKA values.
+                    actual_agg_layer_cka = 1 - agg_layer_score
+                    actual_agg_filter_cka = 1 - agg_filter_score
+                    
+                    # Decide the winning structure.
+                    if BEST_PRUNED_CRITERIA == 'cka_flops_score':
+                        # Multiplicative metric: score = CKA * (min_flops / model_flops)
+                        f_min = min(flops_layer, flops_filter)
+                        score_layer = actual_agg_layer_cka * (f_min / flops_layer)
+                        score_filter = actual_agg_filter_cka * (f_min / flops_filter)
+                        if score_layer > score_filter:
+                            pruned_structure = 'layer'
+                            winner_cka = actual_agg_layer_cka
+                            loser_cka = actual_agg_filter_cka
+                            winner_flops = flops_layer
+                            loser_flops = flops_filter
+                            winner_cka_flops_score = score_layer
+                            loser_cka_flops_score = score_filter
+                        else:
+                            pruned_structure = 'filter'
+                            winner_cka = actual_agg_filter_cka
+                            loser_cka = actual_agg_layer_cka
+                            winner_flops = flops_filter
+                            loser_flops = flops_layer
+                            winner_cka_flops_score = score_filter
+                            loser_cka_flops_score = score_layer
+                    else:
+                        # Default decision based solely on actual CKA.
+                        if actual_agg_layer_cka > actual_agg_filter_cka:
+                            pruned_structure = 'layer'
+                            winner_cka = actual_agg_layer_cka
+                            loser_cka = actual_agg_filter_cka
+                            winner_flops = flops_layer
+                            loser_flops = flops_filter
+                        else:
+                            pruned_structure = 'filter'
+                            winner_cka = actual_agg_filter_cka
+                            loser_cka = actual_agg_layer_cka
+                            winner_flops = flops_filter
+                            loser_flops = flops_layer
+                    
+                    # Prepare the extended pruning info to log.
+                    pruning_info_to_log = {
+                        'pruned_structure': pruned_structure,
+                        'winner_cka': round(winner_cka, 4),
+                        'winner_flops': int(winner_flops),
+                        'loser_cka': round(loser_cka, 4),
+                        'loser_flops': int(loser_flops)
+                    }
+                    if BEST_PRUNED_CRITERIA == 'cka_flops_score':
+                        pruning_info_to_log['winner_cka_flops_score'] = round(winner_cka_flops_score, 4)
+                        pruning_info_to_log['loser_cka_flops_score'] = round(loser_cka_flops_score, 4)
+                    
+                    # Select the winning pruned model.
+                    if pruned_structure == 'layer':
+                        model = pruned_model_layer
+                    else:
+                        model = pruned_model_filter
+                    
                     # Re-compile the newly pruned model and reset the learning rate.
                     model, callbacks = setup_fine_tuning_cnn(model, LEARNING_RATE)
                     K.set_value(model.optimizer.learning_rate, LEARNING_RATE)
